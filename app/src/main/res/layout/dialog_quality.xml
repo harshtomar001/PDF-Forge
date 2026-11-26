@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="vertical"
+    android:padding="24dp"
+    android:background="@android:color/white">
+
+    <TextView
+        android:id="@+id/dialog_title"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Image quality"
+        android:textColor="@android:color/black"
+        android:textSize="20sp"
+        android:textStyle="bold"/>
+
+
+    <RadioGroup
+        android:id="@+id/quality_group"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <com.google.android.material.radiobutton.MaterialRadioButton
+            android:id="@+id/radio_low"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Low • 60%"
+            android:textColor="@android:color/black"/>
+
+        <com.google.android.material.radiobutton.MaterialRadioButton
+            android:id="@+id/radio_medium"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Medium • 80%"
+            android:textColor="@android:color/black"/>
+
+        <com.google.android.material.radiobutton.MaterialRadioButton
+            android:id="@+id/radio_high"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="High • 90%"
+            android:textColor="@android:color/black"/>
+
+        <com.google.android.material.radiobutton.MaterialRadioButton
+            android:id="@+id/radio_max"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Maximum • 100%"
+            android:textColor="@android:color/black"/>
+
+    </RadioGroup>
+
+</LinearLayout>

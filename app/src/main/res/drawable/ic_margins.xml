@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8"?>
+<vector xmlns:android="http://schemas.android.com/apk/res/android"
+    android:width="18dp"
+    android:height="18dp"
+    android:viewportWidth="24"
+    android:viewportHeight="24">
+    <path
+        android:strokeColor="@color/pdf_primary_red"
+        android:strokeWidth="1.6"
+        android:fillColor="@color/pdf_transparent"
+        android:pathData="M4,4 H20 V20 H4 Z" />
+    <path
+        android:strokeColor="@color/pdf_primary_red"
+        android:strokeWidth="1.6"
+        android:fillColor="@color/pdf_transparent"
+        android:pathData="M8,8 H16 V16 H8 Z" />
+</vector>

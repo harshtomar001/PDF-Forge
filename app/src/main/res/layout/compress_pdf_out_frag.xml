@@ -1,0 +1,488 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+<LinearLayout
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+
+
+    <include
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        layout="@layout/compress_toolbar"
+        />
+
+<ScrollView
+    android:layout_width="match_parent"
+    android:layout_height="0dp"
+    android:layout_weight="1"
+    android:background="#FAFAFA">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        >
+
+
+        <include
+            android:layout_marginTop="@dimen/margin_20dp"
+            android:layout_marginStart="@dimen/margin_18dp"
+            android:layout_marginEnd="@dimen/margin_18dp"
+            layout="@layout/compress_success_div"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            />
+
+
+
+
+
+
+        <com.google.android.material.card.MaterialCardView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="28dp"
+            app:cardCornerRadius="18dp"
+            app:strokeWidth="0dp"
+            android:layout_marginStart="@dimen/margin_18dp"
+            android:layout_marginEnd="@dimen/margin_18dp"
+            app:cardElevation="@dimen/margin_5dp"
+            app:cardBackgroundColor="#FFFFFF">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:padding="20dp">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:gravity="center"
+                    android:orientation="horizontal">
+
+                    <!-- Original -->
+                    <LinearLayout
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:gravity="center"
+                        android:orientation="vertical">
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:ellipsize="end"
+                            android:maxLines="1"
+                            android:text="Original PDF"
+                            android:textColor="#666666"
+                            android:textSize="15dp" />
+
+
+                        <TextView
+                            android:id="@+id/original_size"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="8dp"
+                            android:text="25.4 MB"
+                            android:textColor="#111111"
+                            android:textSize="20dp"
+                            android:textStyle="bold" />
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="8dp"
+                            android:background="@drawable/before_bg"
+                            android:paddingLeft="7dp"
+                            android:paddingTop="5dp"
+                            android:paddingEnd="7dp"
+                            android:paddingBottom="@dimen/margin_5dp"
+                            android:text="Before"
+
+                            android:textColor="#fc474d"
+                            android:textSize="12dp" />
+
+                    </LinearLayout>
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginHorizontal="12dp"
+                        android:text="→"
+                        android:textColor="@color/cmp_text_red"
+                        android:textSize="42dp" />
+
+
+                    <LinearLayout
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:gravity="center"
+                        android:orientation="vertical">
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:ellipsize="end"
+                            android:maxLines="1"
+                            android:text="Compressed PDF"
+                            android:textColor="#159947"
+                            android:textSize="15dp"
+                            android:textStyle="bold" />
+
+
+                        <TextView
+                            android:id="@+id/compressed_size"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="8dp"
+                            android:text="6.2 MB"
+                            android:textColor="#159947"
+                            android:textSize="20dp"
+                            android:textStyle="bold" />
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="8dp"
+                            android:background="@drawable/after_bg"
+                            android:paddingLeft="7dp"
+                            android:paddingTop="5dp"
+                            android:paddingEnd="7dp"
+                            android:paddingBottom="@dimen/margin_5dp"
+                            android:text=" After "
+                            android:textColor="#4bc98a"
+                            android:textSize="12dp" />
+
+                    </LinearLayout>
+
+                </LinearLayout>
+
+
+                <LinearLayout
+                    android:id="@+id/equivalent_image_video_layout"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="22dp"
+                    android:background="@drawable/saved_box_bg"
+                    android:gravity="center_vertical"
+                    android:orientation="horizontal"
+                    android:padding="14dp">
+
+                    <TextView
+                        android:layout_width="54dp"
+                        android:layout_height="54dp"
+                        android:background="@drawable/reduced_size"
+                        android:gravity="center"
+                        android:text=""
+                        android:textColor="#FFFFFF"
+                        android:textSize="24sp" />
+
+                    <LinearLayout
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="14dp"
+                        android:layout_weight="1"
+                        android:orientation="vertical">
+
+                       <include
+                            layout="@layout/compress_pdf_equ_img_mp4"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content" />
+
+
+                    </LinearLayout>
+
+                </LinearLayout>
+
+                <include
+                    android:id="@+id/cmp_uncmp_card"
+                    layout="@layout/compress_pdf_uncmp_card"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="22dp"
+                    android:padding="14dp"
+                    android:visibility="gone" />
+
+                <include
+                    android:visibility="gone"
+                    android:id="@+id/minStorage"
+                    layout="@layout/compress_pdf_min_storage"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/margin_18dp" />
+
+
+            </LinearLayout>
+
+        </com.google.android.material.card.MaterialCardView>
+
+        <include
+            android:visibility="gone"
+            android:id="@+id/tipCard"
+            layout="@layout/compress_pdf_tip"
+            android:layout_marginTop="@dimen/margin_20dp"
+            android:layout_marginStart="@dimen/margin_18dp"
+            android:layout_marginEnd="@dimen/margin_18dp"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            />
+
+
+
+        <com.google.android.material.card.MaterialCardView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="22dp"
+            app:cardCornerRadius="18dp"
+            app:strokeWidth="0dp"
+            android:layout_marginStart="@dimen/margin_18dp"
+            android:layout_marginEnd="@dimen/margin_18dp"
+            app:cardElevation="@dimen/margin_5dp"
+            app:cardBackgroundColor="#FFFFFF">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:gravity="center_vertical"
+                android:padding="18dp">
+
+
+                <com.google.android.material.card.MaterialCardView
+                    android:layout_width="54dp"
+                    android:layout_height="54dp"
+                    app:cardCornerRadius="12dp">
+
+                    <ImageView
+                        android:id="@+id/pdf_image"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:scaleType="centerCrop"
+                        android:src="@drawable/ic_pdf_file"/>
+
+                </com.google.android.material.card.MaterialCardView>
+
+
+
+                <LinearLayout
+                    android:id="@+id/pdf_preview_cmp_out_pdf"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:orientation="vertical"
+                    android:layout_marginStart="8dp">
+
+
+                    <TextView
+                        android:id="@+id/pdf_name_cmp_out_pdf"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Project_Report_compressed.pdf"
+                        android:textColor="#111111"
+                        android:textSize="16dp"
+                        android:maxLines="1"
+                        android:ellipsize="end" />
+
+                    <androidx.constraintlayout.widget.ConstraintLayout
+                        android:id="@+id/metaLayout"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="10dp">
+
+                        <ImageView
+                            android:id="@+id/folder"
+                            android:layout_width="18dp"
+                            android:layout_height="18dp"
+                            android:src="@drawable/folder"
+                            app:layout_constraintStart_toStartOf="parent"
+                            app:layout_constraintTop_toTopOf="parent"
+                            app:layout_constraintBottom_toBottomOf="parent"/>
+
+                        <TextView
+                            android:id="@+id/txtPdfSize"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginStart="5dp"
+                            android:ellipsize="end"
+                            android:maxLines="1"
+                            android:text="253.22 MB"
+                            android:textColor="#555555"
+                            android:textSize="12dp"
+                            android:textStyle="bold"
+                            app:layout_constraintStart_toEndOf="@id/folder"
+                            app:layout_constraintTop_toTopOf="parent"
+                            app:layout_constraintBottom_toBottomOf="parent"/>
+
+                        <TextView
+                            android:id="@+id/black_dot"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginStart="8dp"
+                            android:text="•"
+                            android:textColor="#999999"
+                            android:textSize="18dp"
+                            app:layout_constraintStart_toEndOf="@id/txtPdfSize"
+                            app:layout_constraintTop_toTopOf="parent"
+                            app:layout_constraintBottom_toBottomOf="parent"/>
+
+                        <ImageView
+                            android:id="@+id/blankPage"
+                            android:layout_width="18dp"
+                            android:layout_height="18dp"
+                            android:layout_marginStart="8dp"
+                            android:layout_marginEnd="6dp"
+                            android:src="@drawable/blankpage"
+                            app:layout_constraintStart_toEndOf="@id/black_dot"
+                            app:layout_constraintTop_toTopOf="parent"
+                            app:layout_constraintBottom_toBottomOf="parent"/>
+
+                        <TextView
+                            android:id="@+id/txtPdfPages"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:ellipsize="end"
+                            android:maxLines="1"
+                            android:text="804 Pages"
+                            android:textColor="#555555"
+                            android:textSize="12dp"
+                            android:layout_marginStart="@dimen/margin_5dp"
+                            android:textStyle="bold"
+                            app:layout_constraintStart_toEndOf="@id/blankPage"
+                            app:layout_constraintTop_toTopOf="parent"
+                            app:layout_constraintBottom_toBottomOf="parent"/>
+
+                    </androidx.constraintlayout.widget.ConstraintLayout>
+                </LinearLayout>
+
+
+            </LinearLayout>
+
+        </com.google.android.material.card.MaterialCardView>
+
+
+        <LinearLayout
+            android:id="@+id/download_compressed_pdf"
+            android:layout_width="match_parent"
+            android:layout_marginTop="@dimen/margin_20dp"
+            android:layout_marginBottom="@dimen/margin_20dp"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:gravity="center"
+            android:paddingTop="8dp"
+            android:paddingBottom="@dimen/margin_8dp"
+            android:layout_marginStart="@dimen/margin_18dp"
+            android:layout_marginEnd="@dimen/margin_18dp"
+            android:background="@drawable/upl_pdf_cmp_pdf"
+            app:layout_constraintTop_toBottomOf="@id/pdf_View">
+
+
+            <ImageView
+                android:layout_width="@dimen/margin_50dp"
+                android:layout_height="@dimen/margin_50dp"
+                app:srcCompat="@drawable/download_icon_no_bg" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Download"
+                android:textColor="@color/white"
+                android:textStyle="bold"
+                android:textSize="@dimen/margin_22dp"
+                />
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/sharePDF_compressPDF"
+            android:layout_width="match_parent"
+            android:layout_marginStart="@dimen/margin_18dp"
+            android:layout_marginEnd="@dimen/margin_18dp"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:gravity="center"
+            android:paddingTop="8dp"
+            android:paddingBottom="@dimen/margin_8dp"
+            android:background="@drawable/border_share_pdf"
+            >
+
+            <ImageView
+                android:id="@+id/share_img"
+                android:layout_width="@dimen/margin_50dp"
+                android:layout_height="@dimen/margin_50dp"
+                app:srcCompat="@drawable/share_icon_red"
+                android:layout_marginRight="@dimen/margin_8dp"
+                />
+
+            <TextView
+                android:id="@+id/share_textView"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Share PDF"
+                android:textColor="#C0392B"
+                android:textStyle="bold"
+                android:textSize="@dimen/margin_22dp"
+                />
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/redirecting_inp_frag"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:layout_marginLeft="@dimen/margin_40dp"
+            android:layout_marginTop="@dimen/margin_12dp"
+            android:layout_marginBottom="@dimen/margin_20dp"
+            android:layout_marginRight="@dimen/margin_40dp"
+
+            android:gravity="center">
+
+
+
+            <com.google.android.material.button.MaterialButton
+                android:id="@+id/cmp_pdf_another"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Compress Another PDF"
+                android:textSize="@dimen/margin_12dp"
+                android:maxLines="1"
+                android:ellipsize="end"
+                android:textColor="@color/cmp_text_red"
+                android:layout_marginLeft="@dimen/margin_8dp"
+                android:backgroundTint="@null"
+                app:backgroundTint="@null"
+                app:icon="@drawable/rotate_arrow_bgless"
+                app:iconTint="@color/cmp_text_red"
+                app:iconSize="@dimen/margin_30dp"
+                app:iconGravity="textStart"
+                android:background="@android:color/transparent"
+                />
+
+
+        </LinearLayout>
+
+
+
+
+    </LinearLayout>
+
+</ScrollView>
+
+
+</LinearLayout>
+
+    <include
+        android:id="@+id/loading_overlay"
+        layout="@layout/loading_bar"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        />
+
+
+
+</FrameLayout>

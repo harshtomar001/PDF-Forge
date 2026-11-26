@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<!--
+    activity_splash.xml
+    This layout is intentionally minimal.
+    SplashView (a full-screen custom Canvas View) is set
+    programmatically inside SplashActivity via setContentView(splashView).
+    If you prefer XML inflation, replace the FrameLayout content with:
+        <com.pdfstudio.app.SplashView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent" />
+    and call setContentView(R.layout.activity_splash) in the Activity.
+-->
+<FrameLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#0f0c29">
+
+    <!--
+        SplashView fills this entire frame.
+        Added here as a reference; the Activity sets it programmatically.
+    -->
+    <com.harsh.pdfstudio.ui.SplashView
+        android:id="@+id/splashView"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent" />
+
+</FrameLayout>

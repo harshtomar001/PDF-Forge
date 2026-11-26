@@ -1,0 +1,74 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- res/drawable/ic_server_down.xml -->
+<vector xmlns:android="http://schemas.android.com/apk/res/android"
+    android:width="120dp"
+    android:height="120dp"
+    android:viewportWidth="120"
+    android:viewportHeight="120">
+
+    <!-- Background circle -->
+    <path
+        android:fillColor="#FFF0F0"
+        android:pathData="M60,10 A50,50 0 1,1 59.99,10 Z" />
+
+    <!-- Server body top -->
+    <path
+        android:fillColor="#E8192C"
+        android:pathData="M36,38 Q36,34 40,34 L80,34 Q84,34 84,38 L84,52 Q84,56 80,56 L40,56 Q36,56 36,52 Z" />
+
+    <!-- Server body bottom -->
+    <path
+        android:fillColor="#CC1525"
+        android:pathData="M36,60 Q36,56 40,56 L80,56 Q84,56 84,60 L84,74 Q84,78 80,78 L40,78 Q36,78 36,74 Z" />
+
+    <!-- Top server LED dot -->
+    <path
+        android:fillColor="#FFFFFF"
+        android:pathData="M76,43 A3,3 0 1,1 75.99,43 Z" />
+
+    <!-- Top server LED dot 2 -->
+    <path
+        android:fillColor="#FFCDD2"
+        android:pathData="M68,43 A3,3 0 1,1 67.99,43 Z" />
+
+    <!-- Top server line slot -->
+    <path
+        android:fillColor="#FFFFFF"
+        android:strokeColor="#FFFFFF"
+        android:strokeWidth="2"
+        android:strokeLineCap="round"
+        android:pathData="M42,43 L58,43" />
+
+    <!-- Bottom server LED dot -->
+    <path
+        android:fillColor="#FFFFFF"
+        android:pathData="M76,67 A3,3 0 1,1 75.99,67 Z" />
+
+    <!-- Bottom server LED dot 2 -->
+    <path
+        android:fillColor="#FFCDD2"
+        android:pathData="M68,67 A3,3 0 1,1 67.99,67 Z" />
+
+    <!-- Bottom server line slot -->
+    <path
+        android:fillColor="#FFFFFF"
+        android:strokeColor="#FFFFFF"
+        android:strokeWidth="2"
+        android:strokeLineCap="round"
+        android:pathData="M42,67 L58,67" />
+
+    <!-- X mark below servers -->
+    <path
+        android:fillColor="@android:color/transparent"
+        android:strokeColor="#E8192C"
+        android:strokeWidth="3"
+        android:strokeLineCap="round"
+        android:pathData="M52,86 L68,100" />
+    <path
+        android:fillColor="@android:color/transparent"
+        android:strokeColor="#E8192C"
+        android:strokeWidth="3"
+        android:strokeLineCap="round"
+        android:pathData="M68,86 L52,100" />
+
+</vector>

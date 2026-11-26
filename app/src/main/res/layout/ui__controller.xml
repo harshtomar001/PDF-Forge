@@ -1,0 +1,435 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/app_bg"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:android="http://schemas.android.com/apk/res/android">
+
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/toolbar_home_page"
+        android:layout_width="match_parent"
+        android:layout_height="75dp"
+        android:background="@color/toolbar_blue"
+        android:elevation="8dp"
+        android:paddingTop="@dimen/margin_18dp"
+        android:paddingStart="12dp"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        android:paddingEnd="12dp">
+
+        <!-- ========================= -->
+        <!-- MENU -->
+        <!-- ========================= -->
+
+        <ImageView
+            android:id="@+id/menuBtn"
+            android:layout_width="44dp"
+            android:layout_height="44dp"
+            android:padding="10dp"
+            android:background="?attr/selectableItemBackgroundBorderless"
+            android:src="@drawable/main_menu"
+            android:contentDescription="Menu"
+            android:clickable="true"
+            android:focusable="true"
+            app:tint="@android:color/white"
+
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintBottom_toBottomOf="parent" />
+
+
+        <!-- ========================= -->
+        <!-- APP LOGO -->
+        <!-- ========================= -->
+
+        <ImageView
+            android:id="@+id/appLogo"
+            android:layout_width="34dp"
+            android:layout_height="34dp"
+            android:layout_marginStart="2dp"
+            android:src="@drawable/ic_pdf_logo"
+            android:contentDescription="PDF Studio logo"
+
+            app:layout_constraintStart_toEndOf="@id/menuBtn"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintBottom_toBottomOf="parent" />
+
+
+        <!-- ========================= -->
+        <!-- TITLE -->
+        <!-- ========================= -->
+
+        <TextView
+            android:id="@+id/toolbarTitle"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="8dp"
+            android:text="PDF STUDIO"
+            android:textColor="@android:color/white"
+            android:textSize="20sp"
+            android:textStyle="bold"
+            android:maxLines="1"
+            android:ellipsize="end"
+
+            app:layout_constraintStart_toEndOf="@id/appLogo"
+            app:layout_constraintEnd_toStartOf="@id/searchBtn"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintBottom_toBottomOf="parent" />
+
+
+        <!-- ========================= -->
+        <!-- SEARCH -->
+        <!-- ========================= -->
+
+        <ImageView
+            android:id="@+id/searchBtn"
+            android:layout_width="44dp"
+            android:layout_height="44dp"
+            android:padding="10dp"
+            android:background="?attr/selectableItemBackgroundBorderless"
+            android:src="@drawable/ic_search"
+            android:contentDescription="Search"
+            android:clickable="true"
+            android:focusable="true"
+            app:tint="@android:color/white"
+
+            app:layout_constraintEnd_toStartOf="@id/notificationContainer"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintBottom_toBottomOf="parent" />
+
+
+        <!-- ========================= -->
+        <!-- NOTIFICATION -->
+        <!-- ========================= -->
+
+        <FrameLayout
+            android:id="@+id/notificationContainer"
+            android:layout_width="44dp"
+            android:layout_height="44dp"
+
+            app:layout_constraintEnd_toStartOf="@id/profileBtn"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintBottom_toBottomOf="parent">
+
+            <ImageView
+                android:id="@+id/notificationBtn"
+                android:layout_width="44dp"
+                android:layout_height="44dp"
+                android:padding="10dp"
+                android:background="?attr/selectableItemBackgroundBorderless"
+                android:src="@drawable/ic_notification"
+                android:contentDescription="Notifications"
+                android:clickable="true"
+                android:focusable="true"
+                app:tint="@android:color/white" />
+
+            <!-- Notification badge -->
+            <View
+                android:id="@+id/notificationBadge"
+                android:layout_width="8dp"
+                android:layout_height="8dp"
+                android:layout_gravity="top|end"
+                android:layout_marginTop="9dp"
+                android:layout_marginEnd="9dp"
+                android:background="@drawable/dot_notification_badge" />
+
+        </FrameLayout>
+
+
+        <!-- ========================= -->
+        <!-- PROFILE -->
+        <!-- ========================= -->
+
+        <FrameLayout
+            android:id="@+id/profileBtn"
+            android:layout_width="44dp"
+            android:layout_height="44dp"
+            android:layout_marginStart="2dp"
+            android:clickable="true"
+            android:focusable="true"
+            android:foreground="?attr/selectableItemBackgroundBorderless"
+
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintBottom_toBottomOf="parent">
+
+            <!-- White circular background -->
+            <View
+                android:layout_width="34dp"
+                android:layout_height="34dp"
+                android:layout_gravity="center"
+                android:background="@drawable/bg_profile_circle" />
+
+            <!-- Profile icon -->
+            <ImageView
+                android:id="@+id/profileIcon"
+                android:layout_width="34dp"
+                android:layout_height="34dp"
+                android:layout_gravity="center"
+                android:padding="7dp"
+                android:src="@drawable/ic_person"
+                android:contentDescription="Profile"
+                app:tint="@color/toolbar_blue" />
+
+        </FrameLayout>
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+    <!-- ===================== SCROLLABLE CONTENT ===================== -->
+    <ScrollView
+        android:id="@+id/Linealayout"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:fillViewport="true"
+        android:clipToPadding="false"
+        android:paddingBottom="16dp"
+        app:layout_constraintTop_toBottomOf="@id/toolbar_home_page"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent">
+
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+
+            <!-- ===================== CREATE PDF HERO / BANNER CAROUSEL ===================== -->
+            <include
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="16dp"
+                android:layout_marginBottom="24dp"
+                android:id="@+id/featuresPage"
+                layout="@layout/app_main_page" />
+
+
+            <!-- ===================== POPULAR TOOLS HEADER ===================== -->
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:gravity="center_vertical"
+                android:layout_marginStart="@dimen/margin_18dp"
+                android:layout_marginEnd="16dp"
+                android:layout_marginBottom="@dimen/margin_15dp">
+
+                <TextView
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:text="@string/popularTools"
+                    android:textColor="@color/text_main"
+                    android:textStyle="bold"
+                    android:textSize="@dimen/margin_20dp" />
+
+                <TextView
+                    android:id="@+id/seeAllTools"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:padding="6dp"
+                    android:background="?attr/selectableItemBackground"
+                    android:text="See All ›"
+                    android:textColor="@color/toolbar_blue"
+                    android:textStyle="bold"
+                    android:textSize="13sp" />
+
+            </LinearLayout>
+
+
+            <!-- ===================== POPULAR TOOLS GRID ===================== -->
+            <include
+                android:layout_height="wrap_content"
+                android:layout_width="match_parent"
+                android:layout_marginStart="8dp"
+                android:layout_marginEnd="8dp"
+                android:layout_gravity="center_horizontal"
+                layout="@layout/home_btns" />
+
+
+            <!-- ===================== RECENT FILES ===================== -->
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:backgroundTint="@null"
+                android:orientation="vertical"
+
+                android:layout_marginLeft="@dimen/margin_12dp"
+                android:layout_marginRight="@dimen/margin_12dp"
+                android:layout_marginTop="8dp"
+                android:layout_marginBottom="@dimen/margin_20dp"
+                android:paddingBottom="@dimen/margin_18dp">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+                    android:gravity="center_vertical"
+                    android:layout_marginStart="@dimen/margin_5dp"
+                    android:layout_marginEnd="8dp">
+
+                    <TextView
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:text="@string/recentFiles"
+                        android:textSize="@dimen/margin_20dp"
+                        android:layout_marginLeft="@dimen/margin_20dp"
+                        android:textColor="@color/text_main"
+                        android:textStyle="normal" />
+
+                    <TextView
+                        android:id="@+id/seeAllRecent"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:padding="6dp"
+                        android:background="?attr/selectableItemBackground"
+                        android:text="See All ›"
+                        android:textColor="@color/toolbar_blue"
+                        android:textStyle="bold"
+                        android:textSize="13sp" />
+
+                </LinearLayout>
+
+
+                <ImageView
+                    android:visibility="gone"
+                    android:id="@+id/no_recentFile_Img"
+                    android:layout_width="70dp"
+                    android:layout_height="70dp"
+                    android:layout_marginTop="@dimen/margin_18dp"
+                    android:layout_gravity="center"
+                    android:src="@drawable/history_icon_transparent"
+                    />
+
+
+                <TextView
+                    android:visibility="gone"
+                    android:id="@+id/no_recent_fileText"
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:layout_marginTop="@dimen/margin_5dp"
+                    android:layout_marginBottom="@dimen/margin_18dp"
+                    android:text="@string/no_recent_files"
+                    android:textSize="22sp"
+                    android:textColor="@color/darkBlue"
+                    android:textStyle="bold"
+                    android:gravity="center"
+                    android:fontFamily="@font/inconsolata_condensed_bold"
+                    android:layout_gravity="center"
+                    />
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    android:id="@+id/linearLayout_recent_files"
+                    android:layout_marginTop="@dimen/margin_15dp"
+                    />
+
+
+            </LinearLayout>
+
+
+            <!-- ===================== UNLOCK PREMIUM BANNER ===================== -->
+            <LinearLayout
+                android:id="@+id/unlockPremiumBtn"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/margin_12dp"
+                android:layout_marginEnd="@dimen/margin_12dp"
+                android:layout_marginBottom="12dp"
+                android:orientation="horizontal"
+                android:gravity="center_vertical"
+                android:background="@drawable/bg_premium_banner"
+                android:clickable="true"
+                android:focusable="true"
+                android:foreground="?attr/selectableItemBackground"
+                android:padding="14dp">
+
+                <TextView
+                    android:layout_width="40dp"
+                    android:layout_height="40dp"
+                    android:gravity="center"
+                    android:text="👑"
+                    android:textSize="22sp" />
+
+                <LinearLayout
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:layout_marginStart="8dp"
+                    android:orientation="vertical">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Unlock Premium"
+                        android:textColor="@color/text_main"
+                        android:textStyle="bold"
+                        android:textSize="15sp" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="2dp"
+                        android:text="Unlock all features and remove ads"
+                        android:textColor="@color/text_secondary"
+                        android:textSize="12sp" />
+
+                </LinearLayout>
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:background="@drawable/bg_upgrade_pill"
+                    android:paddingStart="16dp"
+                    android:paddingEnd="16dp"
+                    android:paddingTop="9dp"
+                    android:paddingBottom="9dp"
+                    android:text="Upgrade Now  ›"
+                    android:textColor="@android:color/white"
+                    android:textStyle="bold"
+                    android:textSize="13sp" />
+
+            </LinearLayout>
+
+
+            <!-- App version footer (already read by HomeFragment; was previously missing) -->
+            <TextView
+                android:id="@+id/versionText"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="center"
+                android:layout_marginTop="4dp"
+                android:layout_marginBottom="12dp"
+                android:textColor="@color/text_secondary"
+                android:textSize="12sp"
+                tools:text="Version 1.0"
+                xmlns:tools="http://schemas.android.com/tools" />
+
+        </LinearLayout>
+
+    </ScrollView>
+
+    <include
+        android:id="@+id/rateApp"
+        android:layout_height="wrap_content"
+        android:layout_width="0dp"
+        android:visibility="gone"
+        android:layout_marginHorizontal="@dimen/margin_18dp"
+        app:layout_constraintVertical_bias="0.45"
+        layout="@layout/rate_pdf_studio_bottom_sheet"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintBottom_toBottomOf="parent"
+        />
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>

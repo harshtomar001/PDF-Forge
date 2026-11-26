@@ -1,0 +1,671 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/rootAppStorage"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/storage_background">
+
+    <!-- ============================ TOP APP BAR ============================ -->
+    <com.google.android.material.appbar.MaterialToolbar
+        android:id="@+id/toolbarAppStorage"
+        android:layout_width="0dp"
+        android:layout_height="@dimen/storage_toolbar_height"
+        android:background="@color/storage_surface"
+        android:elevation="0dp"
+        android:minHeight="@dimen/storage_toolbar_height"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:navigationIcon="@drawable/ic_back"
+        app:navigationContentDescription="@string/storage_nav_back"
+        app:navigationIconTint="@color/storage_text_primary"
+        app:title="@string/storage_title"
+        app:titleTextColor="@color/storage_text_primary"
+        app:titleTextAppearance="@style/TextAppearance.AppStorage.ToolbarTitle"
+        app:menu="@menu/menu_app_storage" />
+
+    <View
+        android:id="@+id/toolbarDivider"
+        android:layout_width="0dp"
+        android:layout_height="@dimen/storage_divider_thickness"
+        android:background="@color/storage_divider"
+        app:layout_constraintTop_toBottomOf="@id/toolbarAppStorage"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent" />
+
+    <!-- ============================ SCROLLABLE CONTENT ============================ -->
+    <androidx.core.widget.NestedScrollView
+        android:id="@+id/scrollAppStorage"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:clipToPadding="false"
+        android:fillViewport="true"
+        android:paddingBottom="@dimen/storage_spacing_xl"
+        app:layout_constraintTop_toBottomOf="@id/toolbarDivider"
+        app:layout_constraintBottom_toTopOf="@id/bottomActionArea"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <!-- ===================== 1. INTRODUCTION CARD ===================== -->
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:id="@+id/cardIntro"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/storage_screen_margin_horizontal"
+                android:layout_marginEnd="@dimen/storage_screen_margin_horizontal"
+                android:layout_marginTop="@dimen/storage_spacing_md"
+                android:minHeight="@dimen/storage_intro_card_min_height"
+                android:background="@drawable/bg_intro_card"
+                android:padding="@dimen/storage_spacing_lg">
+
+                <ImageView
+                    android:id="@+id/ivIntroIllustration"
+                    android:layout_width="@dimen/storage_intro_illustration_size"
+                    android:layout_height="@dimen/storage_intro_illustration_size"
+                    android:contentDescription="@string/storage_cd_intro_illustration"
+                    android:src="@drawable/ic_storage_illustration"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent"
+                    app:layout_constraintBottom_toBottomOf="parent" />
+
+                <TextView
+                    android:id="@+id/tvIntroTitle"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="@dimen/storage_spacing_md"
+                    android:text="@string/storage_intro_title"
+                    android:textColor="@color/storage_text_primary"
+                    android:textSize="@dimen/storage_text_title_lg"
+                    android:textStyle="bold"
+                    app:layout_constraintStart_toEndOf="@id/ivIntroIllustration"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintTop_toTopOf="@id/ivIntroIllustration" />
+
+                <TextView
+                    android:id="@+id/tvIntroDescription"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/storage_spacing_xs"
+                    android:layout_marginStart="@dimen/storage_spacing_md"
+                    android:lineSpacingExtra="2dp"
+                    android:text="@string/storage_intro_description"
+                    android:textColor="@color/storage_text_secondary"
+                    android:textSize="@dimen/storage_text_body_sm"
+                    app:layout_constraintStart_toEndOf="@id/ivIntroIllustration"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintTop_toBottomOf="@id/tvIntroTitle" />
+
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+            <!-- ===================== 2. STORAGE USED CARD ===================== -->
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:id="@+id/cardStorageUsed"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/storage_screen_margin_horizontal"
+                android:layout_marginEnd="@dimen/storage_screen_margin_horizontal"
+                android:layout_marginTop="@dimen/storage_card_gap"
+                android:minHeight="@dimen/storage_used_card_min_height"
+                android:background="@drawable/bg_white_card"
+                android:elevation="@dimen/storage_card_elevation"
+                android:padding="@dimen/storage_spacing_lg">
+
+                <FrameLayout
+                    android:id="@+id/frameStorageDonut"
+                    android:layout_width="@dimen/storage_donut_size"
+                    android:layout_height="@dimen/storage_donut_size"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent"
+                    app:layout_constraintBottom_toBottomOf="parent">
+
+                    <com.harsh.pdfstudio.storage.StorageDonutView
+                        android:id="@+id/progressStorage"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:contentDescription="@string/storage_cd_donut_chart" />
+
+                    <ImageView
+                        android:id="@+id/ivStorageIcon"
+                        android:layout_width="@dimen/storage_donut_icon_size"
+                        android:layout_height="@dimen/storage_donut_icon_size"
+                        android:layout_gravity="center"
+                        android:src="@drawable/ic_storage"
+                        app:tint="@color/blue_checkBox" />
+
+                </FrameLayout>
+
+                <TextView
+                    android:id="@+id/tvStorageUsed"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="@dimen/storage_spacing_lg"
+                    android:text="@string/storage_used_label"
+                    android:textColor="@color/storage_text_secondary"
+                    android:textSize="@dimen/storage_text_label"
+                    android:textStyle="bold"
+                    app:layout_constraintStart_toEndOf="@id/frameStorageDonut"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintTop_toTopOf="@id/frameStorageDonut" />
+
+                <TextView
+                    android:id="@+id/tvStorageAmount"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="@dimen/storage_spacing_lg"
+                    android:layout_marginTop="@dimen/storage_spacing_xxs"
+                    android:text="@string/storage_amount_placeholder"
+                    android:textColor="@color/blue_checkBox"
+                    android:textSize="@dimen/storage_text_value_huge"
+                    android:textStyle="bold"
+                    app:layout_constraintStart_toEndOf="@id/frameStorageDonut"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintTop_toBottomOf="@id/tvStorageUsed" />
+
+                <TextView
+                    android:id="@+id/tvStorageSubtitle"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="@dimen/storage_spacing_lg"
+                    android:text="@string/storage_used_subtitle"
+                    android:textColor="@color/storage_text_secondary"
+                    android:textSize="@dimen/storage_text_body_sm"
+                    app:layout_constraintStart_toEndOf="@id/frameStorageDonut"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintTop_toBottomOf="@id/tvStorageAmount" />
+
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+            <!-- ===================== 3. STORAGE BREAKDOWN CARD ===================== -->
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:id="@+id/cardStorageBreakdown"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/storage_screen_margin_horizontal"
+                android:layout_marginEnd="@dimen/storage_screen_margin_horizontal"
+                android:layout_marginTop="@dimen/storage_card_gap"
+                android:background="@drawable/bg_white_card"
+                android:elevation="@dimen/storage_card_elevation"
+                android:paddingHorizontal="@dimen/storage_spacing_lg"
+                android:paddingTop="@dimen/storage_spacing_lg"
+                android:paddingBottom="@dimen/storage_spacing_sm">
+
+                <TextView
+                    android:id="@+id/tvBreakdownTitle"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:text="@string/storage_breakdown_title"
+                    android:textColor="@color/storage_text_primary"
+                    android:textSize="@dimen/storage_text_title_lg"
+                    android:textStyle="bold"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+                <!-- ROW 1: PDF FILES -->
+                <ImageView
+                    android:id="@+id/ivPdfIcon"
+                    android:layout_width="@dimen/storage_icon_row_size"
+                    android:layout_height="@dimen/storage_icon_row_size"
+                    android:layout_marginTop="@dimen/storage_spacing_lg"
+                    android:background="@drawable/bg_icon_circle_purple"
+                    android:contentDescription="@string/storage_cd_pdf_icon"
+                    android:padding="@dimen/storage_spacing_xs"
+                    android:src="@drawable/ic_pdf"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@id/tvBreakdownTitle" />
+
+                <TextView
+                    android:id="@+id/tvPdfTitle"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="@dimen/storage_spacing_sm"
+                    android:text="@string/storage_pdf_title"
+                    android:textColor="@color/storage_text_primary"
+                    android:textSize="@dimen/storage_text_body"
+                    android:textStyle="bold"
+                    app:layout_constraintStart_toEndOf="@id/ivPdfIcon"
+                    app:layout_constraintEnd_toStartOf="@id/tvPdfStorage"
+                    app:layout_constraintTop_toTopOf="@id/ivPdfIcon" />
+
+                <TextView
+                    android:id="@+id/tvPdfDescription"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="@dimen/storage_spacing_sm"
+                    android:layout_marginTop="@dimen/storage_spacing_xxs"
+                    android:text="@string/storage_pdf_description"
+                    android:textColor="@color/storage_text_secondary"
+                    android:textSize="@dimen/storage_text_caption"
+                    app:layout_constraintStart_toEndOf="@id/ivPdfIcon"
+                    app:layout_constraintEnd_toStartOf="@id/tvPdfStorage"
+                    app:layout_constraintTop_toBottomOf="@id/tvPdfTitle"
+                    app:layout_constraintBottom_toBottomOf="@id/ivPdfIcon" />
+
+                <TextView
+                    android:id="@+id/tvPdfStorage"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="1.18 GB"
+                    android:textColor="@color/storage_text_primary"
+                    android:textSize="@dimen/storage_text_body"
+                    android:textStyle="bold"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintTop_toTopOf="@id/ivPdfIcon"
+                    tools:ignore="HardcodedText" />
+
+                <TextView
+                    android:id="@+id/tvPdfPercentage"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/storage_spacing_xxs"
+                    android:text="95.2%"
+                    android:textColor="@color/blue_checkBox"
+                    android:textSize="@dimen/storage_text_percentage"
+                    android:textStyle="bold"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintTop_toBottomOf="@id/tvPdfStorage"
+                    tools:ignore="HardcodedText" />
+
+                <View
+                    android:id="@+id/dividerRow1"
+                    android:layout_width="0dp"
+                    android:layout_height="@dimen/storage_divider_thickness"
+                    android:layout_marginTop="@dimen/storage_spacing_md"
+                    android:background="@color/storage_divider"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintTop_toBottomOf="@id/ivPdfIcon" />
+
+                <!-- ROW 2: CACHE -->
+                <ImageView
+                    android:id="@+id/ivCacheIcon"
+                    android:layout_width="@dimen/storage_icon_row_size"
+                    android:layout_height="@dimen/storage_icon_row_size"
+                    android:layout_marginTop="@dimen/storage_spacing_md"
+                    android:background="@drawable/bg_icon_circle_green"
+                    android:contentDescription="@string/storage_cd_cache_icon"
+                    android:padding="@dimen/storage_spacing_xs"
+                    android:src="@drawable/ic_delete"
+                    android:tint="@color/storage_green_500"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@id/dividerRow1" />
+
+                <TextView
+                    android:id="@+id/tvCacheTitle"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="@dimen/storage_spacing_sm"
+                    android:text="@string/storage_cache_title"
+                    android:textColor="@color/storage_text_primary"
+                    android:textSize="@dimen/storage_text_body"
+                    android:textStyle="bold"
+                    app:layout_constraintStart_toEndOf="@id/ivCacheIcon"
+                    app:layout_constraintEnd_toStartOf="@id/tvCacheStorage"
+                    app:layout_constraintTop_toTopOf="@id/ivCacheIcon" />
+
+                <TextView
+                    android:id="@+id/tvCacheDescription"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="@dimen/storage_spacing_sm"
+                    android:layout_marginTop="@dimen/storage_spacing_xxs"
+                    android:text="@string/storage_cache_description"
+                    android:textColor="@color/storage_text_secondary"
+                    android:textSize="@dimen/storage_text_caption"
+                    app:layout_constraintStart_toEndOf="@id/ivCacheIcon"
+                    app:layout_constraintEnd_toStartOf="@id/tvCacheStorage"
+                    app:layout_constraintTop_toBottomOf="@id/tvCacheTitle"
+                    app:layout_constraintBottom_toBottomOf="@id/ivCacheIcon" />
+
+                <TextView
+                    android:id="@+id/tvCacheStorage"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="42 MB"
+                    android:textColor="@color/storage_text_primary"
+                    android:textSize="@dimen/storage_text_body"
+                    android:textStyle="bold"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintTop_toTopOf="@id/ivCacheIcon"
+                    tools:ignore="HardcodedText" />
+
+                <TextView
+                    android:id="@+id/tvCachePercentage"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/storage_spacing_xxs"
+                    android:text="3.3%"
+                    android:textColor="@color/storage_green_500"
+                    android:textSize="@dimen/storage_text_percentage"
+                    android:textStyle="bold"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintTop_toBottomOf="@id/tvCacheStorage"
+                    tools:ignore="HardcodedText" />
+
+                <View
+                    android:id="@+id/dividerRow2"
+                    android:layout_width="0dp"
+                    android:layout_height="@dimen/storage_divider_thickness"
+                    android:layout_marginTop="@dimen/storage_spacing_md"
+                    android:background="@color/storage_divider"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintTop_toBottomOf="@id/ivCacheIcon" />
+
+                <!-- ROW 3: OTHER APP DATA -->
+                <ImageView
+                    android:id="@+id/ivOtherIcon"
+                    android:layout_width="@dimen/storage_icon_row_size"
+                    android:layout_height="@dimen/storage_icon_row_size"
+                    android:layout_marginTop="@dimen/storage_spacing_md"
+                    android:background="@drawable/bg_icon_circle_orange"
+                    android:contentDescription="@string/storage_cd_other_icon"
+                    android:padding="@dimen/storage_spacing_xs"
+                    android:src="@drawable/ic_other_data"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@id/dividerRow2" />
+
+                <TextView
+                    android:id="@+id/tvOtherTitle"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="@dimen/storage_spacing_sm"
+                    android:text="@string/storage_other_title"
+                    android:textColor="@color/storage_text_primary"
+                    android:textSize="@dimen/storage_text_body"
+                    android:textStyle="bold"
+                    app:layout_constraintStart_toEndOf="@id/ivOtherIcon"
+                    app:layout_constraintEnd_toStartOf="@id/tvOtherStorage"
+                    app:layout_constraintTop_toTopOf="@id/ivOtherIcon" />
+
+                <TextView
+                    android:id="@+id/tvOtherDescription"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="@dimen/storage_spacing_sm"
+                    android:layout_marginTop="@dimen/storage_spacing_xxs"
+                    android:text="@string/storage_other_description"
+                    android:textColor="@color/storage_text_secondary"
+                    android:textSize="@dimen/storage_text_caption"
+                    app:layout_constraintStart_toEndOf="@id/ivOtherIcon"
+                    app:layout_constraintEnd_toStartOf="@id/tvOtherStorage"
+                    app:layout_constraintTop_toBottomOf="@id/tvOtherTitle"
+                    app:layout_constraintBottom_toBottomOf="@id/ivOtherIcon" />
+
+                <TextView
+                    android:id="@+id/tvOtherStorage"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="20 MB"
+                    android:textColor="@color/storage_text_primary"
+                    android:textSize="@dimen/storage_text_body"
+                    android:textStyle="bold"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintTop_toTopOf="@id/ivOtherIcon"
+                    tools:ignore="HardcodedText" />
+
+                <TextView
+                    android:id="@+id/tvOtherPercentage"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/storage_spacing_xxs"
+                    android:text="1.5%"
+                    android:textColor="@color/storage_orange_500"
+                    android:textSize="@dimen/storage_text_percentage"
+                    android:textStyle="bold"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintTop_toBottomOf="@id/tvOtherStorage"
+                    tools:ignore="HardcodedText" />
+
+                <View
+                    android:id="@+id/dividerTotal"
+                    android:layout_width="0dp"
+                    android:layout_height="@dimen/storage_divider_thickness"
+                    android:layout_marginTop="@dimen/storage_spacing_md"
+                    android:background="@color/storage_divider"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintTop_toBottomOf="@id/ivOtherIcon" />
+
+                <!-- TOTAL ROW -->
+                <TextView
+                    android:id="@+id/tvTotalLabel"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/storage_spacing_md"
+                    android:layout_marginBottom="@dimen/storage_spacing_md"
+                    android:text="@string/storage_total_label"
+                    android:textColor="@color/storage_text_primary"
+                    android:textSize="@dimen/storage_text_body"
+                    android:textStyle="bold"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintEnd_toStartOf="@id/tvTotalStorage"
+                    app:layout_constraintTop_toBottomOf="@id/dividerTotal"
+                    app:layout_constraintBottom_toBottomOf="parent" />
+
+                <TextView
+                    android:id="@+id/tvTotalStorage"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/storage_spacing_md"
+                    android:text="@string/storage_amount_placeholder"
+                    android:textColor="@color/blue_checkBox"
+                    android:textSize="@dimen/storage_text_body"
+                    android:textStyle="bold"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintTop_toBottomOf="@id/dividerTotal" />
+
+                <TextView
+                    android:id="@+id/tvTotalPercentage"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/storage_spacing_xxs"
+                    android:text="100%"
+                    android:textColor="@color/storage_text_secondary"
+                    android:textSize="@dimen/storage_text_percentage"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintTop_toBottomOf="@id/tvTotalStorage"
+                    tools:ignore="HardcodedText" />
+
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+            <!-- ===================== AUTOMATIC CLEANUP CARD ===================== -->
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:id="@+id/cardAutoCleanup"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/storage_screen_margin_horizontal"
+                android:layout_marginEnd="@dimen/storage_screen_margin_horizontal"
+                android:layout_marginTop="@dimen/storage_card_gap"
+                android:background="@drawable/bg_white_card"
+                android:elevation="@dimen/storage_card_elevation"
+                android:padding="@dimen/storage_spacing_md">
+
+                <TextView
+                    android:id="@+id/tvAutoCleanupTitle"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:text="@string/storage_auto_cleanup_title"
+                    android:textColor="@color/storage_text_primary"
+                    android:textSize="@dimen/storage_text_body"
+                    android:textStyle="bold"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintEnd_toStartOf="@id/chipAutoCleanupStatus"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+                <TextView
+                    android:id="@+id/tvAutoCleanupDescription"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/storage_spacing_xxs"
+                    android:text="@string/storage_auto_cleanup_description"
+                    android:textColor="@color/storage_text_secondary"
+                    android:textSize="@dimen/storage_text_caption"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintEnd_toStartOf="@id/chipAutoCleanupStatus"
+                    app:layout_constraintTop_toBottomOf="@id/tvAutoCleanupTitle"
+                    app:layout_constraintBottom_toBottomOf="parent" />
+
+                <TextView
+                    android:id="@+id/chipAutoCleanupStatus"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:background="@drawable/bg_chip_active"
+                    android:paddingHorizontal="@dimen/storage_spacing_sm"
+                    android:paddingVertical="@dimen/storage_spacing_xxs"
+                    android:text="@string/storage_auto_cleanup_status_active"
+                    android:textColor="@color/storage_green_700"
+                    android:textSize="@dimen/storage_text_caption"
+                    android:textStyle="bold"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintTop_toTopOf="parent"
+                    app:layout_constraintBottom_toBottomOf="parent" />
+
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+            <!-- ===================== 4. INFORMATION CARD ===================== -->
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:id="@+id/cardStorageInfo"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/storage_screen_margin_horizontal"
+                android:layout_marginEnd="@dimen/storage_screen_margin_horizontal"
+                android:layout_marginTop="@dimen/storage_card_gap"
+                android:background="@drawable/bg_info_card"
+                android:padding="@dimen/storage_spacing_md">
+
+                <ImageView
+                    android:id="@+id/ivInfoIcon"
+                    android:layout_width="@dimen/storage_icon_size_md"
+                    android:layout_height="@dimen/storage_icon_size_md"
+                    android:contentDescription="@string/storage_cd_info_icon"
+                    android:src="@drawable/ic_info"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+                <TextView
+                    android:id="@+id/tvInfoTitle"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="@dimen/storage_spacing_sm"
+                    android:text="@string/storage_info_title"
+                    android:textColor="@color/storage_blue_700"
+                    android:textSize="@dimen/storage_text_body"
+                    android:textStyle="bold"
+                    app:layout_constraintStart_toEndOf="@id/ivInfoIcon"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintTop_toTopOf="@id/ivInfoIcon"
+                    app:layout_constraintBottom_toBottomOf="@id/ivInfoIcon" />
+
+                <TextView
+                    android:id="@+id/tvInfoBullets"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="@dimen/storage_spacing_sm"
+                    android:layout_marginTop="@dimen/storage_spacing_sm"
+                    android:lineSpacingExtra="4dp"
+                    android:text="@string/storage_info_bullets"
+                    android:textColor="@color/storage_blue_700"
+                    android:textSize="@dimen/storage_text_body_sm"
+                    app:layout_constraintStart_toEndOf="@id/ivInfoIcon"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintTop_toBottomOf="@id/tvInfoTitle"
+                    tools:ignore="StringFormatInvalid" />
+
+                <View
+                    android:id="@+id/dividerInfo"
+                    android:layout_width="0dp"
+                    android:layout_height="@dimen/storage_divider_thickness"
+                    android:layout_marginTop="@dimen/storage_spacing_md"
+                    android:background="#33FFFFFF"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintTop_toBottomOf="@id/tvInfoBullets" />
+
+                <ImageView
+                    android:id="@+id/ivDownloadIcon"
+                    android:layout_width="@dimen/storage_icon_size_md"
+                    android:layout_height="@dimen/storage_icon_size_md"
+                    android:layout_marginTop="@dimen/storage_spacing_md"
+                    android:contentDescription="@string/storage_cd_download_icon"
+                    android:src="@drawable/ic_download"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@id/dividerInfo"
+                    app:layout_constraintBottom_toBottomOf="parent" />
+
+                <TextView
+                    android:id="@+id/tvDownloadsNote"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="@dimen/storage_spacing_sm"
+                    android:text="@string/storage_info_downloads_note"
+                    android:textColor="@color/storage_blue_700"
+                    android:textSize="@dimen/storage_text_body_sm"
+                    app:layout_constraintStart_toEndOf="@id/ivDownloadIcon"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintTop_toTopOf="@id/ivDownloadIcon"
+                    app:layout_constraintBottom_toBottomOf="parent" />
+
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+        </LinearLayout>
+
+    </androidx.core.widget.NestedScrollView>
+
+    <!-- ============================ 5. BOTTOM ACTION AREA ============================ -->
+    <LinearLayout
+        android:id="@+id/bottomActionArea"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:background="@color/storage_background"
+        android:orientation="vertical"
+        android:paddingTop="@dimen/storage_spacing_sm"
+        android:paddingBottom="@dimen/storage_spacing_md"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent">
+
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/btnClearAppStorage"
+            style="@style/Widget.MaterialComponents.Button"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/storage_button_height"
+            android:layout_marginStart="@dimen/storage_screen_margin_horizontal"
+            android:layout_marginEnd="@dimen/storage_screen_margin_horizontal"
+            app:cornerRadius="@dimen/margin_12dp"
+            app:backgroundTint="@color/blue_checkBox"
+            android:elevation="0dp"
+            android:fontFamily="sans-serif-medium"
+            android:letterSpacing="0.02"
+            android:text="@string/storage_clear_button"
+            android:textAllCaps="true"
+            android:textColor="@color/storage_white"
+            android:textSize="@dimen/storage_text_button"
+            app:icon="@drawable/ic_delete"
+            app:iconGravity="textStart"
+            app:iconTint="@color/storage_white"
+            app:rippleColor="@color/storage_purple_900" />
+
+        <TextView
+            android:id="@+id/tvClearButtonCaption"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_horizontal"
+            android:layout_marginTop="@dimen/storage_spacing_sm"
+            android:gravity="center"
+            android:paddingHorizontal="@dimen/storage_spacing_xl"
+            android:text="@string/storage_clear_button_caption"
+            android:textColor="@color/storage_text_tertiary"
+            android:textSize="@dimen/storage_text_caption" />
+
+    </LinearLayout>
+
+</androidx.constraintlayout.widget.ConstraintLayout>

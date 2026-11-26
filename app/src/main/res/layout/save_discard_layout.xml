@@ -1,0 +1,118 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/unsavedChangesOverlay"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#99000000"
+    android:clickable="true"
+    android:focusable="true"
+    android:elevation="@dimen/margin_30dp"
+    android:visibility="gone"
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <androidx.cardview.widget.CardView
+        android:layout_width="330dp"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        app:cardCornerRadius="22dp"
+        app:cardElevation="10dp"
+        android:layout_marginBottom="@dimen/margin_40dp"
+        app:cardBackgroundColor="@android:color/white">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:gravity="center"
+            android:paddingLeft="22dp"
+            android:paddingTop="28dp"
+            android:paddingRight="22dp"
+            android:paddingBottom="22dp">
+
+            <TextView
+                android:layout_width="82dp"
+                android:layout_height="82dp"
+                android:background="@drawable/bg_light_blur_circle"
+                android:gravity="center"
+                android:text="?"
+                android:textColor="#1A73E8"
+                android:textSize="42sp"
+                android:textStyle="bold" />
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="18dp"
+                android:gravity="center"
+                android:text="Save changes?"
+                android:textColor="#202124"
+                android:textSize="20dp"
+                android:maxLines="1"
+                android:ellipsize="end"
+                android:textStyle="bold"
+                tools:ignore="HardcodedText,SpUsage" />
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
+                android:gravity="center"
+                android:maxLines="3"
+                android:ellipsize="end"
+                android:lineSpacingExtra="2dp"
+                android:text="@string/you_have_unsaved_changes_in_this_pdf_ndo_you_want_to_save_them_before_leaving"
+                android:textColor="#6B7280"
+                android:textSize="13dp" />
+
+            <com.google.android.material.button.MaterialButton
+                android:id="@+id/btnSaveChanges"
+                android:layout_width="match_parent"
+                android:layout_height="52dp"
+                android:layout_marginTop="26dp"
+                android:background="@drawable/save_layout_bg"
+                android:gravity="center"
+                android:text="@string/save_changes"
+                android:textColor="@android:color/white"
+                android:textSize="15dp"
+                app:backgroundTint="@null"
+                app:icon="@drawable/ic_save"
+                app:iconTint="@color/white"
+                app:iconGravity="textStart"
+                android:textStyle="bold" />
+
+            <com.google.android.material.button.MaterialButton
+                android:id="@+id/btnDiscardChanges"
+                android:layout_width="match_parent"
+                android:layout_height="52dp"
+                android:layout_marginTop="12dp"
+                android:background="@drawable/bg_discard_btn"
+                android:gravity="center"
+                android:text="@string/discard"
+                android:textColor="#E54848"
+                android:textSize="15dp"
+                android:textStyle="bold"
+                app:backgroundTint="@null"
+                app:icon="@drawable/delete"
+                app:iconGravity="textStart"
+                app:iconTint="@color/cmp_text_red"
+                app:iconSize="@dimen/margin_20dp"
+                />
+
+            <TextView
+                android:id="@+id/btnCancelExit"
+                android:layout_width="match_parent"
+                android:layout_height="52dp"
+                android:layout_marginTop="12dp"
+                android:background="@drawable/bg_cancel_bt"
+                android:gravity="center"
+                android:text="@string/cancel"
+                android:textColor="#6B7280"
+                android:textSize="15dp"
+                android:textStyle="bold" />
+
+        </LinearLayout>
+
+    </androidx.cardview.widget.CardView>
+
+</FrameLayout>

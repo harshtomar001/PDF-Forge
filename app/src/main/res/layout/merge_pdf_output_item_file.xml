@@ -1,0 +1,79 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="horizontal"
+    android:layout_marginLeft="@dimen/margin_12dp"
+    android:layout_marginRight="@dimen/margin_12dp"
+    android:paddingTop="@dimen/margin_12dp"
+    android:background="@drawable/bottom_border"
+
+    >
+
+    <ImageView
+        android:id="@+id/imageView3"
+        android:layout_width="40dp"
+        android:layout_height="40dp"
+        app:srcCompat="@drawable/pdf_fevicon"
+        android:layout_gravity="center_vertical"
+
+
+        />
+
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_weight="1"
+        android:orientation="vertical"
+        android:layout_marginLeft="@dimen/margin_12dp">
+
+
+        <TextView
+            android:id="@+id/pdf_name_merge_pdf"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/filename"
+            android:textColor="@color/black"
+            android:textStyle="bold"
+            android:textSize="20sp"/>
+
+        <TextView
+            android:id="@+id/pdf_size_merge_pdf"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/fileSize"
+            android:textColor="@color/grey"
+            android:textStyle="bold"
+            android:layout_marginLeft="@dimen/margin_12dp"/>
+
+        <TextView
+            android:id="@+id/page_count_merge_pdf"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/pagesCount"
+            android:textStyle="bold"
+            android:textColor="@color/grey"
+            android:layout_marginLeft="@dimen/margin_12dp"
+
+            />
+
+
+    </LinearLayout>
+
+    <ImageView
+        android:id="@+id/download_merge_pdfs"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:srcCompat="@drawable/download_icon"
+        android:layout_gravity="center_vertical"
+        android:layout_marginRight="10dp"/>
+
+    <ImageView
+        android:id="@+id/delete_merge_pdfs"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:srcCompat="@drawable/delete_icon"
+        android:layout_gravity="center_vertical"/>
+
+</LinearLayout>

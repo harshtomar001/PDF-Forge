@@ -1,0 +1,588 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/pdf_studio_background">
+
+    <!-- ============ TOP TOOLBAR ============ -->
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/toolbarContainer"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:background="@color/rgb_red"
+        android:paddingHorizontal="@dimen/spacing_sm"
+
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <ImageView
+            android:id="@+id/ivBack"
+            android:layout_width="@dimen/merge_touch_target"
+            android:layout_height="@dimen/merge_touch_target"
+            android:padding="10dp"
+            android:background="?attr/selectableItemBackgroundBorderless"
+            android:src="@drawable/ic_merge_back"
+            android:contentDescription="@string/merge_back_content_desc"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <TextView
+            android:id="@+id/tvToolbarTitle"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="4dp"
+            android:text="@string/merge_title"
+            android:textColor="@color/pdf_studio_white"
+            android:textSize="20sp"
+            android:textStyle="bold"
+            app:layout_constraintStart_toEndOf="@id/ivBack"
+            app:layout_constraintEnd_toStartOf="@id/ivHelp"
+            app:layout_constraintTop_toTopOf="@id/ivBack" />
+
+        <TextView
+            android:id="@+id/tvToolbarSubtitle"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="4dp"
+            android:layout_marginTop="2dp"
+            android:text="@string/merge_subtitle"
+            android:textColor="@color/pdf_studio_white_70"
+            android:textSize="12sp"
+            android:maxLines="1"
+            android:ellipsize="end"
+            app:layout_constraintStart_toStartOf="@id/tvToolbarTitle"
+            app:layout_constraintEnd_toStartOf="@id/ivHelp"
+            app:layout_constraintTop_toBottomOf="@id/tvToolbarTitle" />
+
+        <ImageView
+            android:id="@+id/ivHelp"
+            android:layout_width="@dimen/merge_touch_target"
+            android:layout_height="@dimen/merge_touch_target"
+            android:padding="12dp"
+            android:background="?attr/selectableItemBackgroundBorderless"
+            android:src="@drawable/ic_merge_help"
+            android:contentDescription="@string/merge_help_content_desc"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+    <!-- ============ SCROLLABLE CONTENT ============ -->
+    <androidx.core.widget.NestedScrollView
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:fillViewport="true"
+        android:clipToPadding="false"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/toolbarContainer"
+        app:layout_constraintBottom_toBottomOf="parent">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:paddingHorizontal="@dimen/merge_screen_padding"
+            android:paddingTop="@dimen/spacing_md"
+            android:paddingBottom="@dimen/spacing_xl">
+
+            <!-- ============ ADD PDF CARD ============ -->
+            <com.google.android.material.card.MaterialCardView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                app:cardCornerRadius="@dimen/merge_card_radius"
+                app:cardElevation="2dp"
+                app:strokeWidth="0dp"
+                app:cardBackgroundColor="@color/pdf_studio_white">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical">
+
+                    <LinearLayout
+                        android:id="@+id/uploadArea"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:background="@drawable/bg_merge_upload_area"
+                        android:orientation="vertical"
+                        android:gravity="center"
+                        android:paddingVertical="20dp"
+                        android:paddingHorizontal="@dimen/spacing_md">
+
+                        <FrameLayout
+                            android:layout_width="56dp"
+                            android:layout_height="56dp"
+                            android:background="@drawable/bg_merge_selected_pdf">
+
+                            <ImageView
+                                android:layout_width="match_parent"
+                                android:layout_height="match_parent"
+                                android:layout_gravity="center"
+                                android:src="@drawable/pdf_icon_1_cmp_pdf"
+                                android:contentDescription="@null" />
+
+                        </FrameLayout>
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="@dimen/spacing_sm"
+                            android:text="@string/merge_add_pdf_title"
+                            android:ellipsize="end"
+                            android:maxLines="1"
+                            android:textColor="@color/pdf_studio_dark_navy"
+                            android:textSize="17sp"
+                            android:textStyle="bold" />
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="4dp"
+                            android:gravity="center"
+                            android:ellipsize="end"
+                            android:maxLines="2"
+                            android:text="@string/merge_add_pdf_subtitle"
+                            android:textColor="@color/pdf_studio_secondary_gray"
+                            android:textSize="13sp" />
+
+                        <com.google.android.material.button.MaterialButton
+                            android:id="@+id/btnBrowseFiles"
+                            android:layout_width="wrap_content"
+                            android:layout_height="46dp"
+                            android:layout_marginTop="@dimen/spacing_md"
+                            android:insetTop="0dp"
+                            android:insetBottom="0dp"
+                            android:text="@string/merge_browse_files"
+                            android:textAllCaps="false"
+                            android:textColor="@color/pdf_studio_white"
+                            app:icon="@drawable/ic_merge_browse_folder"
+                            app:iconSize="@dimen/margin_24dp"
+                            app:iconTint="@color/pdf_studio_white"
+                            app:iconGravity="textStart"
+                            app:backgroundTint="@color/rgb_red"
+                            app:cornerRadius="12dp" />
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="@dimen/spacing_sm"
+                            android:text="@string/merge_multiple_files_hint"
+                            android:ellipsize="end"
+                            android:maxLines="1"
+                            android:textColor="@color/pdf_studio_secondary_gray"
+                            android:textSize="12sp" />
+
+                    </LinearLayout>
+
+                </LinearLayout>
+
+            </com.google.android.material.card.MaterialCardView>
+
+            <!-- ============ SELECTED FILES CARD ============ -->
+            <com.google.android.material.card.MaterialCardView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/spacing_md"
+                app:cardCornerRadius="@dimen/merge_card_radius"
+                app:cardElevation="2dp"
+                app:strokeWidth="0dp"
+                app:cardBackgroundColor="@color/pdf_studio_white">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical">
+
+                    <androidx.constraintlayout.widget.ConstraintLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content">
+
+                        <TextView
+                            android:id="@+id/tvSelectedFilesCount"
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:text="@string/merge_selected_files_format"
+                            android:textColor="@color/pdf_studio_dark_navy"
+                            android:textSize="16sp"
+                            android:ellipsize="end"
+                            android:maxLines="1"
+                            android:textStyle="bold"
+                            app:layout_constraintStart_toStartOf="parent"
+                            app:layout_constraintEnd_toStartOf="@id/btnClearAll"
+                            app:layout_constraintTop_toTopOf="parent"
+                            app:layout_constraintBottom_toBottomOf="parent" />
+
+                        <LinearLayout
+                            android:id="@+id/btnClearAll"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:background="?attr/selectableItemBackground"
+                            android:gravity="center_vertical"
+                            android:orientation="horizontal"
+                            android:padding="6dp"
+                            app:layout_constraintEnd_toEndOf="parent"
+                            app:layout_constraintTop_toTopOf="parent"
+                            app:layout_constraintBottom_toBottomOf="parent">
+
+                            <ImageView
+                                android:layout_width="16dp"
+                                android:layout_height="16dp"
+                                android:src="@drawable/ic_merge_delete"
+                                android:contentDescription="@null" />
+
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_marginStart="4dp"
+                                android:text="@string/merge_clear_all"
+                                android:textColor="@color/rgb_red"
+                                android:textSize="13sp"
+                                android:textStyle="bold" />
+
+                        </LinearLayout>
+
+                    </androidx.constraintlayout.widget.ConstraintLayout>
+
+                    <androidx.recyclerview.widget.RecyclerView
+                        android:id="@+id/selectedPdfRecyclerView"
+                        android:layout_width="match_parent"
+                        android:layout_height="@dimen/merge_selected_list_height"
+                        android:layout_marginTop="@dimen/spacing_sm"
+                        android:clipToPadding="false"
+                        android:overScrollMode="always"
+                        android:scrollbars="vertical"
+                        tools:listitem="@layout/item_merge_pdf"
+                        tools:itemCount="3" />
+
+                    <!-- ============ EMPTY STATE ============ -->
+                    <LinearLayout
+                        android:id="@+id/emptyStateContainer"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="@dimen/spacing_sm"
+                        android:orientation="vertical"
+                        android:gravity="center"
+                        android:paddingVertical="@dimen/spacing_lg"
+                        android:visibility="gone"
+                        tools:visibility="visible">
+
+                        <ImageView
+                            android:layout_width="48dp"
+                            android:layout_height="48dp"
+                            android:src="@drawable/ic_merge_empty_pdf"
+                            android:contentDescription="@null" />
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="@dimen/spacing_sm"
+                            android:text="@string/merge_empty_title"
+                            android:textColor="@color/pdf_studio_dark_navy"
+                            android:textSize="15sp"
+                            android:textStyle="bold" />
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="4dp"
+                            android:gravity="center"
+                            android:ellipsize="end"
+                            android:maxLines="2"
+                            android:text="@string/merge_empty_subtitle"
+                            android:textColor="@color/pdf_studio_secondary_gray"
+                            android:textSize="13sp" />
+
+                    </LinearLayout>
+
+                </LinearLayout>
+
+            </com.google.android.material.card.MaterialCardView>
+
+            <!-- ============ MERGE OPTIONS CARD ============ -->
+            <com.google.android.material.card.MaterialCardView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/spacing_md"
+                app:cardCornerRadius="@dimen/merge_card_radius"
+                app:cardElevation="2dp"
+                app:strokeWidth="0dp"
+                app:cardBackgroundColor="@color/pdf_studio_white">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    android:paddingTop="@dimen/spacing_md"
+                    android:paddingBottom="4dp">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginHorizontal="@dimen/spacing_md"
+                        android:text="@string/merge_options_title"
+                        android:textColor="@color/pdf_studio_dark_navy"
+                        android:textSize="16sp"
+                        android:textStyle="bold" />
+
+                    <!-- File Order row -->
+                    <androidx.constraintlayout.widget.ConstraintLayout
+                        android:id="@+id/rowFileOrder"
+                        android:layout_width="match_parent"
+                        android:layout_height="@dimen/merge_row_height"
+                        android:background="?attr/selectableItemBackground"
+                        android:paddingHorizontal="@dimen/spacing_md">
+
+                        <FrameLayout
+                            android:id="@+id/iconFileOrder"
+                            android:layout_width="40dp"
+                            android:layout_height="40dp"
+                            android:background="@drawable/bg_merge_option_icon"
+                            app:layout_constraintStart_toStartOf="parent"
+                            app:layout_constraintTop_toTopOf="parent"
+                            app:layout_constraintBottom_toBottomOf="parent">
+
+                            <ImageView
+                                android:layout_width="18dp"
+                                android:layout_height="18dp"
+                                android:layout_gravity="center"
+                                android:src="@drawable/ic_merge_file_order"
+                                android:contentDescription="@null" />
+
+                        </FrameLayout>
+
+                        <TextView
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_marginStart="12dp"
+                            android:text="@string/merge_option_file_order"
+                            android:textColor="@color/pdf_studio_dark_navy"
+                            android:textSize="15sp"
+                            android:textStyle="bold"
+                            app:layout_constraintStart_toEndOf="@id/iconFileOrder"
+                            app:layout_constraintEnd_toStartOf="@id/ivChevronFileOrder"
+                            app:layout_constraintTop_toTopOf="@id/iconFileOrder"
+                            app:layout_constraintBottom_toTopOf="@id/tvFileOrderValue"
+                            app:layout_constraintVertical_chainStyle="packed" />
+
+                        <TextView
+                            android:id="@+id/tvFileOrderValue"
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_marginStart="12dp"
+                            android:layout_marginTop="2dp"
+                            android:ellipsize="end"
+                            android:maxLines="1"
+                            android:text="@string/merge_option_file_order_value_default"
+                            android:textColor="@color/pdf_studio_secondary_gray"
+                            android:textSize="13sp"
+                            app:layout_constraintStart_toEndOf="@id/iconFileOrder"
+                            app:layout_constraintEnd_toStartOf="@id/ivChevronFileOrder"
+                            app:layout_constraintBottom_toBottomOf="@id/iconFileOrder" />
+
+                        <ImageView
+                            android:id="@+id/ivChevronFileOrder"
+                            android:layout_width="20dp"
+                            android:layout_height="20dp"
+                            android:src="@drawable/ic_merge_chevron_right"
+                            android:contentDescription="@null"
+                            app:layout_constraintEnd_toEndOf="parent"
+                            app:layout_constraintTop_toTopOf="parent"
+                            app:layout_constraintBottom_toBottomOf="parent" />
+
+                    </androidx.constraintlayout.widget.ConstraintLayout>
+
+                    <View
+                        android:layout_width="match_parent"
+                        android:layout_height="1dp"
+                        android:layout_marginStart="@dimen/spacing_md"
+                        android:background="@color/pdf_studio_divider" />
+
+                    <!-- Page Size row -->
+                    <androidx.constraintlayout.widget.ConstraintLayout
+                        android:id="@+id/rowPageSize"
+                        android:layout_width="match_parent"
+                        android:layout_height="@dimen/merge_row_height"
+                        android:background="?attr/selectableItemBackground"
+                        android:paddingHorizontal="@dimen/spacing_md">
+
+                        <FrameLayout
+                            android:id="@+id/iconPageSize"
+                            android:layout_width="40dp"
+                            android:layout_height="40dp"
+                            android:background="@drawable/bg_merge_option_icon"
+                            app:layout_constraintStart_toStartOf="parent"
+                            app:layout_constraintTop_toTopOf="parent"
+                            app:layout_constraintBottom_toBottomOf="parent">
+
+                            <ImageView
+                                android:layout_width="18dp"
+                                android:layout_height="18dp"
+                                android:layout_gravity="center"
+                                android:src="@drawable/ic_merge_page_size"
+                                android:contentDescription="@null" />
+
+                        </FrameLayout>
+
+                        <TextView
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_marginStart="12dp"
+                            android:text="@string/merge_option_page_size"
+                            android:textColor="@color/pdf_studio_dark_navy"
+                            android:textSize="15sp"
+                            android:textStyle="bold"
+                            app:layout_constraintStart_toEndOf="@id/iconPageSize"
+                            app:layout_constraintEnd_toStartOf="@id/ivChevronPageSize"
+                            app:layout_constraintTop_toTopOf="@id/iconPageSize"
+                            app:layout_constraintBottom_toTopOf="@id/tvPageSizeValue"
+                            app:layout_constraintVertical_chainStyle="packed" />
+
+                        <TextView
+                            android:id="@+id/tvPageSizeValue"
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_marginStart="12dp"
+                            android:layout_marginTop="2dp"
+                            android:ellipsize="end"
+                            android:maxLines="1"
+                            android:textColor="@color/pdf_studio_secondary_gray"
+                            android:textSize="13sp"
+                            tools:text="Original Size"
+                            app:layout_constraintStart_toEndOf="@id/iconPageSize"
+                            app:layout_constraintEnd_toStartOf="@id/ivChevronPageSize"
+                            app:layout_constraintBottom_toBottomOf="@id/iconPageSize" />
+
+                        <ImageView
+                            android:id="@+id/ivChevronPageSize"
+                            android:layout_width="20dp"
+                            android:layout_height="20dp"
+                            android:src="@drawable/ic_merge_chevron_right"
+                            android:contentDescription="@null"
+                            app:layout_constraintEnd_toEndOf="parent"
+                            app:layout_constraintTop_toTopOf="parent"
+                            app:layout_constraintBottom_toBottomOf="parent" />
+
+                    </androidx.constraintlayout.widget.ConstraintLayout>
+
+                    <View
+                        android:layout_width="match_parent"
+                        android:layout_height="1dp"
+                        android:layout_marginStart="@dimen/spacing_md"
+                        android:background="@color/pdf_studio_divider" />
+
+                    <!-- Page Margins row -->
+                    <androidx.constraintlayout.widget.ConstraintLayout
+                        android:id="@+id/rowPageMargins"
+                        android:layout_width="match_parent"
+                        android:layout_height="@dimen/merge_row_height"
+                        android:background="?attr/selectableItemBackground"
+                        android:paddingHorizontal="@dimen/spacing_md">
+
+                        <FrameLayout
+                            android:id="@+id/iconPageMargins"
+                            android:layout_width="40dp"
+                            android:layout_height="40dp"
+                            android:background="@drawable/bg_merge_option_icon"
+                            app:layout_constraintStart_toStartOf="parent"
+                            app:layout_constraintTop_toTopOf="parent"
+                            app:layout_constraintBottom_toBottomOf="parent">
+
+                            <ImageView
+                                android:layout_width="18dp"
+                                android:layout_height="18dp"
+                                android:layout_gravity="center"
+                                android:src="@drawable/ic_merge_page_margins"
+                                android:contentDescription="@null" />
+
+                        </FrameLayout>
+
+                        <TextView
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_marginStart="12dp"
+                            android:text="@string/merge_option_page_margins"
+                            android:textColor="@color/pdf_studio_dark_navy"
+                            android:textSize="15sp"
+                            android:textStyle="bold"
+                            app:layout_constraintStart_toEndOf="@id/iconPageMargins"
+                            app:layout_constraintEnd_toStartOf="@id/ivChevronPageMargins"
+                            app:layout_constraintTop_toTopOf="@id/iconPageMargins"
+                            app:layout_constraintBottom_toTopOf="@id/tvPageMarginValue"
+                            app:layout_constraintVertical_chainStyle="packed" />
+
+                        <TextView
+                            android:id="@+id/tvPageMarginValue"
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_marginStart="12dp"
+                            android:layout_marginTop="2dp"
+                            android:ellipsize="end"
+                            android:maxLines="1"
+                            android:textColor="@color/pdf_studio_secondary_gray"
+                            android:textSize="13sp"
+                            tools:text="No margin"
+                            app:layout_constraintStart_toEndOf="@id/iconPageMargins"
+                            app:layout_constraintEnd_toStartOf="@id/ivChevronPageMargins"
+                            app:layout_constraintBottom_toBottomOf="@id/iconPageMargins" />
+
+                        <ImageView
+                            android:id="@+id/ivChevronPageMargins"
+                            android:layout_width="20dp"
+                            android:layout_height="20dp"
+                            android:src="@drawable/ic_merge_chevron_right"
+                            android:contentDescription="@null"
+                            app:layout_constraintEnd_toEndOf="parent"
+                            app:layout_constraintTop_toTopOf="parent"
+                            app:layout_constraintBottom_toBottomOf="parent" />
+
+                    </androidx.constraintlayout.widget.ConstraintLayout>
+
+                </LinearLayout>
+
+            </com.google.android.material.card.MaterialCardView>
+
+            <!-- ============ MERGE BUTTON ============ -->
+            <com.google.android.material.button.MaterialButton
+                android:id="@+id/btnMergePdfs"
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/merge_button_height"
+                android:layout_marginTop="@dimen/spacing_lg"
+                android:background="@drawable/bg_merge_button"
+                android:enabled="false"
+                android:text="@string/merge_button"
+                android:textAllCaps="false"
+                android:textColor="@color/pdf_studio_white"
+                android:textSize="16sp"
+                android:textStyle="bold"
+                app:icon="@drawable/merge_pdf_icon_paths"
+                app:iconTint="@null"
+                app:iconSize="@dimen/margin_40dp"
+                app:iconGravity="textStart"
+                app:backgroundTint="@null" />
+
+        </LinearLayout>
+
+    </androidx.core.widget.NestedScrollView>
+
+
+    <include
+        android:id="@+id/loader_layout"
+        layout="@layout/loader_layout"
+        android:layout_height="match_parent"
+        android:layout_width="match_parent"
+        android:visibility="gone"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintBottom_toBottomOf="parent"
+        />
+
+
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>

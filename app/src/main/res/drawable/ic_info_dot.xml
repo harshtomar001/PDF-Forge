@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- res/drawable/ic_info_dot.xml -->
+<vector xmlns:android="http://schemas.android.com/apk/res/android"
+    android:width="18dp"
+    android:height="18dp"
+    android:viewportWidth="18"
+    android:viewportHeight="18">
+    <path
+        android:fillColor="#E8192C"
+        android:pathData="M9,1 A8,8 0 1,1 8.99,1 Z" />
+    <path
+        android:fillColor="#FFFFFF"
+        android:pathData="M8.25,8.25 L9.75,8.25 L9.75,13.5 L8.25,13.5 Z" />
+    <path
+        android:fillColor="#FFFFFF"
+        android:pathData="M8.25,5.25 L9.75,5.25 L9.75,6.75 L8.25,6.75 Z" />
+</vector>

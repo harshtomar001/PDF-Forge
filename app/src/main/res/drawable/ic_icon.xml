@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<vector xmlns:android="http://schemas.android.com/apk/res/android"
+    android:width="48dp"
+    android:height="48dp"
+    android:viewportWidth="48"
+    android:viewportHeight="48">
+
+    <!-- Light blue circular background -->
+    <path
+        android:fillColor="#DDE8FF"
+        android:pathData="M24,2
+            A22,22 0 1,1 23.999,2
+            Z" />
+
+    <!-- Outer eye shape (eyelid curves) -->
+    <path
+        android:fillColor="#00000000"
+        android:strokeColor="#4A3FC0"
+        android:strokeWidth="2"
+        android:strokeLineCap="round"
+        android:strokeLineJoin="round"
+        android:pathData="M10,24
+            C13,18 18,14 24,14
+            C30,14 35,18 38,24
+            C35,30 30,34 24,34
+            C18,34 13,30 10,24
+            Z" />
+
+    <!-- Iris circle -->
+    <path
+        android:fillColor="#00000000"
+        android:strokeColor="#4A3FC0"
+        android:strokeWidth="2"
+        android:pathData="M24,24
+            m-5,0
+            a5,5 0 1,0 10,0
+            a5,5 0 1,0 -10,0" />
+
+    <!-- Pupil dot -->
+    <path
+        android:fillColor="#4A3FC0"
+        android:pathData="M24,24
+            m-2,0
+            a2,2 0 1,0 4,0
+            a2,2 0 1,0 -4,0" />
+
+</vector>

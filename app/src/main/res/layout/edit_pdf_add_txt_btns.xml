@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="utf-8"?>
+<com.google.android.material.card.MaterialCardView
+    android:id="@+id/fontSelector"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_marginHorizontal="16dp"
+    app:cardCornerRadius="12dp"
+    app:strokeWidth="1dp"
+    app:strokeColor="#DDDDDD"
+    app:cardBackgroundColor="@color/white"
+    android:layout_marginBottom="@dimen/margin_15dp"
+    app:layout_constraintStart_toStartOf="parent"
+    app:layout_constraintBottom_toTopOf="@id/buttonLayout"
+    app:cardElevation="0dp"
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:gravity="center_vertical"
+        android:orientation="horizontal"
+        android:paddingTop="@dimen/margin_12dp"
+        android:paddingBottom="@dimen/margin_12dp"
+        android:paddingStart="12dp"
+        android:paddingEnd="@dimen/margin_8dp"
+        >
+
+        <TextView
+            android:id="@+id/tvPreview_add_font"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Aa"
+            android:textSize="20sp"
+            android:maxLines="1"
+            android:ellipsize="none"
+            android:textColor="#2563EB"
+            android:textStyle="normal"/>
+
+        <TextView
+            android:id="@+id/tvFontName"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:maxLines="2"
+            android:textAlignment="center"
+            android:ellipsize="end"
+            android:layout_marginStart="8dp"
+            android:text="Poppins"
+            android:textColor="@color/grey"
+            android:textSize="14dp"/>
+
+        <ImageView
+            android:layout_width="@dimen/margin_20dp"
+            android:layout_height="@dimen/margin_20dp"
+            android:rotation="90"
+            android:src="@drawable/arrow_right"/>
+
+    </LinearLayout>
+
+</com.google.android.material.card.MaterialCardView>

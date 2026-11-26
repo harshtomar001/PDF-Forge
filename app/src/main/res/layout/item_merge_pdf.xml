@@ -1,0 +1,86 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="@dimen/merge_row_height"
+    android:background="?attr/selectableItemBackground"
+    android:paddingHorizontal="@dimen/spacing_md">
+
+    <!-- Icon container -->
+    <FrameLayout
+        android:id="@+id/pdfIconContainer"
+        android:layout_width="44dp"
+        android:layout_height="44dp"
+        android:background="@drawable/bg_merge_selected_pdf"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintBottom_toBottomOf="parent">
+
+        <ImageView
+            android:layout_width="20dp"
+            android:layout_height="20dp"
+            android:layout_gravity="center"
+            android:src="@drawable/ic_merge_pdf_file"
+            android:contentDescription="@null" />
+
+    </FrameLayout>
+
+    <TextView
+        android:id="@+id/tvFileName"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="12dp"
+        android:layout_marginEnd="8dp"
+        android:ellipsize="middle"
+        android:maxLines="1"
+        android:textColor="@color/pdf_studio_dark_navy"
+        android:textSize="15sp"
+        android:textStyle="bold"
+        app:layout_constraintStart_toEndOf="@id/pdfIconContainer"
+        app:layout_constraintEnd_toStartOf="@id/ivDragHandle"
+        app:layout_constraintTop_toTopOf="@id/pdfIconContainer"
+        app:layout_constraintBottom_toTopOf="@id/tvFileSize"
+        app:layout_constraintVertical_chainStyle="packed"
+        tools:text="Project Proposal.pdf" />
+
+    <TextView
+        android:id="@+id/tvFileSize"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="12dp"
+        android:layout_marginEnd="8dp"
+        android:layout_marginTop="2dp"
+        android:textColor="@color/pdf_studio_secondary_gray"
+        android:textSize="13sp"
+        app:layout_constraintStart_toEndOf="@id/pdfIconContainer"
+        app:layout_constraintEnd_toStartOf="@id/ivDragHandle"
+        app:layout_constraintTop_toBottomOf="@id/tvFileName"
+        app:layout_constraintBottom_toBottomOf="@id/pdfIconContainer"
+        tools:text="2.45 MB" />
+
+    <ImageView
+        android:id="@+id/ivDragHandle"
+        android:layout_width="@dimen/merge_touch_target"
+        android:layout_height="@dimen/merge_touch_target"
+        android:padding="12dp"
+        android:src="@drawable/ic_merge_drag_handle"
+        android:contentDescription="@string/merge_drag_content_desc"
+        app:layout_constraintEnd_toStartOf="@id/ivDelete"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintBottom_toBottomOf="parent" />
+
+    <ImageView
+        android:id="@+id/ivDelete"
+        android:layout_width="@dimen/merge_touch_target"
+        android:layout_height="@dimen/merge_touch_target"
+        android:padding="12dp"
+        android:background="?attr/selectableItemBackgroundBorderless"
+        android:src="@drawable/ic_merge_delete"
+        android:contentDescription="@string/merge_delete_content_desc"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintBottom_toBottomOf="parent" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

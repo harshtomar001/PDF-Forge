@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="utf-8"?>
+<shape xmlns:android="http://schemas.android.com/apk/res/android"
+    android:shape="rectangle">
+    <solid android:color="@color/storage_purple_50" />
+    <corners android:radius="@dimen/storage_radius_card" />
+</shape>

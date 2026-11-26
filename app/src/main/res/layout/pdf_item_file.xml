@@ -1,0 +1,322 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+
+<com.google.android.material.card.MaterialCardView
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+
+    android:id="@+id/pdfHistoryCard"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_marginStart="10dp"
+    android:layout_marginEnd="10dp"
+    android:layout_marginTop="6dp"
+    android:layout_marginBottom="6dp"
+    app:strokeWidth="0dp"
+    app:cardBackgroundColor="@color/white"
+    app:cardCornerRadius="18dp"
+    app:cardElevation="2dp">
+
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+
+        android:paddingStart="10dp"
+        android:paddingTop="10dp"
+        android:paddingEnd="10dp"
+        android:paddingBottom="10dp">
+
+
+        <!-- ================================================= -->
+        <!-- PDF PREVIEW                                      -->
+        <!-- ================================================= -->
+
+        <com.google.android.material.card.MaterialCardView
+            android:id="@+id/previewCard"
+
+            android:layout_width="72dp"
+            android:layout_height="84dp"
+
+            app:cardCornerRadius="12dp"
+            app:cardElevation="1dp"
+
+            app:strokeColor="#E5E8EF"
+            app:strokeWidth="1dp"
+
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintBottom_toBottomOf="parent">
+
+
+            <FrameLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent">
+
+
+                <ImageView
+                    android:id="@+id/pagePreview"
+
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+
+                    android:scaleType="centerCrop"
+
+                    android:src="@drawable/pdf_icon_2"
+
+                    android:contentDescription="@null" />
+
+
+                <!-- PDF BADGE -->
+
+                <TextView
+                    android:id="@+id/textPDF"
+
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+
+                    android:layout_gravity="bottom|start"
+
+                    android:layout_marginStart="5dp"
+                    android:layout_marginBottom="5dp"
+
+                    android:background="@drawable/pdf_text_item_file"
+
+                    android:paddingStart="8dp"
+                    android:paddingTop="3dp"
+                    android:paddingEnd="8dp"
+                    android:paddingBottom="3dp"
+
+                    android:text="@string/pdf"
+
+                    android:textColor="@color/white"
+                    android:textSize="10sp"
+                    android:textStyle="bold"
+
+                    android:visibility="gone" />
+
+            </FrameLayout>
+
+        </com.google.android.material.card.MaterialCardView>
+
+
+        <!-- ================================================= -->
+        <!-- FILE INFORMATION                                  -->
+        <!-- ================================================= -->
+
+        <LinearLayout
+            android:id="@+id/recentContainers"
+
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+
+            android:layout_marginStart="12dp"
+            android:layout_marginEnd="8dp"
+
+            android:orientation="vertical"
+
+            app:layout_constraintStart_toEndOf="@id/previewCard"
+            app:layout_constraintEnd_toStartOf="@id/pdfActions"
+
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintBottom_toBottomOf="parent">
+
+
+            <!-- FILE NAME -->
+
+            <TextView
+                android:id="@+id/pdfName"
+
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+
+                android:maxLines="1"
+                android:ellipsize="end"
+
+                android:text="pdf_2920122.pdf"
+
+                android:textColor="@color/history_text_primary"
+                android:textSize="16sp"
+                android:textStyle="bold" />
+
+
+            <!-- SIZE + PAGES -->
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+
+                android:layout_marginTop="10dp"
+
+                android:gravity="center_vertical"
+                android:orientation="horizontal">
+
+
+                <ImageView
+                    android:layout_width="17dp"
+                    android:layout_height="17dp"
+
+                    android:alpha="0.7"
+
+                    android:src="@drawable/folder"
+
+                    android:contentDescription="@null" />
+
+
+                <TextView
+                    android:id="@+id/pdfSize"
+
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+
+                    android:layout_marginStart="5dp"
+
+                    android:maxLines="1"
+                    android:ellipsize="end"
+
+                    android:text="21.43 MB"
+
+                    android:textColor="@color/history_text_secondary"
+                    android:textSize="12sp" />
+
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+
+                    android:layout_marginStart="6dp"
+                    android:layout_marginEnd="6dp"
+
+                    android:text="•"
+
+                    android:textColor="@color/history_text_secondary"
+                    android:textSize="12sp" />
+
+
+                <ImageView
+                    android:layout_width="17dp"
+                    android:layout_height="17dp"
+
+                    android:alpha="0.7"
+
+                    android:src="@drawable/blankpage"
+
+                    android:contentDescription="@null" />
+
+
+                <TextView
+                    android:id="@+id/pdfPages"
+
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+
+                    android:layout_weight="1"
+
+                    android:layout_marginStart="5dp"
+
+                    android:maxLines="1"
+                    android:ellipsize="end"
+
+                    android:text="7 Pages"
+
+                    android:textColor="@color/history_text_secondary"
+                    android:textSize="12sp" />
+
+            </LinearLayout>
+
+
+            <!-- DATE -->
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+
+                android:layout_marginTop="8dp"
+
+                android:gravity="center_vertical"
+                android:orientation="horizontal">
+
+
+                <ImageView
+                    android:layout_width="17dp"
+                    android:layout_height="17dp"
+
+                    android:alpha="0.7"
+
+                    android:src="@drawable/calendar"
+
+                    android:contentDescription="@null" />
+
+
+                <TextView
+                    android:id="@+id/pdfDate"
+
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+
+                    android:layout_weight="1"
+
+                    android:layout_marginStart="5dp"
+
+                    android:maxLines="1"
+                    android:ellipsize="end"
+
+                    android:text="20 Aug 2026, 09:52 PM"
+
+                    android:textColor="@color/history_text_secondary"
+                    android:textSize="12sp" />
+
+            </LinearLayout>
+
+        </LinearLayout>
+
+
+        <!-- ================================================= -->
+        <!-- ACTION BUTTONS                                    -->
+        <!-- ================================================= -->
+
+        <LinearLayout
+            android:id="@+id/pdfActions"
+
+            android:layout_width="92dp"
+            android:layout_height="wrap_content"
+
+            android:gravity="center"
+            android:orientation="horizontal"
+
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintBottom_toBottomOf="parent">
+
+
+            <!-- VIEW -->
+
+            <ImageView
+                android:id="@+id/viewPDF"
+                android:layout_width="46dp"
+                android:layout_height="46dp"
+                android:src="@drawable/view_icon"
+                android:clickable="true"
+                android:focusable="true"
+                />
+
+
+            <!-- DELETE -->
+
+            <ImageView
+                android:id="@+id/deletePDF"
+                android:layout_width="46dp"
+                android:layout_height="46dp"
+                android:layout_marginStart="8dp"
+                android:src="@drawable/delete_icon"
+                android:clickable="true"
+                android:focusable="true"
+
+                />
+
+        </LinearLayout>
+
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+</com.google.android.material.card.MaterialCardView>

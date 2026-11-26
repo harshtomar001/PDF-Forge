@@ -1,0 +1,800 @@
+<resources>
+    <string name="appName">PDF STUDIO</string>
+    <string name="action_settings">Settings</string>
+    <string name="previous">Previous</string>
+    <string name="filename">File Name</string>
+    <string name="pagesCount">Total Pages:</string>
+    <string name="fileSize">File Size:</string>
+    <string name="addMoreFiles">More Files</string>
+    <string name="generate_pdf">Generate PDF</string>
+    <string name="totalPages">%1$d Images Selected</string>
+    <string name="edit_pdf">Edit PDF</string>
+    <string name="compress_pdf">Compress PDF"</string>
+    <string name="merge_pdf">Merge PDF</string>
+    <string name="create_pdf">Create PDF</string>
+    <string name="format_ImageType">Change Images Type</string>
+    <string name="add_images">Add Images</string>
+    <string  name="upload_img">Upload Images</string>
+    <string name="output_format">Output Format</string>
+    <string name="upload_file">Upload File</string>
+    <string name="file_converter">File Converter</string>
+    <string name="choose_output_format">Choose Output Format:</string>
+    <string name="generate">Generate</string>
+    <string name="convert">Convert</string>
+    <string name="docx">DOCX</string>
+    <string name="pptx">PPTX</string>
+    <string name="pdf">PDF</string>
+    <string name="png">PNG</string>
+    <string name="bmp">BMP</string>
+    <string name="webp">WEBP</string>
+    <string name="jpeg">JPEG</string>
+    <string name="upload_pdf">Upload PDF</string>
+    <string name="merging_pdf">Merging PDF...</string>
+    <string name="generating_pdf">Generating PDF...</string>
+    <string name="converting_img">Converting Images...</string>
+    <string name="download_all">Download ALL</string>
+    <string name="convertImage">Convert Images</string>
+    <string name="compressPDf">Compressing PDF...</string>
+    <string name="aboutDeveloper">About Developer</string>
+    <string name="home">Home</string>
+    <string name="setting">Settings</string>
+    <string name="copyright">PDF STUDIO © 2026</string>
+    <string name="ImageToPdf">Image to PDF</string>
+    <string name="popularTools">Popular Tools</string>
+    <string name="imageToPdftext">Convert Images to PDF</string>
+    <string name="pdftoImage">PDF to Images</string>
+    <string name="pdftoImagetext">Convert PDF to Images</string>
+    <string name="splitpdf">Split PDF</string>
+    <string name="tools">Tools</string>
+    <string name="aboutpdfStudio">About PDF Studio</string>
+    <string name="privacyPolicy">Privacy Policy</string>
+    <string name="exitApp">Exit App</string>
+    <string name="developedBy">Developed By</string>
+    <string name="name">Harsh</string>
+    <string name="feedback">Send Feedback</string>
+    <string name="appIntro">
+        PDF STUDIO is a powerful all-in-one document solution designed
+        to simplify your workflow. Seamlessly create, compress,
+        merge, and edit PDFs, while also supporting Word, PowerPoint,
+        and multiple image formats for effortless conversion and management.
+    </string>
+    <string name="privacy_policy_html">
+            <![CDATA[
+            <h2>Privacy Policy</h2>
+            <p><b>Effective Date:</b> [24 APR, 2026]</p>
+            </br>
+             </br>
+              </br>
+
+            <p>Thank you for using <b>PDF Studio</b>. Your privacy is important to us. This Privacy Policy explains how we handle your information when you use our application.</p>
+
+            <h3>1. Information We Collect</h3>
+            <p>We do not collect any personally identifiable information from users.</p>
+            <ul>
+            <li>No account registration required</li>
+            <li>No personal data such as name, email, or phone number is collected</li>
+            </ul>
+
+            <p>The app may request access to:</p>
+            <ul>
+            <li><b>Storage (Files & Media):</b> To read, create, edit, merge, and manage PDF files, Word documents, PowerPoint presentations, and images on your device.</li>
+            </ul>
+
+            <h3>2. How We Use Your Information</h3>
+            <p>All file processing is done locally on your device.</p>
+            <ul>
+            <li>Create and edit PDF files</li>
+            <li>Compress, merge, and manage documents</li>
+            <li>Convert Word, PowerPoint, and image files</li>
+            </ul>
+
+            <p>We do <b>not upload your files</b> to any server.</p>
+
+            <h3>3. Data Sharing and Third Parties</h3>
+            <p>We do not sell, trade, or share your data with third parties.</p>
+            <ul>
+            <li>No data leaves your device</li>
+            <li>No tracking or hidden collection</li>
+            </ul>
+
+            <h3>4. Data Security</h3>
+            <ul>
+            <li>All processing happens on-device</li>
+            <li>No external storage of files</li>
+            <li>No unauthorized access</li>
+            </ul>
+
+            <h3>5. Permissions</h3>
+            <p>The app may request:</p>
+            <ul>
+            <li><b>Storage Permission:</b> Required for document access and editing</li>
+            </ul>
+
+            <h3>6. Children’s Privacy</h3>
+            <p>This app is not intended for children under 13. We do not knowingly collect data from children.</p>
+
+            <h3>7. Changes to This Policy</h3>
+            <p>We may update this policy from time to time. Changes will be reflected on this page.</p>
+
+            <h3>8. Contact Us</h3>
+            <p>If you have questions, contact us at:</p>
+            <p><b>Email:</b> <a href="">pdfstudio011@gmail.com</a></p>
+
+            <h3>9. Consent</h3>
+            <p>By using this app, you agree to this Privacy Policy.</p>
+            ]]>
+</string>
+    <string name="feedbackQuote">Your feedback helps us improve and make your experience better.</string>
+    <string name="rateExpr">How would you rate your experience?</string>
+    <string name="poor">Very Poor</string>
+    <string name="excellent">Excellent</string>
+    <string name="tellUsMore">Tell us more</string>
+    <string name="writeFeedbackHere">Write your feedback here...</string>
+    <string name="feedbackAbout">What is your feedback about?</string>
+    <string name="features">Features</string>
+    <string name="bugs">Bugs</string>
+    <string name="support">Support</string>
+    <string name="others">Other</string>
+    <string name="submitFeedback">Submit Feedback</string>
+    <string name="feedbackPrivate">Your feedback is private and helps us to improve.</string>
+    <string name="date">25 APR 2026, 10:20 AM</string>
+    <string name="recentFiles">Recent Files</string>
+    <string name="viewAll">View All</string>
+    <string name="clearAll">Clear All</string>
+    <string name="moreTools">More Tools</string>
+    <string name="upload_img_from_gallery">Upload more images from gallery</string>
+    <string name="yourFileProtect">Your files are encrypted</string>
+    <string name="safe_with_us">We don\'t store your files on our servers</string>
+    <string name="n_images_selected">n Images Selected</string>
+    <string name="generate_pdf_from_n_pages">Create PDF from n pages</string>
+    <string name="edit_images_text_title">Convert your images to your desired output</string>
+    <string name="todo">TODO</string>
+    <string name="selectImagesGallery">Selects Images from Gallery</string>
+    <string name="convertImages">Convert Images</string>
+    <string name="cnvt_sel_img">Convert Selected Images</string>
+    <string name="tip">Tip</string>
+    <string name="tip_text">You can upload multiple images and convert to your desired format.</string>
+    <string name="conversion_complete">Conversion Complete</string>
+    <string name="convertedSuccessfully">All images converted successfully!</string>
+    <string name="readyDownload">Your images are ready to download</string>
+    <string name="format">Format</string>
+    <string name="downloadAllSize">Download All</string>
+    <string name="shareAll">Share All</string>
+    <string name="deleteAll">Delete All</string>
+    <string name="safeFiles">Your files are safe</string>
+    <string name="safeFileText">All converted images are stored locally on your device</string>
+    <string name="convertMoreImages">Convert More Images</string>
+    <string name="goToHome">Go to Home</string>
+    <string name="converted_images">Converted Images (%1$d)</string>
+    <string name="download__all">Download All (%1$s)</string>
+    <string name="converted_images_10">Converted Images (10)</string>
+    <string name="n_img_converted_successfully">%1$d images converted successfully</string>
+    <string name="downloading">Downloading...</string>
+    <string name="upload_pdfs">Upload PDFs</string>
+    <string name="add_PDFs_from_Device">Add PDFs from device</string>
+    <string name="mergeSelectedPDF">Merge Selected PDFs</string>
+    <string name="sel_arr_merge_pdf_title_text">Select and arrange PDFs to merge</string>
+    <string name="selectedPDFs">Selected PDFs (%1$d)</string>
+    <string name="mergePDFs">Merge PDFs</string>
+    <string name="tip_mergepdf_text">You can add multiple PDFs  and change their order from merging them</string>
+    <string name="n_pdfs_select">%1$d PDF selected</string>
+
+    <string name="rotatePDF">Rotate PDF</string>
+    <string name="rotate_pdf_title_text">Rotate  the pages of your PDF</string>
+    <string name="rotatePagesPDF"> Rotate PDF by 90°</string>
+    <string name="change">Change</string>
+    <string name="rotate_pdf_pages">Rotate PDF Pages</string>
+    <string name="loading_preview">Loading Preview...</string>
+    <string name="_90">90°</string>
+    <string name="preview_after_rotation_90">Preview (After rotation %1$d°)</string>
+    <string name="showing_n_Pages_from_m_pages">Showing %1$d out of %2$d</string>
+    <string name="pdf_rotated_successfully">PDF Rotated SuccessFully!</string>
+    <string name="your_pdf_is_rotated_and_is_ready_to_download">Your PDF is rotated and is ready to download.</string>
+    <string name="reverse_the_pages_of_your_pdf">Reverse the pages of your PDF</string>
+    <string name="reverse_pdf">Reverse PDF</string>
+    <string name="reverse_your_pdf" translatable="false">Reverse your PDF</string>
+    <string name="info_text_reverse_pdf">Quickly reverse your PDF page order while preserving the original quality and formatting.</string>
+    <string name="reverse_your_pdf_pages">Reverse your PDF pages</string>
+    <string name="reverse_another_pdf">Reverse Another PDF</string>
+    <string name="pdf_reversed_successfully">PDF Reversed Successfully</string>
+    <string name="your_pdf_is_reversed_and_ready_to_download">Your PDF is reversed and ready to Download</string>
+    <string name="no_recent_files">No Recent Files</string>
+    <string name="extract_all_images_text">Upload a PDF file to extract all images or select specific pages.</string>
+    <string name="extract_images">Extract Images</string>
+    <string name="fetch_images_from_pdf">Fetch Images from PDF</string>
+    <string name="image_extracted">Image Extracted</string>
+    <string name="rotate_another_pdf">Rotate Another PDF</string>
+    <string name="no_internet">No Internet</string>
+    <string name="no_internet_connection">No Internet Connection</string>
+    <string name="please_check_your_connection_and_try_again">Please check your connection and try again.</string>
+    <string name="retry">Retry</string>
+    <string name="upload_pptx_to_convert_to_pdf">Upload pptx to convert to PDF</string>
+    <string name="docx_to_pdf">DOCX to PDF</string>
+    <string name="upload_doc">Upload DOC</string>
+    <string name="convert_doc_files_to_pdf">Convert DOC files to PDF</string>
+    <string name="pptx_to_pdf">PPTX to PDF</string>
+    <string name="fetching_metadata">Fetching Metadata</string>
+    <string name="conversion_failed">Conversion Failed</string>
+    <string name="we_couldn_t_complete_the_conversion_nplease_check_your_file_and_try_once_more">We couldn’t complete the conversion.\nPlease check your file and try once more.</string>
+    <string name="choose_another_file">Choose Another File</string>
+    <string name="return_home">Return Home</string>
+    <string name="medium_compression">Medium Compression</string>
+    <string name="high_compression">High Compression</string>
+    <string name="good_quality_medium_size">Good Quality, Medium Size</string>
+    <string name="lower_quality_small_size">Lower Quality, Small Size</string>
+    <string name="_70_quality">~ 70% Quality</string>
+    <string name="_40_quality">~ 40% Quality</string>
+    <string name="_10">~ 10%</string>
+    <string name="pdf_compressed_successfully">PDF Compressed SuccessFully!</string>
+    <string name="_30">~ 30%</string>
+    <string name="_60">~ 60%</string>
+    <string name="this_document_is_already_highly_compressed_no_significant_size_reduction_was_possible">This document is already highly compressed. No significant size reduction was possible.</string>
+    <string name="pdf_already_optimized">PDF Already Optimized</string>
+    <string name="minor_size_reduction_achieved_this_document_was_already_partially_optimized">Minor size reduction achieved. This document was already partially optimized.</string>
+    <string name="pdf_optimized">PDF Optimized!</string>
+    <string name="what_you_saved_is_equivalent_to">What you saved is equivalent to</string>
+    <string name="split_pdf">Split PDF</string>
+    <string name="choose_split_method">Choose split method</string>
+    <string name="total_d_pages_will_be_extracted">Total %d pages will be extracted</string>
+    <string name="_100">100</string>
+    <string name="share">Share</string>
+    <string name="download">Download</string>
+    <string name="delete">Delete</string>
+    <string name="you_have_unsaved_changes_in_this_pdf_ndo_you_want_to_save_them_before_leaving">You have unsaved changes in this PDF.\nDo you want to save them before leaving?</string>
+    <string name="save_changes">SAVE CHANGES</string>
+    <string name="discard">DISCARD</string>
+    <string name="cancel">CANCEL</string>
+    <string name="watermark">Watermark</string>
+    <string name="size_px">Size (px)</string>
+    <string name="choose_the_format_you_want_to_export_this_page_as">Choose the format you want to export this page as.</string>
+    <string name="export_page">Export Page</string>
+    <string name="best_for_documents_and_maintains_original_quality">Best for documents and maintains original quality.</string>
+    <string name="exporting">Exporting...</string>
+    <string name="add_image">Add Image</string>
+    <string name="preview">Preview</string>
+
+    <string name="label_weight">Weight</string>
+    <string name="label_formatting">Formatting</string>
+    <string name="weight_light">Light</string>
+    <string name="weight_regular">Regular</string>
+    <string name="weight_medium">Medium</string>
+    <string name="weight_semibold">SemiBold</string>
+    <string name="weight_bold">Bold</string>
+
+    <string name="color_picker">Color Picker</string>
+    <string name="pick_color_from_screen">Pick color from screen</string>
+    <string name="opacity">Opacity</string>
+    <string name="percent_sign">%</string>
+    <string name="hex">HEX</string>
+    <string name="copy_hex">Copy HEX code</string>
+    <string name="rgb">RGB</string>
+    <string name="prefix_r">R</string>
+    <string name="prefix_g">G</string>
+    <string name="prefix_b">B</string>
+    <string name="hsv">HSV</string>
+    <string name="prefix_h">H</string>
+    <string name="prefix_s">S</string>
+    <string name="prefix_v">V</string>
+    <string name="increase">Increase value</string>
+    <string name="decrease">Decrease value</string>
+    <string name="recent_colors">Recent Colors</string>
+    <string name="clear">Clear</string>
+    <string name="apply">Apply</string>
+    <string name="bold">Bold</string>
+    <string name="strikethrough">StrikeThrough</string>
+
+    <string name="success_title">PDF Created Successfully!</string>
+    <string name="success_subtitle">Your PDF has been generated and saved to your device.</string>
+    <string name="action_open_pdf">Open PDF</string>
+    <string name="action_share_pdf">Share PDF</string>
+    <string name="action_create_another">Create Another PDF</string>
+    <string name="action_done">Done</string>
+    <string name="label_pdf_badge">PDF</string>
+
+    <string name="error_title">Failed to Create PDF</string>
+    <string name="error_subtitle">Something went wrong while generating your PDF.</string>
+    <string name="error_details_title">Error Details</string>
+    <string name="error_message_default">We couldn\'t create the PDF.\nPlease try again.</string>
+    <string name="action_try_again">Try Again</string>
+    <string name="action_back">Back</string>
+
+    <string name="cd_back">Back</string>
+    <string name="cd_success_icon">Success</string>
+    <string name="cd_error_icon">Error</string>
+    <string name="cd_pdf_preview">PDF preview</string>
+    <string name="loading">Loading</string>
+    <string name="compress_now">Compress Now  ›</string>
+    <string name="rotate_now">Rotate Now  ›</string>
+    <string name="merge_now">Merge Now  ›</string>
+    <string name="create_now">Create Now  ›</string>
+
+    <string name="pdf_studio">PDF Studio</string>
+    <string name="welcome_back">Welcome Back</string>
+    <string name="sign_in_to_continue">Sign in to continue to PDF Studio</string>
+    <string name="email_address">Email address</string>
+    <string name="password">Password</string>
+    <string name="forgot_password">Forgot Password?</string>
+    <string name="login">Login</string>
+    <string name="continue_with_google">Continue with Google</string>
+    <string name="dont_have_account">Don\'t have an account?</string>
+    <string name="create_account">Create Account</string>
+    <string name="create_account_title">Create Account</string>
+    <string name="create_account_subtitle">Create your account to get started</string>
+    <string name="full_name">Full name</string>
+    <string name="confirm_password">Confirm password</string>
+    <string name="password_must_contain">Password must contain:</string>
+    <string name="password_requirement_length">• At least 8 characters</string>
+    <string name="password_requirement_uppercase">• One uppercase letter</string>
+    <string name="password_requirement_number">• One number</string>
+    <string name="agree_to_terms">I agree to the Terms of Service and Privacy Policy</string>
+    <string name="already_have_account">Already have an account?</string>
+    <string name="app_logo_content_description">PDF Studio logo</string>
+    <string name="upgrade_now">Upgrade Now</string>
+    <string name="upgrade_now_with_arrow">Upgrade Now  ›</string>
+    <string name="premium">PREMIUM</string>
+    <string name="premium_subtitle">Unlock everything. Create PDFs without limitations.</string>
+    <string name="monthly_placeholder_price">₹249</string>
+    <string name="monthly_placeholder">₹249 / month</string>
+    <string name="yearly_placeholder">₹1,999 / year</string>
+    <string name="yearly_placeholder_price">₹1,999</string>
+    <string name="per_month">/ month</string>
+    <string name="per_year">/ year</string>
+    <string name="choose_your_plan">Choose your plan</string>
+    <string name="select_best_plan">Select the best plan for you</string>
+    <string name="monthly">MONTHLY</string>
+    <string name="yearly">YEARLY</string>
+    <string name="monthly_description">Billed monthly. Cancel anytime.</string>
+    <string name="yearly_savings">Save 33% with yearly plan</string>
+    <string name="best_value">BEST VALUE</string>
+    <string name="secure_cancel">Secure payment • Cancel anytime</string>
+    <string name="or">OR</string>
+    <string name="restore_purchase">Restore Purchase</string>
+    <string name="legal_prefix">By continuing, you agree to our</string>
+    <string name="terms_of_service">Terms of Service</string>
+    <string name="and">and</string>
+    <string name="privacy_policy">Privacy Policy</string>
+    <string name="monthly_plan">Monthly plan</string>
+    <string name="yearly_plan">Yearly plan</string>
+    <string name="benefit_no_ads">No Ads</string>
+    <string name="benefit_no_ads_desc">Ad-free experience</string>
+    <string name="benefit_unlimited">Unlimited PDFs</string>
+    <string name="benefit_unlimited_desc">Create unlimited PDF files</string>
+    <string name="benefit_advanced">Advanced Tools</string>
+    <string name="benefit_advanced_desc">Access all premium tools</string>
+    <string name="benefit_restrictions">Remove Restrictions</string>
+    <string name="benefit_restrictions_desc">No limits, no restrictions</string>
+    <string name="profile_title">Profile</string>
+    <string name="profile_back_desc">Back</string>
+    <string name="profile_notifications_desc">Notifications</string>
+    <string name="profile_avatar_desc">Profile photo</string>
+    <string name="profile_edit_desc">Edit profile photo</string>
+    <string name="profile_default_name">John Doe</string>
+    <string name="profile_default_email">john.doe@example.com</string>
+    <string name="profile_premium_user_badge">Premium User</string>
+    <string name="profile_premium_title">PDF Studio Premium</string>
+    <string name="profile_premium_subtitle">Unlock all premium features and tools</string>
+    <string name="profile_upgrade_button">Upgrade</string>
+    <string name="profile_personal_information">Personal Information</string>
+    <string name="profile_subscription">Subscription</string>
+    <string name="profile_billing_payments">Billing &amp; Payments</string>
+    <string name="profile_security">Security</string>
+    <string name="profile_notifications">Notifications</string>
+    <string name="profile_app_settings">App Settings</string>
+    <string name="profile_help_support">Help &amp; Support</string>
+    <string name="profile_about">About PDF Studio</string>
+    <string name="profile_logout">Log Out</string>
+    <string name="no_recent_pdfs">No Recent PDFs !!</string>
+    <string name="page_size_original">Original</string>
+    <string name="page_size_fit_largest">Fit Largest</string>
+    <string name="page_size_fit_smallest">Fit Smallest</string>
+    <string name="page_size_a4">A4</string>
+    <string name="page_size_a3">A3</string>
+    <string name="page_size_legal">Legal</string>
+    <string name="page_size_letter">Letter</string>
+    <string name="page_margin_none">No Margin</string>
+    <string name="page_margin_small">Small</string>
+    <string name="page_margin_medium">Medium</string>
+    <string name="page_margin_large">Large</string>
+    <string name="page_size_fit_smallest_width_label">Fit smallest width</string>
+    <string name="page_size_fit_smallest_width_desc">Match all pages to the smallest page width</string>
+    <string name="page_size_fit_smallest_height_label">Fit smallest height</string>
+    <string name="page_size_fit_smallest_height_desc">Match all pages to the smallest page height</string>
+    <string name="page_size_fit_smallest_label">Fit smallest</string>
+    <string name="page_size_fit_smallest_desc">Fit pages within the smallest width and height</string>
+    <string name="page_size_fit_largest_width_label">Fit largest width</string>
+    <string name="page_size_fit_largest_width_desc">Match all pages to the largest page width</string>
+    <string name="page_size_fit_largest_height_label">Fit largest height</string>
+    <string name="page_size_fit_largest_height_desc">Match all pages to the largest page height</string>
+    <string name="page_size_fit_largest_label">Fit largest</string>
+    <string name="page_size_fit_largest_desc">Fit pages within the largest width and height</string>
+    <string name="merge_title">Merge PDF</string>
+    <string name="merge_subtitle">Select PDF files and merge them into one</string>
+    <string name="merge_add_pdf_title">Add PDF Files</string>
+    <string name="merge_add_pdf_subtitle">Tap to browse or drag &amp; drop PDF files here</string>
+    <string name="merge_browse_files">Browse Files</string>
+    <string name="merge_multiple_files_hint">You can add multiple PDF files</string>
+    <string name="merge_selected_files_format">Selected Files (%1$d)</string>
+    <string name="merge_clear_all">Clear All</string>
+    <string name="merge_empty_title">No PDF files selected</string>
+    <string name="merge_empty_subtitle">Add two or more PDF files to merge them.</string>
+    <string name="merge_options_title">Merge Options</string>
+    <string name="merge_option_file_order">File Order</string>
+    <string name="merge_option_file_order_value_default">Drag and drop to reorder files</string>
+    <string name="merge_option_page_size">Page Size</string>
+    <string name="merge_option_page_margins">Page Margins</string>
+    <string name="merge_button">Merge PDFs</string>
+    <string name="merge_page_size_sheet_title">Page Size</string>
+    <string name="merge_page_margin_sheet_title">Page Margins</string>
+    <string name="merge_file_order_sheet_title">File Order</string>
+    <string name="merge_file_order_sheet_desc">Drag and drop the files in the order you want them merged.</string>
+    <string name="merge_done">Done</string>
+    <string name="merge_help_title">How Merge PDF works</string>
+    <string name="merge_help_step_1">1. Add two or more PDF files.</string>
+    <string name="merge_help_step_2">2. Arrange them in the desired order.</string>
+    <string name="merge_help_step_3">3. Choose the page size if needed.</string>
+    <string name="merge_help_step_4">4. Choose margins if needed.</string>
+    <string name="merge_help_step_5">5. Tap Merge PDFs.</string>
+    <string name="merge_help_got_it">Got it</string>
+    <string name="page_size_original_label">Original Size</string>
+    <string name="page_size_original_desc">Keep each PDF page at its original dimensions</string>
+    <string name="page_size_a4_label">A4</string>
+    <string name="page_size_a4_desc">210 × 297 mm</string>
+    <string name="page_size_a3_label">A3</string>
+    <string name="page_size_a3_desc">297 × 420 mm</string>
+    <string name="page_size_letter_label">Letter</string>
+    <string name="page_size_letter_desc">8.5 × 11 in</string>
+    <string name="page_size_legal_label">Legal</string>
+    <string name="page_size_legal_desc">8.5 × 14 in</string>
+    <string name="page_margin_none_label">No Margin</string>
+    <string name="page_margin_none_desc">Keep pages edge-to-edge</string>
+    <string name="page_margin_small_label">Small</string>
+    <string name="page_margin_small_desc">8 dp</string>
+    <string name="page_margin_medium_label">Medium</string>
+    <string name="page_margin_medium_desc">16 dp</string>
+    <string name="page_margin_large_label">Large</string>
+    <string name="page_margin_large_desc">24 dp</string>
+    <string name="merge_back_content_desc">Back</string>
+    <string name="merge_help_content_desc">Help</string>
+    <string name="merge_delete_content_desc">Delete</string>
+    <string name="merge_drag_content_desc">Drag to reorder</string>
+    <string name="page_size_fit_smallest_width">Fit smallest width</string>
+    <string name="page_size_fit_smallest_height">Fit smallest height</string>
+    <string name="page_size_fit_largest_width">Fit largest width</string>
+    <string name="page_size_fit_largest_height">Fit largest height</string>
+    <string name="title_merge_pdf">Merge PDF</string>
+    <string name="cd_success">Merge successful</string>
+    <string name="title_pdf_merged">PDF Merged!</string>
+    <string name="subtitle_merge_success">Your PDF files have been successfully merged.</string>
+    <string name="placeholder_pdf_name">merged_document.pdf</string>
+    <string name="placeholder_pdf_pages">8 Pages</string>
+    <string name="placeholder_pdf_size">4.8 MB</string>
+    <string name="dot_separator">•</string>
+    <string name="title_merge_summary">Merge Summary</string>
+    <string name="label_files_merged">Files Merged</string>
+    <string name="label_total_pages">Total Pages</string>
+    <string name="label_page_size">Page Size</string>
+    <string name="label_margins">Margins</string>
+    <string name="placeholder_files_merged">4</string>
+    <string name="placeholder_total_pages">18</string>
+    <string name="placeholder_page_size">A4</string>
+    <string name="placeholder_margins">Medium</string>
+    <string name="action_share">Share</string>
+    <string name="action_save">Save</string>
+    <string name="action_merge_another">Merge Another PDF</string>
+    <string name="storage_title">App Storage</string>
+    <string name="storage_nav_back">Back</string>
+    <string name="storage_overflow_menu">More options</string>
+    <string name="storage_intro_title">PDF Studio uses storage</string>
+    <string name="storage_intro_description">PDF Studio uses storage to save generated PDFs, cached files and other app data.</string>
+    <string name="storage_used_label">Storage Used</string>
+    <string name="storage_used_subtitle">of internal storage</string>
+    <string name="storage_amount_placeholder">1.24 GB</string>
+    <string name="storage_breakdown_title">Storage Breakdown</string>
+    <string name="storage_pdf_title">PDF files</string>
+    <string name="storage_pdf_description">Generated PDFs and PDFs saved for history</string>
+    <string name="storage_cache_title">Cache</string>
+    <string name="storage_cache_description">Temporary files and cache</string>
+    <string name="storage_other_title">Other app data</string>
+    <string name="storage_other_description">Preferences, databases and other data</string>
+    <string name="storage_total_label">Total</string>
+    <string name="storage_auto_cleanup_title">Automatic cleanup</string>
+    <string name="storage_auto_cleanup_description">Generated PDFs older than 2 hours are automatically removed.</string>
+    <string name="storage_auto_cleanup_status_active">Active</string>
+    <string name="storage_info_title">What is stored in App Storage?</string>
+    <string name="storage_info_bullet_1">PDFs generated by PDF Studio.</string>
+    <string name="storage_info_bullet_2">PDFs kept for history and quick access.</string>
+    <string name="storage_info_bullet_3">Cached data and temporary files.</string>
+    <string name="storage_info_downloads_note">Downloaded PDFs in your Downloads folder are not included and will not be deleted.</string>
+    <string name="storage_clear_button">Clear App Storage</string>
+    <string name="storage_clear_button_caption">This will remove PDF files and cached data stored inside the app.</string>
+    <string name="storage_dialog_title">Clear app storage?</string>
+    <string name="storage_dialog_description">This will remove PDF files stored inside PDF Studio and cached files to free up space.</string>
+    <string name="storage_dialog_downloads_note">Your downloaded PDFs in the Downloads folder will not be affected.</string>
+    <string name="storage_dialog_cancel">Cancel</string>
+    <string name="storage_dialog_confirm">Clear Storage</string>
+    <string name="storage_cleared_success">App storage cleared</string>
+    <string name="storage_cleared_error">Something went wrong while clearing storage</string>
+    <string name="storage_cd_intro_illustration">Illustration of PDF documents and cloud storage</string>
+    <string name="storage_cd_donut_chart">Storage usage chart</string>
+    <string name="storage_cd_pdf_icon">PDF files icon</string>
+    <string name="storage_cd_cache_icon">Cache icon</string>
+    <string name="storage_cd_other_icon">Other app data icon</string>
+    <string name="storage_cd_info_icon">Information icon</string>
+    <string name="storage_cd_download_icon">Downloads folder icon</string>
+    <string name="storage_cd_delete_icon">Delete icon</string>
+    <string name="storage_info_bullets">• PDFs generated by PDF Studio. \n
+• PDFs kept for history and quick access.\n
+• Cached data and temporary files.</string>
+    <string name="clear_storage_title">Clear App Storage</string>
+    <string name="clear_storage_subtitle">Select what you want to remove</string>
+    <string name="option_pdf_title">Generated PDF files</string>
+    <string name="option_pdf_description">PDFs generated by PDF Studio</string>
+    <string name="option_cache_title">Cache</string>
+    <string name="option_cache_description">Temporary files and cached data</string>
+    <string name="option_other_title">Other app data</string>
+    <string name="option_other_description">Preferences, databases and other app data</string>
+    <string name="clear_storage_error_none_selected">Select at least one storage type.</string>
+    <string name="action_cancel">CANCEL</string>
+    <string name="action_clear">CLEAR</string>
+    <string name="settings_title">Settings</string>
+    <string name="settings_subtitle">Customize PDF Studio to your preferences</string>
+    <string name="section_appearance">Appearance</string>
+    <string name="section_pdf_settings">PDF Settings</string>
+    <string name="section_storage">Storage</string>
+    <string name="section_notifications">Notifications</string>
+    <string name="section_pdf_operations">PDF Operations</string>
+    <string name="section_about">About</string>
+    <string name="row_theme_title">Theme</string>
+    <string name="row_theme_desc">Choose how PDF Studio looks</string>
+    <string name="row_accent_color_title">Accent Color</string>
+    <string name="row_accent_color_desc">Customize the application accent color</string>
+    <string name="dialog_theme_title">Theme</string>
+    <string name="dialog_accent_color_title">Accent Color</string>
+    <string name="row_page_size_title">Default Page Size</string>
+    <string name="row_page_size_desc">Choose the default page size for PDF operations</string>
+    <string name="row_page_margin_title">Default Page Margin</string>
+    <string name="row_page_margin_desc">Choose the default margin when creating PDFs</string>
+    <string name="row_remember_last_title">Remember Last Settings</string>
+    <string name="row_remember_last_desc">Use the last selected PDF options</string>
+    <string name="dialog_page_size_title">Default Page Size</string>
+    <string name="dialog_page_margin_title">Default Page Margin</string>
+    <string name="row_app_storage_title">App Storage</string>
+    <string name="row_app_storage_desc">Manage generated PDFs, cache and other app data</string>
+    <string name="row_auto_cleanup_title">Automatic Cleanup</string>
+    <string name="row_auto_cleanup_desc">Remove temporary generated files automatically</string>
+    <string name="row_cleanup_after_title">Cleanup After</string>
+    <string name="row_cleanup_after_desc">Automatically remove old generated files</string>
+    <string name="dialog_cleanup_after_title">Cleanup After</string>
+    <string name="row_pdf_completion_notif_title">PDF Completion Notifications</string>
+    <string name="row_pdf_completion_notif_desc">Notify me when PDF operations are completed</string>
+    <string name="row_error_notif_title">Error Notifications</string>
+    <string name="row_error_notif_desc">Notify me when a PDF operation fails</string>
+    <string name="row_notification_sound_title">Notification Sound</string>
+    <string name="row_notification_sound_desc">Play a sound for important notifications</string>
+    <string name="row_open_after_creation_title">Open PDF After Creation</string>
+    <string name="row_open_after_creation_desc">Automatically open PDFs after they are generated</string>
+    <string name="row_save_generated_title">Save Generated PDFs</string>
+    <string name="row_save_generated_desc">Keep generated PDFs inside PDF Studio history</string>
+    <string name="row_ask_overwrite_title">Ask Before Overwriting</string>
+    <string name="row_ask_overwrite_desc">Confirm before replacing an existing file</string>
+    <string name="row_about_app_title">About PDF Studio</string>
+    <string name="row_about_app_desc">Learn more about PDF Studio</string>
+    <string name="row_help_support_title">Help &amp; Support</string>
+    <string name="row_help_support_desc">Get help or report a problem</string>
+    <string name="row_terms_title">Terms &amp; Services</string>
+    <string name="row_terms_desc">Read the terms and conditions</string>
+    <string name="row_privacy_title">Privacy Policy</string>
+    <string name="row_privacy_desc">Read our privacy policy</string>
+    <string name="row_app_version_title">App Version</string>
+    <string name="row_app_version_desc">Current version</string>
+    <string name="reset_settings_title">Reset Settings</string>
+    <string name="reset_settings_subtitle">Restore default settings</string>
+    <string name="reset_dialog_title">Reset Settings?</string>
+    <string name="reset_dialog_message">All settings will be restored to their default values.</string>
+    <string name="reset_dialog_cancel">Cancel</string>
+    <string name="reset_dialog_confirm">Reset</string>
+    <string name="reset_settings_confirmation_toast">Settings restored to default</string>
+    <string name="dialog_cancel">Cancel</string>
+    <string name="theme_system_default">System Default</string>
+    <string name="theme_light">Light</string>
+    <string name="theme_dark">Dark</string>
+    <string name="accent_color_purple">Purple</string>
+    <string name="accent_color_blue">Blue</string>
+    <string name="accent_color_green">Green</string>
+    <string name="accent_color_orange">Orange</string>
+    <string name="margin_none">None</string>
+    <string name="margin_small">Small</string>
+    <string name="margin_medium">Medium</string>
+    <string name="margin_large">Large</string>
+    <string name="cleanup_30_minutes">30 minutes</string>
+    <string name="cleanup_1_hour">1 hour</string>
+    <string name="cleanup_2_hours">2 hours</string>
+    <string name="cleanup_6_hours">6 hours</string>
+    <string name="cleanup_24_hours">24 hours</string>
+    <string name="cd_back_button">Back</string>
+    <string name="cd_google_icon">Google logo</string>
+    <string name="cd_apple_icon">Apple logo</string>
+    <string name="google">Google</string>
+    <string name="apple">Apple</string>
+    <string name="welcome_line1">Welcome</string>
+    <string name="welcome_line2">back!</string>
+    <string name="login_hero_subtitle">Log in to continue to PDF Studio</string>
+    <string name="cd_pdf_illustration">PDF document illustration</string>
+    <string name="email_label">Email</string>
+    <string name="email_placeholder">Enter your email</string>
+    <string name="password_label">Password</string>
+    <string name="password_placeholder">Enter your password</string>
+    <string name="forgot_password_prompt">Forgot password?</string>
+    <string name="action_log_in">Log In</string>
+    <string name="divider_continue_with">or continue with</string>
+    <string name="link_sign_up">Sign up</string>
+    <string name="signup_title_create">Create&#160;</string>
+    <string name="signup_title_account">account</string>
+    <string name="signup_subtitle_join">Join PDF Studio and simplify your work</string>
+    <string name="full_name_label">Full Name</string>
+    <string name="full_name_placeholder">Enter your full name</string>
+    <string name="password_create_placeholder">Create a password</string>
+    <string name="password_strength_label">Password strength:</string>
+    <string name="password_strength_medium">Medium</string>
+    <string name="confirm_password_label">Confirm Password</string>
+    <string name="confirm_password_placeholder">Confirm your password</string>
+    <string name="action_sign_up">Sign Up</string>
+    <string name="divider_sign_up_with">or sign up with</string>
+    <string name="link_log_in">Log in</string>
+    <string name="drawer_default_user_name">Guest</string>
+    <string name="drawer_default_user_email">guest@email.com</string>
+    <string name="drawer_cd_profile_avatar">Profile picture</string>
+    <string name="drawer_section_application">Application</string>
+    <string name="drawer_section_legal">Legal</string>
+    <string name="drawer_section_more">More</string>
+    <string name="drawer_item_about_title">About PDF Studio</string>
+    <string name="drawer_item_help_title">Help &amp; Support</string>
+    <string name="drawer_item_feedback_title">Send Feedback</string>
+    <string name="drawer_item_privacy_title">Privacy Policy</string>
+    <string name="drawer_item_terms_title">Terms &amp; Services</string>
+    <string name="drawer_item_developer_title">About Developer</string>
+    <string name="drawer_item_rate_title">Rate PDF Studio</string>
+    <string name="drawer_item_about_subtitle">Learn more about PDF Studio</string>
+    <string name="drawer_item_help_subtitle">Get help and find answers</string>
+    <string name="drawer_item_feedback_subtitle">Tell us what you think</string>
+    <string name="drawer_item_privacy_subtitle">How your data is handled</string>
+    <string name="drawer_item_terms_subtitle">Terms for using PDF Studio</string>
+    <string name="drawer_item_developer_subtitle">Learn more about the developer</string>
+    <string name="drawer_item_rate_subtitle">Support the app with a rating</string>
+    <string name="drawer_footer_app_name">PDF STUDIO</string>
+    <string name="drawer_footer_version">Version 1.0</string>
+    <string name="rate_cd_close">Close</string>
+    <string name="rate_cd_rating_icon">Rating</string>
+    <string name="rate_title">Enjoying PDF Studio?</string>
+    <string name="rate_description">Your feedback helps us improve PDF Studio\nand build a better experience for you.</string>
+    <string name="rate_cd_star_1">1 star</string>
+    <string name="rate_cd_star_2">2 stars</string>
+    <string name="rate_cd_star_3">3 stars</string>
+    <string name="rate_cd_star_4">4 stars</string>
+    <string name="rate_cd_star_5">5 stars</string>
+    <string name="rate_label_default">Tap a star to rate</string>
+    <string name="rate_label_one_star">1 star</string>
+    <string name="rate_label_n_stars">%1$d stars</string>
+    <string name="rate_btn_rate">Rate PDF Studio</string>
+    <string name="rate_btn_maybe_later">Maybe later</string>
+    <string name="notifications_title">Notifications</string>
+    <string name="filter_all">All</string>
+    <string name="filter_success">Success</string>
+    <string name="filter_info">Info</string>
+    <string name="filter_warning">Warning</string>
+    <string name="filter_chip_format">%1$s  %2$d</string>
+    <string name="menu_mark_all_read">Mark all as read</string>
+    <string name="menu_clear_notifications">Clear notifications</string>
+    <string name="empty_state_title">No notifications</string>
+    <string name="empty_state_subtitle">You\'re all caught up!</string>
+    <string name="content_desc_back">Back</string>
+    <string name="content_desc_settings">Notification settings</string>
+    <string name="content_desc_open_notification">Open notification</string>
+    <string name="content_desc_success_icon">Success</string>
+    <string name="content_desc_info_icon">Info</string>
+    <string name="content_desc_warning_icon">Warning</string>
+    <string name="d_images_extracted_from_s">%d images extracted from %s</string>
+
+    <string name="subscription_title">Subscription</string>
+    <string name="section_your_current_plan">YOUR CURRENT PLAN</string>
+    <string name="section_subscription_details">SUBSCRIPTION DETAILS</string>
+    <string name="section_premium_benefits">PREMIUM BENEFITS</string>
+    <!--  Premium state  -->
+    <string name="premium_plan_title">PDF Studio Premium</string>
+    <string name="premium_plan_subtitle">All premium features unlocked</string>
+    <string name="status_active">✓ ACTIVE</string>
+    <string name="price_monthly">₹299 / month</string>
+    <string name="label_started_on">Started on</string>
+    <string name="label_renews_on">Renews on</string>
+    <string name="detail_plan">Plan</string>
+    <string name="detail_plan_value">Premium</string>
+    <string name="detail_payment_method">Payment method</string>
+    <string name="detail_payment_method_value">Google Play</string>
+    <string name="detail_billing">Billing details</string>
+    <string name="detail_billing_value">View billing and payment history</string>
+    <string name="detail_current_plan">Current plan</string>
+    <string name="detail_current_plan_free_value">Free</string>
+    <string name="detail_subscription_status">Subscription status</string>
+    <string name="detail_subscription_status_free_value">No active subscription</string>
+    <string name="action_manage_subscription">Manage Subscription →</string>
+    <string name="action_cancel_subscription">Cancel Subscription</string>
+    <string name="action_upgrade_to_premium">Upgrade to Premium →</string>
+    <string name="security_premium">🔒 Your payments are secure and processed by Google Play.</string>
+    <string name="security_free">🔒 Secure payments powered by Google Play.</string>
+    <!--  Free state  -->
+    <string name="free_plan_title">PDF Studio Free</string>
+    <string name="free_plan_subtitle">You\'re currently using the free plan</string>
+    <string name="status_free">FREE</string>
+    <string name="upgrade_heading">Upgrade to Premium</string>
+    <string name="upgrade_price">₹299 / month</string>
+    <string name="upgrade_subheading">Unlock the full power of PDF Studio</string>
+    <!--  Benefits (shared)  -->
+    <string name="benefit_unlimited_title">Unlimited PDF processing</string>
+    <string name="benefit_compression_title">Large PDF compression</string>
+    <string name="benefit_compression_desc">Server processing for files over 200 MB</string>
+    <string name="benefit_conversion_title">DOC / PPT to PDF conversion</string>
+    <string name="benefit_conversion_desc">Processed on server</string>
+    <string name="benefit_no_limits_title">No usage limits</string>
+    <string name="benefit_priority_title">Priority processing and updates</string>
+
+    <string name="app_name">PDF Studio</string>
+    <string name="billing_title">Billing &amp; Payments</string>
+    <string name="billing_subtitle">View your payment methods, history and invoices</string>
+    <string name="section_payment_method">PAYMENT METHOD</string>
+    <string name="section_billing_summary">BILLING SUMMARY</string>
+    <string name="section_payment_history">PAYMENT HISTORY</string>
+    <string name="section_recent_invoice">RECENT INVOICE</string>
+    <string name="google_play">Google Play</string>
+    <string name="badge_primary">Primary</string>
+    <string name="action_manage">Manage</string>
+    <string name="security_payment_method_line1">Your payment methods are managed by Google Play.</string>
+    <string name="security_payment_method_line1_empty">Payment methods are managed by Google Play.</string>
+    <string name="security_payment_method_line2">We don\'t store your full card or payment details.</string>
+    <string name="row_subscription_status">Subscription status</string>
+    <string name="row_last_payment">Last payment</string>
+    <string name="row_last_payment_date">Last payment date</string>
+    <string name="row_next_payment">Next payment</string>
+    <string name="row_next_billing_date">Next billing date</string>
+    <string name="status_none">No active subscription</string>
+    <string name="value_placeholder">—</string>
+    <string name="action_view_all">View all</string>
+    <string name="badge_paid">Paid</string>
+    <string name="badge_failed">Failed</string>
+    <string name="badge_refunded">Refunded</string>
+    <string name="row_order_id_format">Order ID: %1$s</string>
+    <string name="action_view_receipt">View receipt</string>
+    <string name="action_download_invoice">Download invoice</string>
+    <string name="invoice_meta_format">%1$s · Invoice #%2$s</string>
+    <string name="security_footer_line1">Payments are securely processed by Google Play.</string>
+    <string name="security_footer_line2">For any billing issues, contact Google Play support.</string>
+    <string name="empty_payment_method_title">No payment method</string>
+    <string name="empty_payment_method_body">You don\'t have any payment method associated with your account.</string>
+    <string name="empty_history_title">No payments yet</string>
+    <string name="empty_history_body">Your payment history will appear here after you make a purchase.</string>
+    <string name="action_upgrade">Upgrade to premium</string>
+    <string name="promo_title">Unlock premium features</string>
+    <string name="promo_benefit_1">Unlimited PDF processing</string>
+    <string name="promo_benefit_2">Large PDF compression, over 200 MB</string>
+    <string name="promo_benefit_3">DOC and PPT to PDF conversion</string>
+    <string name="promo_benefit_4">No usage limits</string>
+    <string name="promo_benefit_5">Priority processing and updates</string>
+    <string name="cd_help">Help</string>
+    <string name="cd_open_transaction">Open transaction details</string>
+    <string name="extracting_images">Extracting Images...</string>
+    <string name="_0_d_pages_processed">0 / %d pages processed</string>
+    <string name="d_d_pages_processed">%d / %d pages processed</string>
+    <string name="fetching_file">Fetching File...</string>
+    <string name="empty_file_from_server">Empty file from server</string>
+    <string name="uploading_file">Uploading File...</string>
+    <string name="uploading_pdf">"Uploading PDF... "</string>
+    <string name="uploading_pdf_0">Uploading PDF... 0%</string>
+    <string name="joinjob_invoke_completed">JoinJob invoke COMPLETED</string>
+    <string name="joinjob_invoke_completed_for_jobid">JoinJob invoke COMPLETED for jobId=</string>
+    <string name="added_to_queue">Added to queue...</string>
+    <string name="you_are_in">You are in #</string>
+    <string name="compression_failed">Compression Failed</string>
+    <string name="compressing_pdf">Compressing PDF...</string>
+    <string name="compression_completed">Compression Completed</string>
+
+
+</resources>

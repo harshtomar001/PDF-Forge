@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Standard white rounded card background. Elevation/shadow is handled
+     by MaterialCardView (cardElevation) in the layout, not this drawable. -->
+<shape xmlns:android="http://schemas.android.com/apk/res/android"
+    android:shape="rectangle">
+    <solid android:color="@color/pdf_studio_white" />
+    <corners android:radius="@dimen/profile_card_corner_radius" />
+</shape>

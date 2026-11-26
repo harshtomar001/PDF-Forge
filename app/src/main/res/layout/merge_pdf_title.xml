@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:background="@drawable/create_pdf_toolbar_bg"
+    android:paddingBottom="12dp">
+
+
+    <ImageView
+        android:id="@+id/back_arrow_merge_pdf"
+        android:layout_width="@dimen/margin_30dp"
+        android:layout_height="@dimen/margin_30dp"
+        android:clickable="true"
+        android:layout_gravity="center"
+        android:layout_marginTop="10dp"
+        app:srcCompat="@drawable/ic_back_arrow"
+
+        />
+
+    <LinearLayout
+
+        android:layout_height="wrap_content"
+        android:layout_width="wrap_content"
+        android:layout_marginStart="@dimen/margin_12dp"
+        android:orientation="vertical"
+
+        >
+
+    <TextView
+
+        android:id="@+id/title_merge_pdf"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/merge_pdf"
+        android:layout_marginTop="22dp"
+        android:textColor="@color/white"
+        android:textSize="24sp"
+        android:textStyle="bold"
+        android:layout_marginEnd="@dimen/margin_18dp"
+
+
+        />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/sel_arr_merge_pdf_title_text"
+        android:textColor="@color/white"
+        android:textSize="12sp"
+        android:alpha="0.9"
+        android:layout_marginEnd="@dimen/margin_18dp"
+
+
+        />
+
+    </LinearLayout>
+
+</LinearLayout>

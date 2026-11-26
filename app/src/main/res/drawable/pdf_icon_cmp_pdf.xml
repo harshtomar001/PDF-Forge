@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- res/drawable/ic_pdf.xml -->
+<vector xmlns:android="http://schemas.android.com/apk/res/android"
+    android:width="64dp"
+    android:height="80dp"
+    android:viewportWidth="64"
+    android:viewportHeight="80">
+
+    <!-- Document body -->
+    <path
+        android:pathData="M4,0 L44,0 L64,20 L64,80 L4,80 Q0,80 0,76 L0,4 Q0,0 4,0 Z"
+        android:fillColor="#E53935"/>
+
+    <!-- Fold corner (lighter) -->
+    <path
+        android:pathData="M44,0 L64,20 L44,20 Z"
+        android:fillColor="#FF8A80"/>
+
+    <!-- Document lines -->
+    <path
+        android:pathData="M10,36 L54,36"
+        android:strokeColor="#FFFFFF"
+        android:strokeWidth="3.5"
+        android:strokeAlpha="0.5"
+        android:strokeLineCap="round"
+        android:fillColor="#00000000"/>
+    <path
+        android:pathData="M10,46 L54,46"
+        android:strokeColor="#FFFFFF"
+        android:strokeWidth="3.5"
+        android:strokeAlpha="0.35"
+        android:strokeLineCap="round"
+        android:fillColor="#00000000"/>
+
+    <!-- PDF label -->
+    <path
+        android:pathData="M8,54 L8,76 L56,76 L56,54 Z"
+        android:fillColor="#C62828"/>
+    <path
+        android:pathData="
+                        M13,59 L13,71
+                        M13,59 L18,59 Q23,59 23,62 Q23,65 18,65 L13,65
+
+                        M27,59 L27,71
+                        M27,59 L31,59 Q38,59 38,65 Q38,71 31,71 L27,71
+
+                        M42,59 L48,59
+                        M42,59 L42,71
+                        M42,64 L47,64"
+        android:strokeColor="#FFFFFF"
+        android:strokeWidth="2"
+        android:fillColor="#00000000"
+        android:strokeLineCap="round"
+        android:strokeLineJoin="round"/>
+</vector>

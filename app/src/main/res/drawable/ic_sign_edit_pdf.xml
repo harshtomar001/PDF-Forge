@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="utf-8"?>
+<vector xmlns:android="http://schemas.android.com/apk/res/android"
+    android:width="48dp"
+    android:height="48dp"
+    android:viewportWidth="48"
+    android:viewportHeight="48">
+
+    <!-- Pen tilted ~40deg: drawn rotated, tip pointing bottom-left -->
+    <!-- Pen body (dark indigo) — tilted parallelogram -->
+    <path
+        android:fillColor="#3949AB"
+        android:pathData="M28,4 L34,4 L34,6 L22,34 L16,34 L16,32 Z"/>
+
+    <!-- Pen body left highlight (lighter strip) -->
+    <path
+        android:fillColor="#5C6BC0"
+        android:pathData="M28,4 L30,4 L18,32 L16,32 L16,34 L22,34 Z"/>
+
+    <!-- Pen cap top (dark, rounded) -->
+    <path
+        android:fillColor="#283593"
+        android:pathData="M28,4 Q29,2 33,3 Q35,4 34,6 Z"/>
+
+    <!-- Pen clip (thin bar along right side) -->
+    <path
+        android:fillColor="#283593"
+        android:pathData="M33,5 L34,5 L24,30 L23,30 Z"/>
+
+    <!-- Grip band -->
+    <path
+        android:fillColor="#283593"
+        android:pathData="M22,30 L16,30 L16,34 L22,34 Z"/>
+
+    <!-- Nib upper (light silver) -->
+    <path
+        android:fillColor="#C5CAE9"
+        android:pathData="M17,33 L22,31 L18,42 L14,42 Z"/>
+
+    <!-- Nib tip (darker, pointy) -->
+    <path
+        android:fillColor="#9FA8DA"
+        android:pathData="M14,42 L18,42 L15,47 Z"/>
+
+    <!-- Ink slit -->
+    <path
+        android:pathData="M16,40 L15,46"
+        android:strokeColor="#5C6BC0"
+        android:strokeWidth="0.8"
+        android:strokeLineCap="round"
+        android:fillColor="@android:color/transparent"/>
+
+    <!-- Signature curve at bottom -->
+    <path
+        android:pathData="M6,44 Q10,39 14,42 Q18,45 22,40 Q26,36 30,38"
+        android:strokeColor="#3949AB"
+        android:strokeWidth="2"
+        android:strokeLineCap="round"
+        android:fillColor="@android:color/transparent"/>
+
+</vector>

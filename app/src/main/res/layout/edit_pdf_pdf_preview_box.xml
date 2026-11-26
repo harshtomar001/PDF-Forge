@@ -1,0 +1,101 @@
+<?xml version="1.0" encoding="utf-8"?>
+<com.google.android.material.card.MaterialCardView
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:elevation="@dimen/margin_12dp"
+    app:cardCornerRadius="@dimen/margin_12dp"
+    app:cardElevation="@dimen/margin_5dp"
+    app:strokeWidth="0dp"
+    app:cardBackgroundColor="@color/white"
+    xmlns:android="http://schemas.android.com/apk/res/android">
+
+<androidx.constraintlayout.widget.ConstraintLayout
+    android:layout_width="match_parent"
+    android:padding="@dimen/margin_10dp"
+    android:layout_height="match_parent">
+
+    <ImageView
+        android:id="@+id/pdf_preview_edit_pdf_inp_frag"
+        android:layout_width="44dp"
+        android:layout_height="44dp"
+        android:src="@drawable/pdf_fevicon"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintBottom_toBottomOf="parent"
+        />
+
+    <LinearLayout
+        android:id="@+id/file_data_layout"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:layout_marginStart="@dimen/margin_15dp"
+        app:layout_constraintStart_toEndOf="@id/pdf_preview_edit_pdf_inp_frag"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toStartOf="@id/rename_layout"
+        app:layout_constraintHorizontal_bias="0"
+        app:layout_constraintTop_toTopOf="parent">
+
+    <TextView
+        android:id="@+id/pdf_file_name_edit_pdf"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="report_powerpoint.pdf"
+        android:textSize="@dimen/margin_15dp"
+        android:textStyle="bold"
+        android:maxLines="1"
+        android:ellipsize="end"
+        android:textColor="@color/black"
+
+        />
+
+    <TextView
+        android:id="@+id/metadata_edit_pdf"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="12 Pages • 2.45 MB"
+        android:layout_marginTop="@dimen/margin_5dp"
+        android:layout_marginStart="2dp"
+        android:maxLines="1"
+        android:ellipsize="end"
+        />
+
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/rename_layout"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:gravity="center"
+        android:background="@drawable/rename_bg"
+        android:padding="@dimen/margin_5dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintEnd_toEndOf="parent">
+
+        <ImageView
+            android:layout_width="@dimen/margin_25dp"
+            android:layout_height="@dimen/margin_25dp"
+            android:src="@drawable/pencil_ic" />
+
+        <TextView
+            android:layout_height="wrap_content"
+            android:layout_width="wrap_content"
+            android:text="Rename"
+            android:textSize="@dimen/margin_12dp"
+            android:textStyle="normal"
+            android:textColor="@color/darkGray"
+            android:layout_marginStart="@dimen/margin_5dp"
+            />
+
+    </LinearLayout>
+
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>
+
+
+</com.google.android.material.card.MaterialCardView>

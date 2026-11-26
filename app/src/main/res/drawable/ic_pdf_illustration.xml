@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="utf-8"?>
+<vector xmlns:android="http://schemas.android.com/apk/res/android"
+    android:width="64dp"
+    android:height="76dp"
+    android:viewportWidth="100"
+    android:viewportHeight="118">
+
+    <!-- Page body with folded top-right corner -->
+    <path
+        android:fillColor="@color/pdf_card_white"
+        android:strokeColor="@color/pdf_page_border"
+        android:strokeWidth="2"
+        android:pathData="M12,4 L72,4 L96,28 L96,114 L12,114 Z" />
+
+    <!-- Folded corner triangle -->
+    <path
+        android:fillColor="#F0F1F3"
+        android:strokeColor="@color/pdf_page_border"
+        android:strokeWidth="2"
+        android:pathData="M72,4 L72,28 L96,28 Z" />
+
+    <!-- Faux text lines -->
+    <path
+        android:fillColor="@color/pdf_page_border"
+        android:pathData="M46,72 L86,72 L86,76 L46,76 Z" />
+    <path
+        android:fillColor="@color/pdf_page_border"
+        android:pathData="M46,84 L86,84 L86,88 L46,88 Z" />
+    <path
+        android:fillColor="@color/pdf_page_border"
+        android:pathData="M46,96 L74,96 L74,100 L46,100 Z" />
+
+    <!-- Red PDF ribbon tag -->
+    <path
+        android:fillColor="@color/pdf_primary_red"
+        android:pathData="M0,34 L64,34 L64,60 L0,60 Z" />
+
+    <!-- Stylised red acrobat-style swirl mark -->
+    <path
+        android:fillColor="#FFFFFFFF"
+        android:pathData="M14,52 C14,44 20,40 26,40 C32,40 36,44 33,49 C31,52.5 26,52 24,55 C22,58 26,60 30,58 L30,54 C30,54 26,55 26,53 C26,51 30,51 32,48 C35,44 31,38 25,38 C19,38 12,42 12,52 Z"
+        android:fillType="evenOdd" />
+</vector>

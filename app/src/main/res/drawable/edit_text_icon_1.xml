@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="utf-8"?>
+<vector xmlns:android="http://schemas.android.com/apk/res/android"
+    android:width="28dp"
+    android:height="28dp"
+    android:viewportWidth="28"
+    android:viewportHeight="28">
+
+    <!-- File outline -->
+    <path
+        android:fillColor="@android:color/transparent"
+        android:strokeColor="#6C3BFF"
+        android:strokeWidth="2"
+        android:strokeLineCap="round"
+        android:strokeLineJoin="round"
+        android:pathData="M8,3H17L23,9V23C23,24.1 22.1,25 21,25H8C6.9,25 6,24.1 6,23V5C6,3.9 6.9,3 8,3Z"/>
+
+    <!-- Fold -->
+    <path
+        android:fillColor="@android:color/transparent"
+        android:strokeColor="#6C3BFF"
+        android:strokeWidth="2"
+        android:strokeLineCap="round"
+        android:strokeLineJoin="round"
+        android:pathData="M17,3V9H23"/>
+
+    <!-- Text lines -->
+    <path
+        android:fillColor="@android:color/transparent"
+        android:strokeColor="#6C3BFF"
+        android:strokeWidth="2"
+        android:strokeLineCap="round"
+        android:pathData="M10,11H17"/>
+
+    <path
+        android:fillColor="@android:color/transparent"
+        android:strokeColor="#6C3BFF"
+        android:strokeWidth="2"
+        android:strokeLineCap="round"
+        android:pathData="M10,15H15"/>
+
+    <!-- Pencil -->
+    <path
+        android:fillColor="@android:color/transparent"
+        android:strokeColor="#6C3BFF"
+        android:strokeWidth="2"
+        android:strokeLineCap="round"
+        android:strokeLineJoin="round"
+        android:pathData="M14,22L15,18L21,12L24,15L18,21L14,22Z"/>
+
+    <!-- Pencil inner line -->
+    <path
+        android:fillColor="@android:color/transparent"
+        android:strokeColor="#6C3BFF"
+        android:strokeWidth="1.6"
+        android:strokeLineCap="round"
+        android:pathData="M19.5,13.5L22.5,16.5"/>
+</vector>

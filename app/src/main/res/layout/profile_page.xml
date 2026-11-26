@@ -1,0 +1,742 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.core.widget.NestedScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/pdf_studio_background"
+    android:fillViewport="true"
+    android:overScrollMode="never">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <!-- ============ BLUE HEADER ============ -->
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/profileHeader"
+            android:layout_width="0dp"
+            android:layout_height="@dimen/profile_header_height"
+            android:paddingBottom="20dp"
+            android:background="@drawable/profile_header_wave_background"
+            android:fitsSystemWindows="true"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent">
+
+            <ImageButton
+                android:id="@+id/profileBackButton"
+                android:layout_width="@dimen/profile_touch_target"
+                android:layout_height="@dimen/profile_touch_target"
+                android:layout_marginStart="8dp"
+                android:layout_marginTop="12dp"
+                android:background="?attr/selectableItemBackgroundBorderless"
+                android:contentDescription="@string/profile_back_desc"
+                android:padding="10dp"
+                android:src="@drawable/ic_arrow_back"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <TextView
+                android:id="@+id/profileTitle"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="8dp"
+                android:fontFamily="sans-serif-medium"
+                android:text="@string/profile_title"
+                android:textColor="@color/pdf_studio_white"
+                android:textSize="@dimen/profile_title_text_size"
+                android:textStyle="bold"
+                app:layout_constraintBottom_toBottomOf="@id/profileBackButton"
+                app:layout_constraintStart_toEndOf="@id/profileBackButton"
+                app:layout_constraintTop_toTopOf="@id/profileBackButton" />
+
+            <ImageButton
+                android:id="@+id/profileNotificationsButton"
+                android:layout_width="@dimen/profile_touch_target"
+                android:layout_height="@dimen/profile_touch_target"
+                android:layout_marginEnd="8dp"
+                android:background="?attr/selectableItemBackgroundBorderless"
+                android:contentDescription="@string/profile_notifications_desc"
+                android:padding="10dp"
+                android:src="@drawable/ic_notifications"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toTopOf="@id/profileBackButton" />
+
+
+            <FrameLayout
+                android:id="@+id/profileAvatarContainer"
+                android:layout_width="@dimen/profile_avatar_size"
+                android:layout_height="@dimen/profile_avatar_size"
+                android:layout_marginTop="20dp"
+                android:background="@drawable/profile_avatar_background"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/profileBackButton">
+
+                <ImageView
+                    android:id="@+id/profileAvatar"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_margin="4dp"
+                    android:background="@drawable/profile_avatar_fill"
+                    android:contentDescription="@string/profile_avatar_desc"
+                    android:padding="24dp"
+                    android:src="@drawable/ic_person"
+                    tools:ignore="ContentDescription" />
+            </FrameLayout>
+
+            <FrameLayout
+                android:id="@+id/editProfileButton"
+                android:layout_width="@dimen/profile_edit_badge_size"
+                android:layout_height="@dimen/profile_edit_badge_size"
+                android:layout_marginEnd="2dp"
+                android:layout_marginBottom="2dp"
+                android:background="@drawable/profile_edit_background"
+                android:clickable="true"
+                android:contentDescription="@string/profile_edit_desc"
+                android:elevation="3dp"
+                android:focusable="true"
+                app:layout_constraintBottom_toBottomOf="@id/profileAvatarContainer"
+                app:layout_constraintEnd_toEndOf="@id/profileAvatarContainer">
+
+                <ImageView
+                    android:layout_width="@dimen/profile_edit_badge_icon_size"
+                    android:layout_height="@dimen/profile_edit_badge_icon_size"
+                    android:layout_gravity="center"
+                    android:importantForAccessibility="no"
+                    android:src="@drawable/ic_edit" />
+            </FrameLayout>
+
+            <TextView
+                android:id="@+id/profileName"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="14dp"
+                android:ellipsize="end"
+                android:fontFamily="sans-serif-medium"
+                android:gravity="center"
+                android:maxLines="1"
+                android:paddingHorizontal="24dp"
+                android:text="@string/profile_default_name"
+                android:textColor="@color/pdf_studio_white"
+                android:textSize="@dimen/profile_name_text_size"
+                android:textStyle="bold"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/profileAvatarContainer" />
+
+            <TextView
+                android:id="@+id/profileEmail"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="2dp"
+                android:ellipsize="end"
+                android:gravity="center"
+                android:maxLines="1"
+                android:paddingHorizontal="24dp"
+                android:text="@string/profile_default_email"
+                android:textColor="@color/pdf_studio_white_70"
+                android:textSize="@dimen/profile_email_text_size"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/profileName" />
+
+            <LinearLayout
+                android:id="@+id/premiumBadge"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
+                android:background="@drawable/profile_premium_badge"
+                android:gravity="center_vertical"
+                android:orientation="horizontal"
+                android:paddingHorizontal="12dp"
+                android:paddingVertical="6dp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/profileEmail">
+
+                <ImageView
+                    android:layout_width="14dp"
+                    android:layout_height="14dp"
+                    android:importantForAccessibility="no"
+                    android:src="@drawable/ic_crown" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="6dp"
+                    android:text="@string/profile_premium_user_badge"
+                    android:textColor="@color/pdf_studio_white"
+                    android:textSize="@dimen/profile_badge_text_size"
+                    android:textStyle="bold" />
+            </LinearLayout>
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+        <!-- ============ PREMIUM CARD ============ -->
+        <androidx.cardview.widget.CardView
+            android:id="@+id/premiumCard"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="0dp"
+            android:layout_marginHorizontal="@dimen/profile_card_margin_horizontal"
+            app:cardBackgroundColor="@android:color/transparent"
+            app:cardCornerRadius="@dimen/profile_card_corner_radius"
+            app:cardElevation="@dimen/profile_card_elevation"
+            app:cardPreventCornerOverlap="false"
+            app:cardUseCompatPadding="false"
+            app:layout_constraintTop_toBottomOf="@id/profileHeader"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent">
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@drawable/premium_card_background"
+                android:minHeight="@dimen/profile_premium_card_height"
+                android:padding="@dimen/profile_card_padding">
+
+                <FrameLayout
+                    android:id="@+id/premiumIconContainer"
+                    android:layout_width="@dimen/profile_row_icon_container"
+                    android:layout_height="@dimen/profile_row_icon_container"
+                    android:background="@drawable/profile_premium_icon_background"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent">
+
+                    <ImageView
+                        android:layout_width="@dimen/profile_row_icon_size"
+                        android:layout_height="@dimen/profile_row_icon_size"
+                        android:layout_gravity="center"
+                        android:importantForAccessibility="no"
+                        android:src="@drawable/ic_crown" />
+                </FrameLayout>
+
+                <TextView
+                    android:id="@+id/premiumTitle"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="14dp"
+                    android:layout_marginEnd="12dp"
+                    android:fontFamily="sans-serif-medium"
+                    android:text="@string/profile_premium_title"
+                    android:textColor="@color/pdf_studio_dark_navy"
+                    android:textSize="@dimen/profile_card_title_text_size"
+                    android:textStyle="bold"
+                    app:layout_constraintEnd_toStartOf="@id/upgradeButton"
+                    app:layout_constraintStart_toEndOf="@id/premiumIconContainer"
+                    app:layout_constraintTop_toTopOf="@id/premiumIconContainer" />
+
+                <TextView
+                    android:id="@+id/premiumSubtitle"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="2dp"
+                    android:text="@string/profile_premium_subtitle"
+                    android:textColor="@color/pdf_studio_secondary_gray"
+                    android:textSize="@dimen/profile_card_subtitle_text_size"
+                    app:layout_constraintEnd_toEndOf="@id/premiumTitle"
+                    app:layout_constraintStart_toStartOf="@id/premiumTitle"
+                    app:layout_constraintTop_toBottomOf="@id/premiumTitle" />
+
+                <com.google.android.material.button.MaterialButton
+                    android:id="@+id/upgradeButton"
+                    android:layout_width="wrap_content"
+                    android:layout_height="0dp"
+                    android:minHeight="@dimen/profile_touch_target"
+                    android:minWidth="88dp"
+                    android:backgroundTint="@color/pdf_studio_primary_blue"
+                    android:insetTop="0dp"
+                    android:insetBottom="0dp"
+                    android:paddingHorizontal="16dp"
+                    android:text="@string/profile_upgrade_button"
+                    android:textAllCaps="false"
+                    android:textColor="@color/pdf_studio_white"
+                    android:textSize="@dimen/profile_button_text_size"
+                    app:cornerRadius="12dp"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintTop_toTopOf="parent" />
+            </androidx.constraintlayout.widget.ConstraintLayout>
+        </androidx.cardview.widget.CardView>
+
+        <!-- ============ PROFILE SETTINGS CARD ============ -->
+        <androidx.cardview.widget.CardView
+            android:id="@+id/settingsCard"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/profile_section_spacing"
+            android:layout_marginHorizontal="@dimen/profile_card_margin_horizontal"
+            app:cardBackgroundColor="@android:color/transparent"
+            app:cardCornerRadius="@dimen/profile_card_corner_radius"
+            app:cardElevation="@dimen/profile_card_elevation"
+            app:cardPreventCornerOverlap="false"
+            app:cardUseCompatPadding="false"
+            app:layout_constraintTop_toBottomOf="@id/premiumCard"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@drawable/profile_card_background"
+                android:orientation="vertical"
+                android:paddingHorizontal="@dimen/profile_card_padding">
+
+                <!-- Row: Personal Information -->
+                <LinearLayout
+                    android:id="@+id/profilePersonalInfo"
+                    android:layout_width="match_parent"
+                    android:layout_height="@dimen/profile_row_height"
+                    android:background="?attr/selectableItemBackground"
+                    android:clickable="true"
+                    android:focusable="true"
+                    android:gravity="center_vertical"
+                    android:orientation="horizontal">
+
+                    <FrameLayout
+                        android:layout_width="@dimen/profile_row_icon_container"
+                        android:layout_height="@dimen/profile_row_icon_container"
+                        android:background="@drawable/profile_icon_background">
+
+                        <ImageView
+                            android:layout_width="@dimen/profile_row_icon_size"
+                            android:layout_height="@dimen/profile_row_icon_size"
+                            android:layout_gravity="center"
+                            android:importantForAccessibility="no"
+                            android:src="@drawable/ic_person" />
+                    </FrameLayout>
+
+                    <TextView
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="14dp"
+                        android:layout_weight="1"
+                        android:text="@string/profile_personal_information"
+                        android:textColor="@color/pdf_studio_dark_navy"
+                        android:textSize="@dimen/profile_row_text_size" />
+
+                    <ImageView
+                        android:layout_width="20dp"
+                        android:layout_height="20dp"
+                        android:importantForAccessibility="no"
+                        android:src="@drawable/ic_chevron_right" />
+                </LinearLayout>
+
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_height="@dimen/profile_divider_height"
+                    android:background="@color/pdf_studio_divider" />
+
+                <!-- Row: Subscription -->
+                <LinearLayout
+                    android:id="@+id/profileSubscription"
+                    android:layout_width="match_parent"
+                    android:layout_height="@dimen/profile_row_height"
+                    android:background="?attr/selectableItemBackground"
+                    android:clickable="true"
+                    android:focusable="true"
+                    android:gravity="center_vertical"
+                    android:orientation="horizontal">
+
+                    <FrameLayout
+                        android:layout_width="@dimen/profile_row_icon_container"
+                        android:layout_height="@dimen/profile_row_icon_container"
+                        android:background="@drawable/profile_icon_background">
+
+                        <ImageView
+                            android:layout_width="@dimen/profile_row_icon_size"
+                            android:layout_height="@dimen/profile_row_icon_size"
+                            android:layout_gravity="center"
+                            android:importantForAccessibility="no"
+                            android:src="@drawable/ic_subscription" />
+                    </FrameLayout>
+
+                    <TextView
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="14dp"
+                        android:layout_weight="1"
+                        android:text="@string/profile_subscription"
+                        android:textColor="@color/pdf_studio_dark_navy"
+                        android:textSize="@dimen/profile_row_text_size" />
+
+                    <ImageView
+                        android:layout_width="20dp"
+                        android:layout_height="20dp"
+                        android:importantForAccessibility="no"
+                        android:src="@drawable/ic_chevron_right" />
+                </LinearLayout>
+
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_height="@dimen/profile_divider_height"
+                    android:background="@color/pdf_studio_divider" />
+
+                <!-- Row: Billing & Payments -->
+                <LinearLayout
+                    android:id="@+id/profileBilling"
+                    android:layout_width="match_parent"
+                    android:layout_height="@dimen/profile_row_height"
+                    android:background="?attr/selectableItemBackground"
+                    android:clickable="true"
+                    android:focusable="true"
+                    android:gravity="center_vertical"
+                    android:orientation="horizontal">
+
+                    <FrameLayout
+                        android:layout_width="@dimen/profile_row_icon_container"
+                        android:layout_height="@dimen/profile_row_icon_container"
+                        android:background="@drawable/profile_icon_background">
+
+                        <ImageView
+                            android:layout_width="@dimen/profile_row_icon_size"
+                            android:layout_height="@dimen/profile_row_icon_size"
+                            android:layout_gravity="center"
+                            android:importantForAccessibility="no"
+                            android:src="@drawable/ic_payment" />
+
+                    </FrameLayout>
+
+                    <TextView
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="14dp"
+                        android:layout_weight="1"
+                        android:text="@string/profile_billing_payments"
+                        android:textColor="@color/pdf_studio_dark_navy"
+                        android:textSize="@dimen/profile_row_text_size" />
+
+                    <ImageView
+                        android:layout_width="20dp"
+                        android:layout_height="20dp"
+                        android:importantForAccessibility="no"
+                        android:src="@drawable/ic_chevron_right" />
+                </LinearLayout>
+
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_height="@dimen/profile_divider_height"
+                    android:background="@color/pdf_studio_divider" />
+
+                <!-- Row: Security -->
+                <LinearLayout
+                    android:id="@+id/profileSecurity"
+                    android:layout_width="match_parent"
+                    android:layout_height="@dimen/profile_row_height"
+                    android:background="?attr/selectableItemBackground"
+                    android:clickable="true"
+                    android:focusable="true"
+                    android:gravity="center_vertical"
+                    android:orientation="horizontal">
+
+                    <FrameLayout
+                        android:layout_width="@dimen/profile_row_icon_container"
+                        android:layout_height="@dimen/profile_row_icon_container"
+                        android:background="@drawable/profile_icon_background">
+
+                        <ImageView
+                            android:layout_width="@dimen/profile_row_icon_size"
+                            android:layout_height="@dimen/profile_row_icon_size"
+                            android:layout_gravity="center"
+                            android:importantForAccessibility="no"
+                            android:src="@drawable/ic_security" />
+                    </FrameLayout>
+
+                    <TextView
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="14dp"
+                        android:layout_weight="1"
+                        android:text="@string/profile_security"
+                        android:textColor="@color/pdf_studio_dark_navy"
+                        android:textSize="@dimen/profile_row_text_size" />
+
+                    <ImageView
+                        android:layout_width="20dp"
+                        android:layout_height="20dp"
+                        android:importantForAccessibility="no"
+                        android:src="@drawable/ic_chevron_right" />
+                </LinearLayout>
+
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_height="@dimen/profile_divider_height"
+                    android:background="@color/pdf_studio_divider" />
+
+                <!-- Row: Notifications -->
+                <LinearLayout
+                    android:id="@+id/profileNotifications"
+                    android:layout_width="match_parent"
+                    android:layout_height="@dimen/profile_row_height"
+                    android:background="?attr/selectableItemBackground"
+                    android:clickable="true"
+                    android:focusable="true"
+                    android:gravity="center_vertical"
+                    android:orientation="horizontal">
+
+                    <FrameLayout
+                        android:layout_width="@dimen/profile_row_icon_container"
+                        android:layout_height="@dimen/profile_row_icon_container"
+                        android:background="@drawable/profile_icon_background">
+
+                        <ImageView
+                            android:layout_width="@dimen/profile_row_icon_size"
+                            android:layout_height="@dimen/profile_row_icon_size"
+                            android:layout_gravity="center"
+                            android:importantForAccessibility="no"
+                            android:src="@drawable/ic_notifications"
+                            app:tint="@color/pdf_studio_primary_blue" />
+                    </FrameLayout>
+
+                    <TextView
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="14dp"
+                        android:layout_weight="1"
+                        android:text="@string/profile_notifications"
+                        android:textColor="@color/pdf_studio_dark_navy"
+                        android:textSize="@dimen/profile_row_text_size" />
+
+                    <ImageView
+                        android:layout_width="20dp"
+                        android:layout_height="20dp"
+                        android:importantForAccessibility="no"
+                        android:src="@drawable/ic_chevron_right" />
+                </LinearLayout>
+
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_height="@dimen/profile_divider_height"
+                    android:background="@color/pdf_studio_divider" />
+
+                <!-- Row: App Settings -->
+                <LinearLayout
+                    android:id="@+id/profileAppSettings"
+                    android:layout_width="match_parent"
+                    android:layout_height="@dimen/profile_row_height"
+                    android:background="?attr/selectableItemBackground"
+                    android:clickable="true"
+                    android:focusable="true"
+                    android:gravity="center_vertical"
+                    android:orientation="horizontal">
+
+                    <FrameLayout
+                        android:layout_width="@dimen/profile_row_icon_container"
+                        android:layout_height="@dimen/profile_row_icon_container"
+                        android:background="@drawable/profile_icon_background">
+
+                        <ImageView
+                            android:layout_width="@dimen/profile_row_icon_size"
+                            android:layout_height="@dimen/profile_row_icon_size"
+                            android:layout_gravity="center"
+                            android:importantForAccessibility="no"
+                            android:src="@drawable/ic_settings" />
+                    </FrameLayout>
+
+                    <TextView
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="14dp"
+                        android:layout_weight="1"
+                        android:text="@string/profile_app_settings"
+                        android:textColor="@color/pdf_studio_dark_navy"
+                        android:textSize="@dimen/profile_row_text_size" />
+
+                    <ImageView
+                        android:layout_width="20dp"
+                        android:layout_height="20dp"
+                        android:importantForAccessibility="no"
+                        android:src="@drawable/ic_chevron_right" />
+                </LinearLayout>
+
+
+
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_height="@dimen/profile_divider_height"
+                    android:background="@color/pdf_studio_divider" />
+
+                <LinearLayout
+                    android:id="@+id/profileAppStorage"
+                    android:layout_width="match_parent"
+                    android:layout_height="@dimen/profile_row_height"
+                    android:background="?attr/selectableItemBackground"
+                    android:clickable="true"
+                    android:focusable="true"
+                    android:gravity="center_vertical"
+                    android:orientation="horizontal">
+
+                    <FrameLayout
+                        android:layout_width="@dimen/profile_row_icon_container"
+                        android:layout_height="@dimen/profile_row_icon_container"
+                        android:background="@drawable/profile_icon_background">
+
+                        <ImageView
+                            android:layout_width="@dimen/profile_row_icon_size"
+                            android:layout_height="@dimen/profile_row_icon_size"
+                            android:layout_gravity="center"
+                            android:importantForAccessibility="no"
+                            android:src="@drawable/cloud_ic" />
+                    </FrameLayout>
+
+                    <TextView
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="14dp"
+                        android:layout_weight="1"
+                        android:text="App Storage"
+                        android:textColor="@color/pdf_studio_dark_navy"
+                        android:textSize="@dimen/profile_row_text_size" />
+
+                    <ImageView
+                        android:layout_width="20dp"
+                        android:layout_height="20dp"
+                        android:importantForAccessibility="no"
+                        android:src="@drawable/ic_chevron_right" />
+                </LinearLayout>
+
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_height="@dimen/profile_divider_height"
+                    android:background="@color/pdf_studio_divider" />
+
+                <!-- Row: Help & Support -->
+                <LinearLayout
+                    android:id="@+id/profileHelpSupport"
+                    android:layout_width="match_parent"
+                    android:layout_height="@dimen/profile_row_height"
+                    android:background="?attr/selectableItemBackground"
+                    android:clickable="true"
+                    android:focusable="true"
+                    android:gravity="center_vertical"
+                    android:orientation="horizontal">
+
+                    <FrameLayout
+                        android:layout_width="@dimen/profile_row_icon_container"
+                        android:layout_height="@dimen/profile_row_icon_container"
+                        android:background="@drawable/profile_icon_background">
+
+                        <ImageView
+                            android:layout_width="@dimen/profile_row_icon_size"
+                            android:layout_height="@dimen/profile_row_icon_size"
+                            android:layout_gravity="center"
+                            android:importantForAccessibility="no"
+                            android:src="@drawable/ic_help" />
+                    </FrameLayout>
+
+                    <TextView
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="14dp"
+                        android:layout_weight="1"
+                        android:text="@string/profile_help_support"
+                        android:textColor="@color/pdf_studio_dark_navy"
+                        android:textSize="@dimen/profile_row_text_size" />
+
+                    <ImageView
+                        android:layout_width="20dp"
+                        android:layout_height="20dp"
+                        android:importantForAccessibility="no"
+                        android:src="@drawable/ic_chevron_right" />
+                </LinearLayout>
+
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_height="@dimen/profile_divider_height"
+                    android:background="@color/pdf_studio_divider" />
+
+                <!-- Row: About PDF Studio -->
+                <LinearLayout
+                    android:id="@+id/profileAbout"
+                    android:layout_width="match_parent"
+                    android:layout_height="@dimen/profile_row_height"
+                    android:background="?attr/selectableItemBackground"
+                    android:clickable="true"
+                    android:focusable="true"
+                    android:gravity="center_vertical"
+                    android:orientation="horizontal">
+
+                    <FrameLayout
+                        android:layout_width="@dimen/profile_row_icon_container"
+                        android:layout_height="@dimen/profile_row_icon_container"
+                        android:background="@drawable/profile_icon_background">
+
+                        <ImageView
+                            android:layout_width="@dimen/profile_row_icon_size"
+                            android:layout_height="@dimen/profile_row_icon_size"
+                            android:layout_gravity="center"
+                            android:importantForAccessibility="no"
+                            android:src="@drawable/ic_info" />
+                    </FrameLayout>
+
+                    <TextView
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="14dp"
+                        android:layout_weight="1"
+                        android:text="@string/profile_about"
+                        android:textColor="@color/pdf_studio_dark_navy"
+                        android:textSize="@dimen/profile_row_text_size" />
+
+                    <ImageView
+                        android:layout_width="20dp"
+                        android:layout_height="20dp"
+                        android:importantForAccessibility="no"
+                        android:src="@drawable/ic_chevron_right" />
+                </LinearLayout>
+            </LinearLayout>
+        </androidx.cardview.widget.CardView>
+
+        <!-- ============ LOGOUT ============ -->
+        <androidx.cardview.widget.CardView
+            android:id="@+id/logoutCard"
+            android:layout_width="0dp"
+            android:layout_height="@dimen/profile_logout_height"
+            android:layout_marginTop="@dimen/profile_section_spacing"
+            android:layout_marginHorizontal="@dimen/profile_card_margin_horizontal"
+            android:layout_marginBottom="@dimen/profile_content_bottom_padding"
+            app:cardBackgroundColor="@android:color/transparent"
+            app:cardCornerRadius="@dimen/profile_card_corner_radius"
+            app:cardElevation="@dimen/profile_card_elevation"
+            app:cardPreventCornerOverlap="false"
+            app:cardUseCompatPadding="false"
+            app:layout_constraintTop_toBottomOf="@id/settingsCard"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintBottom_toBottomOf="parent">
+
+            <LinearLayout
+                android:id="@+id/logoutButton"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:background="@drawable/logout_button_background"
+                android:clickable="true"
+                android:focusable="true"
+                android:foreground="?attr/selectableItemBackground"
+                android:gravity="center"
+                android:orientation="horizontal">
+
+                <ImageView
+                    android:layout_width="20dp"
+                    android:layout_height="20dp"
+                    android:importantForAccessibility="no"
+                    android:src="@drawable/ic_logout" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="10dp"
+                    android:fontFamily="sans-serif-medium"
+                    android:text="@string/profile_logout"
+                    android:textColor="@color/pdf_studio_logout_red"
+                    android:textSize="@dimen/profile_logout_text_size"
+                    android:textStyle="bold" />
+            </LinearLayout>
+        </androidx.cardview.widget.CardView>
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+</androidx.core.widget.NestedScrollView>

@@ -1,0 +1,263 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/white">
+
+
+    <include
+        layout="@layout/rotated_toolbar_btn"
+        android:id="@+id/toolbar_rot_btns" />
+
+
+    <ImageView
+        android:id="@+id/no_rotate_pdf"
+        android:layout_height="wrap_content"
+        android:scaleType="fitStart"
+        android:maxHeight="350dp"
+        android:layout_width="match_parent"
+        android:layout_marginLeft="-5dp"
+        android:src="@drawable/no_rotate_pdf"
+        app:layout_constraintTop_toBottomOf="@id/toolbar_rot_btns"
+        />
+
+<!--    <com.google.android.material.card.MaterialCardView-->
+<!--        android:id="@+id/pdf_preview"-->
+<!--        android:visibility="gone"-->
+<!--        android:layout_margin="16dp"-->
+<!--        android:layout_width="0dp"-->
+<!--        android:layout_height="wrap_content"-->
+<!--        app:layout_constraintTop_toBottomOf="@id/toolbar_rot_btns"-->
+<!--        app:layout_constraintStart_toStartOf="parent"-->
+<!--        app:layout_constraintEnd_toEndOf="parent"-->
+<!--        app:cardElevation="6dp"-->
+<!--        app:cardBackgroundColor="@color/white"-->
+<!--        app:strokeWidth="0dp"-->
+<!--        app:cardCornerRadius="12dp">-->
+
+<!--        <androidx.constraintlayout.widget.ConstraintLayout-->
+<!--            android:layout_width="match_parent"-->
+<!--            android:layout_height="wrap_content"-->
+<!--            android:padding="12dp">-->
+
+<!--            <ImageView-->
+<!--                android:id="@+id/imageView7"-->
+<!--                android:layout_width="48dp"-->
+<!--                android:layout_height="48dp"-->
+<!--                android:contentDescription="pdf icon"-->
+<!--                app:srcCompat="@drawable/pdf_icon_adjusted"-->
+<!--                app:layout_constraintStart_toStartOf="parent"-->
+<!--                app:layout_constraintTop_toTopOf="parent"-->
+<!--                app:layout_constraintBottom_toBottomOf="parent"/>-->
+
+
+
+<!--            <LinearLayout-->
+<!--                android:id="@+id/text_block"-->
+<!--                android:layout_width="0dp"-->
+<!--                android:layout_height="wrap_content"-->
+<!--                android:orientation="vertical"-->
+<!--                android:layout_marginStart="12dp"-->
+<!--                app:layout_constraintStart_toEndOf="@id/imageView7"-->
+<!--                app:layout_constraintEnd_toStartOf="@id/change_pdf"-->
+<!--                app:layout_constraintTop_toTopOf="parent"-->
+<!--                app:layout_constraintBottom_toBottomOf="parent">-->
+
+
+<!--                <TextView-->
+<!--                    android:id="@+id/PDFName"-->
+<!--                    android:layout_width="wrap_content"-->
+<!--                    android:layout_height="wrap_content"-->
+<!--                    android:text="hello.pdf"-->
+<!--                    android:textColor="@color/black"-->
+<!--                    android:textStyle="bold"-->
+<!--                    android:textSize="16sp"-->
+<!--                    android:maxLines="1"-->
+<!--                    android:ellipsize="end"/>-->
+
+
+<!--                <LinearLayout-->
+<!--                    android:layout_width="wrap_content"-->
+<!--                    android:layout_height="wrap_content"-->
+<!--                    android:orientation="horizontal"-->
+<!--                    android:layout_marginTop="4dp"-->
+<!--                    android:alpha="0.7">-->
+
+<!--                    <TextView-->
+<!--                        android:id="@+id/PDFPages"-->
+<!--                        android:layout_width="wrap_content"-->
+<!--                        android:layout_height="wrap_content"-->
+<!--                        android:text="8 Pages"-->
+<!--                        android:textColor="@color/black"-->
+<!--                        android:textSize="12sp"/>-->
+
+<!--                    <View-->
+<!--                        android:layout_width="16dp"-->
+<!--                        android:layout_height="16dp"-->
+<!--                        android:layout_marginHorizontal="6dp"-->
+<!--                        android:background="@drawable/fullstop"-->
+<!--                        android:layout_gravity="center"/>-->
+
+<!--                    <TextView-->
+<!--                        android:id="@+id/PDFSize"-->
+<!--                        android:layout_width="wrap_content"-->
+<!--                        android:layout_height="wrap_content"-->
+<!--                        android:text="2.45 MB"-->
+<!--                        android:textColor="@color/black"-->
+<!--                        android:textSize="12sp"/>-->
+<!--                </LinearLayout>-->
+
+<!--            </LinearLayout>-->
+
+
+
+<!--            <TextView-->
+<!--                android:id="@+id/change_pdf"-->
+<!--                android:layout_width="wrap_content"-->
+<!--                android:layout_height="wrap_content"-->
+<!--                android:background="@drawable/btn_bg_rotp"-->
+<!--                android:paddingHorizontal="14dp"-->
+<!--                android:paddingVertical="8dp"-->
+<!--                android:text="@string/change"-->
+<!--                android:textColor="#4A1F8C"-->
+<!--                android:textSize="14sp"-->
+<!--                android:textStyle="bold"-->
+<!--                app:layout_constraintEnd_toEndOf="parent"-->
+<!--                app:layout_constraintTop_toTopOf="parent"-->
+<!--                app:layout_constraintBottom_toBottomOf="parent"/>-->
+
+<!--        </androidx.constraintlayout.widget.ConstraintLayout>-->
+
+<!--    </com.google.android.material.card.MaterialCardView>-->
+    <include
+        android:id="@+id/pdf_preview"
+        layout="@layout/rotate_pdf_item_pdf"
+        android:visibility="gone"
+        android:layout_margin="16dp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:layout_constraintTop_toBottomOf="@id/toolbar_rot_btns"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        />
+
+
+
+    <include
+        android:visibility="gone"
+        layout="@layout/rotated_pdf_recyclerview_co"
+        android:id="@+id/recyler_view"
+        android:layout_height="0dp"
+        android:layout_width="match_parent"
+        android:layout_margin="@dimen/margin_20dp"
+        app:layout_constraintTop_toBottomOf="@id/pdf_preview"
+        app:layout_constraintBottom_toTopOf="@id/tip_rotated"
+        />
+
+
+
+
+    <LinearLayout
+        android:id="@+id/tip_rotated"
+        android:layout_width="match_parent"
+        android:layout_marginLeft="@dimen/margin_20dp"
+        android:layout_marginRight="@dimen/margin_20dp"
+        android:layout_marginTop="0dp"
+        android:layout_marginBottom="@dimen/margin_12dp"
+        android:layout_height="wrap_content"
+        android:padding="@dimen/margin_10dp"
+        android:background="@drawable/tip_layout_bg_rotp"
+        app:layout_constraintBottom_toTopOf="@+id/rotate_pdf_layout">
+
+        <ImageView
+            android:id="@+id/imageView9"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:srcCompat="@drawable/info_icon_purple_nobg" />
+
+        <TextView
+            android:id="@+id/info_text"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="@dimen/margin_60dp"
+            android:layout_marginStart="@dimen/margin_8dp"
+            android:textColor="@color/black"
+            android:alpha="0.7"
+            android:maxLines="4"
+            android:textSize="@dimen/margin_10dp"
+            android:ellipsize="end"
+            android:text="The PDF Pages will be rotated by 90°. Rotating a PDF does not change the page sequence—only the page direction." />
+
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/rotate_pdf_layout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="@dimen/margin_20dp"
+        android:orientation="horizontal"
+        android:gravity="center"
+        android:padding="@dimen/margin_5dp"
+        android:background="@drawable/rotate_btn_bg_rotp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        >
+
+        <ImageView
+            android:id="@+id/generate_pdf_icon"
+            android:layout_width="@dimen/margin_50dp"
+            android:layout_height="@dimen/margin_50dp"
+            app:srcCompat="@drawable/rotate_pdf_bg_less" />
+
+        <TextView
+            android:id="@+id/generatePDF_text"
+            android:layout_marginStart="@dimen/margin_10dp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textColor="@color/white"
+            android:textSize="@dimen/margin_18dp"
+            android:textStyle="bold"
+            android:text="@string/rotatePDF" />
+
+    </LinearLayout>
+
+    <FrameLayout
+        android:id="@+id/progress_indicator_rotate_pdf"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="#80000000"
+        android:visibility="gone"
+        android:clickable="true"
+        android:focusable="true">
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:orientation="vertical"
+            android:gravity="center">
+
+            <com.google.android.material.progressindicator.CircularProgressIndicator
+                android:layout_width="70dp"
+                android:layout_height="70dp"
+                app:trackColor="@color/white"
+                app:indicatorColor="@color/black"
+                android:indeterminate="true"/>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/loading_preview"
+                android:textColor="@android:color/white"
+                android:textSize="18sp"
+                android:layout_marginTop="12dp"/>
+
+        </LinearLayout>
+
+
+
+    </FrameLayout>
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>

@@ -1,0 +1,100 @@
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="vertical"
+    android:gravity="center"
+    android:padding="24dp">
+
+    <!-- 1. Rotating ring spinner -->
+    <ImageView
+        android:id="@+id/loaderRing"
+        android:layout_width="40dp"
+        android:layout_height="40dp"
+        android:src="@drawable/loader_ring_animated"
+        android:contentDescription="@string/loading" />
+
+    <Space android:layout_width="match_parent" android:layout_height="24dp" />
+
+    <!-- 2. Page flip -->
+    <ImageView
+        android:id="@+id/loaderPage"
+        android:layout_width="40dp"
+        android:layout_height="40dp"
+        android:src="@drawable/loader_page_animated"
+        android:contentDescription="Loading" />
+
+    <Space android:layout_width="match_parent" android:layout_height="24dp" />
+
+    <!-- 3. Determinate export progress -->
+    <ProgressBar
+        android:id="@+id/exportProgress"
+        style="?android:attr/progressBarStyleHorizontal"
+        android:layout_width="200dp"
+        android:layout_height="8dp"
+        android:progressDrawable="@drawable/loader_progress_bar"
+        android:max="100"
+        android:progress="45" />
+
+    <Space android:layout_width="match_parent" android:layout_height="24dp" />
+
+    <!-- 4. Three pulsing dots -->
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:gravity="center">
+
+        <View
+            android:id="@+id/dot1"
+            android:layout_width="8dp"
+            android:layout_height="8dp"
+            android:layout_marginEnd="6dp"
+            android:background="@drawable/loader_dot" />
+
+        <View
+            android:id="@+id/dot2"
+            android:layout_width="8dp"
+            android:layout_height="8dp"
+            android:layout_marginEnd="6dp"
+            android:background="@drawable/loader_dot" />
+
+        <View
+            android:id="@+id/dot3"
+            android:layout_width="8dp"
+            android:layout_height="8dp"
+            android:background="@drawable/loader_dot" />
+
+    </LinearLayout>
+
+    <Space android:layout_width="match_parent" android:layout_height="24dp" />
+
+    <!-- 5. Three-page stack, staggered bounce -->
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:gravity="center">
+
+        <View
+            android:id="@+id/page1"
+            android:layout_width="14dp"
+            android:layout_height="18dp"
+            android:layout_marginEnd="6dp"
+            android:background="@drawable/loader_page_stack_rect" />
+
+        <View
+            android:id="@+id/page2"
+            android:layout_width="14dp"
+            android:layout_height="18dp"
+            android:layout_marginEnd="6dp"
+            android:background="@drawable/loader_page_stack_rect" />
+
+        <View
+            android:id="@+id/page3"
+            android:layout_width="14dp"
+            android:layout_height="18dp"
+            android:background="@drawable/loader_page_stack_rect" />
+
+    </LinearLayout>
+
+</LinearLayout>

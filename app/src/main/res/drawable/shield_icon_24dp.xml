@@ -1,0 +1,45 @@
+<vector xmlns:android="http://schemas.android.com/apk/res/android"
+    android:width="24dp"
+    android:height="24dp"
+    android:viewportWidth="24"
+    android:viewportHeight="24">
+
+    <!-- Light grey circle background -->
+    <path
+        android:fillColor="#E0E3E8"
+        android:pathData="M12,1 A11,11 0 1,1 11.999,1 Z"/>
+
+    <!-- Shield outer body -->
+    <path
+        android:fillColor="#4A5568"
+        android:pathData="M12,4.5 L18.5,7 L18.5,13 Q18.5,18 12,20.5 Q5.5,18 5.5,13 L5.5,7 Z"/>
+
+    <!-- Left darker half -->
+    <path
+        android:fillColor="#3A4455"
+        android:pathData="M12,4.5 L12,20.5 Q5.5,18 5.5,13 L5.5,7 Z"/>
+
+    <!-- Horizontal divider -->
+    <path
+        android:fillColor="#2D3748"
+        android:pathData="M5.5,12.5 L18.5,12.5 L18.5,14 L5.5,14 Z"/>
+
+    <!-- Notch outer -->
+    <path
+        android:fillColor="#3A4455"
+        android:pathData="M10.5,11.5 L13.5,11.5 L13.5,15 L10.5,15 Z"/>
+
+    <!-- Notch inner -->
+    <path
+        android:fillColor="#4A5568"
+        android:pathData="M11,12.2 L13,12.2 L13,14.3 L11,14.3 Z"/>
+
+    <!-- Inner highlight border -->
+    <path
+        android:fillColor="#00000000"
+        android:strokeColor="#FFFFFF"
+        android:strokeWidth="0.3"
+        android:strokeAlpha="0.2"
+        android:pathData="M12,5.2 L18,7.5 L18,13 Q18,17.5 12,19.8 Q6,17.5 6,13 L6,7.5 Z"/>
+
+</vector>

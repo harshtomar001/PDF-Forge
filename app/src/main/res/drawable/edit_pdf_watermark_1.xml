@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8"?>
+<vector xmlns:android="http://schemas.android.com/apk/res/android"
+    android:width="48dp"
+    android:height="48dp"
+    android:viewportWidth="48"
+    android:viewportHeight="48">
+
+    <!-- Drop shape body -->
+    <path
+        android:fillColor="#5C6BC0"
+        android:pathData="M24,6 Q24,6 14,22 Q10,28 10,32 A14,14 0 0,0 38,32 Q38,28 34,22 Z"/>
+
+    <!-- Drop inner highlight (top-left shine) -->
+    <path
+        android:fillColor="#9FA8DA"
+        android:pathData="M24,10 Q20,18 16,26 Q14,29 14,32 A4,4 0 0,0 18,32 Q18,28 21,23 Q23,18 24,10 Z"/>
+
+    <!-- Drop shine dot (small) -->
+    <path
+        android:fillColor="#E8EAF6"
+        android:pathData="M18,28 m-2,0 a2,2 0 1,0 4,0 a2,2 0 1,0 -4,0"/>
+
+</vector>

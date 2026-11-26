@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <dimen name="export_sheet_max_width">480dp</dimen>
+    <dimen name="export_sheet_side_margin">24dp</dimen>
+    <dimen name="export_title_size">26sp</dimen>
+    <dimen name="export_option_card_height">92dp</dimen>
+</resources>

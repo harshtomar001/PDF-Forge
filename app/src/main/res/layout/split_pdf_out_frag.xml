@@ -1,0 +1,493 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#FFFFFF">
+
+
+    <include
+        android:id="@+id/split_pdf_out_toolbar"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        layout="@layout/split_pdf_toolbar"
+        />
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:fillViewport="true"
+        app:layout_constraintTop_toBottomOf="@id/split_pdf_out_toolbar"
+        app:layout_constraintBottom_toBottomOf="parent">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:padding="20dp">
+
+            <!-- Success Icon Circle -->
+            <FrameLayout
+                android:id="@+id/successIconLayout"
+                android:layout_width="120dp"
+                android:layout_height="120dp"
+                android:background="@drawable/bg_success_circle"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintEnd_toEndOf="parent">
+
+                <ImageView
+                    android:layout_width="70dp"
+                    android:layout_height="70dp"
+                    android:layout_gravity="center"
+                    android:src="@drawable/ic_success_focus" />
+
+            </FrameLayout>
+
+            <TextView
+                android:id="@+id/successTitle"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="PDF split successfully!"
+                android:textColor="#111111"
+                android:textSize="24sp"
+                android:textStyle="bold"
+                android:layout_marginTop="18dp"
+                app:layout_constraintTop_toBottomOf="@id/successIconLayout"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintEnd_toEndOf="parent" />
+
+            <TextView
+                android:id="@+id/successSubTitle"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:text="Your PDF has been split and saved."
+                android:textColor="#6B7280"
+                android:textSize="15sp"
+                android:gravity="center"
+                android:layout_marginTop="8dp"
+                app:layout_constraintTop_toBottomOf="@id/successTitle"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintEnd_toEndOf="parent" />
+
+            <TextView
+                android:id="@+id/generatedChip"
+                android:layout_width="wrap_content"
+                android:layout_height="36dp"
+                android:text="  1 file generated  "
+                android:textColor="#111111"
+                android:textStyle="bold"
+                android:visibility="gone"
+                android:textSize="14sp"
+                android:gravity="center"
+                android:drawableStart="@drawable/pdf_page_ic"
+                android:drawableTint="#4CAF50"
+                android:paddingStart="@dimen/margin_8dp"
+                android:paddingEnd="@dimen/margin_8dp"
+                android:drawablePadding="8dp"
+                android:background="@drawable/bg_generatedd_chip"
+                android:layout_marginTop="16dp"
+                app:layout_constraintTop_toBottomOf="@id/successSubTitle"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintEnd_toEndOf="parent" />
+
+
+            <com.google.android.material.card.MaterialCardView
+                android:id="@+id/generatedPdfCard"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="26dp"
+                app:cardCornerRadius="22dp"
+                app:cardElevation="4dp"
+                app:cardBackgroundColor="#FFFFFF"
+                app:layout_constraintTop_toBottomOf="@id/generatedChip"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintEnd_toEndOf="parent">
+
+                <androidx.constraintlayout.widget.ConstraintLayout
+
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:padding="22dp">
+
+                    <ImageView
+                        android:id="@+id/pdfIcon"
+                        android:layout_width="54dp"
+                        android:layout_height="54dp"
+                        android:src="@drawable/ic_pdf_file"
+                        app:layout_constraintTop_toTopOf="parent"
+                        app:layout_constraintStart_toStartOf="parent" />
+
+                    <TextView
+                        android:id="@+id/generatedPdfName"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:text="Project_Proposal_1-10.pdf"
+                        android:textColor="#111111"
+                        android:textSize="16dp"
+                        android:textStyle="bold"
+                        android:maxLines="1"
+                        android:ellipsize="end"
+                        android:layout_marginStart="16dp"
+                        app:layout_constraintTop_toTopOf="@id/pdfIcon"
+                        app:layout_constraintStart_toEndOf="@id/pdfIcon"
+                        app:layout_constraintEnd_toStartOf="@id/cardArrow" />
+
+                    <TextView
+                        android:id="@+id/sourcePdfName"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:text="Split from: Project_Proposal.pdf"
+                        android:textColor="#6B7280"
+                        android:textSize="14dp"
+                        android:maxLines="1"
+                        android:ellipsize="end"
+                        android:layout_marginTop="8dp"
+                        app:layout_constraintTop_toBottomOf="@id/generatedPdfName"
+                        app:layout_constraintStart_toStartOf="@id/generatedPdfName"
+                        app:layout_constraintEnd_toEndOf="@id/generatedPdfName" />
+
+                    <ImageView
+                        android:id="@+id/cardArrow"
+                        android:layout_width="42dp"
+                        android:layout_height="42dp"
+                        android:padding="10dp"
+                        android:background="@drawable/bg_circle_light"
+                        android:src="@drawable/right_arrow"
+                        app:tint="#555555"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintTop_toTopOf="@id/pdfIcon"
+                        app:layout_constraintBottom_toBottomOf="@id/pdfIcon" />
+
+                    <View
+                        android:id="@+id/divider1"
+                        android:layout_width="0dp"
+                        android:layout_height="1dp"
+                        android:background="#EEEEEE"
+                        android:layout_marginTop="22dp"
+                        app:layout_constraintTop_toBottomOf="@id/pdfIcon"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintEnd_toEndOf="parent" />
+
+
+                    <ImageView
+                        android:id="@+id/page_icon"
+                        android:layout_width="@dimen/margin_25dp"
+                        android:layout_height="@dimen/margin_25dp"
+                        android:tint="#4CAF50"
+                        android:src="@drawable/pdf_page_ic"
+                        app:layout_constraintTop_toTopOf="@+id/pagesLabel"
+                        app:layout_constraintBottom_toBottomOf="@+id/pagesLabel"
+                        app:layout_constraintStart_toStartOf="parent"
+                        />
+
+                    <TextView
+                        android:id="@+id/pagesLabel"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Pages"
+                        android:textColor="#6B7280"
+                        android:textSize="15dp"
+                        android:layout_marginTop="18dp"
+                        android:layout_marginStart="2dp"
+                        app:layout_constraintTop_toBottomOf="@id/divider1"
+                        app:layout_constraintStart_toEndOf="@+id/page_icon"
+                         />
+
+                    <TextView
+                        android:id="@+id/pagesValue"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="1 – 10"
+                        android:textColor="#111111"
+                        android:textStyle="bold"
+                        android:textSize="15dp"
+                        android:layout_marginStart="@dimen/margin_12dp"
+                        app:layout_constraintBaseline_toBaselineOf="@id/pagesLabel"
+                        app:layout_constraintStart_toStartOf="@id/valueGuide" />
+
+                    <ImageView
+                        android:id="@+id/page_icon_1"
+                        android:layout_width="@dimen/margin_25dp"
+                        android:layout_height="@dimen/margin_25dp"
+                        android:tint="#7B1FA2"
+                        android:src="@drawable/pdf_page_ic"
+                        app:layout_constraintTop_toTopOf="@+id/totalPagesLabel"
+                        app:layout_constraintBottom_toBottomOf="@+id/totalPagesLabel"
+                        app:layout_constraintStart_toStartOf="parent"
+                        />
+
+                    <TextView
+                        android:id="@+id/totalPagesLabel"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Total Pages"
+                        android:textColor="#6B7280"
+                        android:textSize="15sp"
+                        android:layout_marginStart="3dp"
+                        android:layout_marginTop="18dp"
+                        app:layout_constraintTop_toBottomOf="@id/pagesLabel"
+                        app:layout_constraintStart_toEndOf="@id/page_icon_1" />
+
+                    <TextView
+                        android:id="@+id/totalPagesValue"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="10 pages"
+                        android:textColor="#111111"
+                        android:textStyle="bold"
+                        android:textSize="15dp"
+                        android:layout_marginStart="@dimen/margin_12dp"
+                        app:layout_constraintBaseline_toBaselineOf="@id/totalPagesLabel"
+                        app:layout_constraintStart_toStartOf="@id/valueGuide" />
+
+                    <ImageView
+                        android:id="@+id/download_icon"
+                        android:layout_width="@dimen/margin_25dp"
+                        android:layout_height="@dimen/margin_25dp"
+                        android:tint="#2f7bf5"
+                        android:src="@drawable/download_icon"
+                        app:layout_constraintTop_toTopOf="@+id/fileSizeLabel"
+                        app:layout_constraintBottom_toBottomOf="@+id/fileSizeLabel"
+                        app:layout_constraintStart_toStartOf="parent"
+                        />
+
+                    <TextView
+                        android:id="@+id/fileSizeLabel"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="File Size"
+                        android:textColor="#6B7280"
+                        android:textSize="15dp"
+                        android:layout_marginTop="18dp"
+                        android:layout_marginStart="@dimen/margin_5dp"
+                        app:layout_constraintTop_toBottomOf="@id/totalPagesLabel"
+                        app:layout_constraintStart_toEndOf="@id/download_icon" />
+
+                    <TextView
+                        android:id="@+id/fileSizeValue"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="14.2 MB"
+                        android:textColor="#111111"
+                        android:textStyle="bold"
+                        android:textSize="15dp"
+                        android:layout_marginStart="@dimen/margin_12dp"
+                        app:layout_constraintBaseline_toBaselineOf="@id/fileSizeLabel"
+                        app:layout_constraintStart_toStartOf="@id/valueGuide" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Tap To Preview"
+                        android:background="@drawable/tap_to_preview_bg"
+                        android:paddingStart="@dimen/margin_10dp"
+                        android:paddingEnd="@dimen/margin_10dp"
+                        android:paddingTop="@dimen/margin_5dp"
+                        android:paddingBottom="@dimen/margin_5dp"
+                        android:textColor="#419c62"
+                        android:textStyle="bold"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintBottom_toBottomOf="parent"
+                        app:layout_constraintTop_toBottomOf="@+id/fileSizeLabel"
+                        android:layout_marginTop="@dimen/margin_12dp"
+                        />
+
+                    <androidx.constraintlayout.widget.Guideline
+                        android:id="@+id/valueGuide"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:orientation="vertical"
+                        app:layout_constraintGuide_percent="0.5" />
+
+                </androidx.constraintlayout.widget.ConstraintLayout>
+
+            </com.google.android.material.card.MaterialCardView>
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+
+                android:id="@+id/multiplesSplitPdfCard"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:visibility="gone"
+                app:layout_constraintTop_toBottomOf="@+id/successSubTitle"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                android:layout_marginTop="@dimen/margin_20dp">
+
+                <TextView
+                    android:id="@+id/totalGeneratedFiles"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent"
+                    android:textStyle="bold"
+
+                    android:textColor="@color/black"
+                    android:textSize="@dimen/margin_15dp"
+                    android:text="Generated Files (10)"
+                    />
+
+                <TextView
+                    android:id="@+id/selectAll_Text"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textColor="@color/pink_split_pdf"
+                    android:textStyle="bold"
+                    android:textSize="@dimen/margin_12dp"
+
+                    android:text="Select All"
+                    android:layout_marginEnd="@dimen/margin_8dp"
+                    app:layout_constraintEnd_toStartOf="@+id/selectAll_checkBox"
+                    app:layout_constraintTop_toTopOf="@id/selectAll_checkBox"
+                    app:layout_constraintBottom_toBottomOf="@id/selectAll_checkBox"
+                    />
+
+                <CheckBox
+                    android:id="@+id/selectAll_checkBox"
+                    android:layout_height="@dimen/margin_20dp"
+                    android:layout_width="@dimen/margin_20dp"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    android:layout_marginStart="@dimen/margin_5dp"
+                    />
+
+                <androidx.recyclerview.widget.RecyclerView
+                    android:id="@+id/recyclerViewSplitPDF"
+                    android:layout_width="0dp"
+                    android:background="@drawable/recyclerview_bg"
+                    android:layout_height="350dp"
+                    android:layout_marginTop="@dimen/margin_12dp"
+                    android:layout_marginBottom="@dimen/margin_18dp"
+                    android:paddingTop="@dimen/margin_12dp"
+                    android:paddingBottom="@dimen/margin_12dp"
+                    app:layout_constraintTop_toBottomOf="@id/totalGeneratedFiles"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"/>
+
+
+
+
+
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+            <LinearLayout
+                android:id="@+id/layout_btns_mul_split_pdfs"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:visibility="gone"
+                android:gravity="center"
+                android:layout_marginTop="@dimen/margin_12dp"
+                app:layout_constraintTop_toBottomOf="@id/multiplesSplitPdfCard"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintVertical_bias="0.5"
+                app:layout_constraintBottom_toTopOf="@+id/backHomeBtn">
+
+                <com.google.android.material.button.MaterialButton
+                    android:id="@+id/downloadPdfBtn_mul_split"
+                    android:layout_width="0dp"
+                    android:layout_height="62dp"
+                    android:layout_weight="1"
+                    android:layout_marginEnd="8dp"
+                    android:text="Download All (13.4 MB)"
+                    android:textColor="@android:color/white"
+                    android:textSize="15sp"
+                    android:textStyle="bold"
+                    android:maxLines="1"
+                    android:ellipsize="end"
+                    app:icon="@drawable/download_icon"
+                    app:iconSize="@dimen/margin_25dp"
+                    app:iconTint="@android:color/white"
+                    app:iconGravity="textStart"
+                    app:cornerRadius="12dp"
+                    app:backgroundTint="#20C45A" />
+
+                <com.google.android.material.button.MaterialButton
+                    android:id="@+id/sharePdfBtn_mul_split"
+                    android:layout_width="0dp"
+                    android:layout_height="62dp"
+                    android:layout_weight="1"
+                    android:layout_marginStart="8dp"
+                    android:text="Share All"
+                    android:textColor="@android:color/white"
+                    android:textSize="15sp"
+                    android:textStyle="bold"
+                    android:maxLines="1"
+                    android:ellipsize="end"
+                    android:paddingStart="@dimen/margin_5dp"
+                    android:paddingEnd="@dimen/margin_5dp"
+                    app:icon="@drawable/share_icon_updated"
+                    app:iconSize="@dimen/margin_25dp"
+                    app:iconTint="@android:color/white"
+                    app:iconGravity="textStart"
+                    app:cornerRadius="12dp"
+                    app:backgroundTint="#1687F2" />
+
+            </LinearLayout>
+
+
+            <com.google.android.material.button.MaterialButton
+                android:id="@+id/downloadPdfBtn"
+                android:layout_width="match_parent"
+                android:visibility="gone"
+                android:layout_height="62dp"
+                android:layout_marginTop="28dp"
+                android:text="Download PDF"
+                android:textColor="@android:color/white"
+                android:textSize="18sp"
+                android:textStyle="bold"
+                app:icon="@drawable/download_icon"
+                app:iconSize="@dimen/margin_30dp"
+                app:iconTint="@android:color/white"
+                app:iconGravity="textStart"
+                app:cornerRadius="18dp"
+                app:backgroundTint="#20C45A"
+                app:layout_constraintTop_toBottomOf="@id/generatedPdfCard" />
+
+            <com.google.android.material.button.MaterialButton
+                android:id="@+id/sharePdfBtn"
+                android:layout_width="match_parent"
+                android:layout_height="62dp"
+                android:layout_marginTop="14dp"
+                android:visibility="gone"
+                android:text="Share PDF"
+                android:textColor="@android:color/white"
+                android:textSize="18sp"
+                android:textStyle="bold"
+                app:icon="@drawable/share_icon_updated"
+                app:iconSize="@dimen/margin_30dp"
+                app:iconTint="@android:color/white"
+                app:iconGravity="textStart"
+                app:cornerRadius="18dp"
+                app:backgroundTint="#1687F2"
+                app:layout_constraintTop_toBottomOf="@id/downloadPdfBtn" />
+
+            <com.google.android.material.button.MaterialButton
+                android:id="@+id/backHomeBtn"
+                android:layout_width="match_parent"
+                android:layout_height="62dp"
+                android:layout_marginTop="14dp"
+                android:layout_marginBottom="24dp"
+                android:text="Back to Home"
+                android:textColor="#D84072"
+                android:textSize="18sp"
+                android:textStyle="bold"
+                app:icon="@drawable/ic_home"
+                app:iconTint="#D84072"
+                app:iconGravity="textStart"
+                app:strokeColor="#D84072"
+                app:strokeWidth="1dp"
+                app:cornerRadius="18dp"
+                app:backgroundTint="@android:color/white"
+                app:layout_constraintVertical_bias="1"
+                app:layout_constraintTop_toBottomOf="@id/sharePdfBtn"
+                app:layout_constraintBottom_toBottomOf="parent" />
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+    </ScrollView>
+
+</androidx.constraintlayout.widget.ConstraintLayout>

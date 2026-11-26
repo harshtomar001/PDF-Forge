@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="utf-8"?>
+<vector xmlns:android="http://schemas.android.com/apk/res/android"
+    android:width="24dp"
+    android:height="24dp"
+    android:viewportWidth="24"
+    android:viewportHeight="24">
+
+    <group
+        android:scaleX="1"
+        android:pivotX="12"
+        android:pivotY="12">
+
+        <!-- Pencil body -->
+        <path
+            android:fillColor="#9E9E9E"
+            android:pathData="M17.204,3.334L20.666,6.796L8.536,18.926L5.074,15.464Z"/>
+
+        <!-- Dark band near tip -->
+        <path
+            android:fillColor="#424242"
+            android:pathData="M6.343,16.733L7.757,18.147L6.465,19.439L5.051,18.025Z"/>
+
+        <!-- Wood tip -->
+        <path
+            android:fillColor="#BDBDBD"
+            android:pathData="M5.074,15.464L6.343,16.733L3.808,21L3,21Z"/>
+
+        <!-- Graphite point -->
+        <path
+            android:fillColor="#212121"
+            android:pathData="M3.808,21L5.074,19.734L3.5,21Z"/>
+
+        <!-- Eraser top -->
+        <path
+            android:fillColor="#BDBDBD"
+            android:pathData="M18.44,2.04L21.96,5.56L20.666,6.796L17.204,3.334Z"/>
+
+        <!-- Ferrule band -->
+        <path
+            android:fillColor="#616161"
+            android:pathData="M19.006,1.474L21.96,4.26L21.96,5.56L18.44,2.04Z"/>
+
+    </group>
+
+</vector>

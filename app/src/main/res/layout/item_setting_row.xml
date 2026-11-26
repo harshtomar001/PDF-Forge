@@ -1,0 +1,142 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/rowRoot"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:minHeight="@dimen/settings_row_min_height"
+    android:background="?attr/selectableItemBackground"
+    android:clickable="true"
+    android:focusable="true"
+    android:paddingTop="@dimen/settings_row_vertical_padding"
+    android:paddingBottom="@dimen/settings_row_vertical_padding">
+
+
+
+    <FrameLayout
+        android:id="@+id/iconContainer"
+        android:layout_width="@dimen/settings_icon_container_size"
+        android:layout_height="@dimen/settings_icon_container_size"
+        android:background="@drawable/bg_settings_icon_circle"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintBottom_toBottomOf="parent">
+
+        <ImageView
+            android:id="@+id/rowIcon"
+            android:layout_width="@dimen/settings_icon_size"
+            android:layout_height="@dimen/settings_icon_size"
+            android:layout_gravity="center"
+            app:tint="@color/settings_blue"
+            tools:ignore="ContentDescription"
+            tools:src="@drawable/ic_dark_mode" />
+
+    </FrameLayout>
+
+
+    <LinearLayout
+        android:id="@+id/textContainer"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="12dp"
+        android:orientation="vertical"
+        app:layout_constraintStart_toEndOf="@id/iconContainer"
+        app:layout_constraintEnd_toStartOf="@id/rowTrailingBarrier"
+        app:layout_constraintTop_toTopOf="@id/iconContainer"
+        app:layout_constraintBottom_toBottomOf="@id/iconContainer"
+        app:layout_constraintVertical_bias="0.5">
+
+        <!-- ================= TITLE ================= -->
+
+        <TextView
+            android:id="@+id/rowTitle"
+            style="@style/SettingsRowTitle"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:textColor="@color/settings_text_primary"
+            tools:text="Theme" />
+
+        <!-- ================= DESCRIPTION ================= -->
+
+        <TextView
+            android:id="@+id/rowDescription"
+            style="@style/SettingsRowDescription"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="2dp"
+            android:maxLines="2"
+            android:ellipsize="end"
+            android:textColor="@color/settings_text_secondary"
+            tools:text="Choose how PDF Studio looks" />
+
+    </LinearLayout>
+
+
+    <TextView
+        android:id="@+id/rowValue"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textSize="@dimen/settings_description_size"
+        android:textColor="@color/settings_text_secondary"
+        android:maxWidth="110dp"
+        android:maxLines="1"
+        android:ellipsize="end"
+        android:visibility="gone"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintBottom_toBottomOf="parent"
+        tools:text="System Default"
+        tools:visibility="visible" />
+
+
+    <com.google.android.material.materialswitch.MaterialSwitch
+        android:id="@+id/rowSwitch"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:visibility="gone"
+        app:thumbTint="@color/settings_switch_thumb"
+        app:trackTint="@color/settings_switch_track"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintBottom_toBottomOf="parent"
+        tools:visibility="visible" />
+
+
+    <ImageView
+        android:id="@+id/rowChevron"
+        android:layout_width="20dp"
+        android:layout_height="20dp"
+        android:src="@drawable/ic_chevron_right"
+        app:tint="@color/settings_text_secondary"
+        android:visibility="gone"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintBottom_toBottomOf="parent"
+        tools:visibility="visible"
+        tools:ignore="ContentDescription" />
+
+
+    <View
+        android:id="@+id/rowColorDot"
+        android:layout_width="22dp"
+        android:layout_height="22dp"
+        android:background="@drawable/bg_color_dot"
+        android:visibility="gone"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintBottom_toBottomOf="parent"
+        tools:visibility="visible" />
+
+
+
+    <androidx.constraintlayout.widget.Barrier
+        android:id="@+id/rowTrailingBarrier"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:barrierDirection="start"
+        app:constraint_referenced_ids="rowValue,rowSwitch,rowChevron,rowColorDot" />
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>

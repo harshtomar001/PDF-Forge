@@ -1,0 +1,180 @@
+<?xml version="1.0" encoding="utf-8"?>
+<com.google.android.material.card.MaterialCardView xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/cardSelectedPdf"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_margin="16dp"
+    app:cardCornerRadius="18dp"
+    app:cardElevation="6dp"
+    app:strokeWidth="1dp"
+    app:strokeColor="#EEEEEE"
+    app:cardBackgroundColor="#FFFFFF"
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:padding="14dp">
+
+        <!-- PDF Icon -->
+
+        <ImageView
+            android:id="@+id/imgPdfIcon"
+            android:layout_width="64dp"
+            android:layout_height="64dp"
+            android:src="@drawable/ic_pdf_file"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintBottom_toBottomOf="parent"
+            />
+
+        <!-- Remove Button -->
+
+        <ImageView
+            android:id="@+id/btnRemovePdf"
+            android:layout_width="34dp"
+            android:layout_height="34dp"
+            android:alpha="0.6"
+            android:background="@drawable/bg_close_circle"
+            android:padding="8dp"
+            android:src="@drawable/cross"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="parent"/>
+
+        <!-- File Name -->
+
+        <TextView
+            android:id="@+id/txtPdfName"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="14dp"
+            android:layout_marginEnd="12dp"
+            android:ellipsize="end"
+            android:maxLines="1"
+            android:text="Annual_Report_2024.pdf"
+            android:textColor="#111111"
+            android:textSize="18dp"
+            android:textStyle="bold"
+            app:layout_constraintStart_toEndOf="@id/imgPdfIcon"
+            app:layout_constraintEnd_toStartOf="@id/btnRemovePdf"
+            app:layout_constraintTop_toTopOf="@id/imgPdfIcon"/>
+
+        <!-- Metadata Layout -->
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/metaLayout"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            app:layout_constraintStart_toStartOf="@id/txtPdfName"
+            app:layout_constraintEnd_toStartOf="@id/btnRemovePdf"
+            app:layout_constraintTop_toBottomOf="@id/txtPdfName">
+
+            <ImageView
+                android:id="@+id/folder"
+                android:layout_width="18dp"
+                android:layout_height="18dp"
+                android:src="@drawable/folder"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintBottom_toBottomOf="parent"/>
+
+            <TextView
+                android:id="@+id/txtPdfSize"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="5dp"
+                android:ellipsize="end"
+                android:maxLines="1"
+                android:text="253.22 MB"
+                android:textColor="#555555"
+                android:textSize="12dp"
+                android:textStyle="bold"
+                app:layout_constraintStart_toEndOf="@id/folder"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintBottom_toBottomOf="parent"/>
+
+            <TextView
+                android:id="@+id/black_dot"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="8dp"
+                android:text="•"
+                android:textColor="#999999"
+                android:textSize="18dp"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintStart_toEndOf="@id/txtPdfSize"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <ImageView
+                android:id="@+id/blankPage"
+                android:layout_width="18dp"
+                android:layout_height="18dp"
+                android:layout_marginStart="8dp"
+                android:layout_marginEnd="6dp"
+                android:src="@drawable/blankpage"
+                app:layout_constraintStart_toEndOf="@id/black_dot"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintBottom_toBottomOf="parent"/>
+
+            <TextView
+                android:id="@+id/txtPdfPages"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:ellipsize="end"
+                android:maxLines="1"
+                android:text="804 Pages"
+                android:textColor="#555555"
+                android:textSize="12dp"
+                android:layout_marginEnd="@dimen/margin_5dp"
+                android:textStyle="bold"
+                app:layout_constraintStart_toEndOf="@id/blankPage"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintBottom_toBottomOf="parent"/>
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+        <!-- Preview Icon -->
+
+        <ImageView
+            android:id="@+id/imgPreview"
+            android:layout_width="18dp"
+            android:layout_height="18dp"
+            android:layout_marginTop="12dp"
+            android:src="@drawable/ic_icon"
+            app:layout_constraintStart_toStartOf="@id/metaLayout"
+            app:layout_constraintTop_toBottomOf="@id/metaLayout"/>
+
+        <!-- Preview Text -->
+
+        <TextView
+            android:id="@+id/txtPreview"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="6dp"
+            android:ellipsize="end"
+            android:maxLines="1"
+            android:text="Tap to Preview"
+            android:textColor="#5A55FF"
+            android:textSize="15dp"
+            android:textStyle="bold"
+            app:layout_constraintBottom_toBottomOf="@id/imgPreview"
+            app:layout_constraintStart_toEndOf="@id/imgPreview"
+            app:layout_constraintTop_toTopOf="@id/imgPreview"/>
+
+        <ImageView
+            android:id="@+id/rightArrow"
+            android:layout_width="18dp"
+            android:layout_height="18dp"
+            android:layout_marginStart="6dp"
+            android:src="@drawable/right_arrow"
+            app:layout_constraintBottom_toBottomOf="@id/txtPreview"
+            app:layout_constraintStart_toEndOf="@id/txtPreview"
+            app:layout_constraintTop_toTopOf="@id/txtPreview"/>
+
+
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+</com.google.android.material.card.MaterialCardView>

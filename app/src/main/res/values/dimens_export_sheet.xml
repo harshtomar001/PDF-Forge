@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <dimen name="export_sheet_max_width">560dp</dimen>
+    <dimen name="export_sheet_side_margin">20dp</dimen>
+    <dimen name="export_sheet_top_padding">10dp</dimen>
+    <dimen name="export_sheet_bottom_padding">16dp</dimen>
+
+    <dimen name="export_handle_width">40dp</dimen>
+    <dimen name="export_handle_height">4dp</dimen>
+
+    <dimen name="export_title_size">24sp</dimen>
+    <dimen name="export_subtitle_size">15sp</dimen>
+
+    <dimen name="export_option_card_height">88dp</dimen>
+    <dimen name="export_option_card_padding">14dp</dimen>
+    <dimen name="export_option_card_radius">16dp</dimen>
+    <dimen name="export_option_card_spacing">12dp</dimen>
+
+    <dimen name="export_icon_card_size">56dp</dimen>
+    <dimen name="export_icon_card_radius">14dp</dimen>
+    <dimen name="export_icon_size">28dp</dimen>
+
+    <dimen name="export_option_title_size">17sp</dimen>
+    <dimen name="export_option_desc_size">13sp</dimen>
+
+    <dimen name="export_radio_size">24dp</dimen>
+
+    <dimen name="export_label_size">14sp</dimen>
+    <dimen name="export_input_height">52dp</dimen>
+    <dimen name="export_input_radius">12dp</dimen>
+    <dimen name="export_input_text_size">16sp</dimen>
+
+    <dimen name="export_checkbox_size">22dp</dimen>
+    <dimen name="export_share_text_size">15sp</dimen>
+
+    <dimen name="export_button_height">52dp</dimen>
+    <dimen name="export_button_radius">12dp</dimen>
+    <dimen name="export_button_text_size">16sp</dimen>
+</resources>

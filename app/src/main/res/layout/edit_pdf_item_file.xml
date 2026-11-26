@@ -1,0 +1,72 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_marginRight="15dp"
+    android:layout_marginLeft="15dp"
+    android:layout_marginTop="15dp"
+    android:background="@drawable/bottom_border"
+
+
+    >
+    <ImageView
+        android:id="@+id/pdf_icon_edit_pdf"
+        android:layout_width="40dp"
+        android:layout_height="40dp"
+        app:srcCompat="@drawable/pdf_fevicon"
+        android:layout_gravity="center_vertical"
+        android:layout_marginRight="12dp"
+
+        />
+
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_weight="1"
+        android:orientation="vertical"
+        android:layout_marginLeft="5dp">
+
+
+
+
+    <TextView
+        android:id="@+id/file_name_edit_pdf"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/filename"
+        android:textStyle="bold"
+        android:textColor="@color/black"
+        android:textSize="18sp"
+        android:layout_gravity="center_vertical"/>
+
+        <TextView
+            android:id="@+id/file_size_edit_pdf"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/fileSize"
+            android:layout_marginLeft="6dp"
+            android:textColor="@color/grey"/>
+
+
+
+        <TextView
+            android:id="@+id/pages_edit_pdf"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/pagesCount"
+            android:layout_marginLeft="6dp"
+            android:textColor="@color/grey"/>
+
+
+
+
+</LinearLayout>
+    <ImageView
+        android:id="@+id/cross_sign_edit_pdf"
+        android:layout_width="32dp"
+        android:layout_height="32dp"
+        app:srcCompat="@drawable/cross_sign"
+        android:layout_gravity="center_vertical"/>
+
+</LinearLayout>

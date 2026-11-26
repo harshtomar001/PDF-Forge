@@ -1,0 +1,286 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:background="@color/white">
+
+
+    <include
+        android:id="@+id/title_include"
+        android:layout_height="wrap_content"
+        android:layout_width="match_parent"
+        layout="@layout/merge_pdf_title"
+        />
+
+    <include
+        android:layout_margin="@dimen/margin_20dp"
+        android:id="@+id/btn_include"
+        layout="@layout/merge_pdf_btns"
+        android:layout_height="wrap_content"
+        android:layout_width="match_parent"
+        app:layout_constraintTop_toBottomOf="@id/title_include"
+
+
+        />
+
+
+    <com.google.android.material.card.MaterialCardView
+        android:id="@+id/card__view"
+        android:visibility="gone"
+        android:layout_height="wrap_content"
+        android:layout_width="match_parent"
+        android:layout_margin="@dimen/margin_20dp"
+        app:cardBackgroundColor="@color/white"
+        app:strokeWidth="0dp"
+        android:background="@drawable/sel_pdf_card_bg_mp"
+        app:layout_constraintTop_toBottomOf="@id/btn_include"
+        >
+
+        <LinearLayout
+            android:padding="5dp"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="horizontal"
+            android:paddingTop="@dimen/margin_8dp">
+
+            <TextView
+                android:id="@+id/selected_PDFs"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/selectedPDFs"
+                android:textStyle="bold"
+                android:textColor="@color/black"
+                />
+            <View
+                android:layout_width="0dp"
+                android:layout_height="0dp"
+                android:layout_weight="1"
+                />
+
+            <TextView
+                android:id="@+id/clear_all"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/clearAll"
+                android:textColor="#2f69fa"
+                />
+
+
+
+
+        </LinearLayout>
+
+
+
+
+
+
+    </com.google.android.material.card.MaterialCardView>
+
+    <View
+        android:id="@+id/view"
+        android:visibility="gone"
+        android:layout_height="2dp"
+        android:layout_width="match_parent"
+        android:background="@color/grey"
+        android:alpha="0.6"
+        android:layout_marginTop="@dimen/margin_15dp"
+        android:layout_marginLeft="@dimen/margin_30dp"
+        android:layout_marginRight="@dimen/margin_30dp"
+        app:layout_constraintTop_toBottomOf="@id/card__view"
+        />
+
+    <ImageView
+        android:id="@+id/no_merge_pdf_img"
+        android:layout_width="match_parent"
+        android:layout_height="500dp"
+        android:scaleType="fitStart"
+        android:src="@drawable/no_merge_pdf"
+        app:layout_constraintTop_toBottomOf="@id/view"/>
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_marginTop="@dimen/margin_20dp"
+        app:layout_constraintTop_toBottomOf="@+id/view"
+        android:visibility="gone"
+        app:layout_constraintBottom_toTopOf="@+id/bottom_section"
+        android:id="@+id/recyclerview_output_pdf" />
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:visibility="gone"
+        android:id="@+id/recyclerView_merge_pdf"
+        android:layout_marginTop="@dimen/margin_20dp"
+        android:layout_marginBottom="@dimen/margin_20dp"
+        app:layout_constraintBottom_toTopOf="@+id/bottom_section"
+        app:layout_constraintTop_toBottomOf="@+id/view"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"/>
+
+    <LinearLayout
+        android:id="@+id/bottom_section"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:layout_marginLeft="@dimen/margin_18dp"
+        android:layout_marginRight="@dimen/margin_18dp"
+        android:layout_marginBottom="@dimen/margin_5dp"
+        android:padding="@dimen/margin_5dp"
+        app:layout_constraintBottom_toTopOf="@id/generate_pdf"
+        app:layout_constraintStart_toStartOf="parent"
+        android:background="@drawable/shield_bg"
+        app:layout_constraintEnd_toEndOf="parent">
+
+
+        <ImageView
+            android:layout_height="@dimen/margin_50dp"
+            android:layout_width="@dimen/margin_50dp"
+            android:src="@drawable/light_red_bulb_icon"
+            android:layout_marginLeft="@dimen/margin_40dp"
+            />
+
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:orientation="vertical"
+            android:layout_marginLeft="@dimen/margin_8dp"
+            >
+
+            <TextView
+                android:layout_height="wrap_content"
+                android:layout_width="wrap_content"
+                android:textStyle="bold"
+                android:alpha=".6"
+                android:textColor="@color/black"
+                android:text="@string/tip"
+                />
+
+            <TextView
+                android:layout_height="wrap_content"
+                android:layout_width="wrap_content"
+                android:alpha="0.8"
+                android:maxLines="2"
+                android:ellipsize="end"
+                android:text="@string/tip_mergepdf_text"
+                android:textColor="@color/grey"
+
+                />
+
+
+
+        </LinearLayout>
+
+
+
+    </LinearLayout>
+
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center"
+        android:orientation="horizontal"
+        android:id="@+id/generate_pdf"
+        android:padding="@dimen/margin_8dp"
+        android:background="@drawable/generate_pdf_bg"
+        android:layout_marginLeft="@dimen/margin_18dp"
+        android:layout_marginRight="@dimen/margin_18dp"
+        android:layout_marginBottom="@dimen/margin_18dp"
+        android:layout_marginTop="@dimen/margin_5dp"
+        app:layout_constraintBottom_toBottomOf="parent">
+
+        <ImageView
+            android:layout_width="@dimen/margin_50dp"
+            android:layout_height="@dimen/margin_50dp"
+            android:src="@drawable/merge_pdf_icon_paths"
+            android:layout_marginLeft="@dimen/margin_12dp" />
+
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/mergePDFs"
+            android:textColor="@color/white"
+            android:textSize="18sp"
+            android:textStyle="bold"
+            />
+
+
+
+
+    </LinearLayout>
+
+
+
+
+    <FrameLayout
+        android:id="@+id/progress_indicator"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="#80000000"
+        android:visibility="gone"
+        android:clickable="true"
+        android:focusable="true">
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:orientation="vertical"
+            android:gravity="center">
+
+        <com.google.android.material.progressindicator.CircularProgressIndicator
+            android:layout_width="70dp"
+            android:layout_height="70dp"
+            app:trackColor="@color/white"
+            app:indicatorColor="@color/black"
+            android:indeterminate="true"/>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/merging_pdf"
+            android:textColor="@android:color/white"
+            android:textSize="18sp"
+            android:layout_marginTop="12dp"/>
+
+        </LinearLayout>
+
+
+
+    </FrameLayout>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>

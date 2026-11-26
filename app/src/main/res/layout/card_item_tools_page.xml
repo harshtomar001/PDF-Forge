@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<androidx.cardview.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="130dp"
+    android:layout_height="150dp"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:padding="@dimen/margin_50dp"
+    app:cardCornerRadius="12dp"
+    android:layout_gravity="center_horizontal"
+    app:cardElevation="8dp"
+    app:cardUseCompatPadding="false"
+    android:layout_marginTop="@dimen/margin_20dp"
+    android:background="@color/white"
+    android:backgroundTint="@null"
+
+
+    >
+
+    <LinearLayout
+        android:layout_height="match_parent"
+        android:layout_width="match_parent"
+        android:orientation="vertical"
+        android:paddingTop="@dimen/margin_15dp"
+        android:gravity="center"
+        android:backgroundTint="@color/white"
+        android:background="@color/white"
+        >
+        <ImageView
+            android:layout_width="@dimen/margin_50dp"
+            android:layout_height="@dimen/margin_50dp"
+            android:id="@+id/image_card_item"
+            android:layout_gravity="center_horizontal"
+            android:src="@drawable/image_to_pdf"
+            />
+
+        <TextView
+            android:layout_height="wrap_content"
+            android:layout_width="wrap_content"
+            android:id="@+id/title_card_item"
+            android:text="@string/ImageToPdf"
+            android:textColor="@color/black"
+            android:layout_marginTop="@dimen/margin_12dp"
+            android:textSize="10sp"
+            android:layout_gravity="center_horizontal"
+            />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/text_card_item"
+            android:layout_gravity="center_horizontal"
+            android:text="@string/imageToPdftext"
+            android:textAlignment="center"
+            android:textSize="10sp"
+            android:paddingLeft="@dimen/margin_20dp"
+            android:paddingRight="@dimen/margin_20dp"
+            android:layout_marginTop="@dimen/margin_12dp"
+            android:textStyle="normal"
+
+            />
+    </LinearLayout>
+
+
+
+
+</androidx.cardview.widget.CardView>

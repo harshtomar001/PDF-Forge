@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<vector xmlns:android="http://schemas.android.com/apk/res/android" android:width="80dp" android:height="80dp" android:viewportWidth="80" android:viewportHeight="80">
+    <!--  Soft purple circular background  -->
+    <path android:fillColor="#E8E2F8" android:pathData="M40,4 A36,36 0 1,1 39.999,4 Z"/>
+    <!--  Bar 1 (left, shortest) — baseline y=56, height=10  -->
+    <path android:fillColor="#6B3FC0" android:pathData="M23,46 L31,46 Q33,46 33,48 L33,54 Q33,56 31,56 L23,56 Q21,56 21,54 L21,48 Q21,46 23,46 Z"/>
+    <!--  Bar 2 (middle, medium) — baseline y=56, height=17  -->
+    <path android:fillColor="#7C4FD4" android:pathData="M37,39 L45,39 Q47,39 47,41 L47,54 Q47,56 45,56 L37,56 Q35,56 35,54 L35,41 Q35,39 37,39 Z"/>
+    <!--  Bar 3 (right, tallest) — baseline y=56, height=26  -->
+    <path android:fillColor="#6B3FC0" android:pathData="M51,30 L59,30 Q61,30 61,32 L61,54 Q61,56 59,56 L51,56 Q49,56 49,54 L49,32 Q49,30 51,30 Z"/>
+</vector>

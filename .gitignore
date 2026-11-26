@@ -1,0 +1,65 @@
+# ==============================
+# Gradle
+# ==============================
+.gradle/
+**/build/
+!gradle/wrapper/gradle-wrapper.jar
+
+# ==============================
+# Android Studio
+# ==============================
+.idea/caches/
+.idea/libraries/
+.idea/modules.xml
+.idea/workspace.xml
+.idea/tasks.xml
+.idea/usage.statistics.xml
+.idea/dictionaries/
+.idea/shelf/
+
+# ==============================
+# Local Configuration
+# ==============================
+local.properties
+*.iml
+
+# ==============================
+# Android Build Outputs
+# ==============================
+*.apk
+*.aab
+*.ap_
+*.dex
+
+# ==============================
+# Native C/C++ Build
+# ==============================
+.cxx/
+.externalNativeBuild/
+obj/
+*.o
+*.a
+
+# ==============================
+# Signing & Keystores
+# ==============================
+*.jks
+*.keystore
+keystore.properties
+signing.properties
+
+# ==============================
+# Logs & Temporary Files
+# ==============================
+*.log
+*.tmp
+*.swp
+*.bak
+Thumbs.db
+.DS_Store
+
+# ==============================
+# Generated Documentation
+# ==============================
+captures/
+output-metadata.json

@@ -1,0 +1,130 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/dialogClearStorageRoot"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:background="@drawable/bg_dialog_surface"
+    android:padding="@dimen/storage_dialog_padding">
+
+    <FrameLayout
+        android:id="@+id/frameDialogIcon"
+        android:layout_width="@dimen/storage_dialog_icon_circle_size"
+        android:layout_height="@dimen/storage_dialog_icon_circle_size"
+        android:background="@drawable/bg_dialog_icon"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent">
+
+        <ImageView
+            android:layout_width="@dimen/storage_icon_size_lg"
+            android:layout_height="@dimen/storage_icon_size_lg"
+            android:layout_gravity="center"
+            android:contentDescription="@string/storage_cd_delete_icon"
+            android:src="@drawable/ic_delete"
+            app:tint="@color/storage_red_500" />
+
+    </FrameLayout>
+
+    <TextView
+        android:id="@+id/tvDialogTitle"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/storage_spacing_lg"
+        android:gravity="center"
+        android:text="@string/storage_dialog_title"
+        android:textColor="@color/storage_text_primary"
+        android:textSize="@dimen/storage_text_title_lg"
+        android:textStyle="bold"
+        app:layout_constraintTop_toBottomOf="@id/frameDialogIcon"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent" />
+
+    <TextView
+        android:id="@+id/tvDialogDescription"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/storage_spacing_sm"
+        android:gravity="center"
+        android:lineSpacingExtra="2dp"
+        android:text="@string/storage_dialog_description"
+        android:textColor="@color/storage_text_secondary"
+        android:textSize="@dimen/storage_text_body_sm"
+        app:layout_constraintTop_toBottomOf="@id/tvDialogTitle"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent" />
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/dialogInfoBox"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/storage_spacing_lg"
+        android:background="@drawable/bg_dialog_info_box"
+        android:padding="@dimen/storage_spacing_md"
+        app:layout_constraintTop_toBottomOf="@id/tvDialogDescription"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent">
+
+        <ImageView
+            android:id="@+id/ivDialogDownloadIcon"
+            android:layout_width="@dimen/storage_icon_size_md"
+            android:layout_height="@dimen/storage_icon_size_md"
+            android:contentDescription="@string/storage_cd_download_icon"
+            android:src="@drawable/ic_download"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintBottom_toBottomOf="parent" />
+
+        <TextView
+            android:id="@+id/tvDialogDownloadsNote"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/storage_spacing_sm"
+            android:text="@string/storage_dialog_downloads_note"
+            android:textColor="@color/storage_purple_700"
+            android:textSize="@dimen/storage_text_body_sm"
+            android:textStyle="bold"
+            app:layout_constraintStart_toEndOf="@id/ivDialogDownloadIcon"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintBottom_toBottomOf="parent" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+    <com.google.android.material.button.MaterialButton
+        android:id="@+id/btnDialogCancel"
+        style="@style/Widget.MaterialComponents.Button.TextButton"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/storage_spacing_xl"
+        android:layout_marginEnd="@dimen/storage_spacing_sm"
+        android:text="@string/storage_dialog_cancel"
+        android:textAllCaps="true"
+        android:textColor="@color/storage_purple_600"
+        android:textSize="@dimen/storage_text_body_sm"
+        android:textStyle="bold"
+        app:layout_constraintTop_toBottomOf="@id/dialogInfoBox"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toStartOf="@id/btnDialogConfirm"
+        app:layout_constraintWidth_percent="0.42" />
+
+    <com.google.android.material.button.MaterialButton
+        android:id="@+id/btnDialogConfirm"
+        style="@style/Widget.MaterialComponents.Button"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/storage_spacing_xl"
+        android:background="@drawable/bg_button_purple_filled_small"
+        android:elevation="0dp"
+        android:text="@string/storage_dialog_confirm"
+        android:textAllCaps="true"
+        android:textColor="@color/storage_white"
+        android:textSize="@dimen/storage_text_body_sm"
+        android:textStyle="bold"
+        app:layout_constraintTop_toBottomOf="@id/dialogInfoBox"
+        app:layout_constraintStart_toEndOf="@id/btnDialogCancel"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:rippleColor="@color/storage_purple_900" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

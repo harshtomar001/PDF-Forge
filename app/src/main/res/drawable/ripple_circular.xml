@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Bounded circular ripple for the close button and each star touch target. -->
+<ripple xmlns:android="http://schemas.android.com/apk/res/android"
+    android:color="@color/rate_ripple_neutral">
+
+    <item android:id="@android:id/mask">
+        <shape android:shape="oval">
+            <solid android:color="@android:color/white" />
+        </shape>
+    </item>
+
+</ripple>

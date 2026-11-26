@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Small white circular badge for the avatar edit/pencil button.
+     Use as the background of a 36dp View/ImageButton; elevation is set
+     in the layout (elevation="2dp") rather than baked into the drawable. -->
+<shape xmlns:android="http://schemas.android.com/apk/res/android"
+    android:shape="oval">
+    <solid android:color="@color/pdf_studio_white" />
+</shape>

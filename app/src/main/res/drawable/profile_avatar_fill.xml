@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Sits inside profile_avatar_background with a small inset (see layout)
+     to create the white ring border effect around the avatar. -->
+<shape xmlns:android="http://schemas.android.com/apk/res/android"
+    android:shape="oval">
+    <solid android:color="@color/pdf_studio_light_blue" />
+</shape>

@@ -1,0 +1,300 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<androidx.constraintlayout.widget.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@android:color/white"
+    android:paddingTop="@dimen/margin_16dp">
+
+    <!-- ========================================================= -->
+    <!-- TOP BAR -->
+    <!-- ========================================================= -->
+
+    <LinearLayout
+        android:id="@+id/headerLayout"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:gravity="center_vertical"
+        android:paddingTop="@dimen/margin_15dp"
+        android:paddingStart="12dp"
+        android:paddingEnd="8dp"
+        android:paddingBottom="8dp"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent">
+
+        <ImageView
+            android:id="@+id/back_arrow_eraser"
+            android:layout_width="30dp"
+            android:layout_height="30dp"
+            android:src="@drawable/ic_back_arrow"
+            app:tint="@color/black" />
+
+        <TextView
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:layout_marginStart="16dp"
+            android:text="Eraser"
+            android:textStyle="bold"
+            android:textSize="20sp"
+            android:textColor="@color/black"/>
+
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/btnResetEraser"
+            android:layout_width="wrap_content"
+            android:layout_height="40dp"
+            android:text="Reset"
+            android:textAllCaps="false"
+            android:textStyle="bold"
+            android:textSize="16sp"
+            android:textColor="#2563EB"
+            app:icon="@drawable/refresh"
+            app:iconGravity="textStart"
+            app:iconPadding="6dp"
+            app:iconTint="#2563EB"
+            app:backgroundTint="@android:color/transparent"
+            app:rippleColor="#332563EB"
+            app:strokeWidth="0dp"
+            app:elevation="0dp"
+            android:minWidth="0dp"
+            android:minHeight="40dp"
+            android:paddingHorizontal="8dp"/>
+    </LinearLayout>
+
+
+    <!-- ========================================================= -->
+    <!-- DIVIDER -->
+    <!-- ========================================================= -->
+
+    <View
+        android:id="@+id/topDivider"
+        android:layout_width="0dp"
+        android:layout_height="1dp"
+        android:background="#DDDDDD"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:layout_marginTop="@dimen/margin_16dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/headerLayout" />
+
+    <LinearLayout
+        android:id="@+id/undo_redo"
+        android:layout_height="wrap_content"
+        android:layout_width="wrap_content"
+        android:orientation="horizontal"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:gravity="center"
+        android:padding="1dp"
+        android:background="@drawable/undo_redo_bg"
+        android:layout_marginTop="@dimen/margin_5dp"
+        app:layout_constraintTop_toBottomOf="@id/topDivider">
+
+        <ImageButton
+            android:layout_height="@dimen/margin_30dp"
+            android:layout_width="@dimen/margin_30dp"
+            android:src="@drawable/undo_icon"
+            android:tint="@color/black"
+            android:background="@drawable/radius_12_dp"
+
+            />
+
+        <ImageButton
+            android:layout_height="@dimen/margin_30dp"
+            android:layout_width="@dimen/margin_30dp"
+            android:src="@drawable/redo_icon"
+            android:tint="@color/black"
+            android:background="@drawable/radius_12_dp"
+            android:layout_marginStart="@dimen/margin_12dp"
+
+            />
+
+
+
+
+    </LinearLayout>
+
+    <com.google.android.material.card.MaterialCardView
+        android:id="@+id/eraserPreviewCard"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="14dp"
+        android:layout_marginEnd="16dp"
+        android:layout_marginBottom="4dp"
+        app:cardBackgroundColor="#F5FAFA"
+        app:cardCornerRadius="12dp"
+        app:cardElevation="2dp"
+
+        app:layout_constraintBottom_toTopOf="@id/tvZoomHint"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/undo_redo"
+        app:strokeColor="#E0E0E0"
+        app:strokeWidth="1dp">
+
+        <FrameLayout
+            android:id="@+id/eraserContainer"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:clipChildren="true"
+            android:clipToPadding="true">
+
+            <com.harsh.pdfstudio.custom_view.EraserView
+                android:id="@+id/eraserView"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:contentDescription="PDF eraser preview" />
+
+        </FrameLayout>
+
+    </com.google.android.material.card.MaterialCardView>
+
+
+    <TextView
+        android:id="@+id/tvZoomHint"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="6dp"
+        android:text="Pinch to zoom  •  Drag to erase"
+        android:textColor="#888888"
+        android:textSize="11sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/eraserPreviewCard" />
+
+
+
+    <TextView
+        android:id="@+id/eraserColortv"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="6dp"
+        android:text="Eraser Color"
+        android:textColor="@color/black"
+        android:textSize="11sp"
+        android:layout_marginStart="@dimen/margin_18dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintHorizontal_bias="0"
+        app:layout_constraintTop_toBottomOf="@id/tvZoomHint" />
+
+    <com.google.android.material.card.MaterialCardView
+        android:id="@+id/eraserColorSelector"
+        android:layout_width="40dp"
+        android:layout_height="40dp"
+        android:layout_marginTop="6dp"
+        app:cardCornerRadius="8dp"
+        app:strokeWidth="1dp"
+        app:strokeColor="@color/grey"
+        app:cardBackgroundColor="@android:color/white"
+        app:layout_constraintStart_toStartOf="@id/eraserColortv"
+        app:layout_constraintTop_toBottomOf="@id/eraserColortv"
+        >
+
+        <View
+            android:id="@+id/eraserColorPreview"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_gravity="center"
+            android:clickable="true"
+            android:focusable="true"
+            android:background="@color/white" />
+
+    </com.google.android.material.card.MaterialCardView>
+
+
+    <TextView
+        android:id="@+id/tvEraserSizeLabel"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="18dp"
+        android:layout_marginTop="14dp"
+        android:text="Eraser Size"
+        android:textColor="@color/black"
+        android:textSize="13sp"
+        android:textStyle="bold"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/eraserColorSelector" />
+
+    <TextView
+        android:id="@+id/tvEraserSizeValue"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="18dp"
+        android:text="30"
+        android:textColor="@color/blue_color"
+        android:textSize="13sp"
+        android:textStyle="bold"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="@id/tvEraserSizeLabel" />
+
+    <com.google.android.material.slider.Slider
+        android:id="@+id/eraserSizeSlider"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="18dp"
+        android:layout_marginTop="2dp"
+        android:layout_marginEnd="18dp"
+        android:value="30"
+        android:valueFrom="2"
+        android:valueTo="130"
+        android:stepSize="1"
+        app:haloRadius="10dp"
+        app:labelBehavior="gone"
+        app:tickVisible="false"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/tvEraserSizeLabel"
+        app:thumbColor="@color/blue_color"
+        app:trackColorActive="@color/blue_color"
+        app:trackColorInactive="#DDE8FA" />
+
+
+
+    <com.google.android.material.button.MaterialButton
+        android:id="@+id/btnCancelEraser"
+        android:layout_width="0dp"
+        android:layout_height="48dp"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="14dp"
+        android:layout_marginEnd="6dp"
+        android:layout_marginBottom="16dp"
+        android:text="✕  Cancel"
+        android:textAllCaps="false"
+        android:textColor="@color/black"
+        android:textSize="14sp"
+        app:backgroundTint="@android:color/white"
+        app:cornerRadius="10dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toStartOf="@id/btnApplyEraser"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/eraserSizeSlider"
+        app:strokeColor="#D5D5D5"
+        app:strokeWidth="1dp" />
+
+    <com.google.android.material.button.MaterialButton
+        android:id="@+id/btnApplyEraser"
+        android:layout_width="0dp"
+        android:layout_height="48dp"
+        android:layout_marginStart="6dp"
+        android:layout_marginTop="14dp"
+        android:layout_marginEnd="16dp"
+        android:layout_marginBottom="16dp"
+        android:text="✓  Apply"
+        android:textAllCaps="false"
+        android:textColor="@android:color/white"
+        android:textSize="14sp"
+        android:textStyle="bold"
+        app:backgroundTint="@color/blue_color"
+        app:cornerRadius="10dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@id/btnCancelEraser"
+        app:layout_constraintTop_toBottomOf="@id/eraserSizeSlider" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

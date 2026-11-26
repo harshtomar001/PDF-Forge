@@ -1,0 +1,75 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:paddingStart="@dimen/margin_12dp"
+    android:paddingBottom="@dimen/margin_8dp"
+    android:paddingTop="@dimen/margin_8dp"
+    android:paddingEnd="@dimen/margin_12dp"
+    xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <TextView
+        android:id="@+id/txtEquivalentTitle"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:text="@string/what_you_saved_is_equivalent_to"
+        android:textColor="#2E7D32"
+        android:textSize="13dp"
+        android:textStyle="bold"
+        android:maxLines="1"
+        android:ellipsize="end"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        tools:ignore="SpUsage" />
+
+    <ImageView
+        android:id="@+id/imgPhotos"
+        android:layout_width="18dp"
+        android:layout_height="18dp"
+        android:layout_marginTop="10dp"
+        android:src="@drawable/photo_icon"
+        app:layout_constraintTop_toBottomOf="@id/txtEquivalentTitle"
+        app:layout_constraintStart_toStartOf="parent" />
+
+    <TextView
+        android:id="@+id/txtPhotos"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="8dp"
+        android:text="≈ 380 Photos"
+        android:textColor="#666666"
+        android:textSize="12dp"
+        android:maxLines="1"
+        android:ellipsize="end"
+        app:layout_constraintStart_toEndOf="@id/imgPhotos"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="@id/imgPhotos"
+        app:layout_constraintBottom_toBottomOf="@id/imgPhotos" />
+
+    <ImageView
+        android:id="@+id/imgVideo"
+        android:layout_width="18dp"
+        android:layout_height="18dp"
+        android:layout_marginTop="8dp"
+        android:src="@drawable/video_icon"
+        app:layout_constraintTop_toBottomOf="@id/imgPhotos"
+        app:layout_constraintStart_toStartOf="parent" />
+
+    <TextView
+        android:id="@+id/txtEquivalentVideo"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="8dp"
+        android:text="≈ 5 Minutes of HD Video"
+        android:textColor="#666666"
+        android:textSize="12dp"
+        android:maxLines="1"
+        android:ellipsize="end"
+        app:layout_constraintStart_toEndOf="@id/imgVideo"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="@id/imgVideo"
+        app:layout_constraintBottom_toBottomOf="@id/imgVideo" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

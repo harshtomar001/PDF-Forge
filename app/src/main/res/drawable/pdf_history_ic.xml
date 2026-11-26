@@ -1,0 +1,114 @@
+<?xml version="1.0" encoding="utf-8"?>
+<vector xmlns:android="http://schemas.android.com/apk/res/android"
+    android:width="48dp"
+    android:height="48dp"
+    android:viewportWidth="48"
+    android:viewportHeight="48">
+
+    <!-- Clock -->
+    <path
+        android:fillColor="#2563EB"
+        android:pathData="M25,7
+            C15.06,7 7,15.06 7,25
+            C7,34.94 15.06,43 25,43
+            C34.94,43 43,34.94 43,25
+            C43,15.06 34.94,7 25,7 Z
+
+            M25,11
+            C32.73,11 39,17.27 39,25
+            C39,32.73 32.73,39 25,39
+            C17.27,39 11,32.73 11,25
+            C11,17.27 17.27,11 25,11 Z" />
+
+    <!-- Clock face -->
+    <path
+        android:fillColor="#DBEAFE"
+        android:pathData="M25,12
+            C17.82,12 12,17.82 12,25
+            C12,32.18 17.82,38 25,38
+            C32.18,38 38,32.18 38,25
+            C38,17.82 32.18,12 25,12 Z" />
+
+    <!-- Clock hand -->
+    <path
+        android:fillColor="#1D4ED8"
+        android:pathData="M23.5,17
+            L26.5,17
+            L26.5,24
+            L32,27
+            L30.5,29.6
+            L23.5,25.8
+            Z" />
+
+    <!-- Clock center -->
+    <path
+        android:fillColor="#1D4ED8"
+        android:pathData="M25,22.5
+            A2.5,2.5 0,1 0,25.01 22.5 Z" />
+
+    <!-- PDF document -->
+    <path
+        android:fillColor="#FFFFFF"
+        android:pathData="M6,16
+            L15,16
+            L20,21
+            L20,35
+            C20,36.66 18.66,38 17,38
+            L6,38
+            C4.34,38 3,36.66 3,35
+            L3,19
+            C3,17.34 4.34,16 6,16 Z" />
+
+    <!-- PDF folded corner -->
+    <path
+        android:fillColor="#DBEAFE"
+        android:pathData="M15,16
+            L15,21
+            L20,21
+            Z" />
+
+    <!-- PDF red label -->
+    <path
+        android:fillColor="#EF4444"
+        android:pathData="M3,27
+            L20,27
+            L20,35
+            C20,36.66 18.66,38 17,38
+            L6,38
+            C4.34,38 3,36.66 3,35
+            Z" />
+
+    <!-- PDF label lines -->
+    <path
+        android:fillColor="#FFFFFF"
+        android:pathData="M7,29
+            L16,29
+            L16,30.5
+            L7,30.5 Z" />
+
+    <path
+        android:fillColor="#FFFFFF"
+        android:pathData="M7,32
+            L14,32
+            L14,33.5
+            L7,33.5 Z" />
+
+    <!-- History / rewind arrow -->
+    <path
+        android:fillColor="#F43F5E"
+        android:pathData="M13,9
+            C17,5.5 22,4 27,4
+            C36.94,4 45,12.06 45,22
+            C45,23.1 44.1,24 43,24
+            C41.9,24 41,23.1 41,22
+            C41,14.27 34.73,8 27,8
+            C23.1,8 19.5,9.6 16.8,12.2
+            L20.5,15.5
+            C21.2,16.1 20.8,17.3 19.8,17.4
+            L9,18
+            C8.1,18.1 7.4,17.1 7.8,16.3
+            L12.2,7.2
+            C12.6,6.3 13.8,6.4 14.3,7.2
+            Z" />
+
+</vector>

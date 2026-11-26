@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:background="@drawable/create_pdf_toolbar_bg"
+    android:orientation="horizontal"
+    android:gravity="center_vertical"
+    android:padding="@dimen/margin_12dp"
+    app:layout_constraintTop_toTopOf="parent"
+    app:layout_constraintBottom_toTopOf="@id/upload_btn"
+    android:id="@+id/titlecrtpdf"
+    xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <ImageView
+        android:id="@+id/back_arrow"
+        android:layout_width="30dp"
+        android:layout_height="30dp"
+        android:layout_marginRight="@dimen/margin_12dp"
+        android:layout_gravity="center"
+        android:src="@drawable/ic_back_arrow"
+        android:clickable="true"
+        android:focusable="true"/>
+
+
+    <TextView
+        android:id="@+id/textView_crt_pdf"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="64dp"
+        android:text="@string/create_pdf"
+        android:textColor="@color/white"
+        android:textSize="24sp"
+        android:textStyle="bold"
+
+
+        />
+
+
+</LinearLayout>

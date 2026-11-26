@@ -1,0 +1,84 @@
+<?xml version="1.0" encoding="utf-8"?>
+<com.google.android.material.card.MaterialCardView android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    app:strokeWidth="0dp"
+    app:cardElevation="2dp"
+    app:cardCornerRadius="0dp"
+    android:layout_marginStart="2dp"
+    android:layout_marginEnd="2dp"
+    android:layout_marginBottom="1dp"
+    app:cardBackgroundColor="@android:color/white"
+    xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:padding="16dp">
+
+        <!-- PDF Icon -->
+        <ImageView
+            android:id="@+id/pdfIcon"
+            android:layout_width="48dp"
+            android:layout_height="48dp"
+            android:src="@drawable/ic_pdf_file"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintBottom_toBottomOf="parent"/>
+
+        <!-- File Name -->
+        <TextView
+            android:id="@+id/pdfName_split_pdf"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="14dp"
+            android:text="Project_Proposal_1.pdf"
+            android:textColor="#111111"
+            android:textSize="18sp"
+            android:textStyle="bold"
+            android:maxLines="1"
+            android:ellipsize="end"
+            app:layout_constraintStart_toEndOf="@id/pdfIcon"
+            app:layout_constraintEnd_toStartOf="@id/moreBtn"
+            app:layout_constraintTop_toTopOf="parent"/>
+
+        <!-- Metadata -->
+        <TextView
+            android:id="@+id/pdfMeta"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="4dp"
+            android:text="Page 1  •  165 KB"
+            android:textColor="#6B7280"
+            android:textSize="14sp"
+            app:layout_constraintStart_toStartOf="@id/pdfName_split_pdf"
+            app:layout_constraintEnd_toEndOf="@id/pdfName_split_pdf"
+            app:layout_constraintTop_toBottomOf="@id/pdfName_split_pdf"/>
+
+
+        <!-- More Menu -->
+        <ImageView
+            android:id="@+id/moreBtn"
+            android:layout_width="34dp"
+            android:layout_height="34dp"
+            android:src="@drawable/three_dot_vertical"
+            app:tint="#666666"
+            app:layout_constraintEnd_toStartOf="@id/checkBtn"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintBottom_toBottomOf="parent"
+            android:layout_marginEnd="6dp"/>
+
+        <!-- Selected Checkbox -->
+        <CheckBox
+            android:id="@+id/checkBtn"
+            android:layout_width="34dp"
+            android:layout_height="34dp"
+            android:buttonTint="@color/pink_split_pdf"
+
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintBottom_toBottomOf="parent"/>
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+</com.google.android.material.card.MaterialCardView>

@@ -1,0 +1,269 @@
+<resources>
+    <dimen name="fab_margin">16dp</dimen>
+    <dimen name="margin_12dp">12dp</dimen>
+    <dimen name="margin_18dp">18dp</dimen>
+    <dimen name="margin_25dp">25dp</dimen>
+    <dimen name="margin_15dp">15dp</dimen>
+    <dimen name="margin_20dp">20dp</dimen>
+    <dimen name="margin_30dp">30dp</dimen>
+    <dimen name="margin_22dp">22dp</dimen>
+    <dimen name="margin_8dp">8dp</dimen>
+    <dimen name="margin_5dp">5dp</dimen>
+    <dimen name="margin_24dp">24dp</dimen>
+    <dimen name="margin_40dp">40dp</dimen>
+    <dimen name="margin_10dp">10dp</dimen>
+    <dimen name="margin_50dp">50dp</dimen>
+    <dimen name="margin_60dp">60dp</dimen>
+    <dimen name="margin_16dp">16dp</dimen>
+
+    <!-- Spacing scale -->
+    <dimen name="spacing_xs">4dp</dimen>
+    <dimen name="spacing_sm">8dp</dimen>
+    <dimen name="spacing_md">16dp</dimen>
+    <dimen name="spacing_lg">24dp</dimen>
+    <dimen name="spacing_xl">32dp</dimen>
+
+    <!-- Touch targets -->
+    <dimen name="touch_target_min">48dp</dimen>
+
+    <!-- Gradient header behind the status icon -->
+    <dimen name="header_height">190dp</dimen>
+
+    <!-- Status icon (success / error circle) -->
+    <dimen name="status_circle_size">96dp</dimen>
+    <dimen name="status_icon_size">44dp</dimen>
+
+    <!-- PDF thumbnail -->
+    <dimen name="pdf_thumb_width">72dp</dimen>
+    <dimen name="pdf_thumb_height">96dp</dimen>
+
+    <!-- Card -->
+    <dimen name="card_corner_radius">12dp</dimen>
+    <dimen name="card_stroke_width">1dp</dimen>
+    <dimen name="detail_icon_size">20dp</dimen>
+
+    <!-- Buttons -->
+    <dimen name="button_height">52dp</dimen>
+    <dimen name="button_corner_radius">10dp</dimen>
+
+    <!-- Typography -->
+    <dimen name="text_size_title">18sp</dimen>
+    <dimen name="text_size_subtitle">15sp</dimen>
+    <dimen name="text_size_body">14sp</dimen>
+    <dimen name="text_size_caption">13sp</dimen>
+
+    <!-- Authentication -->
+    <dimen name="auth_horizontal_margin">24dp</dimen>
+    <dimen name="auth_top_padding">28dp</dimen>
+    <dimen name="auth_bottom_padding">32dp</dimen>
+    <dimen name="auth_title_spacing">22dp</dimen>
+    <dimen name="auth_subtitle_spacing">8dp</dimen>
+    <dimen name="auth_card_top_spacing">28dp</dimen>
+    <dimen name="auth_card_padding">20dp</dimen>
+    <dimen name="auth_field_spacing">14dp</dimen>
+    <dimen name="auth_small_spacing">6dp</dimen>
+    <dimen name="auth_section_spacing">18dp</dimen>
+    <dimen name="auth_button_spacing">14dp</dimen>
+    <dimen name="auth_bottom_section_spacing">24dp</dimen>
+    <dimen name="auth_button_height">54dp</dimen>
+    <dimen name="auth_corner_radius">14dp</dimen>
+    <dimen name="auth_card_radius">20dp</dimen>
+    <dimen name="auth_click_padding">4dp</dimen>
+    <dimen name="auth_brand_accent_width">8dp</dimen>
+    <dimen name="auth_brand_accent_height">8dp</dimen>
+
+    <dimen name="profile_header_height">320dp</dimen>
+    <dimen name="profile_touch_target">44dp</dimen>
+    <!-- Avatar -->
+    <dimen name="profile_avatar_size">108dp</dimen>
+    <dimen name="profile_avatar_icon_size">56dp</dimen>
+    <dimen name="profile_edit_badge_size">36dp</dimen>
+    <dimen name="profile_edit_badge_icon_size">18dp</dimen>
+    <!-- Text -->
+    <dimen name="profile_title_text_size">20sp</dimen>
+    <dimen name="profile_name_text_size">23sp</dimen>
+    <dimen name="profile_email_text_size">15sp</dimen>
+    <dimen name="profile_badge_text_size">12sp</dimen>
+    <dimen name="profile_row_text_size">16sp</dimen>
+    <dimen name="profile_card_title_text_size">16sp</dimen>
+    <dimen name="profile_card_subtitle_text_size">13sp</dimen>
+    <dimen name="profile_button_text_size">15sp</dimen>
+    <dimen name="profile_logout_text_size">16sp</dimen>
+    <!-- Cards -->
+    <dimen name="profile_card_corner_radius">18dp</dimen>
+    <dimen name="profile_card_elevation">3dp</dimen>
+    <dimen name="profile_card_margin_horizontal">16dp</dimen>
+    <dimen name="profile_card_padding">16dp</dimen>
+    <dimen name="profile_premium_card_height">84dp</dimen>
+    <!-- Rows -->
+    <dimen name="profile_row_height">60dp</dimen>
+    <dimen name="profile_row_icon_container">40dp</dimen>
+    <dimen name="profile_row_icon_size">20dp</dimen>
+    <dimen name="profile_row_icon_corner_radius">12dp</dimen>
+    <dimen name="profile_divider_height">1dp</dimen>
+    <!-- Logout -->
+    <dimen name="profile_logout_height">60dp</dimen>
+    <!-- Spacing -->
+    <dimen name="profile_section_spacing">16dp</dimen>
+    <dimen name="profile_content_bottom_padding">24dp</dimen>
+
+    <dimen name="merge_selected_list_height">264dp</dimen>
+
+    <dimen name="storage_spacing_xxs">4dp</dimen>
+    <dimen name="storage_spacing_xs">8dp</dimen>
+    <dimen name="storage_spacing_sm">12dp</dimen>
+    <dimen name="storage_spacing_md">16dp</dimen>
+    <dimen name="storage_spacing_lg">20dp</dimen>
+    <dimen name="storage_spacing_xl">24dp</dimen>
+    <dimen name="storage_spacing_xxl">32dp</dimen>
+    <!-- Screen margins -->
+    <dimen name="storage_screen_margin_horizontal">16dp</dimen>
+    <dimen name="storage_card_gap">16dp</dimen>
+    <!-- Corner radii -->
+    <dimen name="storage_radius_card">16dp</dimen>
+    <dimen name="storage_radius_button">16dp</dimen>
+    <dimen name="storage_radius_dialog">24dp</dimen>
+    <dimen name="storage_radius_icon_circle">24dp</dimen>
+    <dimen name="storage_radius_chip">10dp</dimen>
+    <!-- Toolbar -->
+    <dimen name="storage_toolbar_height">60dp</dimen>
+    <dimen name="storage_toolbar_title_text">20sp</dimen>
+    <!-- Cards -->
+    <dimen name="storage_intro_card_min_height">184dp</dimen>
+    <dimen name="storage_intro_illustration_size">128dp</dimen>
+    <dimen name="storage_used_card_min_height">196dp</dimen>
+    <dimen name="storage_donut_size">148dp</dimen>
+    <dimen name="storage_donut_stroke_width">14dp</dimen>
+    <dimen name="storage_donut_icon_size">40dp</dimen>
+    <!-- Card elevation -->
+    <dimen name="storage_card_elevation">2dp</dimen>
+    <dimen name="storage_card_elevation_flat">0dp</dimen>
+    <!-- Typography -->
+    <dimen name="storage_text_title_lg">18sp</dimen>
+    <dimen name="storage_text_body">16sp</dimen>
+    <dimen name="storage_text_body_sm">14sp</dimen>
+    <dimen name="storage_text_caption">13sp</dimen>
+    <dimen name="storage_text_label">17sp</dimen>
+    <dimen name="storage_text_value_huge">40sp</dimen>
+    <dimen name="storage_text_percentage">15sp</dimen>
+    <dimen name="storage_text_button">16sp</dimen>
+    <!-- Icons -->
+    <dimen name="storage_icon_row_size">44dp</dimen>
+    <dimen name="storage_icon_size_sm">20dp</dimen>
+    <dimen name="storage_icon_size_md">24dp</dimen>
+    <dimen name="storage_icon_size_lg">28dp</dimen>
+    <dimen name="storage_dialog_icon_circle_size">64dp</dimen>
+    <!-- Buttons -->
+    <dimen name="storage_button_height">56dp</dimen>
+    <!-- Dividers -->
+    <dimen name="storage_divider_thickness">1dp</dimen>
+    <!-- Dialog -->
+    <dimen name="storage_dialog_padding">24dp</dimen>
+    <dimen name="storage_dialog_width_percent">90%</dimen>
+
+    <dimen name="toolbar_height">56dp</dimen>
+    <dimen name="card_padding">14dp</dimen>
+    <dimen name="item_spacing">12dp</dimen>
+    <dimen name="icon_size">40dp</dimen>
+    <dimen name="icon_size_small">20dp</dimen>
+    <dimen name="chip_height">36dp</dimen>
+    <dimen name="chip_corner_radius">12dp</dimen>
+
+    <dimen name="min_touch_target">48dp</dimen>
+    <dimen name="screen_padding_horizontal">16dp</dimen>
+    <dimen name="unread_dot_size">8dp</dimen>
+
+    <!-- Hero header (Login only) -->
+    <dimen name="auth_hero_height">300dp</dimen>
+    <dimen name="auth_hero_top_inset">22dp</dimen>
+    <dimen name="auth_back_button_size">40dp</dimen>
+
+    <!-- White sheet that overlaps the hero -->
+    <dimen name="auth_sheet_top_radius">28dp</dimen>
+    <dimen name="auth_sheet_overlap">-24dp</dimen>
+    <dimen name="auth_sheet_top_padding">32dp</dimen>
+
+    <!-- Document / lock illustration cluster -->
+    <dimen name="auth_illustration_doc_width">104dp</dimen>
+    <dimen name="auth_illustration_doc_height">124dp</dimen>
+    <dimen name="auth_illustration_tag_width">54dp</dimen>
+    <dimen name="auth_illustration_tag_height">26dp</dimen>
+    <dimen name="auth_illustration_badge_size">50dp</dimen>
+    <dimen name="auth_illustration_badge_icon">22dp</dimen>
+    <dimen name="auth_illustration_glow_size">150dp</dimen>
+    <dimen name="auth_sparkle_size_small">10dp</dimen>
+    <dimen name="auth_sparkle_size_large">16dp</dimen>
+
+    <!-- Social buttons row (Google / Apple) -->
+    <dimen name="auth_social_button_spacing">12dp</dimen>
+
+    <!-- Password strength meter (Signup only) -->
+    <dimen name="auth_strength_segment_height">4dp</dimen>
+    <dimen name="auth_strength_segment_spacing">6dp</dimen>
+
+    <!-- Terms checkbox row (Signup only) -->
+    <dimen name="auth_checkbox_text_spacing">10dp</dimen>
+
+    <dimen name="drawer_width">308dp</dimen>
+    <dimen name="drawer_corner_radius">24dp</dimen>
+    <dimen name="drawer_item_min_height">48dp</dimen>
+    <dimen name="drawer_icon_container_size">40dp</dimen>
+    <dimen name="drawer_icon_size">20dp</dimen>
+    <dimen name="drawer_avatar_size">76dp</dimen>
+    <dimen name="drawer_avatar_corner_radius">38dp</dimen>
+    <dimen name="drawer_padding_horizontal">20dp</dimen>
+    <dimen name="drawer_header_padding_vertical">28dp</dimen>
+    <dimen name="drawer_section_spacing_top">18dp</dimen>
+    <dimen name="drawer_section_label_spacing_bottom">8dp</dimen>
+    <dimen name="drawer_item_spacing">2dp</dimen>
+
+    <dimen name="merge_screen_padding">16dp</dimen>
+    <dimen name="merge_card_radius">18dp</dimen>
+    <dimen name="merge_button_height">54dp</dimen>
+    <dimen name="merge_touch_target">48dp</dimen>
+    <dimen name="merge_toolbar_height">72dp</dimen>
+    <dimen name="merge_row_height">76dp</dimen>
+
+    <dimen name="rate_sheet_corner_radius">28dp</dimen>
+    <dimen name="rate_sheet_horizontal_padding">24dp</dimen>
+    <dimen name="rate_drag_handle_width">36dp</dimen>
+    <dimen name="rate_drag_handle_height">4dp</dimen>
+    <dimen name="rate_drag_handle_radius">2dp</dimen>
+    <dimen name="rate_close_touch_target">48dp</dimen>
+    <dimen name="rate_close_icon_size">20dp</dimen>
+    <dimen name="rate_icon_circle_size">88dp</dimen>
+    <dimen name="rate_icon_size">44dp</dimen>
+    <dimen name="rate_star_touch_target">48dp</dimen>
+    <dimen name="rate_star_icon_size">40dp</dimen>
+    <dimen name="rate_star_spacing">6dp</dimen>
+    <dimen name="rate_button_height">52dp</dimen>
+    <dimen name="rate_button_corner_radius">14dp</dimen>
+
+<!--    <dimen name="spacing_xs">4dp</dimen>-->
+    <dimen name="spacing_s">8dp</dimen>
+    <dimen name="spacing_m">16dp</dimen>
+    <dimen name="spacing_l">24dp</dimen>
+<!--    <dimen name="spacing_xl">32dp</dimen>-->
+<!--    <dimen name="card_corner_radius">20dp</dimen>-->
+    <dimen name="card_corner_radius_small">14dp</dimen>
+    <dimen name="card_elevation">0dp</dimen>
+<!--    <dimen name="card_stroke_width">1dp</dimen>-->
+    <dimen name="icon_chip_size">40dp</dimen>
+<!--    <dimen name="button_height">52dp</dimen>-->
+    <dimen name="badge_corner_radius">100dp</dimen>
+
+
+    <dimen name="margin_3dp">3dp</dimen>
+    <dimen name="margin_4dp">4dp</dimen>
+    <dimen name="margin_7dp">7dp</dimen>
+    <dimen name="margin_14dp">14dp</dimen>
+    <dimen name="margin_28dp">28dp</dimen>
+    <dimen name="margin_32dp">32dp</dimen>
+    <dimen name="margin_38dp">38dp</dimen>
+    <dimen name="margin_44dp">44dp</dimen>
+    <dimen name="margin_48dp">48dp</dimen>
+    <dimen name="margin_58dp">58dp</dimen>
+    <dimen name="margin_11dp">11sp</dimen>
+
+
+</resources>

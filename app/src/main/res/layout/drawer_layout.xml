@@ -1,0 +1,300 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<FrameLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="@dimen/drawer_width"
+    android:layout_height="match_parent"
+    android:background="@drawable/bg_drawer_shape"
+    android:clipToOutline="true"
+    android:elevation="8dp"
+    tools:ignore="UnusedAttribute">
+
+    <LinearLayout
+
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical">
+
+        <!-- ================= HEADER ================= -->
+        <include
+            android:id="@+id/menu_container_toolbar"
+            layout="@layout/drawer_header" />
+
+        <!-- ================= SCROLLABLE NAV ITEMS ================= -->
+        <androidx.core.widget.NestedScrollView
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="1"
+            android:overScrollMode="ifContentScrolls"
+            android:scrollbars="none">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:paddingTop="8dp"
+                android:paddingBottom="12dp">
+
+                <!-- ===== APPLICATION ===== -->
+                <TextView
+                    style="@style/DrawerSectionLabel"
+                    android:text="@string/drawer_section_application" />
+
+                <!-- item_about -->
+                <LinearLayout
+                    android:id="@+id/item_about"
+                    style="@style/DrawerItemRow"
+                    android:contentDescription="@string/drawer_item_about_title">
+
+                    <FrameLayout style="@style/DrawerItemIconContainer">
+                        <ImageView
+                            style="@style/DrawerItemIcon"
+                            android:src="@drawable/ic_info"
+                            android:contentDescription="@null" />
+                    </FrameLayout>
+
+                    <LinearLayout style="@style/DrawerItemTextBlock">
+                        <TextView
+                            style="@style/DrawerItemTitle"
+                            android:text="@string/drawer_item_about_title" />
+                        <TextView
+                            style="@style/DrawerItemSubtitle"
+                            android:text="@string/drawer_item_about_subtitle" />
+                    </LinearLayout>
+
+                    <ImageView
+                        style="@style/DrawerItemChevron"
+                        android:contentDescription="@null" />
+                </LinearLayout>
+
+                <View style="@style/DrawerDivider" />
+
+                <!-- item_help -->
+                <LinearLayout
+                    android:id="@+id/item_help"
+                    style="@style/DrawerItemRow"
+                    android:contentDescription="@string/drawer_item_help_title">
+
+                    <FrameLayout style="@style/DrawerItemIconContainer">
+                        <ImageView
+                            style="@style/DrawerItemIcon"
+                            android:src="@drawable/ic_help"
+                            android:contentDescription="@null" />
+                    </FrameLayout>
+
+                    <LinearLayout style="@style/DrawerItemTextBlock">
+                        <TextView
+                            style="@style/DrawerItemTitle"
+                            android:text="@string/drawer_item_help_title" />
+                        <TextView
+                            style="@style/DrawerItemSubtitle"
+                            android:text="@string/drawer_item_help_subtitle" />
+                    </LinearLayout>
+
+                    <ImageView
+                        style="@style/DrawerItemChevron"
+                        android:contentDescription="@null" />
+                </LinearLayout>
+
+                <View style="@style/DrawerDivider" />
+
+                <!-- item_feedback -->
+                <LinearLayout
+                    android:id="@+id/item_feedback"
+                    style="@style/DrawerItemRow"
+                    android:contentDescription="@string/drawer_item_feedback_title">
+
+                    <FrameLayout style="@style/DrawerItemIconContainer">
+                        <ImageView
+                            style="@style/DrawerItemIcon"
+                            android:src="@drawable/ic_feedback"
+                            android:contentDescription="@null" />
+                    </FrameLayout>
+
+                    <LinearLayout style="@style/DrawerItemTextBlock">
+                        <TextView
+                            style="@style/DrawerItemTitle"
+                            android:text="@string/drawer_item_feedback_title" />
+                        <TextView
+                            style="@style/DrawerItemSubtitle"
+                            android:text="@string/drawer_item_feedback_subtitle" />
+                    </LinearLayout>
+
+                    <ImageView
+                        style="@style/DrawerItemChevron"
+                        android:contentDescription="@null" />
+                </LinearLayout>
+
+                <!-- ===== LEGAL ===== -->
+                <TextView
+                    style="@style/DrawerSectionLabel"
+                    android:layout_marginTop="@dimen/drawer_section_spacing_top"
+                    android:text="@string/drawer_section_legal" />
+
+                <!-- item_privacy -->
+                <LinearLayout
+                    android:id="@+id/item_privacy"
+                    style="@style/DrawerItemRow"
+                    android:contentDescription="@string/drawer_item_privacy_title">
+
+                    <FrameLayout style="@style/DrawerItemIconContainer">
+                        <ImageView
+                            style="@style/DrawerItemIcon"
+                            android:src="@drawable/ic_privacy"
+                            android:contentDescription="@null" />
+                    </FrameLayout>
+
+                    <LinearLayout style="@style/DrawerItemTextBlock">
+                        <TextView
+                            style="@style/DrawerItemTitle"
+                            android:text="@string/drawer_item_privacy_title" />
+                        <TextView
+                            style="@style/DrawerItemSubtitle"
+                            android:text="@string/drawer_item_privacy_subtitle" />
+                    </LinearLayout>
+
+                    <ImageView
+                        style="@style/DrawerItemChevron"
+                        android:contentDescription="@null" />
+                </LinearLayout>
+
+                <View style="@style/DrawerDivider" />
+
+                <!-- item_terms -->
+                <LinearLayout
+                    android:id="@+id/item_terms"
+                    style="@style/DrawerItemRow"
+                    android:contentDescription="@string/drawer_item_terms_title">
+
+                    <FrameLayout style="@style/DrawerItemIconContainer">
+                        <ImageView
+                            style="@style/DrawerItemIcon"
+                            android:src="@drawable/ic_description"
+                            android:contentDescription="@null" />
+                    </FrameLayout>
+
+                    <LinearLayout style="@style/DrawerItemTextBlock">
+                        <TextView
+                            style="@style/DrawerItemTitle"
+                            android:text="@string/drawer_item_terms_title" />
+                        <TextView
+                            style="@style/DrawerItemSubtitle"
+                            android:text="@string/drawer_item_terms_subtitle" />
+                    </LinearLayout>
+
+                    <ImageView
+                        style="@style/DrawerItemChevron"
+                        android:contentDescription="@null" />
+                </LinearLayout>
+
+                <!-- ===== MORE ===== -->
+                <TextView
+                    style="@style/DrawerSectionLabel"
+                    android:layout_marginTop="@dimen/drawer_section_spacing_top"
+                    android:text="@string/drawer_section_more" />
+
+                <!-- item_developer -->
+                <LinearLayout
+                    android:id="@+id/item_developer"
+                    style="@style/DrawerItemRow"
+                    android:contentDescription="@string/drawer_item_developer_title">
+
+                    <FrameLayout style="@style/DrawerItemIconContainer">
+                        <ImageView
+                            style="@style/DrawerItemIcon"
+                            android:src="@drawable/ic_developer"
+                            android:contentDescription="@null" />
+                    </FrameLayout>
+
+                    <LinearLayout style="@style/DrawerItemTextBlock">
+                        <TextView
+                            style="@style/DrawerItemTitle"
+                            android:text="@string/drawer_item_developer_title" />
+                        <TextView
+                            style="@style/DrawerItemSubtitle"
+                            android:text="@string/drawer_item_developer_subtitle" />
+                    </LinearLayout>
+
+                    <ImageView
+                        style="@style/DrawerItemChevron"
+                        android:contentDescription="@null" />
+                </LinearLayout>
+
+                <View style="@style/DrawerDivider" />
+
+                <!-- item_rate -->
+                <LinearLayout
+                    android:id="@+id/item_rate"
+                    style="@style/DrawerItemRow"
+                    android:contentDescription="@string/drawer_item_rate_title">
+
+                    <FrameLayout style="@style/DrawerItemIconContainer">
+                        <ImageView
+                            style="@style/DrawerItemIcon"
+                            android:src="@drawable/ic_star"
+                            android:contentDescription="@null" />
+                    </FrameLayout>
+
+                    <LinearLayout style="@style/DrawerItemTextBlock">
+                        <TextView
+                            style="@style/DrawerItemTitle"
+                            android:text="@string/drawer_item_rate_title" />
+                        <TextView
+                            style="@style/DrawerItemSubtitle"
+                            android:text="@string/drawer_item_rate_subtitle" />
+                    </LinearLayout>
+
+                    <ImageView
+                        style="@style/DrawerItemChevron"
+                        android:contentDescription="@null" />
+                </LinearLayout>
+
+            </LinearLayout>
+        </androidx.core.widget.NestedScrollView>
+
+        <!-- ================= FOOTER ================= -->
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:background="@color/drawer_divider" />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:gravity="center_vertical"
+            android:paddingStart="@dimen/drawer_padding_horizontal"
+            android:paddingEnd="@dimen/drawer_padding_horizontal"
+            android:paddingTop="14dp"
+            android:paddingBottom="14dp">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/drawer_footer_app_name"
+                android:textColor="@color/drawer_text_secondary"
+                android:textSize="11sp"
+                android:letterSpacing="0.05"
+                android:textStyle="bold" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="6dp"
+                android:layout_marginEnd="6dp"
+                android:text="•"
+                android:textColor="@color/drawer_text_secondary"
+                android:textSize="11sp" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/drawer_footer_version"
+                android:textColor="@color/drawer_text_secondary"
+                android:textSize="11sp" />
+        </LinearLayout>
+
+    </LinearLayout>
+
+</FrameLayout>

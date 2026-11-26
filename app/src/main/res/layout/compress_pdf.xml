@@ -1,0 +1,207 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:background="@color/white"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <include
+        android:id="@+id/toolbar_compress_pdf"
+        layout="@layout/compress_toolbar"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        />
+
+    <ScrollView
+        android:layout_height="0dp"
+        android:layout_weight="1"
+        android:layout_width="match_parent" >
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@color/white">
+
+    <include
+        android:id="@+id/upl_layout"
+        layout="@layout/upload_pdf_layout_ep_cmp_pdf"
+        android:layout_height="wrap_content"
+        android:layout_width="match_parent"
+        android:layout_margin="@dimen/margin_20dp"
+        app:layout_constraintTop_toTopOf="parent"
+        />
+
+
+    <include
+        android:id="@+id/pdf_preview_cmp_pdf"
+        android:layout_height="wrap_content"
+        android:layout_width="match_parent"
+        layout="@layout/compress_pdf_pdf_preview"
+        android:layout_marginStart="@dimen/margin_20dp"
+        android:layout_marginEnd="@dimen/margin_20dp"
+        android:layout_marginTop="@dimen/margin_15dp"
+        android:layout_marginBottom="@dimen/margin_18dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/upl_layout"
+
+        />
+
+
+
+    <com.google.android.material.card.MaterialCardView
+        android:id="@+id/cmp_level"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:cardCornerRadius="@dimen/margin_12dp"
+        app:cardElevation="@dimen/margin_30dp"
+        app:cardBackgroundColor="@color/white"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:layout_margin="@dimen/margin_20dp"
+        app:strokeWidth="0dp"
+        app:layout_constraintTop_toBottomOf="@id/pdf_preview_cmp_pdf">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:orientation="vertical"
+        android:layout_height="match_parent">
+
+        <TextView
+            android:text="Compression Level"
+            android:textSize="@dimen/margin_15dp"
+            android:textStyle="bold"
+            android:textColor="@color/black"
+            android:layout_height="wrap_content"
+            android:layout_width="wrap_content"
+            android:layout_marginTop="@dimen/margin_20dp"
+            android:layout_marginStart="@dimen/margin_15dp"
+            android:layout_marginBottom="@dimen/margin_15dp"
+            tools:ignore="HardcodedText,SpUsage" />
+
+
+        <include
+            android:id="@+id/lowCard"
+            layout="@layout/compress_pdf_rbtns" />
+        <include
+            android:id="@+id/mediumCard"
+            layout="@layout/compress_pdf_rbtns" />
+        <include
+            android:id="@+id/highCard"
+            layout="@layout/compress_pdf_rbtns" />
+
+
+
+
+    </LinearLayout>
+
+    </com.google.android.material.card.MaterialCardView>
+
+        <include
+            android:layout_width="match_parent"
+            android:layout_margin="@dimen/margin_20dp"
+            android:layout_height="wrap_content"
+            android:id="@+id/estimate"
+            layout="@layout/compress_pdf_estimated_size_item"
+            app:layout_constraintTop_toBottomOf="@id/cmp_level"
+            app:layout_constraintBottom_toTopOf="@id/note"/>
+
+    <com.google.android.material.card.MaterialCardView
+        android:id="@+id/note"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="16dp"
+            app:cardCornerRadius="16dp"
+            app:cardElevation="0dp"
+            app:strokeWidth="1dp"
+            app:strokeColor="#FFE0B2"
+            app:cardBackgroundColor="#FFF8E7"
+            android:layout_margin="@dimen/margin_20dp"
+            app:layout_constraintTop_toBottomOf="@id/estimate">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:padding="12dp"
+                android:gravity="center_vertical">
+
+                <ImageView
+                    android:layout_width="40dp"
+                    android:layout_height="40dp"
+                    android:src="@drawable/ic_icon_info"
+                    android:tint="#F57C00"/>
+
+                <LinearLayout
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:orientation="vertical"
+                    android:layout_marginStart="10dp">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Note"
+                        android:textStyle="bold"
+                        android:textSize="14sp"
+                        android:textColor="#E65100"/>
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="4dp"
+                        android:text="Large PDF files may be processed on our servers and require an internet connection. Processing time depends on file size and network speed."
+                        android:textSize="12sp"
+                        android:maxLines="4"
+                        android:ellipsize="end"
+                        android:textColor="#666666"/>
+
+                </LinearLayout>
+
+            </LinearLayout>
+
+        </com.google.android.material.card.MaterialCardView>
+
+
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+    </ScrollView>
+
+    <LinearLayout
+    android:id="@+id/compress_pdf_btn"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_margin="@dimen/margin_20dp"
+    android:background="@drawable/upl_pdf_cmp_pdf"
+    android:paddingTop="@dimen/margin_5dp"
+    android:paddingBottom="@dimen/margin_5dp"
+    android:gravity="center">
+
+    <ImageView
+        android:layout_height="37dp"
+        android:layout_width="37dp"
+        android:src="@drawable/bent_pdf_v2" />
+
+    <TextView
+        android:layout_height="wrap_content"
+        android:layout_width="wrap_content"
+        android:text="Compress PDF"
+        android:textSize="@dimen/margin_15dp"
+        android:textColor="@color/white"
+        android:textStyle="bold" />
+
+
+
+</LinearLayout>
+
+
+
+</LinearLayout>

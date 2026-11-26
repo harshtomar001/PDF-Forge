@@ -1,0 +1,770 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/bg_color_picker_sheet"
+    android:paddingStart="20dp"
+    android:paddingEnd="20dp"
+    android:paddingTop="10dp"
+    android:paddingBottom="16dp">
+
+    <!-- Drag handle -->
+    <View
+        android:id="@+id/dragHandle"
+        android:layout_width="40dp"
+        android:layout_height="4dp"
+        android:layout_marginTop="8dp"
+        android:background="@drawable/bg_drag_handle"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <!-- Header -->
+    <ImageView
+        android:id="@+id/ivPaletteIcon"
+        android:layout_width="24dp"
+        android:layout_height="24dp"
+        android:layout_marginTop="20dp"
+        android:contentDescription="@string/color_picker"
+        android:src="@drawable/ic_palette_outline"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/dragHandle"
+        app:tint="@color/on_surface" />
+
+    <TextView
+        android:id="@+id/tvTitle"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="12dp"
+        android:text="@string/color_picker"
+        android:textAppearance="?attr/textAppearanceTitleLarge"
+        android:textColor="@color/on_surface"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toBottomOf="@id/ivPaletteIcon"
+        app:layout_constraintEnd_toStartOf="@id/btnEyedropper"
+        app:layout_constraintStart_toEndOf="@id/ivPaletteIcon"
+        app:layout_constraintTop_toTopOf="@id/ivPaletteIcon" />
+
+    <ImageButton
+        android:id="@+id/btnEyedropper"
+        android:layout_width="40dp"
+        android:layout_height="40dp"
+        android:background="?attr/selectableItemBackgroundBorderless"
+        android:contentDescription="@string/pick_color_from_screen"
+        android:padding="8dp"
+        android:src="@drawable/ic_eyedropper"
+        app:layout_constraintBottom_toBottomOf="@id/ivPaletteIcon"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="@id/ivPaletteIcon"
+        app:tint="@color/on_surface" />
+
+
+
+    <!-- Scrollable body -->
+    <androidx.core.widget.NestedScrollView
+        android:id="@+id/scrollContent"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:layout_marginTop="20dp"
+        android:clipToPadding="false"
+        android:scrollbars="none"
+        android:layout_marginBottom="@dimen/margin_8dp"
+        app:layout_constraintBottom_toTopOf="@id/btnCancelEraser"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintVertical_weight="1"
+        app:layout_constraintTop_toBottomOf="@id/ivPaletteIcon">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <!-- ============ SATURATION + HUE ============ -->
+
+            <com.google.android.material.card.MaterialCardView
+                android:id="@+id/cardSaturation"
+                android:layout_width="0dp"
+                android:layout_height="280dp"
+                android:layout_marginEnd="14dp"
+                app:cardCornerRadius="18dp"
+                app:cardElevation="0dp"
+                app:layout_constraintEnd_toStartOf="@id/cardHue"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                app:strokeWidth="0dp">
+
+                <!-- DO NOT REPLACE: existing OpenGL custom view -->
+                <com.harsh.pdfstudio.custom_view.SaturationGLView
+                    android:id="@+id/saturationSlider"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent" />
+
+            </com.google.android.material.card.MaterialCardView>
+
+            <com.google.android.material.card.MaterialCardView
+                android:id="@+id/cardHue"
+                android:layout_width="32dp"
+                android:layout_height="0dp"
+                app:cardCornerRadius="16dp"
+                app:cardElevation="0dp"
+                app:cardBackgroundColor="@color/white"
+                app:layout_constraintBottom_toBottomOf="@id/cardSaturation"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toTopOf="@id/cardSaturation"
+                app:strokeWidth="0dp">
+
+                <!-- DO NOT REPLACE: existing OpenGL custom view -->
+                <com.harsh.pdfstudio.custom_view.HueSliderView
+                    android:id="@+id/hueSlider"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent" />
+
+            </com.google.android.material.card.MaterialCardView>
+
+           <!--   selected color preview    -->
+
+            <TextView
+                android:id="@+id/tvPreviewLabel"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="24dp"
+                android:text="@string/preview"
+                android:textAppearance="?attr/textAppearanceTitleMedium"
+                android:textColor="@color/on_surface"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/cardSaturation" />
+
+            <com.google.android.material.card.MaterialCardView
+                android:id="@+id/previewCard"
+                android:layout_height="@dimen/margin_60dp"
+                android:layout_width="0dp"
+                app:layout_constraintTop_toBottomOf="@+id/tvPreviewLabel"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                android:layout_marginTop="@dimen/margin_12dp"
+                app:cardCornerRadius="@dimen/margin_12dp"
+                app:cardElevation="@dimen/margin_5dp"
+                app:strokeWidth="0dp">
+
+                <View
+                    android:id="@+id/selectedColorPreview"
+                    android:layout_height="match_parent"
+                    android:layout_width="match_parent"
+                    android:background="@color/white"
+                    />
+
+            </com.google.android.material.card.MaterialCardView>
+
+
+            <TextView
+                android:id="@+id/tvOpacityLabel"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="24dp"
+                android:text="@string/opacity"
+                android:textAppearance="?attr/textAppearanceTitleMedium"
+                android:textColor="@color/on_surface"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/previewCard" />
+
+            <LinearLayout
+                android:id="@+id/boxOpacity"
+                android:layout_width="88dp"
+                android:layout_height="40dp"
+                android:background="@drawable/bg_field_outline"
+                android:gravity="center_vertical"
+                android:orientation="horizontal"
+                android:paddingStart="10dp"
+                android:paddingEnd="2dp"
+                app:layout_constraintBottom_toBottomOf="@id/tvOpacityLabel"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toTopOf="@id/tvOpacityLabel">
+
+                <EditText
+                    android:id="@+id/etOpacityPercent"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:background="@android:color/transparent"
+                    android:gravity="center"
+                    android:importantForAutofill="no"
+                    android:inputType="number"
+                    android:maxLength="3"
+                    android:textColor="@color/darkGray"
+                    android:text="100"
+                    android:textAppearance="?attr/textAppearanceBodyMedium" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/percent_sign"
+                    android:textColor="@color/darkGray"
+                    android:textAppearance="?attr/textAppearanceBodyMedium" />
+
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:orientation="vertical">
+
+                    <ImageButton
+                        android:id="@+id/btnOpacityUp"
+                        android:layout_width="22dp"
+                        android:layout_height="0dp"
+                        android:layout_weight="1"
+                        android:background="?attr/selectableItemBackgroundBorderless"
+                        android:contentDescription="@string/increase"
+                        android:padding="2dp"
+                        android:src="@drawable/ic_stepper_up" />
+
+                    <ImageButton
+                        android:id="@+id/btnOpacityDown"
+                        android:layout_width="22dp"
+                        android:layout_height="0dp"
+                        android:layout_weight="1"
+                        android:background="?attr/selectableItemBackgroundBorderless"
+                        android:contentDescription="@string/decrease"
+                        android:padding="2dp"
+                        android:src="@drawable/ic_stepper_down" />
+
+                </LinearLayout>
+
+            </LinearLayout>
+
+            <!-- Replace with a custom OpacitySliderView later if you want the checkered/gradient track -->
+            <com.google.android.material.slider.Slider
+                android:id="@+id/sliderOpacity"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="6dp"
+                android:stepSize="1"
+                android:value="100"
+                android:valueFrom="0"
+                android:valueTo="100"
+                app:tickVisibilityMode="hidden"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/tvOpacityLabel"
+                app:thumbColor="@color/primary"
+                app:trackColorActive="@color/primary" />
+
+            <!-- ============ HEX ============ -->
+
+            <TextView
+                android:id="@+id/tvHexLabel"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="20dp"
+                android:text="@string/hex"
+                android:textAppearance="?attr/textAppearanceTitleMedium"
+                android:textColor="@color/on_surface"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/sliderOpacity" />
+
+            <com.google.android.material.textfield.TextInputLayout
+                android:id="@+id/tilHex"
+                style="@style/Widget.Material3.TextInputLayout.OutlinedBox"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="8dp"
+                android:hint="@null"
+                app:boxCornerRadiusBottomEnd="14dp"
+                app:boxCornerRadiusBottomStart="14dp"
+                app:boxCornerRadiusTopEnd="14dp"
+                app:boxCornerRadiusTopStart="14dp"
+                app:endIconContentDescription="@string/copy_hex"
+                app:endIconDrawable="@drawable/ic_copy"
+                app:endIconMode="custom"
+                app:hintEnabled="false"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/tvHexLabel">
+
+                <com.google.android.material.textfield.TextInputEditText
+                    android:id="@+id/etHex"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:inputType="textCapCharacters"
+                    android:maxLength="9"
+                    android:textColor="@color/black"
+                    android:textStyle="bold"
+                    android:textAppearance="?attr/textAppearanceBodyLarge" />
+
+            </com.google.android.material.textfield.TextInputLayout>
+
+            <!-- ============ RGB ============ -->
+
+            <TextView
+                android:id="@+id/tvRgbLabel"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="20dp"
+                android:text="@string/rgb"
+                android:textAppearance="?attr/textAppearanceTitleMedium"
+                android:textColor="@color/on_surface"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/tilHex" />
+
+            <LinearLayout
+                android:id="@+id/boxRed"
+                android:layout_width="0dp"
+                android:layout_height="48dp"
+                android:layout_marginTop="8dp"
+                android:layout_marginEnd="8dp"
+                android:background="@drawable/bg_field_outline"
+                android:gravity="center_vertical"
+                android:orientation="horizontal"
+                android:paddingStart="10dp"
+                android:paddingEnd="2dp"
+                app:layout_constraintEnd_toStartOf="@id/boxGreen"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/tvRgbLabel">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginEnd="6dp"
+                    android:text="@string/prefix_r"
+                    android:textColor="@color/rgb_red"
+                    android:textStyle="bold" />
+
+                <EditText
+                    android:id="@+id/etRed"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:background="@android:color/transparent"
+                    android:gravity="center"
+                    android:importantForAutofill="no"
+                    android:inputType="number"
+                    android:maxLength="3"
+                    android:textColor="@color/black"
+                    android:text="255"
+                    android:textAppearance="?attr/textAppearanceBodyMedium" />
+
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:orientation="vertical">
+
+                    <ImageButton
+                        android:id="@+id/btnRedUp"
+                        android:layout_width="22dp"
+                        android:layout_height="0dp"
+                        android:layout_weight="1"
+                        android:background="?attr/selectableItemBackgroundBorderless"
+                        android:contentDescription="@string/increase"
+                        android:padding="2dp"
+                        android:src="@drawable/ic_stepper_up" />
+
+                    <ImageButton
+                        android:id="@+id/btnRedDown"
+                        android:layout_width="22dp"
+                        android:layout_height="0dp"
+                        android:layout_weight="1"
+                        android:background="?attr/selectableItemBackgroundBorderless"
+                        android:contentDescription="@string/decrease"
+                        android:padding="2dp"
+                        android:src="@drawable/ic_stepper_down" />
+
+                </LinearLayout>
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/boxGreen"
+                android:layout_width="0dp"
+                android:layout_height="48dp"
+                android:layout_marginEnd="8dp"
+                android:background="@drawable/bg_field_outline"
+                android:gravity="center_vertical"
+                android:orientation="horizontal"
+                android:paddingStart="10dp"
+                android:paddingEnd="2dp"
+                app:layout_constraintEnd_toStartOf="@id/boxBlue"
+                app:layout_constraintStart_toEndOf="@id/boxRed"
+                app:layout_constraintTop_toTopOf="@id/boxRed">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginEnd="6dp"
+                    android:text="@string/prefix_g"
+                    android:textColor="@color/rgb_green"
+                    android:textStyle="bold" />
+
+                <EditText
+                    android:id="@+id/etGreen"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:background="@android:color/transparent"
+                    android:gravity="center"
+                    android:importantForAutofill="no"
+                    android:inputType="number"
+                    android:textColor="@color/black"
+                    android:maxLength="3"
+                    android:text="106"
+                    android:textAppearance="?attr/textAppearanceBodyMedium" />
+
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:orientation="vertical">
+
+                    <ImageButton
+                        android:id="@+id/btnGreenUp"
+                        android:layout_width="22dp"
+                        android:layout_height="0dp"
+                        android:layout_weight="1"
+                        android:background="?attr/selectableItemBackgroundBorderless"
+                        android:contentDescription="@string/increase"
+                        android:padding="2dp"
+                        android:src="@drawable/ic_stepper_up" />
+
+                    <ImageButton
+                        android:id="@+id/btnGreenDown"
+                        android:layout_width="22dp"
+                        android:layout_height="0dp"
+                        android:layout_weight="1"
+                        android:background="?attr/selectableItemBackgroundBorderless"
+                        android:contentDescription="@string/decrease"
+                        android:padding="2dp"
+                        android:src="@drawable/ic_stepper_down" />
+
+                </LinearLayout>
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/boxBlue"
+                android:layout_width="0dp"
+                android:layout_height="48dp"
+                android:background="@drawable/bg_field_outline"
+                android:gravity="center_vertical"
+                android:orientation="horizontal"
+                android:paddingStart="10dp"
+                android:paddingEnd="2dp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toEndOf="@id/boxGreen"
+                app:layout_constraintTop_toTopOf="@id/boxRed">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginEnd="6dp"
+                    android:text="@string/prefix_b"
+                    android:textColor="@color/rgb_blue"
+                    android:textStyle="bold" />
+
+                <EditText
+                    android:id="@+id/etBlue"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:background="@android:color/transparent"
+                    android:gravity="center"
+                    android:importantForAutofill="no"
+                    android:inputType="number"
+                    android:maxLength="3"
+                    android:textColor="@color/black"
+                    android:text="0"
+                    android:textAppearance="?attr/textAppearanceBodyMedium" />
+
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:orientation="vertical">
+
+                    <ImageButton
+                        android:id="@+id/btnBlueUp"
+                        android:layout_width="22dp"
+                        android:layout_height="0dp"
+                        android:layout_weight="1"
+                        android:background="?attr/selectableItemBackgroundBorderless"
+                        android:contentDescription="@string/increase"
+                        android:padding="2dp"
+                        android:src="@drawable/ic_stepper_up" />
+
+                    <ImageButton
+                        android:id="@+id/btnBlueDown"
+                        android:layout_width="22dp"
+                        android:layout_height="0dp"
+                        android:layout_weight="1"
+                        android:background="?attr/selectableItemBackgroundBorderless"
+                        android:contentDescription="@string/decrease"
+                        android:padding="2dp"
+                        android:src="@drawable/ic_stepper_down" />
+
+                </LinearLayout>
+
+            </LinearLayout>
+
+            <!-- ============ HSV ============ -->
+
+            <TextView
+                android:id="@+id/tvHsvLabel"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="20dp"
+                android:text="@string/hsv"
+                android:textAppearance="?attr/textAppearanceTitleMedium"
+                android:textColor="@color/on_surface"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/boxRed" />
+
+            <LinearLayout
+                android:id="@+id/boxHue"
+                android:layout_width="0dp"
+                android:layout_height="48dp"
+                android:layout_marginTop="8dp"
+                android:layout_marginEnd="8dp"
+                android:background="@drawable/bg_field_outline"
+                android:gravity="center_vertical"
+                android:orientation="horizontal"
+                android:paddingStart="10dp"
+                android:paddingEnd="2dp"
+                app:layout_constraintEnd_toStartOf="@id/boxSaturation"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/tvHsvLabel">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginEnd="6dp"
+                    android:text="@string/prefix_h"
+                    android:textColor="@color/hsv_hue"
+                    android:textStyle="bold" />
+
+                <EditText
+                    android:id="@+id/etHue"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:background="@android:color/transparent"
+                    android:gravity="center"
+                    android:importantForAutofill="no"
+                    android:inputType="number"
+                    android:maxLength="3"
+                    android:textColor="@color/black"
+                    android:text="24"
+                    android:textAppearance="?attr/textAppearanceBodyMedium" />
+
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:orientation="vertical">
+
+                    <ImageButton
+                        android:id="@+id/btnHueUp"
+                        android:layout_width="22dp"
+                        android:layout_height="0dp"
+                        android:layout_weight="1"
+                        android:background="?attr/selectableItemBackgroundBorderless"
+                        android:contentDescription="@string/increase"
+                        android:padding="2dp"
+                        android:src="@drawable/ic_stepper_up" />
+
+                    <ImageButton
+                        android:id="@+id/btnHueDown"
+                        android:layout_width="22dp"
+                        android:layout_height="0dp"
+                        android:layout_weight="1"
+                        android:background="?attr/selectableItemBackgroundBorderless"
+                        android:contentDescription="@string/decrease"
+                        android:padding="2dp"
+                        android:src="@drawable/ic_stepper_down" />
+
+                </LinearLayout>
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/boxSaturation"
+                android:layout_width="0dp"
+                android:layout_height="48dp"
+                android:layout_marginEnd="8dp"
+                android:background="@drawable/bg_field_outline"
+                android:gravity="center_vertical"
+                android:orientation="horizontal"
+                android:paddingStart="10dp"
+                android:paddingEnd="2dp"
+                app:layout_constraintEnd_toStartOf="@id/boxValue"
+                app:layout_constraintStart_toEndOf="@id/boxHue"
+                app:layout_constraintTop_toTopOf="@id/boxHue">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginEnd="6dp"
+                    android:text="@string/prefix_s"
+                    android:textColor="@color/primary"
+                    android:textStyle="bold" />
+
+                <EditText
+                    android:id="@+id/etSaturation"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:background="@android:color/transparent"
+                    android:gravity="center"
+                    android:importantForAutofill="no"
+                    android:inputType="number"
+                    android:maxLength="3"
+                    android:textColor="@color/black"
+                    android:text="100"
+                    android:textAppearance="?attr/textAppearanceBodyMedium" />
+
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:orientation="vertical">
+
+                    <ImageButton
+                        android:id="@+id/btnSaturationUp"
+                        android:layout_width="22dp"
+                        android:layout_height="0dp"
+                        android:layout_weight="1"
+                        android:background="?attr/selectableItemBackgroundBorderless"
+                        android:contentDescription="@string/increase"
+                        android:padding="2dp"
+                        android:src="@drawable/ic_stepper_up" />
+
+                    <ImageButton
+                        android:id="@+id/btnSaturationDown"
+                        android:layout_width="22dp"
+                        android:layout_height="0dp"
+                        android:layout_weight="1"
+                        android:background="?attr/selectableItemBackgroundBorderless"
+                        android:contentDescription="@string/decrease"
+                        android:padding="2dp"
+                        android:src="@drawable/ic_stepper_down" />
+
+                </LinearLayout>
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/boxValue"
+                android:layout_width="0dp"
+                android:layout_height="48dp"
+                android:background="@drawable/bg_field_outline"
+                android:gravity="center_vertical"
+                android:orientation="horizontal"
+                android:paddingStart="10dp"
+                android:paddingEnd="2dp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toEndOf="@id/boxSaturation"
+                app:layout_constraintTop_toTopOf="@id/boxHue">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginEnd="6dp"
+                    android:text="@string/prefix_v"
+                    android:textColor="@color/primary"
+                    android:textStyle="bold" />
+
+                <EditText
+                    android:id="@+id/etValue"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:background="@android:color/transparent"
+                    android:gravity="center"
+                    android:importantForAutofill="no"
+                    android:inputType="number"
+                    android:maxLength="3"
+                    android:textColor="@color/black"
+                    android:text="100"
+                    android:textAppearance="?attr/textAppearanceBodyMedium" />
+
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:orientation="vertical">
+
+                    <ImageButton
+                        android:id="@+id/btnValueUp"
+                        android:layout_width="22dp"
+                        android:layout_height="0dp"
+                        android:layout_weight="1"
+                        android:background="?attr/selectableItemBackgroundBorderless"
+                        android:contentDescription="@string/increase"
+                        android:padding="2dp"
+                        android:src="@drawable/ic_stepper_up" />
+
+                    <ImageButton
+                        android:id="@+id/btnValueDown"
+                        android:layout_width="22dp"
+                        android:layout_height="0dp"
+                        android:layout_weight="1"
+                        android:background="?attr/selectableItemBackgroundBorderless"
+                        android:contentDescription="@string/decrease"
+                        android:padding="2dp"
+                        android:src="@drawable/ic_stepper_down" />
+
+                </LinearLayout>
+
+            </LinearLayout>
+
+            <!-- ============ RECENT COLORS ============ -->
+
+            <TextView
+                android:id="@+id/tvRecentColorsLabel"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="24dp"
+                android:text="@string/recent_colors"
+                android:textAppearance="?attr/textAppearanceTitleMedium"
+                android:textColor="@color/on_surface"
+                app:layout_constraintEnd_toStartOf="@id/tvClearRecent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/boxHue" />
+
+            <TextView
+                android:id="@+id/tvClearRecent"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:background="?attr/selectableItemBackground"
+                android:padding="4dp"
+                android:text="@string/clear"
+                android:textAppearance="?attr/textAppearanceLabelLarge"
+                android:textColor="@color/primary"
+                app:layout_constraintBottom_toBottomOf="@id/tvRecentColorsLabel"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toTopOf="@id/tvRecentColorsLabel" />
+
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/rvRecentColors"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="12dp"
+                android:layout_marginBottom="8dp"
+                android:clipToPadding="false"
+                android:orientation="horizontal"
+                android:overScrollMode="never"
+                app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/tvRecentColorsLabel"
+
+               />
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+    </androidx.core.widget.NestedScrollView>
+
+
+    <include
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:id="@+id/btnCancelEraser"
+        layout="@layout/edit_pdf_opr_btns"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

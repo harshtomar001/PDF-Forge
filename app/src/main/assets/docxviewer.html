@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <script src="mammoth.browser.min.js"></script>
+
+    <style>
+        body{
+            font-family: Arial, sans-serif;
+            padding:20px;
+            line-height:1.6;
+        }
+
+        img{
+            max-width:100%;
+        }
+
+        table{
+            border-collapse:collapse;
+        }
+
+        td, th{
+            border:1px solid #ccc;
+            padding:8px;
+        }
+    </style>
+
+</head>
+
+<body>
+
+<div id="output">Loading document...</div>
+
+<script>
+
+    function openDocx(base64Data){
+
+        var binary = atob(base64Data);
+        var len = binary.length;
+
+        var bytes = new Uint8Array(len);
+
+        for(var i=0;i<len;i++){
+            bytes[i] = binary.charCodeAt(i);
+        }
+
+        mammoth.convertToHtml(
+            {arrayBuffer: bytes},
+            {
+                convertImage: mammoth.images.inline(function(element){
+                    return element.read("base64").then(function(imageBuffer){
+                        return {
+                            src: "data:" + element.contentType + ";base64," + imageBuffer
+                        };
+                    });
+                })
+            }
+        ).then(function(result){
+
+            document.getElementById("output").innerHTML = result.value;
+
+        }).catch(function(err){
+
+            document.getElementById("output").innerHTML = "Error loading document";
+
+            console.log(err);
+
+        });
+
+    }
+
+</script>
+
+</body>
+</html>

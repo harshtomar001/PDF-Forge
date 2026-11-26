@@ -1,0 +1,53 @@
+
+<!-- res/drawable/ic_pdf_preview.xml -->
+<vector xmlns:android="http://schemas.android.com/apk/res/android"
+    android:width="64dp"
+    android:height="80dp"
+    android:viewportWidth="64"
+    android:viewportHeight="80">
+
+    <!-- Document body (rounded corners) -->
+    <path
+        android:pathData="M8,0 L42,0 L42,4 L58,20 L58,74 Q58,80 52,80 L8,80 Q2,80 2,74 L2,6 Q2,0 8,0 Z"
+        android:fillColor="#E53935"/>
+
+    <!-- Shine / gloss top half -->
+    <path
+        android:pathData="M8,0 L42,0 L42,4 L58,20 L58,40 L2,18 L2,6 Q2,0 8,0 Z"
+        android:fillColor="#FFFFFF"
+        android:fillAlpha="0.12"/>
+
+    <!-- Fold triangle -->
+    <path
+        android:pathData="M42,0 L58,20 L42,20 Z"
+        android:fillColor="#FF8A80"/>
+
+    <!-- Document lines -->
+    <path android:pathData="M10,30 L42,30" android:strokeColor="#FFFFFF"
+        android:strokeWidth="3" android:strokeAlpha="0.45" android:strokeLineCap="round" android:fillColor="#00000000"/>
+    <path android:pathData="M10,38 L34,38" android:strokeColor="#FFFFFF"
+        android:strokeWidth="3" android:strokeAlpha="0.3" android:strokeLineCap="round" android:fillColor="#00000000"/>
+    <path android:pathData="M10,46 L38,46" android:strokeColor="#FFFFFF"
+        android:strokeWidth="3" android:strokeAlpha="0.2" android:strokeLineCap="round" android:fillColor="#00000000"/>
+
+    <!-- PDF Badge bg -->
+    <path
+        android:pathData="M8,56 L56,56 L56,76 Q56,80 52,80 L12,80 Q8,80 8,76 Z"
+        android:fillColor="#8B0000"/>
+
+    <!-- P -->
+    <path android:pathData="M13,74 L13,60 M13,60 L18,60 Q23,60 23,64 Q23,68 18,68 L13,68"
+        android:strokeColor="#FFFFFF" android:strokeWidth="2.2" android:fillColor="#00000000"
+        android:strokeLineCap="round" android:strokeLineJoin="round"/>
+
+    <!-- D -->
+    <path android:pathData="M26,74 L26,60 M26,60 L30,60 Q37,60 37,67 Q37,74 30,74 L26,74"
+        android:strokeColor="#FFFFFF" android:strokeWidth="2.2" android:fillColor="#00000000"
+        android:strokeLineCap="round" android:strokeLineJoin="round"/>
+
+    <!-- F -->
+    <path android:pathData="M40,60 L50,60 M40,60 L40,74 M40,67 L49,67"
+        android:strokeColor="#FFFFFF" android:strokeWidth="2.2" android:fillColor="#00000000"
+        android:strokeLineCap="round" android:strokeLineJoin="round"/>
+
+</vector>

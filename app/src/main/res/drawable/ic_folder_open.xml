@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8"?>
+<vector xmlns:android="http://schemas.android.com/apk/res/android"
+    android:width="24dp"
+    android:height="24dp"
+    android:viewportWidth="24"
+    android:viewportHeight="24">
+
+    <!-- Back folder -->
+    <path
+        android:fillColor="#00000000"
+        android:strokeColor="#2E7D32"
+        android:strokeWidth="1.5"
+        android:strokeLineJoin="round"
+        android:pathData="M3,9 Q3,7 5,7 L9,7 L11,9 L19,9 Q21,9 21,11 L21,18 Q21,20 19,20 L5,20 Q3,20 3,18 Z"/>
+
+    <!-- Front folder -->
+    <path
+        android:fillColor="#E8F5E9"
+        android:strokeColor="#2E7D32"
+        android:strokeWidth="1.5"
+        android:strokeLineJoin="round"
+        android:pathData="M2,11 Q2,9 4,9 L9,9 L11,11 L20,11 Q22,11 22,13 L22,19 Q22,21 20,21 L4,21 Q2,21 2,19 Z"/>
+
+</vector>

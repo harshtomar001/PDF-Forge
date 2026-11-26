@@ -1,0 +1,84 @@
+<?xml version="1.0" encoding="utf-8"?>
+<vector xmlns:android="http://schemas.android.com/apk/res/android"
+    android:width="108dp"
+    android:height="108dp"
+    android:viewportWidth="108"
+    android:viewportHeight="108">
+
+    <!-- ① Blue rounded-square background (was orange) -->
+    <path
+        android:pathData="M0,22 Q0,0 22,0 L86,0 Q108,0 108,22 L108,86 Q108,108 86,108 L22,108 Q0,108 0,86 Z"
+        android:fillColor="#1565C0" />
+
+    <!-- ② Document paper (white) -->
+    <path
+        android:pathData="M20,10 L66,10 L84,27 L84,93 Q84,97 80,97 L20,97 Q16,97 16,93 L16,14 Q16,10 20,10 Z"
+        android:fillColor="#FFFFFF" />
+
+    <!-- ③ Fold triangle top-right (light blue) -->
+    <path
+        android:pathData="M66,10 L84,27 L66,27 Z"
+        android:fillColor="#BBDEFB" />
+
+    <!-- ④ Bar chart – left bar (medium height) -->
+    <path
+        android:pathData="M27,53 L27,36 Q27,34.5 28.5,34.5 L36.5,34.5 Q38,34.5 38,36 L38,53 Q38,54.5 36.5,54.5 L28.5,54.5 Q27,54.5 27,53 Z"
+        android:fillColor="#1565C0" />
+
+    <!-- ④ Bar chart – middle bar (tallest) -->
+    <path
+        android:pathData="M41,53 L41,22 Q41,20.5 42.5,20.5 L50.5,20.5 Q52,20.5 52,22 L52,53 Q52,54.5 50.5,54.5 L42.5,54.5 Q41,54.5 41,53 Z"
+        android:fillColor="#1565C0" />
+
+    <!-- ④ Bar chart – right bar (shortest) -->
+    <path
+        android:pathData="M55,53 L55,44 Q55,42.5 56.5,42.5 L64.5,42.5 Q66,42.5 66,44 L66,53 Q66,54.5 64.5,54.5 L56.5,54.5 Q55,54.5 55,53 Z"
+        android:fillColor="#1565C0" />
+
+    <!-- ⑤ Text line 1 (light blue — was salmon) -->
+    <path
+        android:pathData="M22,61 L78,61"
+        android:strokeColor="#90CAF9"
+        android:strokeWidth="3.8"
+        android:strokeLineCap="round"
+        android:fillColor="#00000000" />
+
+    <!-- ⑤ Text line 2 -->
+    <path
+        android:pathData="M22,69 L78,69"
+        android:strokeColor="#90CAF9"
+        android:strokeWidth="3.8"
+        android:strokeLineCap="round"
+        android:fillColor="#00000000" />
+
+    <!-- ⑤ Text line 3 -->
+    <path
+        android:pathData="M22,77 L78,77"
+        android:strokeColor="#90CAF9"
+        android:strokeWidth="3.8"
+        android:strokeLineCap="round"
+        android:fillColor="#00000000" />
+
+    <!-- ⑤ Text line 4 (short) -->
+    <path
+        android:pathData="M22,85 L56,85"
+        android:strokeColor="#90CAF9"
+        android:strokeWidth="3.8"
+        android:strokeLineCap="round"
+        android:fillColor="#00000000" />
+
+    <!-- ⑥ W badge – dark blue rounded square (was dark orange) -->
+    <path
+        android:pathData="M8,74 Q8,64 18,64 L34,64 Q44,64 44,74 L44,94 Q44,104 34,104 L18,104 Q8,104 8,94 Z"
+        android:fillColor="#0D47A1" />
+
+    <!-- ⑦ W letter – path strokes, no text element -->
+    <path
+        android:pathData="M14,82 L19,100 L26,88 L33,100 L38,82"
+        android:strokeColor="#FFFFFF"
+        android:strokeWidth="4"
+        android:strokeLineCap="round"
+        android:strokeLineJoin="round"
+        android:fillColor="#00000000" />
+
+</vector>

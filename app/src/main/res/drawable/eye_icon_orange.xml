@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="utf-8"?>
+<vector xmlns:android="http://schemas.android.com/apk/res/android"
+    android:width="108dp"
+    android:height="108dp"
+    android:viewportWidth="108"
+    android:viewportHeight="108">
+
+    <!-- Rounded square background -->
+    <path
+        android:fillColor="#FFF3EC"
+        android:pathData="M22,0 L86,0 Q108,0 108,22 L108,86 Q108,108 86,108 L22,108 Q0,108 0,86 L0,22 Q0,0 22,0 Z"/>
+
+    <!-- Eye outer shape: natural proportions, not too wide -->
+    <path
+        android:strokeColor="#D94F1A"
+        android:strokeWidth="5.5"
+        android:strokeLineCap="round"
+        android:strokeLineJoin="round"
+        android:fillColor="#FFF3EC"
+        android:pathData="M16,54 C27,30 81,30 92,54 C81,74 27,74 16,54 Z"/>
+
+    <!-- Iris ring -->
+    <path
+        android:strokeColor="#D94F1A"
+        android:strokeWidth="5"
+        android:fillColor="#FFF3EC"
+        android:pathData="M54,54 m-14,0 a14,14 0,1,1 28,0 a14,14 0,1,1 -28,0"/>
+
+    <!-- Pupil -->
+    <path
+        android:fillColor="#D94F1A"
+        android:pathData="M54,54 m-6,0 a6,6 0,1,1 12,0 a6,6 0,1,1 -12,0"/>
+
+</vector>

@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.appcompat.widget.Toolbar android:id="@+id/splitToolbar"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:background="@drawable/bg_split_toolbar"
+    android:paddingStart="16dp"
+    android:paddingEnd="16dp"
+    android:paddingTop="@dimen/margin_10dp"
+    android:paddingBottom="@dimen/margin_5dp"
+    xmlns:android="http://schemas.android.com/apk/res/android">
+
+
+    <ImageView
+        android:id="@+id/back_arrow_split_pdf"
+        android:layout_width="@dimen/margin_30dp"
+        android:layout_height="@dimen/margin_30dp"
+        android:src="@drawable/ic_back_arrow"
+        />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/split_pdf"
+        android:textColor="@android:color/white"
+        android:textSize="20dp"
+        android:textStyle="bold"
+        android:layout_marginStart="@dimen/margin_12dp"
+        />
+
+</androidx.appcompat.widget.Toolbar>

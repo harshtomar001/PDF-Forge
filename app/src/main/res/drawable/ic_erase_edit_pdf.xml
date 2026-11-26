@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<vector xmlns:android="http://schemas.android.com/apk/res/android"
+    android:width="48dp"
+    android:height="48dp"
+    android:viewportWidth="48"
+    android:viewportHeight="48">
+
+    <!-- Eraser body - tilted rectangle (parallelogram shape) -->
+    <!-- Main body purple/blue top half -->
+    <path
+        android:fillColor="#7986CB"
+        android:pathData="M10,12 L38,12 Q41,12 41,15 L41,24 L7,24 L7,15 Q7,12 10,12 Z"/>
+
+    <!-- Top highlight strip -->
+    <path
+        android:fillColor="#9FA8DA"
+        android:pathData="M10,12 L38,12 Q41,12 41,15 L41,18 L7,18 L7,15 Q7,12 10,12 Z"/>
+
+    <!-- Eraser white/cream bottom half -->
+    <path
+        android:fillColor="#E8EAF6"
+        android:pathData="M7,24 L41,24 L41,33 Q41,36 38,36 L10,36 Q7,36 7,33 Z"/>
+
+    <!-- Divider line between two halves -->
+    <path
+        android:pathData="M7,24 L41,24"
+        android:strokeColor="#5C6BC0"
+        android:strokeWidth="1.5"
+        android:fillColor="@android:color/transparent"/>
+
+    <!-- Eraser left face (3D side) -->
+    <path
+        android:fillColor="#5C6BC0"
+        android:pathData="M7,15 L7,33 Q7,36 10,36 L7,36 Q4,36 4,33 L4,18 Q4,15 7,15 Z"/>
+
+    <!-- Smudge/erased area on paper (grey patch below eraser) -->
+    <path
+        android:fillColor="#CFD8DC"
+        android:pathData="M10,38 L28,38 L24,43 L6,43 Z"/>
+
+    <!-- Eraser crumbs -->
+    <path android:fillColor="#B0BEC5" android:pathData="M30,39 m-1.5,0 a1.5,1.5 0 1,0 3,0 a1.5,1.5 0 1,0 -3,0"/>
+    <path android:fillColor="#CFD8DC" android:pathData="M35,41 m-1,0 a1,1 0 1,0 2,0 a1,1 0 1,0 -2,0"/>
+    <path android:fillColor="#B0BEC5" android:pathData="M32,43 m-1,0 a1,1 0 1,0 2,0 a1,1 0 1,0 -2,0"/>
+
+</vector>

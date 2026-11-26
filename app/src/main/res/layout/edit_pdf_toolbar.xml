@@ -1,0 +1,78 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:gravity="center_horizontal"
+    android:layout_gravity="center_horizontal"
+    android:background="#F5F3FF"
+    android:elevation="2dp"
+    android:paddingStart="@dimen/margin_5dp"
+    android:paddingTop="@dimen/margin_30dp"
+    android:paddingBottom="@dimen/margin_8dp"
+    android:paddingEnd="@dimen/margin_5dp"
+    android:layout_height="wrap_content">
+
+
+    <ImageView
+        android:id="@+id/backArrow_edit_pdf_inp_frag"
+        android:layout_width="28dp"
+        android:layout_height="28dp"
+        android:tint="@color/black"
+        android:layout_gravity="center"
+        app:srcCompat="@drawable/ic_back_arrow" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_weight="2"
+        android:text="Edit PDF"
+        android:layout_gravity="center"
+        android:textColor="@color/black"
+        android:textSize="@dimen/margin_18dp"
+        android:textStyle="bold"
+        android:layout_marginStart="@dimen/margin_8dp"
+        />
+
+    <ImageView
+        android:id="@+id/undo_btn"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:src="@drawable/undo_icon"
+        android:tint="@color/grey"
+        android:layout_gravity="center"
+        android:layout_marginEnd="@dimen/margin_12dp"
+        />
+
+
+    <ImageView
+        android:id="@+id/redo_btn"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:tint="@color/grey"
+        android:layout_gravity="center"
+        android:src="@drawable/redo_icon"
+        android:layout_marginEnd="@dimen/margin_12dp"
+        />
+
+    <Space
+        android:id="@+id/edit_pdf_toolbar_space_layout"
+        android:layout_width="0dp"
+        android:visibility="gone"
+        android:layout_height="0dp"
+        android:layout_weight="1"/>
+
+    <TextView
+        android:id="@+id/preview_or_save_edit_pdf"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textSize="@dimen/margin_15dp"
+        android:layout_gravity="center"
+        android:layout_marginEnd="@dimen/margin_5dp"
+        android:textColor="@color/bluish_color"
+        android:fontFamily="@font/iosevka_charonmono_mediumitalic"
+        android:text="Preview"
+        android:background="@drawable/rounder_blue_outline"
+        />
+
+</LinearLayout>

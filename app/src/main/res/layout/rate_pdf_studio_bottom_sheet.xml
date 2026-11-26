@@ -1,0 +1,185 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.core.widget.NestedScrollView
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:clipToPadding="false"
+    android:fillViewport="true">
+
+    <LinearLayout
+        android:id="@+id/rating_bottom_sheet"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:background="@drawable/bottom_sheet_background"
+        android:paddingStart="@dimen/rate_sheet_horizontal_padding"
+        android:paddingEnd="@dimen/rate_sheet_horizontal_padding"
+        android:paddingTop="10dp"
+        android:paddingBottom="28dp">
+
+        <!-- ===== TOP ROW: drag handle (centered) + close button (end) ===== -->
+        <FrameLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <View
+                android:layout_width="@dimen/rate_drag_handle_width"
+                android:layout_height="@dimen/rate_drag_handle_height"
+                android:layout_gravity="center_horizontal|top"
+                android:layout_marginTop="4dp"
+                android:background="@drawable/bg_drag_handle" />
+
+            <ImageView
+                android:id="@+id/iv_close"
+                android:layout_width="@dimen/rate_close_touch_target"
+                android:layout_height="@dimen/rate_close_touch_target"
+                android:layout_gravity="end|top"
+                android:layout_marginTop="-6dp"
+                android:layout_marginEnd="-8dp"
+                android:padding="14dp"
+                android:background="@drawable/ripple_circular"
+                android:clickable="true"
+                android:focusable="true"
+                android:src="@drawable/ic_close"
+                app:tint="@color/rate_text_secondary"
+                android:contentDescription="@string/rate_cd_close" />
+
+        </FrameLayout>
+
+        <!-- ===== RATING ICON ===== -->
+        <FrameLayout
+            android:layout_width="@dimen/rate_icon_circle_size"
+            android:layout_height="@dimen/rate_icon_circle_size"
+            android:layout_gravity="center_horizontal"
+            android:layout_marginTop="4dp"
+            android:background="@drawable/bg_rating_icon_circle">
+
+            <ImageView
+                android:id="@+id/iv_rating_icon"
+                android:layout_width="@dimen/rate_icon_size"
+                android:layout_height="@dimen/rate_icon_size"
+                android:layout_gravity="center"
+                android:src="@drawable/ic_star_filled"
+                app:tint="@color/rate_primary"
+                android:contentDescription="@string/rate_cd_rating_icon" />
+
+        </FrameLayout>
+
+        <!-- ===== TITLE ===== -->
+        <TextView
+            android:id="@+id/tv_title"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="18dp"
+            android:text="@string/rate_title"
+            android:textColor="@color/rate_text_primary"
+            android:textSize="22sp"
+            android:textStyle="bold"
+            android:gravity="center"
+            android:fontFamily="sans-serif-medium" />
+
+        <!-- ===== DESCRIPTION ===== -->
+        <TextView
+            android:id="@+id/tv_description"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="8dp"
+            android:text="@string/rate_description"
+            android:textColor="@color/rate_text_secondary"
+            android:textSize="14.5sp"
+            android:gravity="center"
+            android:lineSpacingExtra="3dp" />
+
+        <!-- ===== INITIAL RATING GROUP (stars + label + rate button) ===== -->
+        <LinearLayout
+            android:id="@+id/initial_rating_group"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <!-- Star row -->
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_horizontal"
+                android:layout_marginTop="26dp"
+                android:orientation="horizontal">
+
+                <ImageView
+                    android:id="@+id/star_1"
+                    style="@style/RateStar"
+                    android:contentDescription="@string/rate_cd_star_1" />
+
+                <ImageView
+                    android:id="@+id/star_2"
+                    style="@style/RateStar"
+                    android:contentDescription="@string/rate_cd_star_2" />
+
+                <ImageView
+                    android:id="@+id/star_3"
+                    style="@style/RateStar"
+                    android:contentDescription="@string/rate_cd_star_3" />
+
+                <ImageView
+                    android:id="@+id/star_4"
+                    style="@style/RateStar"
+                    android:contentDescription="@string/rate_cd_star_4" />
+
+                <ImageView
+                    android:id="@+id/star_5"
+                    style="@style/RateStar"
+                    android:contentDescription="@string/rate_cd_star_5" />
+
+            </LinearLayout>
+
+            <!-- Rating label -->
+            <TextView
+                android:id="@+id/tv_rating_label"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
+                android:text="@string/rate_label_default"
+                android:textColor="@color/rate_text_secondary"
+                android:textSize="13sp"
+                android:gravity="center" />
+
+            <!-- Rate button -->
+            <com.google.android.material.button.MaterialButton
+                android:id="@+id/btn_rate"
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/rate_button_height"
+                android:layout_marginTop="22dp"
+                android:enabled="false"
+                android:text="@string/rate_btn_rate"
+                android:textAllCaps="false"
+                android:textSize="16sp"
+                android:textColor="@android:color/white"
+                app:backgroundTint="@color/selector_btn_rate_background"
+                app:cornerRadius="@dimen/rate_button_corner_radius"
+                app:rippleColor="@color/rate_ripple_blue" />
+
+        </LinearLayout>
+
+        <!-- ===== SECONDARY ACTION ===== -->
+        <TextView
+            android:id="@+id/tv_maybe_later"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_horizontal"
+            android:layout_marginTop="14dp"
+            android:minHeight="48dp"
+            android:gravity="center"
+            android:paddingStart="16dp"
+            android:paddingEnd="16dp"
+            android:background="@drawable/ripple_text_button"
+            android:clickable="true"
+            android:focusable="true"
+            android:text="@string/rate_btn_maybe_later"
+            android:textColor="@color/rate_text_secondary"
+            android:textSize="14.5sp"
+            android:textStyle="bold" />
+
+    </LinearLayout>
+
+</androidx.core.widget.NestedScrollView>

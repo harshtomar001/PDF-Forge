@@ -1,0 +1,438 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<resources>
+    <color name="primary_col_btn">#bd060a</color>
+    <color name="home_page_btn_color">#F0F2F2</color>
+    <color name="bluish_color">#4B90EB</color>
+    <color name="grey">#a39e9e</color>
+    <color name="pp">#fad2f9</color>
+    <color name="purple">#5B2D9E</color>
+    <color name="colorPrimary">#1565C0 </color>
+    <color name="colorPrimaryDark">#0d47a1</color>
+    <color name="statusBarColor">#0d47a1</color>
+    <color name="darkBlue">#161838</color>
+    <color name="gold">#FFD54F</color>
+
+    <color name="orange">#E8531A</color>
+    <color name="light_orange">#F05A1A</color>
+    <color name="background_light">#FAFAFA</color>
+    <color name="text_primary">#1A1A1A</color>
+
+
+    <color name="doc_blue">#1A55B0</color>
+
+    <color name="cmp_text_red">#E53935</color>
+    <color name="_70_quality">#63a1f2</color>
+    <color name="_40_quality">#fa9f55</color>
+
+    <color name="pink_split_pdf">#D84072</color>
+    <color name="split_pdf_gray">#555555</color>
+
+    <color name="darkGray"> #212121</color>
+    <color name="purple_">#4F2DE8</color>
+    <color name="default_">#E5E7EB</color>
+    <color name="default_2">#F0F0F0</color>
+
+
+
+    <color name="app_bg">#F8FAFD</color>
+    <color name="toolbar_blue">#1554B7</color>
+    <color name="card_white">#FFFFFF</color>
+    <color name="card_soft">#EEF3FF</color>
+    <color name="primary_blue">#1554B7</color>
+    <color name="accent_yellow">#FFC83D</color>
+    <color name="text_main">#111827</color>
+    <color name="text_secondary_1">#6B7280</color>
+    <color name="border_light">#E5E7EB</color>
+
+    <color name="ic_home">#1554B7</color>
+
+    <color name="ic_tools">#F59E0B</color>
+    <color name="ic_history"> #10B981</color>
+
+
+    <color name="splash_bg">#0f0c29</color>
+
+    <color name="blue_color">#2563EB</color>
+
+    <color name="button_stroke">#DADCE0</color>
+    <color name="light_blue">#E8F0FE</color>
+
+    <color name="on_surface">#1A1A1A</color>
+    <color name="rgb_red">#E53935</color>
+    <color name="rgb_green">#43A047</color>
+    <color name="rgb_blue">#1E88E5</color>
+    <color name="hsv_hue">#7C4DFF</color>
+    <color name="field_stroke">#DDDDDD</color>
+
+    <color name="primary">#4B3FD1</color>
+
+    <color name="blue_600">#2563EB</color>
+    <color name="blue_100">#DBEAFE</color>
+    <color name="blue_200">#BFDBFE</color>
+
+
+
+
+    <!-- Brand -->
+    <color name="pdf_red">#C62828</color>
+    <color name="pdf_red_pressed">#B71C1C</color>
+
+    <!-- Core -->
+    <color name="black">#1A1A1A</color>
+    <color name="white">#FFFFFF</color>
+    <color name="text_secondary">#6B6B6B</color>
+
+    <!-- Success -->
+    <color name="success_green">#2E7D32</color>
+    <color name="success_green_light">#E6F4EA</color>
+
+    <!-- Error -->
+    <color name="error_red">#C62828</color>
+    <color name="error_red_light">#FDEBEA</color>
+
+    <!-- Card / dividers -->
+    <color name="card_stroke">#E6E6E6</color>
+
+    <!-- Neutral tertiary button (error screen "Back") -->
+    <color name="neutral_button_bg">#EEEEEE</color>
+
+    <color name="card_bg">#FFFFFF</color>
+
+    <color name="tool_icon_bg_default">#EEF4FF</color>
+
+
+    <color name="history_background">#F7F9FC</color>
+
+    <color name="history_text_primary">#111936</color>
+
+    <color name="history_text_secondary">#65708A</color>
+
+    <color name="history_view">#5540D9</color>
+
+    <color name="history_delete">#F22F35</color>
+
+
+
+        <color name="colorPrimaryLight">#EAF3FF</color>
+
+        <color name="colorBackground">#F7F9FC</color>
+        <color name="colorSurface">#FFFFFF</color>
+
+        <color name="colorTextPrimary">#172033</color>
+        <color name="colorTextSecondary">#687386</color>
+
+        <color name="colorBorder">#DCE3EC</color>
+
+        <color name="colorSuccess">#2EAD67</color>
+        <color name="colorError">#E53935</color>
+
+        <color name="colorBrandYellow">#FFD43B</color>
+
+        <color name="colorGoogleBlue">#4285F4</color>
+        <color name="colorGoogleRed">#EA4335</color>
+        <color name="colorGoogleYellow">#FBBC05</color>
+        <color name="colorGoogleGreen">#34A853</color>
+
+
+    <color name="pdf_studio_primary_blue">#1976D2</color>
+    <color name="pdf_studio_primary_blue_dark">#1565C0</color>
+    <color name="pdf_studio_light_blue">#E8F1FF</color>
+    <color name="pdf_studio_dark_navy">#17233C</color>
+    <color name="pdf_studio_secondary_gray">#7A8496</color>
+    <color name="pdf_studio_background">#F7F9FC</color>
+    <color name="pdf_studio_white">#FFFFFF</color>
+    <color name="pdf_studio_divider">#E8ECF2</color>
+    <color name="pdf_studio_logout_red">#E53935</color>
+    <!--  Translucent variants used for header decoration / badge  -->
+    <color name="pdf_studio_white_15">#26FFFFFF</color>
+    <color name="pdf_studio_white_30">#4DFFFFFF</color>
+    <color name="pdf_studio_white_70">#B3FFFFFF</color>
+    <color name="pdf_studio_blue_wave_light">#1E88E5</color>
+    <color name="pdf_studio_blue_wave_dark">#125BA8</color>
+
+    <color name="pdf_primary_red">#C0392B</color>
+    <color name="pdf_dark_red">#A93226</color>
+    <color name="pdf_light_red">#FDEDEC</color>
+    <color name="pdf_success_green">#2E7D32</color>
+    <color name="pdf_background">#F7F8FA</color>
+    <color name="pdf_text_primary">#202124</color>
+    <color name="pdf_text_secondary">#6B7280</color>
+    <color name="pdf_card_white">#FFFFFF</color>
+    <color name="pdf_divider">#EDEEF1</color>
+    <color name="pdf_page_border">#D1D5DB</color>
+    <color name="pdf_transparent">#00000000</color>
+
+    <color name="loader_scrim">#66000000</color>
+    <color name="loader_scrim_cool">#660A0E14</color>
+    <color name="loader_scrim_charcoal">#661C1917</color>
+    <color name="loader_scrim_soft">#40000000</color>
+
+    <color  name="loader_color_bright">#F06A3D</color>
+    <color  name="loader_color_hot">#F06A3D</color>
+
+    <color  name="loader_color">#fc0a0a</color>
+
+    <color name="storage_purple_900">#2E1A6B</color>
+    <color name="storage_purple_700">#4527A0</color>
+    <color name="storage_purple_600">#5E35B1</color>
+    <color name="storage_purple_500">#6C4CD9</color>
+    <color name="storage_purple_400">#7C5CE0</color>
+    <color name="storage_purple_100">#EDE7FA</color>
+    <color name="storage_purple_50">#F5F2FC</color>
+    <!--  Secondary accent (blue / info)  -->
+    <color name="storage_blue_700">#1D5FC2</color>
+    <color name="storage_blue_500">#3B82F6</color>
+    <color name="storage_blue_100">#E4EEFD</color>
+    <color name="storage_blue_50">#F0F6FE</color>
+    <!--  Cache accent (green)  -->
+    <color name="storage_green_700">#1E8E5A</color>
+    <color name="storage_green_500">#34A853</color>
+    <color name="storage_green_100">#E1F5E9</color>
+    <!--  Other data accent (orange)  -->
+    <color name="storage_orange_700">#C6720A</color>
+    <color name="storage_orange_500">#F59E0B</color>
+    <color name="storage_orange_100">#FDECD2</color>
+    <!--  Destructive (red)  -->
+    <color name="storage_red_700">#C62828</color>
+    <color name="storage_red_500">#E53935</color>
+    <color name="storage_red_100">#FCE1E1</color>
+    <!--  Neutrals  -->
+    <color name="storage_background">#F7F7FB</color>
+    <color name="storage_surface">#FFFFFF</color>
+    <color name="storage_text_primary">#1A1B25</color>
+    <color name="storage_text_secondary">#6B6D7A</color>
+    <color name="storage_text_tertiary">#9497A3</color>
+    <color name="storage_divider">#EBEBF0</color>
+    <color name="storage_track_unused">#EDEDF3</color>
+    <color name="storage_scrim">#66000000</color>
+    <color name="storage_white">#FFFFFF</color>
+    <color name="storage_ripple">#33000000</color>
+    <color name="blue_checkBox">#2196F3</color>
+    <color name="blue_checkBox_unsel">#e6edf2</color>
+    <color name="blue_checkBox_unread">#e6f0f7</color>
+    <color name="settings_section_title">#26364D</color>
+    <color name="settings_blue">#1976D2</color>
+    <color name="settings_blue_dark">#1565C0</color>
+    <color name="settings_blue_light">#BBDEFB</color>
+    <color name="settings_switch_off_thumb">#757575</color>
+    <color name="settings_switch_off_track">#D6D9DE</color>
+    <color name="settings_primary_purple">#7B5CFA</color>
+    <color name="settings_primary_purple_dark">#5F3DDE</color>
+    <color name="settings_primary_purple_light">#EFEBFE</color>
+    <color name="settings_screen_background">#F3F0FB</color>
+    <color name="settings_card_surface">#FFFFFF</color>
+    <color name="settings_icon_bg">#EFEBFE</color>
+    <color name="settings_text_primary">#1C1B1F</color>
+    <color name="settings_text_secondary">#6F6B7A</color>
+    <color name="settings_divider">#E8E4F3</color>
+    <color name="settings_success">#2E7D32</color>
+    <color name="settings_warning">#ED8F03</color>
+    <color name="settings_error">#D93025</color>
+    <color name="accent_purple">#7B5CFA</color>
+    <color name="accent_blue">#2E7DF1</color>
+    <color name="accent_green">#2FAE60</color>
+    <color name="accent_orange">#F2994A</color>
+
+
+    <!-- Brand / primary -->
+    <color name="purple_primary">#6C4FE0</color>
+    <color name="purple_primary_dark">#5A3FD1</color>
+
+    <!-- Surfaces -->
+    <color name="screen_background">#F7F9FA</color>
+    <color name="card_background">#FFFFFF</color>
+    <color name="purple_surface_light">#F1EEFB</color>
+    <color name="purple_unread_bg">#F6F3FE</color>
+
+    <!-- Status: success -->
+    <!-- Removed duplicate success_green and success_green_light -->
+
+    <!-- Status: info -->
+    <color name="info_blue">#3B82F6</color>
+    <color name="info_blue_light">#E7F0FE</color>
+
+    <!-- Status: warning -->
+    <color name="warning_orange">#F5A623</color>
+    <color name="warning_orange_light">#FDF1E0</color>
+
+    <!-- Text -->
+    <color name="text_primary_alt">#1A1A2E</color>
+    <color name="text_secondary_alt">#6B7280</color>
+
+    <!-- Misc -->
+    <color name="divider_color">#EAE7F5</color>
+    <color name="unread_dot">#6C4FE0</color>
+
+
+    <color name="colorHeroSubtitleText">#CCFFFFFF</color>
+    <color name="colorHeroHighlight">#1AFFFFFF</color>
+
+
+    <color name="pdf_primary">#2949B8</color>
+    <color name="pdf_dark_blue">#172A78</color>
+    <color name="pdf_light_blue">#EAF1FF</color>
+
+    <!-- Surfaces -->
+    <color name="drawer_background">#F7F9FC</color>
+    <color name="drawer_surface">#FFFFFF</color>
+
+    <!-- Text -->
+    <color name="drawer_text_primary">#172033</color>
+    <color name="drawer_text_secondary">#667085</color>
+
+    <!-- Misc -->
+    <color name="drawer_divider">#E5EAF2</color>
+    <color name="drawer_header_text_primary">#FFFFFFFF</color>
+    <color name="drawer_header_text_secondary">#CCFFFFFF</color>
+    <color name="drawer_ripple">#332949B8</color>
+
+    <color name="export_sheet_bg">#FFFFFF</color>
+    <color name="export_handle">#D0D3D9</color>
+    <color name="export_title">#1A1D29</color>
+    <color name="export_subtitle">#6B7280</color>
+
+    <!-- Accent (matches indigo brand palette) -->
+    <color name="export_accent">#3355E8</color>
+    <color name="export_accent_bg">#EAF0FF</color>
+    <color name="export_card_border">#E5E7EB</color>
+    <color name="export_radio_border">#C7CAD1</color>
+
+    <!-- Format icon colors -->
+    <color name="export_icon_pdf">#EF4444</color>
+    <color name="export_icon_png">#10B981</color>
+    <color name="export_icon_jpeg">#F59E0B</color>
+    <color name="export_icon_card_bg">#FFFFFF</color>
+    <color name="export_icon_card_shadow">#1A000000</color>
+
+    <!-- Buttons / inputs -->
+    <color name="export_cancel_border">#D5D8DE</color>
+    <color name="export_cancel_text">#1A1D29</color>
+    <color name="export_input_border">#DDE0E5</color>
+    <color name="export_input_hint">#9AA0AC</color>
+    <color name="export_divider">#EEF0F3</color>
+
+    <color name="merge_light_red">#FFF1F1</color>
+
+
+    <color name="rate_primary">#2949B8</color>
+    <color name="rate_primary_dark">#1F3A96</color>
+
+    <color name="rate_sheet_background">#FFFFFF</color>
+    <color name="rate_screen_background">#F7F9FC</color>
+
+    <color name="rate_text_primary">#172033</color>
+    <color name="rate_text_secondary">#667085</color>
+
+    <color name="rate_star_selected">#F5B83D</color>
+    <color name="rate_star_unselected">#D0D5DD</color>
+
+    <color name="rate_drag_handle">#E4E7EC</color>
+    <color name="rate_icon_circle_bg">#EAF1FF</color>
+
+    <color name="rate_ripple_blue">#292949B8</color>
+    <color name="rate_ripple_neutral">#1F667085</color>
+
+    <color name="rate_disabled_button">#B7C2E8</color>
+
+    <color name="upgrade_background">#F7F9FC</color>
+    <color name="upgrade_navy">#172033</color>
+    <color name="upgrade_blue">#1557C0</color>
+    <color name="upgrade_gold">#FFC107</color>
+    <color name="upgrade_green">#16A56A</color>
+    <color name="upgrade_purple">#7C3AED</color>
+    <color name="upgrade_card_border">#E3E7EF</color>
+    <color name="upgrade_divider">#CBD5E1</color>
+
+
+    <color name="password_strength_weak">#E53935</color>
+    <color name="password_strength_medium">#FBC02D</color>
+    <color name="password_strength_strong">#43A047</color>
+
+
+
+
+    <color name="colorPrimaryVariant">#F1EBFC</color>
+    <color name="colorOnPrimary">#FFFFFF</color>
+    <!--  Surfaces / backgrounds  -->
+<!--    <color name="colorBackground">#F7F6FB</color>-->
+<!--    <color name="colorSurface">#FFFFFF</color>-->
+    <color name="colorSurfaceAlt">#FAF9FE</color>
+    <!--  Text  -->
+<!--    <color name="colorTextPrimary">#1B1B23</color>-->
+<!--    <color name="colorTextSecondary">#6E6E7C</color>-->
+    <color name="colorTextOnPrimary">#FFFFFF</color>
+    <color name="colorTextOnSuccess">#FFFFFF</color>
+    <!--  Borders / dividers  -->
+<!--    <color name="colorBorder">#E7E5F0</color>-->
+    <color name="colorDivider">#EEEDF5</color>
+    <!--  Status: success (Active/Premium)  -->
+<!--    <color name="colorSuccess">#1FA463</color>-->
+    <color name="colorSuccessBg">#E3F7EC</color>
+    <!--  Status: neutral (Free)  -->
+    <color name="colorNeutral">#6E6E7C</color>
+    <color name="colorNeutralBg">#EEEDF5</color>
+    <!--  Status: error (Cancel)  -->
+<!--    <color name="colorError">#E23D3D</color>-->
+    <color name="colorErrorBg">#FBEAEA</color>
+    <!--  Icon chip backgrounds  -->
+    <color name="colorIconChipBg">#F1EBFC</color>
+    <!--  Decorative crown / premium accent  -->
+    <color name="colorPremiumAccent">#FFD873</color>
+
+    <color name="blue_50">#EFF6FF</color>
+
+
+    <color name="blue_400">#3B82F6</color>
+<!--    <color name="blue_600">#2563EB</color>-->
+    <color name="blue_700">#1D4ED8</color>
+    <color name="blue_900">#1E3A8A</color>
+    <color name="green_50">#DCFCE7</color>
+    <color name="green_600">#16803C</color>
+    <color name="red_50">#FEE2E2</color>
+    <color name="red_600">#DC2626</color>
+    <color name="gray_50">#F8FAFC</color>
+    <color name="gray_100">#F1F5F9</color>
+    <color name="gray_200">#E2E8F0</color>
+    <color name="gray_400">#94A3B8</color>
+    <color name="gray_500">#64748B</color>
+    <color name="error">#BA1A1A</color>
+    <color name="gray_900">#0F172A</color>
+<!--    <color name="white">#FFFFFF</color>-->
+<!--    <color name="black">#000000</color>-->
+    <!--  ================= SEMANTIC ROLES (LIGHT) =================
+             These are the ONLY colors layouts should reference (via
+             values/attrs.xml theme attributes). Never reference blue_*,
+             gray_* etc. directly from a layout.  -->
+    <!--  Primary / accent  -->
+    <color name="color_primary">@color/blue_600</color>
+    <color name="color_primary_dark">@color/blue_700</color>
+    <color name="color_primary_container">@color/blue_100</color>
+    <color name="color_on_primary">@color/white</color>
+    <color name="color_on_primary_container">@color/blue_700</color>
+    <color name="color_secondary_blue">@color/blue_400</color>
+    <!--  Subtle blue surfaces (info / security cards, empty-state icon chips)  -->
+    <color name="color_blue_surface">@color/blue_50</color>
+    <color name="color_blue_border">@color/blue_200</color>
+    <color name="color_on_blue_surface">@color/blue_700</color>
+    <!--  Neutral surfaces  -->
+    <color name="color_surface">@color/white</color>
+    <color name="color_surface_variant">@color/gray_50</color>
+    <color name="color_background">@color/white</color>
+    <!--  Text  -->
+    <color name="color_text_primary">@color/gray_900</color>
+    <color name="color_text_secondary">@color/gray_500</color>
+    <color name="color_text_muted">@color/gray_400</color>
+    <color name="color_on_primary_button">@color/white</color>
+    <!--  Borders / dividers  -->
+    <color name="color_border">@color/gray_200</color>
+    <color name="color_divider">@color/gray_100</color>
+    <!--  Status  -->
+    <color name="color_success">@color/green_600</color>
+    <color name="color_success_container">@color/green_50</color>
+    <color name="color_error">@color/red_600</color>
+    <color name="color_error_container">@color/red_50</color>
+
+
+
+</resources>

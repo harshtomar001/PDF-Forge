@@ -1,0 +1,60 @@
+
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="220dp"
+    android:orientation="vertical"
+    android:layout_marginStart="16dp"
+    android:layout_marginEnd="16dp"
+    android:layout_marginTop="0dp"
+    android:background="@drawable/bg_hero_rounded"
+    android:clipToOutline="true"
+    android:elevation="4dp">
+
+    <androidx.viewpager2.widget.ViewPager2
+
+        android:id="@+id/viewPager"
+        android:layout_width="match_parent"
+        android:layout_height="220dp" />
+
+    <com.google.android.material.tabs.TabLayout
+        android:id="@+id/tabDots"
+        android:layout_width="wrap_content"
+        android:layout_height="8dp"
+        android:layout_gravity="bottom|center_horizontal"
+        android:layout_marginTop="8dp"
+        android:background="@null"
+        android:backgroundTint="@null"
+        android:paddingStart="0dp"
+        android:paddingEnd="0dp"
+        android:layout_marginBottom="@dimen/margin_12dp"
+        app:tabBackground="@drawable/dot_selector"
+        app:tabIndicator="@null"
+        app:tabIndicatorHeight="0dp"
+        app:tabMaxWidth="12dp"
+        app:tabMinWidth="12dp"
+        app:tabRippleColor="@null" />
+
+    <!-- Real, clickable CTA overlaid on every slide (banner art has no baked-in button) -->
+    <TextView
+        android:id="@+id/createNowBtnViewPager"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="bottom|start"
+        android:layout_marginStart="28dp"
+        android:layout_marginBottom="46dp"
+        android:background="@drawable/bg_white_pill"
+        android:clickable="true"
+        android:focusable="true"
+        android:foreground="?attr/selectableItemBackground"
+        android:paddingStart="20dp"
+        android:paddingEnd="20dp"
+        android:paddingTop="11dp"
+        android:paddingBottom="11dp"
+        android:text="Create Now  ›"
+        android:textColor="@color/toolbar_blue"
+        android:textStyle="bold"
+        android:textSize="14sp" />
+
+
+</FrameLayout>

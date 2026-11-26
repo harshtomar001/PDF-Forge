@@ -1,0 +1,31 @@
+<vector xmlns:android="http://schemas.android.com/apk/res/android"
+    android:width="40dp"
+    android:height="40dp"
+    android:viewportWidth="40"
+    android:viewportHeight="40">
+
+    <!-- static page body -->
+    <path
+        android:pathData="M10,4 H24 L30,10 V36 H10 Z"
+        android:fillColor="#FAECE7"
+        android:strokeColor="#D85A30"
+        android:strokeWidth="1.5" />
+
+    <!-- folded corner -->
+    <path
+        android:pathData="M24,4 L24,10 L30,10 Z"
+        android:fillColor="#F0997B" />
+
+    <!-- flipping page, scaled on X by page_flip_scale animator -->
+    <group
+        android:name="flip_page"
+        android:pivotX="20"
+        android:pivotY="20"
+        android:scaleX="1">
+        <path
+            android:pathData="M10,4 H24 L30,10 V36 H10 Z"
+            android:fillColor="#FCFAF8"
+            android:strokeColor="#993C1D"
+            android:strokeWidth="1" />
+    </group>
+</vector>

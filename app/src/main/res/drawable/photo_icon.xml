@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8"?>
+<vector xmlns:android="http://schemas.android.com/apk/res/android"
+    android:width="24dp"
+    android:height="24dp"
+    android:viewportWidth="24"
+    android:viewportHeight="24">
+
+    <!-- Outer rectangle frame -->
+    <path
+        android:pathData="M3,7 Q3,5 5,5 L19,5 Q21,5 21,7 L21,17 Q21,19 19,19 L5,19 Q3,19 3,17 Z"
+        android:fillColor="#00000000"
+        android:strokeColor="#666666"
+        android:strokeWidth="1.5"
+        android:strokeLineCap="round"
+        android:strokeLineJoin="round"/>
+
+    <!-- Sun circle -->
+    <path
+        android:pathData="M8.5,10 m-1.5,0 a1.5,1.5 0 1,0 3,0 a1.5,1.5 0 1,0 -3,0"
+        android:fillColor="#00000000"
+        android:strokeColor="#666666"
+        android:strokeWidth="1.5"/>
+
+    <!-- Mountain / landscape polyline -->
+    <path
+        android:pathData="M3,17 L8,12 L11,15 L14,11 L21,17"
+        android:fillColor="#00000000"
+        android:strokeColor="#666666"
+        android:strokeWidth="1.5"
+        android:strokeLineCap="round"
+        android:strokeLineJoin="round"/>
+
+</vector>

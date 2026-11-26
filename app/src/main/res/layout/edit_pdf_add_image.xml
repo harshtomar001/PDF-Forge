@@ -1,0 +1,166 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:paddingTop="@dimen/margin_8dp"
+    android:background="#FAFAFA">
+
+
+    <ImageView
+        android:id="@+id/back_arrow_addImage"
+        android:layout_width="@dimen/margin_30dp"
+        android:layout_height="@dimen/margin_30dp"
+        android:layout_marginStart="@dimen/margin_12dp"
+        android:src="@drawable/ic_back_arrow"
+        android:tint="@color/black"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        android:layout_marginTop="@dimen/margin_12dp"
+        app:layout_constraintEnd_toStartOf="@+id/title"
+
+        />
+
+    <TextView
+        android:id="@+id/title"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Add Image"
+        android:textStyle="bold"
+        android:textColor="@color/black"
+        android:textSize="20dp"
+        android:padding="16dp"
+        android:layout_marginStart="@dimen/margin_8dp"
+        app:layout_constraintTop_toTopOf="@id/back_arrow_addImage"
+        app:layout_constraintBottom_toBottomOf="@id/back_arrow_addImage"
+        app:layout_constraintStart_toEndOf="@id/back_arrow_addImage"
+       />
+
+    <com.google.android.material.button.MaterialButton
+        android:id="@+id/swap_image"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Replace"
+        android:textStyle="normal"
+        android:textColor="#2962FF"
+        android:maxLines="1"
+        android:ellipsize="end"
+        android:textSize="15dp"
+        android:padding="16dp"
+        app:backgroundTint="@null"
+        android:background="@android:color/transparent"
+        app:icon="@drawable/replace_page"
+        app:iconTint="#2962FF"
+        app:iconGravity="textStart"
+        app:layout_constraintBottom_toBottomOf="@id/title"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="@id/title"/>
+
+    <View
+        android:id="@+id/title_break"
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:background="@color/black"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/title"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:layout_marginHorizontal="@dimen/margin_8dp"
+        android:alpha=".4"
+        />
+
+
+    <com.google.android.material.card.MaterialCardView
+        android:id="@+id/bottomCard"
+        android:layout_width="0dp"
+        android:layout_margin="20dp"
+        app:cardCornerRadius="12dp"
+        app:cardElevation="2dp"
+        app:strokeColor="@color/grey"
+        app:strokeWidth="0dp"
+        app:cardBackgroundColor="#f0f2f0"
+        app:layout_constraintTop_toBottomOf="@+id/title_break"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintBottom_toTopOf="@id/layoutImageTools"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:layout_height="0dp">
+
+
+
+        <com.harsh.pdfstudio.custom_view.AddImageView
+            android:id="@+id/addImageView"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:background="#FFFFFF" />
+
+
+    </com.google.android.material.card.MaterialCardView>
+
+    <LinearLayout
+        android:id="@+id/layoutImageTools"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="16dp"
+        android:layout_marginEnd="16dp"
+        android:layout_marginTop="12dp"
+        android:layout_marginBottom="@dimen/margin_18dp"
+        android:orientation="horizontal"
+        android:gravity="center"
+        app:layout_constraintBottom_toTopOf="@id/bottom"
+        android:weightSum="3">
+
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/btnFlipHorizontal"
+            android:layout_width="0dp"
+            android:layout_height="48dp"
+            android:layout_weight="1"
+            app:cornerRadius="@dimen/margin_12dp"
+            android:layout_marginEnd="8dp"
+            android:text="Flip H"
+            android:textColor="@color/black"
+            app:icon="@drawable/ic_flip_horizontal_simple"
+            app:iconTint="@color/black"
+            android:textAllCaps="false"
+            android:backgroundTint="@color/white"
+            app:strokeWidth="1.5dp"
+            app:strokeColor="#DADCE0"
+            app:rippleColor="@color/light_blue"
+            />
+
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/btnFlipVertical"
+            android:layout_width="0dp"
+            android:layout_height="48dp"
+            android:layout_weight="1"
+            app:cornerRadius="@dimen/margin_12dp"
+            android:layout_marginHorizontal="4dp"
+            android:text="Flip V"
+            android:textColor="@color/black"
+            app:icon="@drawable/ic_flip_vertical_simple"
+            app:iconTint="@color/black"
+            android:textAllCaps="false"
+            android:backgroundTint="@color/white"
+            app:strokeWidth="1.5dp"
+            app:strokeColor="#DADCE0"
+            app:rippleColor="@color/light_blue"
+            />
+
+
+    </LinearLayout>
+
+
+
+    <include
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_margin="@dimen/margin_20dp"
+        android:id="@+id/bottom"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintBottom_toBottomOf="parent"
+        layout="@layout/edit_pdf_opr_btns" />
+
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>

@@ -1,0 +1,8 @@
+<animated-vector xmlns:android="http://schemas.android.com/apk/res/android"
+    android:drawable="@drawable/loader_ring">
+
+    <target
+        android:name="ring_group"
+        android:animation="@anim/loader_ring_rotate" />
+
+</animated-vector>

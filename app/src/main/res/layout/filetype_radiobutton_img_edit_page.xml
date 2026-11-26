@@ -1,0 +1,82 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/ll_radiobutton"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:orientation="vertical"
+    android:layout_gravity="center_horizontal"
+    android:gravity="center"
+    android:elevation="30dp"
+
+    >
+
+
+
+    <Button
+        android:id="@+id/type_choose"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Change To ▼"
+        android:background="@drawable/btn_border_radius"
+        android:layout_marginTop="20dp"
+        android:textSize="24sp"
+        />
+
+    <RadioGroup
+        android:id="@+id/radio_group"
+        android:layout_width="360dp"
+        android:layout_height="wrap_content"
+        android:layout_margin="2dp"
+        android:background="@drawable/radio_btn_bg"
+        android:padding="30dp"
+        android:visibility="visible"
+        >
+
+        <RadioButton
+            android:id="@+id/png_btn"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_horizontal"
+            android:gravity="center"
+            android:text="  PNG"
+            android:textSize="20sp"
+            android:textColor="@color/black"/>
+        <RadioButton
+            android:id="@+id/bmp_btn"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_horizontal"
+            android:gravity="center"
+            android:text="  BMP"
+            android:textSize="20sp"
+            android:layout_marginLeft="2dp"
+            android:textColor="@color/black"/>
+
+        <RadioButton
+            android:id="@+id/jpeg_btn"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_horizontal"
+            android:gravity="center"
+            android:text="  JPEG"
+            android:textColor="@color/black"
+            android:layout_marginLeft="4dp"
+            android:textSize="20sp" />
+
+        <RadioButton
+            android:id="@+id/webp_btn"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_horizontal"
+            android:gravity="center"
+            android:text="  WEBP"
+            android:textSize="20sp"
+            android:layout_marginLeft="7dp"
+            android:textColor="@color/black"/>
+
+
+
+
+    </RadioGroup>
+</LinearLayout>

@@ -1,0 +1,81 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout
+    android:id="@+id/loader_layout"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:visibility="visible"
+    android:background="#80000000"
+    app:layout_constraintTop_toTopOf="parent"
+    app:layout_constraintBottom_toBottomOf="parent"
+    app:layout_constraintStart_toStartOf="parent"
+    app:layout_constraintEnd_toEndOf="parent"
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+
+    <View
+        android:id="@+id/page1"
+        android:layout_width="32dp"
+        android:layout_height="38dp"
+        android:background="@drawable/loader_page_stack_rect"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.41"
+        app:layout_constraintVertical_bias="0.42" />
+
+    <!-- Page 2 -->
+    <View
+        android:id="@+id/page2"
+        android:layout_width="32dp"
+        android:layout_height="38dp"
+        android:background="@drawable/loader_page_stack_rect"
+        app:layout_constraintTop_toTopOf="@id/page1"
+        app:layout_constraintBottom_toBottomOf="@id/page1"
+        app:layout_constraintStart_toEndOf="@id/page1"
+        android:layout_marginStart="4dp" />
+
+    <!-- Page 3 -->
+    <View
+        android:id="@+id/page3"
+        android:layout_width="32dp"
+        android:layout_height="38dp"
+        android:background="@drawable/loader_page_stack_rect"
+        app:layout_constraintTop_toTopOf="@id/page2"
+        app:layout_constraintBottom_toBottomOf="@id/page2"
+        app:layout_constraintStart_toEndOf="@id/page2"
+        android:layout_marginStart="4dp" />
+
+    <!-- Animated Ring -->
+    <ImageView
+        android:id="@+id/loaderRing"
+        android:layout_width="54dp"
+        android:layout_height="54dp"
+        android:src="@drawable/loader_ring_animated"
+        android:visibility="gone"
+        android:contentDescription="@null"
+        app:layout_constraintTop_toBottomOf="@id/page2"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:layout_marginTop="18dp" />
+
+
+    <!-- Loading Text -->
+    <TextView
+        android:id="@+id/loaderText"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Processing PDF..."
+        android:textSize="18sp"
+        android:textStyle="bold"
+        android:textColor="#D85A30"
+        android:gravity="center"
+        app:layout_constraintTop_toBottomOf="@id/loaderRing"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:layout_marginTop="10dp" />
+
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>

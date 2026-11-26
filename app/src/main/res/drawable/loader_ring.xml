@@ -1,0 +1,24 @@
+<vector xmlns:android="http://schemas.android.com/apk/res/android"
+    android:width="50dp"
+    android:height="50dp"
+    android:viewportWidth="40"
+    android:viewportHeight="40">
+
+    <!-- faint track -->
+    <path
+        android:pathData="M20,4 A16,16 0 1,1 19.99,4"
+        android:strokeWidth="4"
+        android:strokeColor="#33D85A30"
+        android:fillColor="@android:color/transparent"
+        android:strokeLineCap="round" />
+
+    <!-- active arc, rotated by loader_ring_rotate.xml -->
+    <group android:name="ring_group" android:pivotX="20" android:pivotY="20">
+        <path
+            android:pathData="M20,4 A16,16 0 0,1 33,12"
+            android:strokeWidth="4"
+            android:strokeColor="@color/loader_color"
+            android:fillColor="@android:color/transparent"
+            android:strokeLineCap="round" />
+    </group>
+</vector>

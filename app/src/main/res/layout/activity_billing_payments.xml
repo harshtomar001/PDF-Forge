@@ -1,0 +1,844 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.coordinatorlayout.widget.CoordinatorLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/color_background">
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:clipToPadding="false"
+        android:paddingBottom="24dp">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <!-- ===================== HEADER ===================== -->
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:paddingHorizontal="18dp"
+                android:paddingTop="18dp"
+                android:paddingBottom="10dp">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+                    android:gravity="center_vertical">
+
+                    <ImageButton
+                        android:id="@+id/btnBack"
+                        android:layout_width="40dp"
+                        android:layout_height="40dp"
+                        android:layout_marginStart="-8dp"
+                        android:background="?attr/selectableItemBackgroundBorderless"
+                        android:src="@drawable/ic_arrow_back"
+                        app:tint="@color/color_text_primary"
+                        android:contentDescription="@string/cd_back" />
+
+                    <View
+                        android:layout_width="0dp"
+                        android:layout_height="0dp"
+                        android:layout_weight="1" />
+
+                    <ImageButton
+                        android:id="@+id/btnHelp"
+                        android:layout_width="36dp"
+                        android:layout_height="36dp"
+                        android:background="?attr/selectableItemBackgroundBorderless"
+                        android:src="@drawable/ic_help_outline"
+                        app:tint="@color/color_primary"
+                        android:contentDescription="@string/cd_help" />
+
+                </LinearLayout>
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="6dp"
+                    style="@style/TextAppearance.PdfStudio.Title"
+                    android:text="@string/billing_title" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="2dp"
+                    style="@style/TextAppearance.PdfStudio.Caption"
+                    android:text="@string/billing_subtitle" />
+
+            </LinearLayout>
+
+
+            <!-- ===================== SECTION 1: PAYMENT METHOD ===================== -->
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:paddingHorizontal="18dp"
+                android:paddingTop="10dp">
+
+                <TextView
+                    style="@style/TextAppearance.PdfStudio.SectionTitle"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/section_payment_method" />
+
+
+                <!-- Active state: linked payment method -->
+
+                <com.google.android.material.card.MaterialCardView
+                    android:id="@+id/cardPaymentMethodActive"
+                    style="@style/Widget.PdfStudio.Card"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="8dp">
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="horizontal"
+                        android:gravity="center_vertical"
+                        android:padding="12dp">
+
+                        <ImageView
+                            android:layout_width="32dp"
+                            android:layout_height="32dp"
+                            android:src="@drawable/ic_google_play"
+                            android:contentDescription="@null" />
+
+                        <LinearLayout
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:layout_marginStart="10dp"
+                            android:orientation="vertical">
+
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:textSize="13.5sp"
+                                android:textStyle="bold"
+                                android:textColor="@color/color_text_primary"
+                                android:text="@string/google_play" />
+
+                            <LinearLayout
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:orientation="horizontal"
+                                android:gravity="center_vertical"
+                                android:layout_marginTop="2dp">
+
+                                <TextView
+                                    android:id="@+id/txtCardLast4"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:textSize="12sp"
+                                    style="@style/TextAppearance.PdfStudio.Caption"
+                                    tools:text="Visa •••• 4821" />
+
+                                <TextView
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:layout_marginStart="6dp"
+                                    android:background="@drawable/bg_pill_primary_container"
+                                    android:paddingHorizontal="8dp"
+                                    android:paddingVertical="1dp"
+                                    android:textSize="10sp"
+                                    android:textStyle="bold"
+                                    android:textColor="@color/color_on_primary_container"
+                                    android:text="@string/badge_primary" />
+
+                            </LinearLayout>
+
+                        </LinearLayout>
+
+
+                        <!-- Manage -->
+
+                        <LinearLayout
+                            android:id="@+id/btnManage"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:orientation="horizontal"
+                            android:gravity="center_vertical"
+                            android:background="?attr/selectableItemBackground"
+                            android:padding="4dp"
+                            android:clickable="true"
+                            android:focusable="true">
+
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:textSize="12.5sp"
+                                android:textStyle="bold"
+                                android:textColor="@color/color_primary"
+                                android:text="@string/action_manage" />
+
+                            <ImageView
+                                android:layout_width="16dp"
+                                android:layout_height="16dp"
+                                android:src="@drawable/ic_chevron_right"
+                                app:tint="@color/color_primary"
+                                android:contentDescription="@null" />
+
+                        </LinearLayout>
+
+                    </LinearLayout>
+
+                </com.google.android.material.card.MaterialCardView>
+
+
+                <!-- Empty state -->
+
+                <LinearLayout
+                    android:id="@+id/groupPaymentMethodEmpty"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="8dp"
+                    android:orientation="vertical"
+                    android:gravity="center_horizontal"
+                    android:background="@drawable/bg_dashed_empty_state"
+                    android:paddingHorizontal="16dp"
+                    android:paddingVertical="22dp"
+                    android:visibility="gone">
+
+                    <ImageView
+                        android:layout_width="42dp"
+                        android:layout_height="42dp"
+                        android:background="@drawable/bg_circle_blue_surface"
+                        android:padding="10dp"
+                        android:src="@drawable/ic_wallet"
+                        app:tint="@color/color_primary"
+                        android:contentDescription="@null" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="10dp"
+                        android:textSize="13.5sp"
+                        android:textStyle="bold"
+                        android:textColor="@color/color_text_primary"
+                        android:text="@string/empty_payment_method_title" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="4dp"
+                        android:gravity="center"
+                        android:textSize="11.5sp"
+                        style="@style/TextAppearance.PdfStudio.Caption"
+                        android:text="@string/empty_payment_method_body" />
+
+                </LinearLayout>
+
+
+                <!-- Security information -->
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="10dp"
+                    android:orientation="horizontal"
+                    android:background="@drawable/bg_info_card_blue"
+                    android:padding="10dp">
+
+                    <ImageView
+                        android:layout_width="16dp"
+                        android:layout_height="16dp"
+                        android:layout_marginTop="2dp"
+                        android:src="@drawable/ic_shield_check"
+                        app:tint="@color/color_on_blue_surface"
+                        android:contentDescription="@null" />
+
+                    <LinearLayout
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:layout_marginStart="9dp"
+                        android:orientation="vertical">
+
+                        <TextView
+                            android:id="@+id/txtPaymentMethodSecurityLine1"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:textSize="11.5sp"
+                            android:lineSpacingMultiplier="1.3"
+                            android:textColor="@color/color_on_blue_surface"
+                            android:text="@string/security_payment_method_line1" />
+
+                        <TextView
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:textSize="11.5sp"
+                            android:lineSpacingMultiplier="1.3"
+                            android:textColor="@color/color_on_blue_surface"
+                            android:text="@string/security_payment_method_line2" />
+
+                    </LinearLayout>
+
+                </LinearLayout>
+
+            </LinearLayout>
+
+
+            <!-- ===================== SECTION 2: BILLING SUMMARY ===================== -->
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:paddingHorizontal="18dp"
+                android:paddingTop="16dp">
+
+                <TextView
+                    style="@style/TextAppearance.PdfStudio.SectionTitle"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/section_billing_summary" />
+
+                <com.google.android.material.card.MaterialCardView
+                    style="@style/Widget.PdfStudio.Card"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="8dp">
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="vertical"
+                        android:paddingHorizontal="14dp">
+
+
+                        <!-- Subscription status -->
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:orientation="horizontal"
+                            android:gravity="center_vertical"
+                            android:paddingVertical="11dp">
+
+                            <TextView
+                                android:layout_width="0dp"
+                                android:layout_height="wrap_content"
+                                android:layout_weight="1"
+                                android:textSize="12.5sp"
+                                style="@style/TextAppearance.PdfStudio.Caption"
+                                android:text="@string/row_subscription_status" />
+
+                            <TextView
+                                android:id="@+id/txtSubscriptionStatus"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:textSize="12.5sp"
+                                android:textStyle="bold"
+                                android:textColor="@color/color_success"
+                                tools:text="Active" />
+
+                        </LinearLayout>
+
+                        <View style="@style/Divider" />
+
+
+                        <!-- Last payment -->
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:orientation="horizontal"
+                            android:gravity="center_vertical"
+                            android:paddingVertical="11dp">
+
+                            <TextView
+                                android:layout_width="0dp"
+                                android:layout_height="wrap_content"
+                                android:layout_weight="1"
+                                android:textSize="12.5sp"
+                                style="@style/TextAppearance.PdfStudio.Caption"
+                                android:text="@string/row_last_payment" />
+
+                            <TextView
+                                android:id="@+id/txtLastPayment"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:textSize="12.5sp"
+                                android:textStyle="bold"
+                                android:textColor="@color/color_text_primary"
+                                tools:text="₹299" />
+
+                        </LinearLayout>
+
+                        <View style="@style/Divider" />
+
+
+                        <!-- Last payment date -->
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:orientation="horizontal"
+                            android:gravity="center_vertical"
+                            android:paddingVertical="11dp">
+
+                            <TextView
+                                android:layout_width="0dp"
+                                android:layout_height="wrap_content"
+                                android:layout_weight="1"
+                                android:textSize="12.5sp"
+                                style="@style/TextAppearance.PdfStudio.Caption"
+                                android:text="@string/row_last_payment_date" />
+
+                            <TextView
+                                android:id="@+id/txtLastPaymentDate"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:textSize="12.5sp"
+                                android:textStyle="bold"
+                                android:textColor="@color/color_text_primary"
+                                tools:text="30 Aug 2026" />
+
+                        </LinearLayout>
+
+                        <View style="@style/Divider" />
+
+
+                        <!-- Next payment -->
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:orientation="horizontal"
+                            android:gravity="center_vertical"
+                            android:paddingVertical="11dp">
+
+                            <TextView
+                                android:layout_width="0dp"
+                                android:layout_height="wrap_content"
+                                android:layout_weight="1"
+                                style="@style/TextAppearance.PdfStudio.Caption"
+                                android:textSize="12.5sp"
+                                android:text="@string/row_next_payment" />
+
+                            <TextView
+                                android:id="@+id/txtNextPayment"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:textSize="12.5sp"
+                                android:textStyle="bold"
+                                android:textColor="@color/color_text_primary"
+                                tools:text="₹299" />
+
+                        </LinearLayout>
+
+                        <View style="@style/Divider" />
+
+
+                        <!-- Next billing date -->
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:orientation="horizontal"
+                            android:gravity="center_vertical"
+                            android:paddingVertical="11dp">
+
+                            <TextView
+                                android:layout_width="0dp"
+                                android:layout_height="wrap_content"
+                                android:layout_weight="1"
+                                style="@style/TextAppearance.PdfStudio.Caption"
+                                android:text="@string/row_next_billing_date"
+                                android:textSize="12.5sp" />
+
+                            <TextView
+                                android:id="@+id/txtNextBillingDate"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:textSize="12.5sp"
+                                android:textStyle="bold"
+                                android:textColor="@color/color_text_primary"
+                                tools:text="30 Sep 2026" />
+
+                        </LinearLayout>
+
+                    </LinearLayout>
+
+                </com.google.android.material.card.MaterialCardView>
+
+            </LinearLayout>
+
+
+            <!-- ===================== SECTION 3: PAYMENT HISTORY ===================== -->
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:paddingHorizontal="18dp"
+                android:paddingTop="16dp">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+                    android:gravity="center_vertical">
+
+                    <TextView
+                        style="@style/TextAppearance.PdfStudio.SectionTitle"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:text="@string/section_payment_history" />
+
+                    <TextView
+                        android:id="@+id/btnViewAll"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:background="?attr/selectableItemBackground"
+                        android:padding="2dp"
+                        android:textSize="12sp"
+                        android:textStyle="bold"
+                        android:textColor="@color/color_primary"
+                        android:text="@string/action_view_all" />
+
+                </LinearLayout>
+
+
+                <!-- Payment history list -->
+
+                <com.google.android.material.card.MaterialCardView
+                    android:id="@+id/cardPaymentHistoryList"
+                    style="@style/Widget.PdfStudio.Card"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="8dp">
+
+                    <androidx.recyclerview.widget.RecyclerView
+                        android:id="@+id/recyclerPaymentHistory"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:paddingHorizontal="14dp"
+                        android:overScrollMode="never"
+                        android:nestedScrollingEnabled="false"
+                        tools:listitem="@layout/item_payment_history"
+                        tools:itemCount="3" />
+
+                </com.google.android.material.card.MaterialCardView>
+
+
+                <!-- Empty state -->
+
+                <com.google.android.material.card.MaterialCardView
+                    android:id="@+id/cardPaymentHistoryEmpty"
+                    style="@style/Widget.PdfStudio.Card"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="8dp"
+                    android:visibility="gone">
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="vertical"
+                        android:gravity="center_horizontal"
+                        android:paddingHorizontal="16dp"
+                        android:paddingVertical="26dp">
+
+                        <ImageView
+                            android:layout_width="46dp"
+                            android:layout_height="46dp"
+                            android:background="@drawable/bg_circle_blue_surface"
+                            android:padding="11dp"
+                            android:src="@drawable/ic_file_search"
+                            app:tint="@color/color_primary"
+                            android:contentDescription="@null" />
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="12dp"
+                            android:textSize="13.5sp"
+                            android:textStyle="bold"
+                            android:textColor="@color/color_text_primary"
+                            android:text="@string/empty_history_title" />
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="4dp"
+                            android:gravity="center"
+                            android:textSize="11.5sp"
+                            style="@style/TextAppearance.PdfStudio.Caption"
+                            android:text="@string/empty_history_body" />
+
+                        <com.google.android.material.button.MaterialButton
+                            android:id="@+id/btnUpgrade"
+                            style="@style/Widget.PdfStudio.Button.Primary"
+                            android:layout_width="match_parent"
+                            android:layout_height="44dp"
+                            android:layout_marginTop="14dp"
+                            app:icon="@drawable/ic_crown"
+                            app:iconTint="@color/color_on_primary"
+                            app:iconGravity="textStart"
+                            android:text="@string/action_upgrade" />
+
+                    </LinearLayout>
+
+                </com.google.android.material.card.MaterialCardView>
+
+            </LinearLayout>
+
+
+            <!-- ===================== SECTION 4: RECENT INVOICE ===================== -->
+
+            <LinearLayout
+                android:id="@+id/groupRecentInvoice"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:paddingHorizontal="18dp"
+                android:paddingTop="16dp">
+
+                <TextView
+                    style="@style/TextAppearance.PdfStudio.SectionTitle"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/section_recent_invoice" />
+
+                <com.google.android.material.card.MaterialCardView
+                    style="@style/Widget.PdfStudio.Card"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="8dp">
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="vertical"
+                        android:padding="14dp">
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:orientation="horizontal"
+                            android:gravity="center_vertical">
+
+                            <ImageView
+                                android:layout_width="34dp"
+                                android:layout_height="34dp"
+                                android:background="@drawable/bg_chip_primary_square"
+                                android:padding="8dp"
+                                android:src="@drawable/ic_invoice"
+                                app:tint="@color/color_on_primary"
+                                android:contentDescription="@null" />
+
+                            <LinearLayout
+                                android:layout_width="0dp"
+                                android:layout_height="wrap_content"
+                                android:layout_weight="1"
+                                android:layout_marginStart="10dp"
+                                android:orientation="vertical">
+
+                                <TextView
+                                    android:id="@+id/txtInvoiceTitle"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:textSize="13sp"
+                                    android:textStyle="bold"
+                                    android:textColor="@color/color_text_primary"
+                                    tools:text="PDF Studio Premium Monthly" />
+
+                                <TextView
+                                    android:id="@+id/txtInvoiceMeta"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:layout_marginTop="1dp"
+                                    android:textSize="11.5sp"
+                                    style="@style/TextAppearance.PdfStudio.Caption"
+                                    tools:text="30 August 2026 · Invoice #INV-20260830-001" />
+
+                            </LinearLayout>
+
+                            <TextView
+                                android:id="@+id/txtInvoiceAmount"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:textSize="13.5sp"
+                                android:textStyle="bold"
+                                android:textColor="@color/color_text_primary"
+                                tools:text="₹299.00" />
+
+                        </LinearLayout>
+
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:orientation="horizontal"
+                            android:layout_marginTop="12dp">
+
+                            <com.google.android.material.button.MaterialButton
+                                android:id="@+id/btnViewReceipt"
+                                style="@style/Widget.PdfStudio.Button.Outlined"
+                                android:layout_width="0dp"
+                                android:layout_height="42dp"
+                                android:layout_weight="1"
+                                android:text="@string/action_view_receipt" />
+
+                            <com.google.android.material.button.MaterialButton
+                                android:id="@+id/btnDownloadInvoice"
+                                style="@style/Widget.PdfStudio.Button.Primary"
+                                android:layout_width="0dp"
+                                android:layout_height="42dp"
+                                android:layout_weight="1"
+                                android:layout_marginStart="8dp"
+                                android:text="@string/action_download_invoice" />
+
+                        </LinearLayout>
+
+                    </LinearLayout>
+
+                </com.google.android.material.card.MaterialCardView>
+
+            </LinearLayout>
+
+
+            <!-- ===================== OPTIONAL PREMIUM PROMO ===================== -->
+
+            <LinearLayout
+                android:id="@+id/groupPremiumPromo"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:paddingHorizontal="18dp"
+                android:paddingTop="16dp"
+                android:visibility="gone">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    android:background="@drawable/bg_promo_card_blue"
+                    android:padding="14dp">
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="horizontal"
+                        android:gravity="center_vertical">
+
+                        <ImageView
+                            android:layout_width="32dp"
+                            android:layout_height="32dp"
+                            android:background="@drawable/bg_chip_primary_square"
+                            android:padding="7dp"
+                            android:src="@drawable/ic_crown"
+                            app:tint="@color/color_on_primary"
+                            android:contentDescription="@null" />
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginStart="10dp"
+                            android:textSize="13.5sp"
+                            android:textStyle="bold"
+                            android:textColor="@color/color_text_primary"
+                            android:text="@string/promo_title" />
+
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="vertical"
+                        android:layout_marginTop="10dp">
+
+                        <include
+                            android:id="@+id/rowBenefit1"
+                            layout="@layout/row_promo_benefit" />
+
+                        <include
+                            android:id="@+id/rowBenefit2"
+                            layout="@layout/row_promo_benefit" />
+
+                        <include
+                            android:id="@+id/rowBenefit3"
+                            layout="@layout/row_promo_benefit" />
+
+                        <include
+                            android:id="@+id/rowBenefit4"
+                            layout="@layout/row_promo_benefit" />
+
+                        <include
+                            android:id="@+id/rowBenefit5"
+                            layout="@layout/row_promo_benefit" />
+
+                    </LinearLayout>
+
+                </LinearLayout>
+
+            </LinearLayout>
+
+
+            <!-- ===================== SECTION 5: SECURITY FOOTER ===================== -->
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:layout_margin="18dp"
+                android:background="@drawable/bg_info_card_blue"
+                android:padding="10dp">
+
+                <ImageView
+                    android:layout_width="24dp"
+                    android:layout_height="24dp"
+                    android:background="@drawable/bg_circle_primary"
+                    android:padding="5dp"
+                    android:src="@drawable/ic_lock"
+                    app:tint="@color/color_on_primary"
+                    android:contentDescription="@null" />
+
+                <LinearLayout
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:layout_marginStart="9dp"
+                    android:orientation="vertical">
+
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:textSize="11.5sp"
+                        android:lineSpacingMultiplier="1.3"
+                        android:textColor="@color/color_on_blue_surface"
+                        android:text="@string/security_footer_line1" />
+
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:textSize="11.5sp"
+                        android:lineSpacingMultiplier="1.3"
+                        android:textColor="@color/color_on_blue_surface"
+                        android:text="@string/security_footer_line2" />
+
+                </LinearLayout>
+
+            </LinearLayout>
+
+        </LinearLayout>
+
+    </ScrollView>
+
+</androidx.coordinatorlayout.widget.CoordinatorLayout>
+
+

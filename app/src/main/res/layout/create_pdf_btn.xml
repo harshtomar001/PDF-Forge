@@ -1,0 +1,151 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout
+    android:layout_width="match_parent"
+    android:layout_height="230dp"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_margin="@dimen/margin_20dp"
+    android:layout_gravity="center_horizontal"
+    xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <LinearLayout
+        android:id="@+id/upload_Layout"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        android:background="@drawable/dashed_border"
+        android:paddingTop="@dimen/margin_10dp"
+        android:paddingStart="@dimen/margin_8dp"
+        android:paddingEnd="@dimen/margin_8dp"
+        android:paddingBottom="@dimen/margin_10dp"
+        android:layout_marginStart="@dimen/margin_20dp"
+        android:clickable="true"
+        android:focusable="true"
+        android:gravity="center"
+        android:visibility="visible"
+        android:descendantFocusability="blocksDescendants"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toStartOf="@id/view"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintWidth_default="wrap"
+        app:layout_goneMarginEnd="0dp">
+
+        <ImageView
+            android:layout_width="64dp"
+            android:layout_height="64dp"
+            android:src="@drawable/photo_gallery_plus_icon"
+            android:layout_gravity="center"
+            android:clickable="false"
+            android:focusable="false"
+            android:duplicateParentState="true"/>
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:clickable="false"
+            android:gravity="center"
+            android:focusable="false"
+            android:layout_marginLeft="@dimen/margin_5dp"
+            android:orientation="vertical">
+
+            <TextView
+                android:layout_height="wrap_content"
+                android:layout_width="wrap_content"
+                android:text="@string/add_images"
+                android:textSize="22sp"
+                android:maxLines="1"
+                android:ellipsize="end"
+                android:textColor="#fc3a3a"
+                android:textStyle="bold"/>
+
+            <TextView
+                android:layout_height="wrap_content"
+                android:layout_width="wrap_content"
+                android:text="@string/upload_img_from_gallery"
+                android:textSize="16sp"
+                android:maxLines="1"
+                android:ellipsize="end"
+                android:textColor="@color/grey"/>
+
+        </LinearLayout>
+
+    </LinearLayout>
+
+    <View
+        android:id="@+id/view"
+        android:layout_height="0dp"
+        android:layout_width="0dp"
+        app:layout_constraintEnd_toStartOf="@id/total_pages_circle"
+        app:layout_constraintStart_toEndOf="@id/upload_Layout"
+        app:layout_constraintBottom_toBottomOf="parent"
+
+        />
+
+
+    <TextView
+        android:id="@+id/total_pages_circle"
+        android:layout_width="@dimen/margin_60dp"
+        android:layout_height="@dimen/margin_60dp"
+        android:gravity="center"
+        android:text="10"
+        android:visibility="gone"
+        android:layout_marginBottom="24dp"
+        android:layout_marginStart="@dimen/margin_60dp"
+        android:layout_marginEnd="@dimen/margin_18dp"
+        android:background="@drawable/createpdf_btn_gradient_bg"
+        android:textColor="@color/white"
+        android:textSize="18sp"
+        android:textStyle="bold"
+        app:layout_constraintStart_toEndOf="@+id/view"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintBottom_toBottomOf="parent"/>
+
+
+
+<!--    <LinearLayout-->
+<!--        android:id="@+id/description"-->
+<!--        android:layout_width="0dp"-->
+<!--        android:layout_height="wrap_content"-->
+<!--        android:orientation="horizontal"-->
+<!--        android:background="@drawable/shield_bg"-->
+<!--        android:padding="@dimen/margin_15dp"-->
+<!--        android:visibility="gone"-->
+<!--        android:layout_marginStart="@dimen/margin_10dp"-->
+<!--        app:layout_constraintStart_toEndOf="@id/upload_Layout"-->
+<!--        app:layout_constraintEnd_toEndOf="parent"-->
+<!--        app:layout_constraintTop_toTopOf="parent"-->
+<!--        app:layout_constraintWidth_default="wrap">-->
+
+<!--        <ImageView-->
+<!--            android:layout_width="@dimen/margin_40dp"-->
+<!--            android:layout_height="@dimen/margin_40dp"-->
+<!--            android:src="@drawable/photo_img"-->
+<!--            android:layout_gravity="center"/>-->
+
+<!--        <LinearLayout-->
+<!--            android:layout_width="wrap_content"-->
+<!--            android:layout_height="wrap_content"-->
+<!--            android:layout_gravity="center"-->
+<!--            android:clickable="false"-->
+<!--            android:focusable="false"-->
+<!--            android:layout_marginLeft="@dimen/margin_5dp"-->
+<!--            android:orientation="vertical">-->
+
+<!--            <TextView-->
+<!--                android:id="@+id/total_images"-->
+<!--                android:layout_height="wrap_content"-->
+<!--                android:layout_width="wrap_content"-->
+<!--                android:text="@string/n_images_selected"-->
+<!--                android:textSize="10sp"-->
+<!--                android:maxLines="1"-->
+<!--                android:ellipsize="end"-->
+<!--                android:textColor="@color/black"-->
+<!--                android:textStyle="normal"-->
+<!--                android:layout_marginLeft="@dimen/margin_5dp"-->
+<!--                android:alpha="0.7"/>-->
+
+<!--        </LinearLayout>-->
+
+<!--    </LinearLayout>-->
+
+</androidx.constraintlayout.widget.ConstraintLayout>

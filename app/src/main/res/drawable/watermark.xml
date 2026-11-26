@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="utf-8"?>
+<vector xmlns:android="http://schemas.android.com/apk/res/android"
+    android:width="24dp"
+    android:height="24dp"
+    android:viewportWidth="24"
+    android:viewportHeight="24">
+
+    <!-- Outer circle ring -->
+    <path
+        android:pathData="M12,2 A10,10 0 1,1 11.99,2 Z"
+        android:strokeWidth="1.8"
+        android:strokeColor="#1A73E8"
+        android:fillColor="#00000000"/>
+
+    <!-- Inner circle ring -->
+    <path
+        android:pathData="M12,5 A7,7 0 1,1 11.99,5 Z"
+        android:strokeWidth="1.2"
+        android:strokeColor="#1A73E8"
+        android:fillColor="#00000000"/>
+
+    <!-- Center water drop shape -->
+    <path
+        android:pathData="M12,7 C12,7 8.5,11 8.5,13.5 A3.5,3.5 0 0,0 15.5,13.5 C15.5,11 12,7 12,7 Z"
+        android:fillColor="#1A73E8"/>
+
+    <!-- Shine on drop -->
+    <path
+        android:pathData="M10.5,12 A1.2,1.5 0 0,1 11.5,10.5"
+        android:strokeWidth="1"
+        android:strokeColor="#FFFFFF"
+        android:strokeLineCap="round"
+        android:fillColor="#00000000"/>
+
+</vector>

@@ -1,0 +1,81 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.cardview.widget.CardView
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_margin="6dp"
+    android:foreground="?attr/selectableItemBackground"
+    android:clickable="true"
+    android:focusable="true"
+    app:cardCornerRadius="16dp"
+    app:cardElevation="2dp"
+    app:cardBackgroundColor="@color/card_bg"
+    xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <FrameLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:gravity="center"
+            android:padding="14dp"
+            android:paddingBottom="30dp">
+
+            <!-- Icon Container - background color set per-tool in CardAdapter -->
+            <androidx.cardview.widget.CardView
+                android:id="@+id/iconCard_item"
+                android:layout_width="56dp"
+                android:layout_height="56dp"
+                app:cardCornerRadius="16dp"
+                app:cardBackgroundColor="@color/tool_icon_bg_default"
+                app:cardElevation="0dp"
+                >
+
+                <ImageView
+                    android:id="@+id/imageView_card_item"
+                    android:layout_width="32dp"
+                    android:layout_height="32dp"
+                    android:layout_gravity="center"
+                    android:src="@drawable/image_to_pdf"/>
+            </androidx.cardview.widget.CardView>
+
+            <TextView
+                android:id="@+id/textView_title_card_item"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
+                android:text="Image to PDF"
+                android:textStyle="bold"
+                android:textColor="@color/text_main"
+                android:textSize="14sp"
+                android:maxLines="1"
+                android:gravity="center"/>
+
+            <TextView
+                android:id="@+id/textView_text_card_item"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="3dp"
+                android:text="Convert images to PDF"
+                android:textColor="@color/text_secondary"
+                android:textSize="11.5sp"
+                android:maxLines="2"
+                android:gravity="center"/>
+
+        </LinearLayout>
+
+        <!-- Decorative chevron, bottom-end corner -->
+        <ImageView
+            android:layout_width="22dp"
+            android:layout_height="22dp"
+            android:layout_gravity="bottom|end"
+            android:layout_margin="8dp"
+            android:src="@drawable/ic_chevron_circle"
+            android:contentDescription="@null" />
+
+    </FrameLayout>
+
+</androidx.cardview.widget.CardView>

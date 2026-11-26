@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ripple xmlns:android="http://schemas.android.com/apk/res/android"
+    android:color="@color/storage_purple_900">
+    <item>
+        <shape android:shape="rectangle">
+            <solid android:color="@color/storage_purple_600" />
+            <corners android:radius="@dimen/storage_radius_chip" />
+        </shape>
+    </item>
+</ripple>

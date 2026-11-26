@@ -1,0 +1,309 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/white">
+
+    <!-- Header -->
+    <LinearLayout
+        android:id="@+id/headerLayout"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:gravity="center_vertical"
+        android:paddingTop="@dimen/margin_15dp"
+        android:paddingStart="12dp"
+        android:paddingEnd="8dp"
+        android:paddingBottom="8dp"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent">
+
+        <ImageView
+            android:id="@+id/back_arrow_addText"
+            android:layout_width="30dp"
+            android:layout_height="30dp"
+            android:src="@drawable/ic_back_arrow"
+            app:tint="@color/black" />
+
+        <TextView
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:layout_marginStart="16dp"
+            android:text="Add Text"
+            android:textStyle="bold"
+            android:textSize="20sp"
+            android:textColor="@color/black"/>
+
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/btnResetText"
+            android:layout_width="wrap_content"
+            android:layout_height="40dp"
+            android:text="Reset"
+            android:textAllCaps="false"
+            android:textStyle="bold"
+            android:textSize="16sp"
+            android:textColor="#2563EB"
+            app:icon="@drawable/refresh"
+            app:iconGravity="textStart"
+            app:iconPadding="6dp"
+            app:iconTint="#2563EB"
+            app:backgroundTint="@android:color/transparent"
+            app:rippleColor="#332563EB"
+            app:strokeWidth="0dp"
+            app:elevation="0dp"
+            android:minWidth="0dp"
+            android:minHeight="40dp"
+            android:paddingHorizontal="8dp"/>
+    </LinearLayout>
+
+    <View
+        android:id="@+id/divider"
+        android:layout_width="0dp"
+        android:layout_height="1dp"
+        android:background="#DDDDDD"
+        app:layout_constraintTop_toBottomOf="@id/headerLayout"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"/>
+
+
+    <TextView
+        android:id="@+id/font"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Font"
+        android:textColor="@color/black"
+        android:textSize="@dimen/margin_15dp"
+        android:textStyle="bold"
+        android:layout_marginBottom="@dimen/margin_5dp"
+        android:layout_marginTop="@dimen/margin_15dp"
+        android:layout_marginStart="@dimen/margin_8dp"
+        app:layout_constraintTop_toBottomOf="@id/divider"
+        app:layout_constraintBottom_toTopOf="@+id/fontSelector"
+        app:layout_constraintStart_toStartOf="@id/fontSelector"
+
+        />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Style"
+        android:textColor="@color/black"
+        android:textSize="@dimen/margin_15dp"
+        android:textStyle="bold"
+        android:layout_marginBottom="@dimen/margin_5dp"
+        android:layout_marginStart="@dimen/margin_8dp"
+        app:layout_constraintBottom_toTopOf="@+id/weightSelector"
+        app:layout_constraintStart_toStartOf="@id/weightSelector"
+        />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Color"
+        android:layout_marginBottom="@dimen/margin_5dp"
+        android:textColor="@color/black"
+        android:textSize="@dimen/margin_15dp"
+        android:textStyle="bold"
+        android:layout_marginStart="@dimen/margin_8dp"
+        app:layout_constraintBottom_toTopOf="@+id/colorSelector"
+        app:layout_constraintStart_toStartOf="@id/colorSelector"
+        />
+
+    <include
+        android:id="@+id/fontSelector"
+        android:layout_height="wrap_content"
+        android:layout_width="0dp"
+        android:layout_marginStart="@dimen/margin_20dp"
+        android:layout_marginBottom="@dimen/margin_15dp"
+        layout="@layout/edit_pdf_add_txt_btns"
+        android:layout_marginTop="@dimen/margin_5dp"
+        app:layout_constraintHorizontal_weight="2"
+        app:layout_constraintTop_toBottomOf="@+id/font"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toStartOf="@id/weightSelector"
+
+        />
+
+    <include
+        android:id="@+id/weightSelector"
+        android:layout_height="0dp"
+        android:layout_width="0dp"
+        android:layout_marginStart="@dimen/margin_8dp"
+        layout="@layout/edit_pdf_add_txt_btns"
+        app:layout_constraintHorizontal_weight="1.5"
+        app:layout_constraintStart_toEndOf="@id/fontSelector"
+        app:layout_constraintEnd_toStartOf="@id/colorSelector"
+        app:layout_constraintBottom_toBottomOf="@+id/fontSelector"
+        app:layout_constraintTop_toTopOf="@+id/fontSelector"
+
+        />
+
+    <com.google.android.material.card.MaterialCardView
+        android:id="@+id/colorSelector"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        app:cardBackgroundColor="#2563EB"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_weight=".8"
+        android:layout_marginEnd="16dp"
+        android:layout_marginStart="@dimen/margin_8dp"
+        app:cardElevation="@dimen/margin_8dp"
+        app:strokeWidth="0dp"
+        app:layout_constraintBottom_toBottomOf="@id/weightSelector"
+        app:layout_constraintTop_toTopOf="@+id/weightSelector"
+        app:layout_constraintStart_toEndOf="@id/weightSelector"
+
+        />
+
+
+    <com.google.android.material.card.MaterialCardView
+        android:id="@+id/cardPreview"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:layout_margin="16dp"
+        app:cardCornerRadius="16dp"
+        app:cardElevation="2dp"
+        app:strokeWidth="0dp"
+        app:layout_constraintTop_toBottomOf="@id/fontSelector"
+        app:layout_constraintBottom_toTopOf="@id/tvOpacity"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent">
+
+        <FrameLayout
+            android:layout_gravity="center"
+            android:layout_width="match_parent"
+            android:background="@color/white"
+            android:layout_height="match_parent">
+
+        <com.harsh.pdfstudio.custom_view.AddTextView
+
+            android:id="@+id/addTextView"
+            android:layout_width="match_parent"
+            android:background="@color/white"
+            android:layout_height="match_parent"
+            />
+
+            <EditText
+                android:id="@+id/etTextEditor"
+                android:layout_width="1dp"
+                android:layout_height="1dp"
+                android:alpha="0"
+                android:layout_gravity="center"
+                android:inputType="text|textMultiLine"
+                />
+
+
+        </FrameLayout>
+
+    </com.google.android.material.card.MaterialCardView>
+
+
+    <TextView
+        android:id="@+id/tvOpacity"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Opacity"
+        android:textColor="@color/black"
+        android:textStyle="bold"
+        android:layout_marginTop="16dp"
+        android:layout_marginStart="16dp"
+        app:layout_constraintBottom_toTopOf="@id/sliderOpacity"
+        app:layout_constraintStart_toStartOf="parent"/>
+
+
+
+    <com.google.android.material.slider.Slider
+        android:id="@+id/sliderOpacity"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:valueFrom="0"
+        android:valueTo="1"
+        android:value="1"
+        app:trackColorActive="@color/blue_600"
+        app:trackColorInactive="@color/blue_100"
+        app:thumbColor="@color/blue_600"
+        app:haloColor="@color/blue_200"
+
+        android:layout_marginHorizontal="16dp"
+        app:layout_constraintBottom_toTopOf="@id/tvTextSize"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"/>
+
+
+    <TextView
+        android:id="@+id/tvTextSize"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Text Size"
+        android:textColor="@color/black"
+        android:textStyle="bold"
+        android:layout_marginStart="16dp"
+        app:layout_constraintBottom_toTopOf="@id/sliderTextSize"
+        app:layout_constraintStart_toStartOf="parent"/>
+
+    <com.google.android.material.slider.Slider
+        android:id="@+id/sliderTextSize"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:valueFrom="10"
+        android:valueTo="300"
+        android:value="100"
+        android:stepSize="1"
+        app:tickVisible="false"
+        app:trackColorActive="@color/blue_600"
+        app:trackColorInactive="@color/blue_100"
+        app:thumbColor="@color/blue_600"
+        app:haloColor="@color/blue_200"
+        android:layout_marginBottom="@dimen/margin_16dp"
+        android:layout_marginHorizontal="16dp"
+        app:layout_constraintTop_toBottomOf="@id/sliderOpacity"
+        app:layout_constraintBottom_toTopOf="@id/addText_addtext"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"/>
+
+
+    <com.google.android.material.button.MaterialButton
+        android:id="@+id/addText_addtext"
+        android:layout_height="wrap_content"
+        android:layout_width="0dp"
+        android:layout_marginHorizontal="10dp"
+        app:backgroundTint="@null"
+        android:backgroundTint="@null"
+        app:strokeWidth="2dp"
+        app:strokeColor="@color/purple"
+        android:background="@drawable/add_img_bg"
+        android:text="Add Text"
+        android:textColor=" #2563EB"
+        app:iconTint="#2563EB"
+        app:icon="@drawable/add_btn"
+        app:iconSize="@dimen/margin_30dp"
+        app:iconGravity="textStart"
+        app:cornerRadius="@dimen/margin_12dp"
+        android:layout_marginStart="@dimen/margin_20dp"
+        android:layout_marginEnd="@dimen/margin_20dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/sliderTextSize"
+        app:layout_constraintBottom_toTopOf="@id/buttonLayout"
+
+        />
+
+
+    <include
+        android:id="@+id/buttonLayout"
+        android:layout_height="0dp"
+        android:layout_marginHorizontal="@dimen/margin_20dp"
+        android:layout_marginBottom="@dimen/margin_20dp"
+        android:layout_width="match_parent"
+        layout="@layout/edit_pdf_opr_btns"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintBottom_toBottomOf="parent"
+        />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

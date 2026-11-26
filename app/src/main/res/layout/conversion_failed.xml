@@ -1,0 +1,94 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:layout_gravity="center"
+    android:background="@color/white"
+    android:padding="24dp">
+
+    <ImageView
+        android:id="@+id/errorImage"
+        android:layout_width="match_parent"
+        android:layout_height="300dp"
+        android:src="@drawable/coversion_failed_2"
+        android:scaleType="fitCenter"
+        android:contentDescription="Conversion failed"
+        app:layout_constraintTop_toTopOf="parent"
+        android:layout_marginTop="@dimen/margin_60dp"
+        app:layout_constraintBottom_toTopOf="@id/errorTitle"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintVertical_chainStyle="packed" />
+
+    <TextView
+        android:id="@+id/errorTitle"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/conversion_failed"
+        android:textColor="#111827"
+        android:textSize="28sp"
+        android:textStyle="bold"
+        android:layout_marginTop="20dp"
+        app:layout_constraintTop_toBottomOf="@id/errorImage"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent" />
+
+    <TextView
+        android:id="@+id/errorMessage"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:text="@string/we_couldn_t_complete_the_conversion_nplease_check_your_file_and_try_once_more"
+        android:textColor="#6B7280"
+        android:textSize="17sp"
+        android:gravity="center"
+        android:lineSpacingExtra="4dp"
+        android:layout_marginTop="16dp"
+        app:layout_constraintTop_toBottomOf="@id/errorTitle"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent" />
+
+    <com.google.android.material.button.MaterialButton
+        android:id="@+id/returnHomeBtn"
+        android:layout_width="0dp"
+        android:layout_height="56dp"
+        android:text="@string/return_home"
+        android:textColor="@color/white"
+        android:textSize="17dp"
+        android:textStyle="bold"
+        android:gravity="center"
+        app:icon="@drawable/ic_home"
+        app:iconTint="@color/white"
+        app:iconSize="@dimen/margin_24dp"
+        app:iconGravity="textStart"
+        android:background="@drawable/bg_blue_button"
+        app:backgroundTint="@null"
+        android:layout_marginTop="36dp"
+        app:layout_constraintTop_toBottomOf="@id/errorMessage"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        tools:ignore="SpUsage" />
+
+    <com.google.android.material.button.MaterialButton
+        android:id="@+id/chooseAnotherFileBtn"
+        android:layout_width="0dp"
+        android:layout_height="56dp"
+        android:text="@string/choose_another_file"
+        android:textColor="#4F6BFF"
+        android:textSize="17dp"
+        android:textStyle="bold"
+        android:gravity="center"
+        app:icon="@drawable/ic_back_arrow"
+        app:iconTint="@color/bluish_color"
+        app:iconSize="@dimen/margin_25dp"
+        app:iconGravity="textStart"
+        android:background="@drawable/bg_outline_button"
+        android:layout_marginTop="16dp"
+        app:layout_constraintTop_toBottomOf="@id/returnHomeBtn"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        tools:ignore="SpUsage" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

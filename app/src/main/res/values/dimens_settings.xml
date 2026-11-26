@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <dimen name="settings_horizontal_margin">16dp</dimen>
+    <dimen name="settings_card_radius">18dp</dimen>
+    <dimen name="settings_card_padding">14dp</dimen>
+    <dimen name="settings_card_elevation">1dp</dimen>
+    <dimen name="settings_section_spacing">16dp</dimen>
+
+    <dimen name="settings_row_min_height">56dp</dimen>
+    <dimen name="settings_row_vertical_padding">10dp</dimen>
+
+    <dimen name="settings_icon_container_size">38dp</dimen>
+    <dimen name="settings_icon_size">20dp</dimen>
+
+    <dimen name="settings_title_size">16sp</dimen>
+    <dimen name="settings_description_size">13sp</dimen>
+    <dimen name="settings_section_title_size">12sp</dimen>
+
+    <dimen name="settings_divider_height">1dp</dimen>
+
+    <dimen name="settings_row_height">56dp</dimen>
+    <dimen name="settings_divider_inset">56dp</dimen>
+
+    <!-- Notification item -->
+    <dimen name="text_size_time">12sp</dimen>
+
+</resources>

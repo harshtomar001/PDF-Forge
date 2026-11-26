@@ -1,0 +1,101 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="horizontal"
+    android:gravity="center_vertical"
+    android:paddingVertical="12dp"
+    android:background="?attr/selectableItemBackground"
+    android:clickable="true"
+    android:focusable="true"
+    android:contentDescription="@string/cd_open_transaction">
+
+    <ImageView
+        android:layout_width="30dp"
+        android:layout_height="30dp"
+        android:background="@drawable/bg_chip_blue_surface_square"
+        android:padding="6dp"
+        android:src="@drawable/ic_file_text"
+        app:tint="@color/color_primary"
+        android:contentDescription="@null" />
+
+    <LinearLayout
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_weight="1"
+        android:layout_marginStart="10dp"
+        android:orientation="vertical">
+
+        <TextView
+            android:id="@+id/txtRowDate"
+            style="@style/TextAppearance.PdfStudio.Caption"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            tools:text="30 Aug 2026" />
+
+        <TextView
+            android:id="@+id/txtRowTitle"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="1dp"
+            android:textSize="12.5sp"
+            android:textStyle="bold"
+            android:textColor="@color/color_text_primary"
+            tools:text="PDF Studio Premium Monthly" />
+
+        <TextView
+            android:id="@+id/txtRowOrderId"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="1dp"
+            android:textSize="10.5sp"
+            android:textColor="@color/color_text_muted"
+            tools:text="Order ID: GPA.3387-1928-7629-12345" />
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:gravity="end"
+        android:layout_marginStart="8dp">
+
+        <TextView
+            android:id="@+id/txtRowAmount"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textSize="12.5sp"
+            android:textStyle="bold"
+            android:textColor="@color/color_text_primary"
+            tools:text="₹299.00" />
+
+        <TextView
+            android:id="@+id/txtRowStatus"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="3dp"
+            android:background="@drawable/bg_pill_success_container"
+            android:paddingHorizontal="8dp"
+            android:paddingVertical="1dp"
+            android:textSize="10sp"
+            android:textStyle="bold"
+            android:textColor="@color/color_success"
+            android:text="@string/badge_paid" />
+
+    </LinearLayout>
+
+    <ImageView
+        android:layout_width="16dp"
+        android:layout_height="16dp"
+        android:layout_marginStart="6dp"
+        android:src="@drawable/ic_chevron_right"
+        app:tint="@color/color_text_muted"
+        android:contentDescription="@null" />
+
+</LinearLayout>
+

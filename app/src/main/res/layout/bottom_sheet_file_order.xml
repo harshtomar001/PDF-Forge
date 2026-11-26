@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="vertical"
+    android:background="@color/pdf_studio_white"
+    android:paddingHorizontal="@dimen/spacing_md"
+    android:paddingTop="@dimen/spacing_md"
+    android:paddingBottom="@dimen/spacing_md">
+
+    <View
+        android:layout_width="40dp"
+        android:layout_height="4dp"
+        android:layout_gravity="center_horizontal"
+        android:background="@color/pdf_studio_divider" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/spacing_md"
+        android:text="@string/merge_file_order_sheet_title"
+        android:textColor="@color/pdf_studio_dark_navy"
+        android:textSize="18sp"
+        android:textStyle="bold" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="4dp"
+        android:text="@string/merge_file_order_sheet_desc"
+        android:textColor="@color/pdf_studio_secondary_gray"
+        android:textSize="14sp" />
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/fileOrderRecyclerView"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/spacing_sm"
+        android:maxHeight="360dp"
+        android:overScrollMode="ifContentScrolls"
+        tools:listitem="@layout/item_merge_pdf"
+        tools:itemCount="3" />
+
+    <com.google.android.material.button.MaterialButton
+        android:id="@+id/btnFileOrderDone"
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:layout_marginTop="@dimen/spacing_md"
+        android:text="@string/merge_done"
+        android:textAllCaps="false"
+        android:textColor="@color/pdf_studio_white"
+        app:backgroundTint="@color/rgb_red"
+        app:cornerRadius="12dp" />
+
+</LinearLayout>

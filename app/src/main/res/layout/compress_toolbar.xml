@@ -1,0 +1,80 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:background="@drawable/compress_toolbar_bg">
+
+    <View
+        android:layout_width="50dp"
+        android:layout_height="50dp"
+        android:layout_gravity="top|end"
+        android:layout_marginTop="-17dp"
+        android:layout_marginEnd="10dp"
+        android:background="@drawable/bg_circle_light_red" />
+
+
+    <View
+        android:layout_width="70dp"
+        android:layout_height="70dp"
+        android:layout_gravity="bottom|center_horizontal"
+        android:layout_marginBottom="-30dp"
+        android:background="@drawable/bg_circle_light_red" />
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_height="wrap_content"
+        android:layout_width="match_parent"
+        android:layout_gravity="start"
+        android:layout_marginBottom="@dimen/margin_5dp"
+        android:layout_marginTop="@dimen/margin_8dp">
+
+
+        <ImageView
+            android:id="@+id/back_arrow_cmp_pdf"
+            android:layout_width="@dimen/margin_40dp"
+            android:layout_height="@dimen/margin_30dp"
+            android:src="@drawable/ic_back_arrow"
+            android:layout_marginStart="@dimen/margin_5dp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintBottom_toBottomOf="parent"
+            />
+
+        <TextView
+            android:id="@+id/compress_pdf_title"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/compress_pdf"
+            android:layout_gravity="center_vertical"
+            android:textColor="@color/white"
+            android:textStyle="bold"
+            android:textSize="@dimen/margin_18dp"
+            android:layout_marginStart="@dimen/margin_5dp"
+            app:layout_constraintStart_toEndOf="@id/back_arrow_cmp_pdf"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintBottom_toBottomOf="parent"
+            />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Compress your PDF files to desireable size"
+            android:textColor="@color/white"
+            android:layout_marginBottom="@dimen/margin_5dp"
+            android:textSize="@dimen/margin_12dp"
+            android:alpha="0.8"
+            android:layout_marginStart="@dimen/margin_5dp"
+            app:layout_constraintStart_toEndOf="@id/back_arrow_cmp_pdf"
+            app:layout_constraintTop_toBottomOf="@id/compress_pdf_title"
+            tools:ignore="SpUsage" />
+
+
+
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+
+
+</FrameLayout>

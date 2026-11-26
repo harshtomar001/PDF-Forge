@@ -1,0 +1,652 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.coordinatorlayout.widget.CoordinatorLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/colorBackground">
+
+    <com.google.android.material.appbar.AppBarLayout
+        android:id="@+id/appBarLayout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/colorSurface"
+        android:elevation="0dp"
+        app:elevation="0dp">
+
+        <com.google.android.material.appbar.MaterialToolbar
+            android:id="@+id/toolbar"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:background="@color/colorSurface"
+            app:navigationIcon="@drawable/ic_arrow_back"
+            app:navigationIconTint="@color/colorTextPrimary"
+            app:title="@string/subscription_title"
+            app:titleTextColor="@color/colorTextPrimary" />
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:background="@color/colorDivider" />
+
+    </com.google.android.material.appbar.AppBarLayout>
+
+    <androidx.core.widget.NestedScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:clipToPadding="false"
+        android:fillViewport="true"
+        android:paddingBottom="@dimen/spacing_xl"
+        app:layout_behavior="@string/appbar_scrolling_view_behavior">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:paddingStart="@dimen/spacing_m"
+            android:paddingEnd="@dimen/spacing_m"
+            android:paddingTop="@dimen/spacing_l">
+
+            <!-- ============ SECTION: YOUR CURRENT PLAN ============ -->
+            <TextView
+                android:id="@+id/tvSectionCurrentPlan"
+                style="@style/SectionLabel"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/section_your_current_plan" />
+
+            <com.google.android.material.card.MaterialCardView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/spacing_s"
+                app:cardBackgroundColor="@color/colorSurface"
+                app:cardCornerRadius="@dimen/card_corner_radius"
+                app:cardElevation="@dimen/card_elevation"
+                app:strokeColor="@color/colorBorder"
+                app:strokeWidth="@dimen/card_stroke_width">
+
+                <FrameLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content">
+
+                    <ImageView
+                        android:id="@+id/imgCrownDecorative"
+                        android:layout_width="56dp"
+                        android:layout_height="56dp"
+                        android:layout_gravity="top|end"
+                        android:layout_margin="@dimen/spacing_m"
+                        android:contentDescription="@null"
+                        android:src="@drawable/ic_crown_decorative" />
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="vertical"
+                        android:padding="@dimen/spacing_m">
+
+                        <TextView
+                            android:id="@+id/tvPlanTitle"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:textColor="@color/colorTextPrimary"
+                            android:textSize="19sp"
+                            android:textStyle="bold"
+                            tools:text="PDF Studio Premium" />
+
+                        <TextView
+                            android:id="@+id/tvPlanSubtitle"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="2dp"
+                            android:textColor="@color/colorTextSecondary"
+                            android:textSize="14sp"
+                            tools:text="All premium features unlocked" />
+
+                        <TextView
+                            android:id="@+id/tvStatusBadge"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="@dimen/spacing_s"
+                            android:background="@drawable/bg_badge_success"
+                            android:paddingStart="10dp"
+                            android:paddingTop="4dp"
+                            android:paddingEnd="10dp"
+                            android:paddingBottom="4dp"
+                            android:textColor="@color/colorSuccess"
+                            android:textSize="12sp"
+                            android:textStyle="bold"
+                            tools:text="✓ ACTIVE" />
+
+                        <TextView
+                            android:id="@+id/tvUpgradeHeading"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="@dimen/spacing_m"
+                            android:text="@string/upgrade_heading"
+                            android:textColor="@color/colorTextPrimary"
+                            android:textSize="16sp"
+                            android:textStyle="bold"
+                            android:visibility="gone" />
+
+                        <TextView
+                            android:id="@+id/tvPrice"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="@dimen/spacing_s"
+                            android:textColor="@color/colorPrimary"
+                            android:textSize="22sp"
+                            android:textStyle="bold"
+                            tools:text="₹299 / month" />
+
+                        <TextView
+                            android:id="@+id/tvPriceCaption"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="2dp"
+                            android:text="@string/upgrade_subheading"
+                            android:textColor="@color/colorTextSecondary"
+                            android:textSize="14sp"
+                            android:visibility="gone" />
+
+                        <LinearLayout
+                            android:id="@+id/layoutDates"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="@dimen/spacing_m"
+                            android:orientation="horizontal">
+
+                            <LinearLayout
+                                android:layout_width="0dp"
+                                android:layout_height="wrap_content"
+                                android:layout_weight="1"
+                                android:orientation="vertical">
+
+                                <LinearLayout
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:gravity="center_vertical"
+                                    android:orientation="horizontal">
+
+                                    <ImageView
+                                        android:layout_width="14dp"
+                                        android:layout_height="14dp"
+                                        android:contentDescription="@null"
+                                        android:src="@drawable/ic_calendar" />
+
+                                    <TextView
+                                        android:layout_width="wrap_content"
+                                        android:layout_height="wrap_content"
+                                        android:layout_marginStart="4dp"
+                                        android:text="@string/label_started_on"
+                                        android:textColor="@color/colorTextSecondary"
+                                        android:textSize="12sp" />
+                                </LinearLayout>
+
+                                <TextView
+                                    android:id="@+id/tvStartedDate"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:layout_marginTop="2dp"
+                                    android:textColor="@color/colorTextPrimary"
+                                    android:textSize="14sp"
+                                    android:textStyle="bold"
+                                    tools:text="30 August 2026" />
+                            </LinearLayout>
+
+                            <LinearLayout
+                                android:layout_width="0dp"
+                                android:layout_height="wrap_content"
+                                android:layout_weight="1"
+                                android:orientation="vertical">
+
+                                <LinearLayout
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:gravity="center_vertical"
+                                    android:orientation="horizontal">
+
+                                    <ImageView
+                                        android:layout_width="14dp"
+                                        android:layout_height="14dp"
+                                        android:contentDescription="@null"
+                                        android:src="@drawable/ic_calendar" />
+
+                                    <TextView
+                                        android:layout_width="wrap_content"
+                                        android:layout_height="wrap_content"
+                                        android:layout_marginStart="4dp"
+                                        android:text="@string/label_renews_on"
+                                        android:textColor="@color/colorTextSecondary"
+                                        android:textSize="12sp" />
+                                </LinearLayout>
+
+                                <TextView
+                                    android:id="@+id/tvRenewsDate"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:layout_marginTop="2dp"
+                                    android:textColor="@color/colorTextPrimary"
+                                    android:textSize="14sp"
+                                    android:textStyle="bold"
+                                    tools:text="30 September 2026" />
+                            </LinearLayout>
+
+                        </LinearLayout>
+
+                    </LinearLayout>
+                </FrameLayout>
+            </com.google.android.material.card.MaterialCardView>
+
+            <!-- ============ SECTION: SUBSCRIPTION DETAILS ============ -->
+            <TextView
+                style="@style/SectionLabel"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/spacing_l"
+                android:text="@string/section_subscription_details" />
+
+            <com.google.android.material.card.MaterialCardView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/spacing_s"
+                app:cardBackgroundColor="@color/colorSurface"
+                app:cardCornerRadius="@dimen/card_corner_radius"
+                app:cardElevation="@dimen/card_elevation"
+                app:strokeColor="@color/colorBorder"
+                app:strokeWidth="@dimen/card_stroke_width">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical">
+
+
+                    <LinearLayout
+                        android:id="@+id/groupDetailsPremium"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="vertical">
+
+                        <LinearLayout
+                            android:id="@+id/rowPlan"
+                            style="@style/DetailRow"
+                            android:background="?attr/selectableItemBackground"
+                            android:clickable="true"
+                            android:focusable="true">
+
+                            <ImageView
+                                android:layout_width="@dimen/icon_chip_size"
+                                android:layout_height="@dimen/icon_chip_size"
+                                android:background="@drawable/bg_icon_chip"
+                                android:contentDescription="@null"
+                                android:padding="9dp"
+                                android:src="@drawable/ic_plan" />
+
+                            <TextView
+                                android:layout_width="0dp"
+                                android:layout_height="wrap_content"
+                                android:layout_marginStart="@dimen/spacing_m"
+                                android:layout_weight="1"
+                                android:text="@string/detail_plan"
+                                android:textColor="@color/colorTextPrimary"
+                                android:textSize="15sp" />
+
+                            <TextView
+                                android:id="@+id/tvRowPlanValue"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_marginEnd="@dimen/spacing_s"
+                                android:text="@string/detail_plan_value"
+                                android:textColor="@color/colorTextSecondary"
+                                android:textSize="14sp" />
+
+                            <ImageView
+                                android:layout_width="20dp"
+                                android:layout_height="20dp"
+                                android:contentDescription="@null"
+                                android:src="@drawable/ic_chevron_right" />
+                        </LinearLayout>
+
+                        <View style="@style/RowDivider" />
+
+                        <LinearLayout
+                            android:id="@+id/rowPaymentMethod"
+                            style="@style/DetailRow"
+                            android:background="?attr/selectableItemBackground"
+                            android:clickable="true"
+                            android:focusable="true">
+
+                            <ImageView
+                                android:layout_width="@dimen/icon_chip_size"
+                                android:layout_height="@dimen/icon_chip_size"
+                                android:background="@drawable/bg_icon_chip"
+                                android:contentDescription="@null"
+                                android:padding="9dp"
+                                android:src="@drawable/ic_payment" />
+
+                            <TextView
+                                android:layout_width="0dp"
+                                android:layout_height="wrap_content"
+                                android:layout_marginStart="@dimen/spacing_m"
+                                android:layout_weight="1"
+                                android:text="@string/detail_payment_method"
+                                android:textColor="@color/colorTextPrimary"
+                                android:textSize="15sp" />
+
+                            <TextView
+                                android:id="@+id/tvRowPaymentMethodValue"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_marginEnd="@dimen/spacing_s"
+                                android:text="@string/detail_payment_method_value"
+                                android:textColor="@color/colorTextSecondary"
+                                android:textSize="14sp" />
+
+                            <ImageView
+                                android:layout_width="20dp"
+                                android:layout_height="20dp"
+                                android:contentDescription="@null"
+                                android:src="@drawable/ic_chevron_right" />
+                        </LinearLayout>
+
+                        <View style="@style/RowDivider" />
+
+                        <LinearLayout
+                            android:id="@+id/rowBilling"
+                            style="@style/DetailRow"
+                            android:background="?attr/selectableItemBackground"
+                            android:clickable="true"
+                            android:focusable="true">
+
+                            <ImageView
+                                android:layout_width="@dimen/icon_chip_size"
+                                android:layout_height="@dimen/icon_chip_size"
+                                android:background="@drawable/bg_icon_chip"
+                                android:contentDescription="@null"
+                                android:padding="9dp"
+                                android:src="@drawable/ic_billing" />
+
+                            <LinearLayout
+                                android:layout_width="0dp"
+                                android:layout_height="wrap_content"
+                                android:layout_marginStart="@dimen/spacing_m"
+                                android:layout_weight="1"
+                                android:orientation="vertical">
+
+                                <TextView
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:text="@string/detail_billing"
+                                    android:textColor="@color/colorTextPrimary"
+                                    android:textSize="15sp" />
+
+                                <TextView
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:text="@string/detail_billing_value"
+                                    android:textColor="@color/colorTextSecondary"
+                                    android:textSize="12sp" />
+                            </LinearLayout>
+
+                            <ImageView
+                                android:layout_width="20dp"
+                                android:layout_height="20dp"
+                                android:contentDescription="@null"
+                                android:src="@drawable/ic_chevron_right" />
+                        </LinearLayout>
+
+                    </LinearLayout>
+
+
+                    <LinearLayout
+                        android:id="@+id/groupDetailsFree"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="vertical"
+                        android:visibility="gone">
+
+                        <LinearLayout style="@style/DetailRow">
+
+                            <ImageView
+                                android:layout_width="@dimen/icon_chip_size"
+                                android:layout_height="@dimen/icon_chip_size"
+                                android:background="@drawable/bg_icon_chip"
+                                android:contentDescription="@null"
+                                android:padding="9dp"
+                                android:src="@drawable/ic_plan" />
+
+                            <TextView
+                                android:layout_width="0dp"
+                                android:layout_height="wrap_content"
+                                android:layout_marginStart="@dimen/spacing_m"
+                                android:layout_weight="1"
+                                android:text="@string/detail_current_plan"
+                                android:textColor="@color/colorTextPrimary"
+                                android:textSize="15sp" />
+
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text="@string/detail_current_plan_free_value"
+                                android:textColor="@color/colorTextSecondary"
+                                android:textSize="14sp" />
+                        </LinearLayout>
+
+                        <View style="@style/RowDivider" />
+
+                        <LinearLayout style="@style/DetailRow">
+
+                            <ImageView
+                                android:layout_width="@dimen/icon_chip_size"
+                                android:layout_height="@dimen/icon_chip_size"
+                                android:background="@drawable/bg_icon_chip"
+                                android:contentDescription="@null"
+                                android:padding="9dp"
+                                android:src="@drawable/ic_billing" />
+
+                            <TextView
+                                android:layout_width="0dp"
+                                android:layout_height="wrap_content"
+                                android:layout_marginStart="@dimen/spacing_m"
+                                android:layout_weight="1"
+                                android:text="@string/detail_subscription_status"
+                                android:textColor="@color/colorTextPrimary"
+                                android:textSize="15sp" />
+
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text="@string/detail_subscription_status_free_value"
+                                android:textColor="@color/colorTextSecondary"
+                                android:textSize="14sp" />
+                        </LinearLayout>
+
+                    </LinearLayout>
+
+                </LinearLayout>
+            </com.google.android.material.card.MaterialCardView>
+
+            <!-- ============ SECTION: PREMIUM BENEFITS ============ -->
+            <TextView
+                style="@style/SectionLabel"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/spacing_l"
+                android:text="@string/section_premium_benefits" />
+
+            <com.google.android.material.card.MaterialCardView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/spacing_s"
+                app:cardBackgroundColor="@color/colorSurface"
+                app:cardCornerRadius="@dimen/card_corner_radius"
+                app:cardElevation="@dimen/card_elevation"
+                app:strokeColor="@color/colorBorder"
+                app:strokeWidth="@dimen/card_stroke_width">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    android:padding="@dimen/spacing_m">
+
+                    <!-- Benefit: Unlimited processing -->
+                    <LinearLayout style="@style/BenefitRow">
+                        <ImageView
+                            style="@style/BenefitIcon"
+                            android:src="@drawable/ic_check_circle" />
+                        <TextView
+                            style="@style/BenefitTitle"
+                            android:text="@string/benefit_unlimited_title" />
+                    </LinearLayout>
+
+                    <!-- Benefit: Large PDF compression -->
+                    <LinearLayout
+                        style="@style/BenefitRow"
+                        android:layout_marginTop="@dimen/spacing_m">
+                        <ImageView
+                            style="@style/BenefitIcon"
+                            android:src="@drawable/ic_check_circle" />
+                        <LinearLayout
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:orientation="vertical">
+                            <TextView
+                                style="@style/BenefitTitle"
+                                android:layout_width="wrap_content"
+                                android:layout_weight="0"
+                                android:text="@string/benefit_compression_title" />
+                            <TextView
+                                style="@style/BenefitDesc"
+                                android:text="@string/benefit_compression_desc" />
+                        </LinearLayout>
+                    </LinearLayout>
+
+                    <!-- Benefit: DOC / PPT conversion -->
+                    <LinearLayout
+                        style="@style/BenefitRow"
+                        android:layout_marginTop="@dimen/spacing_m">
+                        <ImageView
+                            style="@style/BenefitIcon"
+                            android:src="@drawable/ic_check_circle" />
+                        <LinearLayout
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:orientation="vertical">
+                            <TextView
+                                style="@style/BenefitTitle"
+                                android:layout_width="wrap_content"
+                                android:layout_weight="0"
+                                android:text="@string/benefit_conversion_title" />
+                            <TextView
+                                style="@style/BenefitDesc"
+                                android:text="@string/benefit_conversion_desc" />
+                        </LinearLayout>
+                    </LinearLayout>
+
+                    <!-- Benefit: No usage limits -->
+                    <LinearLayout
+                        style="@style/BenefitRow"
+                        android:layout_marginTop="@dimen/spacing_m">
+                        <ImageView
+                            style="@style/BenefitIcon"
+                            android:src="@drawable/ic_check_circle" />
+                        <TextView
+                            style="@style/BenefitTitle"
+                            android:text="@string/benefit_no_limits_title" />
+                    </LinearLayout>
+
+                    <!-- Benefit: Priority processing -->
+                    <LinearLayout
+                        style="@style/BenefitRow"
+                        android:layout_marginTop="@dimen/spacing_m">
+                        <ImageView
+                            style="@style/BenefitIcon"
+                            android:src="@drawable/ic_check_circle" />
+                        <TextView
+                            style="@style/BenefitTitle"
+                            android:text="@string/benefit_priority_title" />
+                    </LinearLayout>
+
+                </LinearLayout>
+            </com.google.android.material.card.MaterialCardView>
+
+            <!-- ============ ACTIONS ============ -->
+
+            <!-- PREMIUM actions -->
+            <LinearLayout
+                android:id="@+id/groupActionsPremium"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/spacing_l"
+                android:orientation="vertical">
+
+                <com.google.android.material.button.MaterialButton
+                    android:id="@+id/btnManageSubscription"
+                    android:layout_width="match_parent"
+                    android:layout_height="@dimen/button_height"
+                    android:backgroundTint="@color/colorPrimary"
+                    android:text="@string/action_manage_subscription"
+                    android:textAllCaps="false"
+                    android:textColor="@color/colorTextOnPrimary"
+                    android:textSize="16sp"
+                    android:textStyle="bold"
+                    app:cornerRadius="14dp" />
+
+                <com.google.android.material.button.MaterialButton
+                    android:id="@+id/btnCancelSubscription"
+                    style="@style/Widget.MaterialComponents.Button.OutlinedButton"
+                    android:layout_width="match_parent"
+                    android:layout_height="@dimen/button_height"
+                    android:layout_marginTop="@dimen/spacing_s"
+                    android:text="@string/action_cancel_subscription"
+                    android:textAllCaps="false"
+                    android:textColor="@color/colorError"
+                    android:textSize="16sp"
+                    app:cornerRadius="14dp"
+                    app:strokeColor="@color/colorError"
+                    app:strokeWidth="1.5dp" />
+
+            </LinearLayout>
+
+            <!-- FREE action -->
+            <LinearLayout
+                android:id="@+id/groupActionsFree"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/spacing_l"
+                android:orientation="vertical"
+                android:visibility="gone">
+
+                <com.google.android.material.button.MaterialButton
+                    android:id="@+id/btnUpgrade"
+                    android:layout_width="match_parent"
+                    android:layout_height="@dimen/button_height"
+                    android:backgroundTint="@color/colorPrimary"
+                    android:text="@string/action_upgrade_to_premium"
+                    android:textAllCaps="false"
+                    android:textColor="@color/colorTextOnPrimary"
+                    android:textSize="16sp"
+                    android:textStyle="bold"
+                    app:cornerRadius="14dp" />
+
+            </LinearLayout>
+
+            <!-- ============ FOOTER: SECURITY NOTE ============ -->
+            <TextView
+                android:id="@+id/tvSecurityNote"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/spacing_l"
+                android:drawablePadding="6dp"
+                android:gravity="center"
+                android:textColor="@color/colorTextSecondary"
+                android:textSize="12sp"
+                tools:text="🔒 Your payments are secure and processed by Google Play." />
+
+        </LinearLayout>
+    </androidx.core.widget.NestedScrollView>
+
+</androidx.coordinatorlayout.widget.CoordinatorLayout>

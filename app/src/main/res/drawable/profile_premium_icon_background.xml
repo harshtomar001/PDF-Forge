@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Solid primary-blue rounded container for the crown icon on the
+     Premium upsell card, so it stands out from the light-blue row icons. -->
+<shape xmlns:android="http://schemas.android.com/apk/res/android"
+    android:shape="rectangle">
+    <solid android:color="@color/pdf_studio_primary_blue" />
+    <corners android:radius="14dp" />
+</shape>

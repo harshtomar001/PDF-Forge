@@ -1,0 +1,283 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<com.google.android.material.card.MaterialCardView
+    android:layout_height="wrap_content"
+    android:layout_width="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    app:cardBackgroundColor="@color/white"
+    android:layout_marginEnd="@dimen/margin_20dp"
+    app:cardCornerRadius="@dimen/margin_20dp"
+    app:cardElevation="@dimen/margin_8dp"
+    xmlns:android="http://schemas.android.com/apk/res/android">
+
+<ScrollView
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:background="@color/white"
+    android:fillViewport="true">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:background="@color/white"
+        android:padding="16dp">
+
+        <!-- ================= Weight ================= -->
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Weight"
+            android:textStyle="bold"
+            android:textSize="16sp"
+            android:textColor="@color/black"/>
+
+        <HorizontalScrollView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="12dp"
+            android:scrollbars="none">
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal">
+
+                <!-- Light -->
+
+                <com.google.android.material.card.MaterialCardView
+                    android:id="@+id/cardLight"
+                    android:layout_width="wrap_content"
+                    android:layout_height="44dp"
+                    android:layout_marginEnd="8dp"
+                    app:cardCornerRadius="12dp"
+                    app:strokeWidth="1dp"
+                    app:strokeColor="#DADCE0"
+                    app:cardBackgroundColor="@android:color/white">
+
+                    <TextView
+                        android:id="@+id/tvLight"
+                        android:layout_width="wrap_content"
+                        android:layout_height="match_parent"
+                        android:gravity="center"
+                        android:paddingHorizontal="18dp"
+                        android:text="Light"
+                        android:textColor="@color/black"/>
+
+                </com.google.android.material.card.MaterialCardView>
+
+                <!-- Regular -->
+
+                <com.google.android.material.card.MaterialCardView
+                    android:id="@+id/cardRegular"
+                    android:layout_width="wrap_content"
+                    android:layout_height="44dp"
+                    android:layout_marginEnd="8dp"
+                    app:cardCornerRadius="12dp"
+                    app:strokeWidth="1dp"
+                    app:strokeColor="#DADCE0"
+                    app:cardBackgroundColor="@android:color/white">
+
+                    <TextView
+                        android:id="@+id/tvRegular"
+                        android:layout_width="wrap_content"
+                        android:layout_height="match_parent"
+                        android:gravity="center"
+                        android:paddingHorizontal="18dp"
+                        android:text="Regular"/>
+
+                </com.google.android.material.card.MaterialCardView>
+
+                <!-- Medium -->
+
+                <com.google.android.material.card.MaterialCardView
+                    android:id="@+id/cardMedium"
+                    android:layout_width="wrap_content"
+                    android:layout_height="44dp"
+                    android:layout_marginEnd="8dp"
+                    app:cardCornerRadius="12dp"
+                    app:strokeWidth="1dp"
+                    app:strokeColor="#DADCE0"
+                    app:cardBackgroundColor="@android:color/white">
+
+                    <TextView
+                        android:id="@+id/tvMedium"
+                        android:layout_width="wrap_content"
+                        android:layout_height="match_parent"
+                        android:gravity="center"
+                        android:paddingHorizontal="18dp"
+                        android:text="Medium"/>
+
+                </com.google.android.material.card.MaterialCardView>
+
+                <!-- SemiBold -->
+
+                <com.google.android.material.card.MaterialCardView
+                    android:id="@+id/cardSemiBold"
+                    android:layout_width="wrap_content"
+                    android:layout_height="44dp"
+                    android:layout_marginEnd="8dp"
+                    app:cardCornerRadius="12dp"
+                    app:strokeWidth="1dp"
+                    app:strokeColor="#DADCE0"
+                    app:cardBackgroundColor="@android:color/white">
+
+                    <TextView
+                        android:id="@+id/tvSemiBold"
+                        android:layout_width="wrap_content"
+                        android:layout_height="match_parent"
+                        android:gravity="center"
+                        android:paddingHorizontal="18dp"
+                        android:text="SemiBold"/>
+
+                </com.google.android.material.card.MaterialCardView>
+
+                <!-- Bold -->
+
+                <com.google.android.material.card.MaterialCardView
+                    android:id="@+id/cardBold"
+                    android:layout_width="wrap_content"
+                    android:layout_height="44dp"
+                    app:cardCornerRadius="12dp"
+                    app:strokeWidth="1dp"
+                    app:strokeColor="#DADCE0"
+                    app:cardBackgroundColor="@android:color/white">
+
+                    <TextView
+                        android:id="@+id/tvBold"
+                        android:layout_width="wrap_content"
+                        android:layout_height="match_parent"
+                        android:gravity="center"
+                        android:paddingHorizontal="18dp"
+                        android:text="Bold"/>
+
+                </com.google.android.material.card.MaterialCardView>
+
+            </LinearLayout>
+
+        </HorizontalScrollView>
+
+        <!-- ================= Formatting ================= -->
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="24dp"
+            android:text="Formatting"
+            android:textStyle="bold"
+            android:textSize="16sp"
+            android:textColor="@color/black"/>
+
+        <HorizontalScrollView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="12dp"
+            android:scrollbars="none">
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal">
+
+                <!-- Bold -->
+
+                <com.google.android.material.card.MaterialCardView
+                    android:id="@+id/cardFmtBold"
+                    android:layout_width="56dp"
+                    android:layout_height="56dp"
+                    android:layout_marginEnd="10dp"
+                    app:cardCornerRadius="14dp"
+                    app:strokeWidth="1dp"
+                    app:strokeColor="#DADCE0"
+                    app:cardBackgroundColor="@android:color/white">
+
+                    <TextView
+                        android:id="@+id/tvFmtBold"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:gravity="center"
+                        android:text="B"
+                        android:textStyle="bold"
+                        android:textSize="18sp"
+                        />
+
+                </com.google.android.material.card.MaterialCardView>
+
+                <!-- Italic -->
+
+                <com.google.android.material.card.MaterialCardView
+                    android:id="@+id/cardFmtItalic"
+                    android:layout_width="56dp"
+                    android:layout_height="56dp"
+                    android:layout_marginEnd="10dp"
+                    app:cardCornerRadius="14dp"
+                    app:strokeWidth="1dp"
+                    app:strokeColor="#DADCE0"
+                    app:cardBackgroundColor="@android:color/white">
+
+                    <TextView
+                        android:id="@+id/tvFmtItalic"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:gravity="center"
+                        android:text="I"
+                        android:textStyle="italic"
+                        android:textSize="18sp"/>
+
+                </com.google.android.material.card.MaterialCardView>
+
+                <!-- Underline -->
+
+                <com.google.android.material.card.MaterialCardView
+                    android:id="@+id/cardFmtUnderline"
+                    android:layout_width="56dp"
+                    android:layout_height="56dp"
+                    android:layout_marginEnd="10dp"
+                    app:cardCornerRadius="14dp"
+                    app:strokeWidth="1dp"
+                    app:strokeColor="#DADCE0"
+                    app:cardBackgroundColor="@android:color/white">
+
+                    <TextView
+                        android:id="@+id/tvFmtUnderline"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:gravity="center"
+                        android:text="U"
+                        android:textSize="18sp"/>
+
+                </com.google.android.material.card.MaterialCardView>
+
+                <!-- Strike -->
+
+                <com.google.android.material.card.MaterialCardView
+                    android:id="@+id/cardFmtStrike"
+                    android:layout_width="56dp"
+                    android:layout_height="56dp"
+                    app:cardCornerRadius="14dp"
+                    app:strokeWidth="1dp"
+                    app:strokeColor="#DADCE0"
+                    app:cardBackgroundColor="@android:color/white">
+
+                    <TextView
+                        android:id="@+id/tvFmtStrike"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:gravity="center"
+                        android:text="S"
+                        android:textSize="18sp"/>
+
+                </com.google.android.material.card.MaterialCardView>
+
+            </LinearLayout>
+
+        </HorizontalScrollView>
+
+    </LinearLayout>
+
+</ScrollView>
+
+</com.google.android.material.card.MaterialCardView>
