@@ -5,7 +5,7 @@
         xmlns:tools="http://schemas.android.com/tools"
         android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="#FFFFFF">
+    android:background="@color/color_background">
 
 <!-- Toolbar -->
 
@@ -27,7 +27,7 @@
         android:layout_height="@dimen/margin_30dp"
         android:background="?attr/selectableItemBackgroundBorderless"
         android:src="@drawable/ic_back_arrow"
-        android:tint="#000000"
+        android:tint="@color/color_text_primary"
         tools:ignore="UseAppTint" />
 
     <TextView
@@ -38,7 +38,7 @@
         android:text="Crop Page"
         android:textStyle="bold"
         android:textSize="20sp"
-        android:textColor="#000000"/>
+        android:textColor="@color/color_text_primary"/>
 
     <com.google.android.material.button.MaterialButton
         android:id="@+id/resetBtnCropLayout"
@@ -49,14 +49,14 @@
         android:textAllCaps="false"
         android:textStyle="bold"
         android:textSize="16sp"
-        android:textColor="#2563EB"
+        android:textColor="@color/color_primary"
         app:icon="@drawable/refresh"
         app:iconGravity="textStart"
         app:iconPadding="6dp"
-        app:iconTint="#2563EB"
+        app:iconTint="@color/color_primary"
 
         app:backgroundTint="@android:color/transparent"
-        app:rippleColor="#332563EB"
+        app:rippleColor="@color/color_primary_container"
         app:strokeWidth="0dp"
         app:elevation="0dp"
 
@@ -85,11 +85,11 @@
 
         android:layout_marginTop="12dp"
 
-        app:cardBackgroundColor="#F5F5F5"
+        app:cardBackgroundColor="@color/color_surface_variant"
         app:cardCornerRadius="20dp"
         app:cardElevation="2dp"
         app:strokeWidth="1dp"
-        app:strokeColor="#DDDDDD"
+        app:strokeColor="@color/color_border"
 
         app:layout_constraintTop_toBottomOf="@id/titleBreak"
         app:layout_constraintStart_toStartOf="parent"
@@ -109,7 +109,7 @@
             android:text="1280 × 1750 px"
             android:textStyle="bold"
             android:textSize="15sp"
-            android:textColor="#212121"/>
+            android:textColor="@color/color_text_primary"/>
 
     </com.google.android.material.card.MaterialCardView>
 
@@ -146,9 +146,9 @@
     android:text="Apply Crop"
     android:textAllCaps="false"
     android:textStyle="bold"
-    android:textColor="#FFFFFF"
+    android:textColor="@color/color_on_primary"
     app:cornerRadius="@dimen/margin_16dp"
-    app:backgroundTint="#2563EB"
+    app:backgroundTint="@color/color_primary"
     android:backgroundTint="@null"
     app:layout_constraintBottom_toBottomOf="parent"
     app:layout_constraintStart_toStartOf="parent"

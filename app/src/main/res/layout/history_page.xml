@@ -6,7 +6,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="#F7F9FC">
+    android:background="@color/color_background">
 
 
     <!-- ================================================= -->
@@ -154,7 +154,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="@string/no_recent_pdfs"
-            android:textColor="@color/black"
+            android:textColor="@color/color_text_primary"
             android:textStyle="bold"
             android:textSize="@dimen/margin_20dp"
             tools:ignore="SpUsage" />

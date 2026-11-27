@@ -1669,14 +1669,14 @@ public class AddTextView extends View {
         snackbar.setBackgroundTint(
                 ContextCompat.getColor(
                         getContext(),
-                        R.color.white
+                        R.color.color_surface
                 )
         );
 
         snackbar.setTextColor(
                 ContextCompat.getColor(
                         getContext(),
-                        R.color.black
+                        R.color.color_text_primary
                 )
         );
 
@@ -1686,7 +1686,7 @@ public class AddTextView extends View {
 
         // Rounded corners
         GradientDrawable background = new GradientDrawable();
-        background.setColor(Color.WHITE);
+        background.setColor(ContextCompat.getColor(getContext(), R.color.color_surface));
         background.setCornerRadius(
                 getResources().getDisplayMetrics().density * 12
         );

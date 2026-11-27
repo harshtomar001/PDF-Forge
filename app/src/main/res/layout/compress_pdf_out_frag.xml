@@ -20,7 +20,7 @@
     android:layout_width="match_parent"
     android:layout_height="0dp"
     android:layout_weight="1"
-    android:background="#FAFAFA">
+    android:background="@color/color_background">
 
     <LinearLayout
         android:layout_width="match_parent"
@@ -52,7 +52,7 @@
             android:layout_marginStart="@dimen/margin_18dp"
             android:layout_marginEnd="@dimen/margin_18dp"
             app:cardElevation="@dimen/margin_5dp"
-            app:cardBackgroundColor="#FFFFFF">
+            app:cardBackgroundColor="@color/color_surface">
 
             <LinearLayout
                 android:layout_width="match_parent"
@@ -80,7 +80,7 @@
                             android:ellipsize="end"
                             android:maxLines="1"
                             android:text="Original PDF"
-                            android:textColor="#666666"
+                            android:textColor="@color/color_text_secondary"
                             android:textSize="15dp" />
 
 
@@ -90,7 +90,7 @@
                             android:layout_height="wrap_content"
                             android:layout_marginTop="8dp"
                             android:text="25.4 MB"
-                            android:textColor="#111111"
+                            android:textColor="@color/color_text_primary"
                             android:textSize="20dp"
                             android:textStyle="bold" />
 
@@ -105,7 +105,7 @@
                             android:paddingBottom="@dimen/margin_5dp"
                             android:text="Before"
 
-                            android:textColor="#fc474d"
+                            android:textColor="@color/color_error"
                             android:textSize="12dp" />
 
                     </LinearLayout>
@@ -132,7 +132,7 @@
                             android:ellipsize="end"
                             android:maxLines="1"
                             android:text="Compressed PDF"
-                            android:textColor="#159947"
+                            android:textColor="@color/color_success"
                             android:textSize="15dp"
                             android:textStyle="bold" />
 
@@ -143,7 +143,7 @@
                             android:layout_height="wrap_content"
                             android:layout_marginTop="8dp"
                             android:text="6.2 MB"
-                            android:textColor="#159947"
+                            android:textColor="@color/color_success"
                             android:textSize="20dp"
                             android:textStyle="bold" />
 
@@ -157,7 +157,7 @@
                             android:paddingEnd="7dp"
                             android:paddingBottom="@dimen/margin_5dp"
                             android:text=" After "
-                            android:textColor="#4bc98a"
+                            android:textColor="@color/color_success"
                             android:textSize="12dp" />
 
                     </LinearLayout>
@@ -181,7 +181,7 @@
                         android:background="@drawable/reduced_size"
                         android:gravity="center"
                         android:text=""
-                        android:textColor="#FFFFFF"
+                        android:textColor="@color/color_on_primary"
                         android:textSize="24sp" />
 
                     <LinearLayout
@@ -245,7 +245,7 @@
             android:layout_marginStart="@dimen/margin_18dp"
             android:layout_marginEnd="@dimen/margin_18dp"
             app:cardElevation="@dimen/margin_5dp"
-            app:cardBackgroundColor="#FFFFFF">
+            app:cardBackgroundColor="@color/color_surface">
 
             <LinearLayout
                 android:layout_width="match_parent"
@@ -285,7 +285,7 @@
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:text="Project_Report_compressed.pdf"
-                        android:textColor="#111111"
+                        android:textColor="@color/color_text_primary"
                         android:textSize="16dp"
                         android:maxLines="1"
                         android:ellipsize="end" />
@@ -313,7 +313,7 @@
                             android:ellipsize="end"
                             android:maxLines="1"
                             android:text="253.22 MB"
-                            android:textColor="#555555"
+                            android:textColor="@color/color_text_secondary"
                             android:textSize="12dp"
                             android:textStyle="bold"
                             app:layout_constraintStart_toEndOf="@id/folder"
@@ -326,7 +326,7 @@
                             android:layout_height="wrap_content"
                             android:layout_marginStart="8dp"
                             android:text="•"
-                            android:textColor="#999999"
+                            android:textColor="@color/color_text_tertiary"
                             android:textSize="18dp"
                             app:layout_constraintStart_toEndOf="@id/txtPdfSize"
                             app:layout_constraintTop_toTopOf="parent"
@@ -350,7 +350,7 @@
                             android:ellipsize="end"
                             android:maxLines="1"
                             android:text="804 Pages"
-                            android:textColor="#555555"
+                            android:textColor="@color/color_text_secondary"
                             android:textSize="12dp"
                             android:layout_marginStart="@dimen/margin_5dp"
                             android:textStyle="bold"
@@ -424,7 +424,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="Share PDF"
-                android:textColor="#C0392B"
+                android:textColor="@color/color_error"
                 android:textStyle="bold"
                 android:textSize="@dimen/margin_22dp"
                 />

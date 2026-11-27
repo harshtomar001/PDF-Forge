@@ -5,20 +5,20 @@
     android:viewportHeight="96">
   <path
       android:pathData="M16,0L64,0A16,16 0,0 1,80 16L80,64A16,16 0,0 1,64 80L16,80A16,16 0,0 1,0 64L0,16A16,16 0,0 1,16 0z"
-      android:fillColor="#EDE9FF"/>
+      android:fillColor="@color/view_btn_bg"/>
   <path
       android:pathData="M40,28C28,28 20,40 20,40C20,40 28,52 40,52C52,52 60,40 60,40C60,40 52,28 40,28Z"
       android:strokeLineJoin="round"
       android:strokeWidth="2.2"
       android:fillColor="#00000000"
-      android:strokeColor="#7C5CBF"
+      android:strokeColor="@color/view_icon_stroke"
       android:strokeLineCap="round"/>
   <path
       android:pathData="M40,40m-6,0a6,6 0,1 1,12 0a6,6 0,1 1,-12 0"
       android:strokeWidth="2.2"
       android:fillColor="#00000000"
-      android:strokeColor="#7C5CBF"/>
+      android:strokeColor="@color/view_icon_stroke"/>
   <path
       android:pathData="M40,40m-3,0a3,3 0,1 1,6 0a3,3 0,1 1,-6 0"
-      android:fillColor="#7C5CBF"/>
+      android:fillColor="@color/view_icon_stroke"/>
 </vector>

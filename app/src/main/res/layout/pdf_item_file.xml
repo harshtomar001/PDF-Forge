@@ -13,7 +13,7 @@
     android:layout_marginTop="6dp"
     android:layout_marginBottom="6dp"
     app:strokeWidth="0dp"
-    app:cardBackgroundColor="@color/white"
+    app:cardBackgroundColor="@color/color_surface"
     app:cardCornerRadius="18dp"
     app:cardElevation="2dp">
 
@@ -41,7 +41,7 @@
             app:cardCornerRadius="12dp"
             app:cardElevation="1dp"
 
-            app:strokeColor="#E5E8EF"
+            app:strokeColor="@color/color_border"
             app:strokeWidth="1dp"
 
             app:layout_constraintStart_toStartOf="parent"
@@ -156,9 +156,9 @@
                     android:layout_width="17dp"
                     android:layout_height="17dp"
 
-                    android:alpha="0.7"
-
                     android:src="@drawable/folder"
+                    app:tint="@color/color_icon_secondary"
+                    android:tint="@color/color_icon_secondary"
 
                     android:contentDescription="@null" />
 
@@ -197,9 +197,9 @@
                     android:layout_width="17dp"
                     android:layout_height="17dp"
 
-                    android:alpha="0.7"
-
                     android:src="@drawable/blankpage"
+                    app:tint="@color/color_icon_secondary"
+                    android:tint="@color/color_icon_secondary"
 
                     android:contentDescription="@null" />
 
@@ -241,9 +241,9 @@
                     android:layout_width="17dp"
                     android:layout_height="17dp"
 
-                    android:alpha="0.7"
-
                     android:src="@drawable/calendar"
+                    app:tint="@color/color_icon_secondary"
+                    android:tint="@color/color_icon_secondary"
 
                     android:contentDescription="@null" />
 

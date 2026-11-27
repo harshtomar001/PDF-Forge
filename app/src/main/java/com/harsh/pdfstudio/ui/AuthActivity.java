@@ -13,12 +13,11 @@ import com.harsh.pdfstudio.fragments.SignupFragment;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
 
-public class AuthActivity extends AppCompatActivity {
+public class AuthActivity extends AppCompatActivity
+        implements LoginFragment.loginActionListener, SignupFragment.SignupActionListener {
 
     private ParentPageBinding binding;
     private FirebaseAuth mAuth;
-
-
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -29,42 +28,40 @@ public class AuthActivity extends AppCompatActivity {
 
         mAuth = FirebaseAuth.getInstance();
 
-
-        LoginFragment loginFragment = new LoginFragment();
-
-        loginFragment.setLoginActionListener(
-                new LoginFragment.loginActionListener() {
-            @Override
-            public void onGoogleClicked() {
-
-            }
-
-            @Override
-            public void onSignUpClicked() {
-
-                showSignup();
-
-            }
-
-            @Override
-            public void onForgotPasswordClicked() {
-
-            }
-        });
-
         if (savedInstanceState == null) {
-
             getSupportFragmentManager()
                     .beginTransaction()
                     .replace(
                             R.id.Fragment_container,
-                            loginFragment,
+                            new LoginFragment(),
                             "LOGIN"
                     )
                     .commit();
         }
+    }
 
+    // --- LoginFragment.loginActionListener ---
+    @Override
+    public void onGoogleClicked() {
+    }
 
+    @Override
+    public void onSignUpClicked() {
+        showSignup();
+    }
+
+    @Override
+    public void onForgotPasswordClicked() {
+    }
+
+    // --- SignupFragment.SignupActionListener ---
+    @Override
+    public void onLoginClicked() {
+        showLogin();
+    }
+
+    @Override
+    public void onAppleClicked() {
     }
 
     private void showSignup() {
@@ -92,28 +89,7 @@ public class AuthActivity extends AppCompatActivity {
             }
         }
 
-        SignupFragment signupFragment =  new SignupFragment();
-
-        signupFragment.setSignupActionListener(
-                new SignupFragment.SignupActionListener() {
-
-                    @Override
-                    public void onLoginClicked() {
-
-                        showLogin();
-                    }
-
-                    @Override
-                    public void onGoogleClicked() {
-
-                    }
-
-                    @Override
-                    public void onAppleClicked() {
-
-                    }
-                }
-        );
+        SignupFragment signupFragment = new SignupFragment();
 
         fm.beginTransaction()
                 .replace(

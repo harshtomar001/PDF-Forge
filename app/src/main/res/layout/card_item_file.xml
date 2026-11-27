@@ -9,7 +9,7 @@
     android:focusable="true"
     app:cardCornerRadius="16dp"
     app:cardElevation="2dp"
-    app:cardBackgroundColor="@color/card_bg"
+    app:cardBackgroundColor="@color/color_surface"
     xmlns:android="http://schemas.android.com/apk/res/android">
 
     <FrameLayout

@@ -20,13 +20,13 @@ public class CardAdapter extends RecyclerView.Adapter<CardAdapter.ViewHolder> {
     List<CardItem> list;
 
 
-    private static final int[] ICON_BG_COLORS = {
-            Color.parseColor("#E6F7F5"), // Teal
-            Color.parseColor("#F0EAFE"), // Purple
-            Color.parseColor("#FFF7E6"), // Amber
-            Color.parseColor("#EAF8EE"), // Green
-            Color.parseColor("#EAF2FF"), // Blue
-            Color.parseColor("#FDEAF4")  // Pink
+    private static final int[] ICON_BG_COLOR_RES = {
+            R.color.card_cat_teal,
+            R.color.card_cat_purple,
+            R.color.card_cat_amber,
+            R.color.card_cat_green,
+            R.color.card_cat_blue,
+            R.color.card_cat_pink
     };
 
     public CardAdapter(List<CardItem> list){
@@ -54,7 +54,9 @@ public class CardAdapter extends RecyclerView.Adapter<CardAdapter.ViewHolder> {
         holder.text.setText(item.getText());
 
         holder.iconCard.setCardBackgroundColor(
-                ICON_BG_COLORS[postion % ICON_BG_COLORS.length]);
+                androidx.core.content.ContextCompat.getColor(
+                        holder.itemView.getContext(),
+                        ICON_BG_COLOR_RES[postion % ICON_BG_COLOR_RES.length]));
 
         holder.itemView.setContentDescription(item.getTitle());
 

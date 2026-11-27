@@ -4,10 +4,10 @@
     <!-- Selected -->
     <item
         android:state_checked="true"
-        android:color="#1554B7"/>
+        android:color="@color/color_nav_selected"/>
 
     <!-- Unselected -->
     <item
-        android:color="#8A94A6"/>
+        android:color="@color/color_nav_unselected"/>
 
 </selector>

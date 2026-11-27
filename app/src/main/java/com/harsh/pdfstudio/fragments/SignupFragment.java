@@ -46,6 +46,20 @@ public class SignupFragment extends Fragment {
 
     private SignupActionListener listener;
 
+    @Override
+    public void onAttach(@NonNull android.content.Context context) {
+        super.onAttach(context);
+        if (context instanceof SignupActionListener) {
+            listener = (SignupActionListener) context;
+        }
+    }
+
+    @Override
+    public void onDetach() {
+        super.onDetach();
+        listener = null;
+    }
+
     public void setSignupActionListener(SignupActionListener listener) {
 
         this.listener = listener;
@@ -278,8 +292,9 @@ public class SignupFragment extends Fragment {
 
             if (listener != null) {
                 listener.onLoginClicked();
+            } else if (getActivity() instanceof SignupActionListener) {
+                ((SignupActionListener) getActivity()).onLoginClicked();
             }
-
 
         });
 

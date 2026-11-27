@@ -3,11 +3,11 @@
 
     <!-- Selected -->
     <item
-        android:color="#E64A3B"
+        android:color="@color/color_pdf_accent"
         android:state_checked="true"/>
 
     <!-- Unselected -->
     <item
-        android:color="#D0D0D0"/>
+        android:color="@color/color_border"/>
 
 </selector>

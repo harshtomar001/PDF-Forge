@@ -172,7 +172,7 @@
                 android:padding="7dp"
                 android:src="@drawable/ic_person"
                 android:contentDescription="Profile"
-                app:tint="@color/toolbar_blue" />
+                app:tint="@color/profile_circle_icon" />
 
         </FrameLayout>
 
@@ -235,7 +235,7 @@
                     android:padding="6dp"
                     android:background="?attr/selectableItemBackground"
                     android:text="See All ›"
-                    android:textColor="@color/toolbar_blue"
+                    android:textColor="@color/color_see_all"
                     android:textStyle="bold"
                     android:textSize="13sp" />
 
@@ -290,7 +290,7 @@
                         android:padding="6dp"
                         android:background="?attr/selectableItemBackground"
                         android:text="See All ›"
-                        android:textColor="@color/toolbar_blue"
+                        android:textColor="@color/color_see_all"
                         android:textStyle="bold"
                         android:textSize="13sp" />
 

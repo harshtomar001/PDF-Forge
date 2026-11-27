@@ -25,7 +25,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="Add Watermark"
-        android:textColor="#111111"
+        android:textColor="@color/color_text_primary"
         android:textSize="20dp"
         android:textStyle="bold"
         android:layout_marginStart="@dimen/margin_15dp"
@@ -76,7 +76,7 @@
                     android:layout_weight="1"
                     android:gravity="center"
                     android:text="Text"
-                    android:textColor="#2563EB"
+                    android:textColor="@color/color_primary"
                     android:textSize="@dimen/margin_18dp"
                     android:textStyle="bold"
                     android:layout_marginEnd="2dp"
@@ -102,8 +102,8 @@
                 android:background="@drawable/bg_input_box_"
                 android:hint="Enter watermark text"
                 android:paddingHorizontal="14dp"
-                android:textColor="#111111"
-                android:textColorHint="#94A3B8" />
+                android:textColor="@color/color_text_primary"
+                android:textColorHint="@color/color_text_tertiary" />
 
             <com.google.android.material.button.MaterialButton
                 android:id="@+id/upload_watermark_image"
@@ -114,8 +114,8 @@
                 android:background="@drawable/upl_img_bg"
                 android:backgroundTint="@null"
                 app:backgroundTint="@null"
-                android:textColor="#2563EB"
-                app:iconTint="#2563EB"
+                android:textColor="@color/color_primary"
+                app:iconTint="@color/color_primary"
                 app:icon="@drawable/add_btn"
                 app:iconGravity="textStart"
                 app:iconSize="@dimen/margin_30dp"
@@ -142,7 +142,7 @@
                     android:layout_height="wrap_content"
                     android:layout_weight="1"
                     android:text="Opacity (Visibility)"
-                    android:textColor="#222222"
+                    android:textColor="@color/color_text_primary"
                     android:textStyle="bold" />
 
                 <TextView
@@ -150,7 +150,7 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:text="0.3"
-                    android:textColor="#222222"
+                    android:textColor="@color/color_text_primary"
                     android:textStyle="bold" />
 
             </LinearLayout>
@@ -159,10 +159,10 @@
                 android:id="@+id/slider_opacity"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                app:trackColorActive="#2563EB"
-                app:trackColorInactive="#D6E4FF"
-                app:thumbColor="#2563EB"
-                app:haloColor="#332563EB"
+                app:trackColorActive="@color/color_primary"
+                app:trackColorInactive="@color/color_primary_container"
+                app:thumbColor="@color/color_primary"
+                app:haloColor="@color/color_primary_container"
                 app:tickVisible="false"
                 android:valueFrom="0"
                 android:valueTo="1"
@@ -182,7 +182,7 @@
                     android:layout_weight="1"
                     android:layout_marginTop="14dp"
                     android:text="Size (px)"
-                    android:textColor="#222222"
+                    android:textColor="@color/color_text_primary"
                     android:textStyle="bold" />
 
                 <TextView
@@ -191,7 +191,7 @@
                     android:layout_height="wrap_content"
                     android:text="24px"
                     android:layout_marginTop="14dp"
-                    android:textColor="#222222"
+                    android:textColor="@color/color_text_primary"
                     android:textStyle="bold" />
 
             </LinearLayout>
@@ -202,10 +202,10 @@
                 android:id="@+id/slider_size"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                app:trackColorActive="#2563EB"
-                app:trackColorInactive="#D6E4FF"
-                app:thumbColor="#2563EB"
-                app:haloColor="#332563EB"
+                app:trackColorActive="@color/color_primary"
+                app:trackColorInactive="@color/color_primary_container"
+                app:thumbColor="@color/color_primary"
+                app:haloColor="@color/color_primary_container"
                 app:tickVisible="false"
                 android:valueFrom="0"
                 android:valueTo="64"
@@ -226,7 +226,7 @@
                     android:layout_weight="1"
                     android:layout_marginTop="14dp"
                     android:text="Rotation (°)"
-                    android:textColor="#222222"
+                    android:textColor="@color/color_text_primary"
                     android:textStyle="bold" />
 
                 <TextView
@@ -235,7 +235,7 @@
                     android:layout_height="wrap_content"
                     android:text="0°"
                     android:layout_marginTop="14dp"
-                    android:textColor="#222222"
+                    android:textColor="@color/color_text_primary"
                     android:textStyle="bold" />
 
             </LinearLayout>
@@ -247,10 +247,10 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:valueFrom="0"
-                app:trackColorActive="#2563EB"
-                app:trackColorInactive="#D6E4FF"
-                app:thumbColor="#2563EB"
-                app:haloColor="#332563EB"
+                app:trackColorActive="@color/color_primary"
+                app:trackColorInactive="@color/color_primary_container"
+                app:thumbColor="@color/color_primary"
+                app:haloColor="@color/color_primary_container"
                 app:tickVisible="false"
                 android:valueTo="360"
                 android:value="0"
@@ -273,7 +273,7 @@
                 android:maxLines="1"
                 android:ellipsize="none"
                 android:textSize="@dimen/margin_18dp"
-                android:textColor="#222222"
+                android:textColor="@color/color_text_primary"
                 android:textStyle="normal" />
 
                 <com.google.android.material.textfield.TextInputLayout
@@ -307,7 +307,7 @@
                         android:dropDownHeight="380dp"
                         android:paddingTop="@dimen/margin_12dp"
                         android:paddingEnd="28dp"
-                        android:textColor="#1E293B"
+                        android:textColor="@color/color_text_primary"
                         android:text="Center" />
 
 
@@ -347,7 +347,7 @@
                         android:alpha="0.3"
                         android:textSize="24sp"
                         android:layout_gravity="center"
-                        android:textColor="#2563EB"/>
+                        android:textColor="@color/color_primary"/>
 
                 </FrameLayout>
 
@@ -359,9 +359,9 @@
                 android:layout_width="match_parent"
                 android:layout_height="54dp"
                 android:layout_marginTop="22dp"
-                android:backgroundTint="#2563EB"
+                android:backgroundTint="@color/color_primary"
                 android:text="Apply Watermark"
-                android:textColor="#FFFFFF"
+                android:textColor="@color/color_on_primary"
                 app:cornerRadius="@dimen/margin_12dp"
                 android:textStyle="bold" />
 

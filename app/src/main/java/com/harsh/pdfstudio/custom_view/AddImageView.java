@@ -15,6 +15,7 @@ import android.view.View;
 import androidx.annotation.Nullable;
 import com.harsh.pdfstudio.model.ImageObject;
 import com.harsh.pdfstudio.model.RotatedBounds;
+import com.harsh.pdfstudio.R;
 import java.util.ArrayList;
 
 
@@ -36,7 +37,7 @@ public class AddImageView extends View {
 
     private final Paint handleStrokePaint = new Paint(Paint.ANTI_ALIAS_FLAG);
 
-    private static final int canvasBGColor = Color.parseColor("#f2f5f4");
+    private int canvasBGColor = Color.parseColor("#f2f5f4");
 
     private static final float DEFAULT_IMAGE_SCALE = 0.5f;
 
@@ -116,6 +117,8 @@ public class AddImageView extends View {
 
 
     private void init(){
+
+        canvasBGColor = androidx.core.content.ContextCompat.getColor(getContext(), R.color.color_surface_variant);
 
         borderPaint.setColor(Color.GRAY);
         borderPaint.setStrokeWidth(3f);

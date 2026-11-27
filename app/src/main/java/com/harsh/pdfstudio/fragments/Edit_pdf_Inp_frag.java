@@ -153,7 +153,7 @@ public class Edit_pdf_Inp_frag extends Fragment {
 
         showPreviewBtn.setText(R.string.preview);
         showPreviewBtn.setPadding(55,10,55,10);
-        showPreviewBtn.setTextColor(Color.parseColor("#1976D2"));
+        showPreviewBtn.setTextColor(androidx.core.content.ContextCompat.getColor(requireContext(), R.color.color_primary));
 
         showPreviewBtn(false);
 

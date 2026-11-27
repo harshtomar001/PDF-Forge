@@ -5,35 +5,35 @@
     android:viewportHeight="96">
   <path
       android:pathData="M16,0L64,0A16,16 0,0 1,80 16L80,64A16,16 0,0 1,64 80L16,80A16,16 0,0 1,0 64L0,16A16,16 0,0 1,16 0z"
-      android:fillColor="#FDECEA"/>
+      android:fillColor="@color/delete_btn_bg"/>
   <path
       android:pathData="M28,33H52"
       android:strokeWidth="2.2"
       android:fillColor="#00000000"
-      android:strokeColor="#E53E3E"
+      android:strokeColor="@color/delete_icon_stroke"
       android:strokeLineCap="round"/>
   <path
       android:pathData="M36,33V30H44V33"
       android:strokeLineJoin="round"
       android:strokeWidth="2.2"
       android:fillColor="#00000000"
-      android:strokeColor="#E53E3E"
+      android:strokeColor="@color/delete_icon_stroke"
       android:strokeLineCap="round"/>
   <path
       android:pathData="M33,36L47,36A2,2 0,0 1,49 38L49,52A2,2 0,0 1,47 54L33,54A2,2 0,0 1,31 52L31,38A2,2 0,0 1,33 36z"
       android:strokeWidth="2.2"
       android:fillColor="#00000000"
-      android:strokeColor="#E53E3E"/>
+      android:strokeColor="@color/delete_icon_stroke"/>
   <path
       android:pathData="M37,40L37,50"
       android:strokeWidth="1.8"
       android:fillColor="#00000000"
-      android:strokeColor="#E53E3E"
+      android:strokeColor="@color/delete_icon_stroke"
       android:strokeLineCap="round"/>
   <path
       android:pathData="M43,40L43,50"
       android:strokeWidth="1.8"
       android:fillColor="#00000000"
-      android:strokeColor="#E53E3E"
+      android:strokeColor="@color/delete_icon_stroke"
       android:strokeLineCap="round"/>
 </vector>

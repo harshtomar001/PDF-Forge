@@ -33,6 +33,20 @@ public class LoginFragment extends Fragment {
 
     private loginActionListener listener;
 
+    @Override
+    public void onAttach(@NonNull android.content.Context context) {
+        super.onAttach(context);
+        if (context instanceof loginActionListener) {
+            listener = (loginActionListener) context;
+        }
+    }
+
+    @Override
+    public void onDetach() {
+        super.onDetach();
+        listener = null;
+    }
+
     private PdfLoaderController loaderController;
 
     public void setLoginActionListener(loginActionListener listener){
@@ -178,9 +192,11 @@ public class LoginFragment extends Fragment {
 
 
         binding.googleButton.setOnClickListener(v -> {
-
-            listener.onGoogleClicked();
-
+            if (listener != null) {
+                listener.onGoogleClicked();
+            } else if (getActivity() instanceof loginActionListener) {
+                ((loginActionListener) getActivity()).onGoogleClicked();
+            }
         });
 
         binding.appleButton.setOnClickListener(v -> {
@@ -190,15 +206,19 @@ public class LoginFragment extends Fragment {
         });
 
         binding.forgotPassword.setOnClickListener(v -> {
-
-            listener.onForgotPasswordClicked();
-
+            if (listener != null) {
+                listener.onForgotPasswordClicked();
+            } else if (getActivity() instanceof loginActionListener) {
+                ((loginActionListener) getActivity()).onForgotPasswordClicked();
+            }
         });
 
-        binding.signUpLink.setOnClickListener(v ->{
-
-            listener.onSignUpClicked();
-
+        binding.signUpLink.setOnClickListener(v -> {
+            if (listener != null) {
+                listener.onSignUpClicked();
+            } else if (getActivity() instanceof loginActionListener) {
+                ((loginActionListener) getActivity()).onSignUpClicked();
+            }
         });
 
     }

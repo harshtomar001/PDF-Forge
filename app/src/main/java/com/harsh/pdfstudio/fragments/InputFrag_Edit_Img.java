@@ -584,12 +584,13 @@ public class InputFrag_Edit_Img extends Fragment {
         int blue =
                 ContextCompat.getColor(
                         requireContext(),
-                        R.color.darkBlue
+                        R.color.color_primary
                 );
 
         int gray =
-                Color.parseColor(
-                        "#BDBDBD"
+                ContextCompat.getColor(
+                        requireContext(),
+                        R.color.color_border
                 );
 
         return new ColorStateList(
